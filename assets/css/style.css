@@ -1,0 +1,333 @@
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f6f8fa;
+      --surface: #ffffff;
+      --surface2: #f0f2f5;
+      --border: rgba(0,0,0,0.1);
+      --border2: rgba(0,0,0,0.2);
+      --text: #1c2128;
+      --text2: #57606a;
+      --text3: #8c959f;
+      --accent: #0969da;
+      --accent-bg: #ddf4ff;
+      --accent-text: #0550ae;
+      --success-bg: #dafbe1;
+      --success-text: #1a7f37;
+      --warn-bg: #fff8c5;
+      --warn-text: #9a6700;
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: #24292f;
+      color: white;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    header svg { flex-shrink: 0; }
+    header h1 { font-size: 18px; font-weight: 600; }
+    header p  { font-size: 13px; opacity: 0.7; margin-top: 2px; }
+
+    /* ── NAV ── */
+    nav {
+      background: #24292f;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 0 24px;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+    }
+    .nav-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      padding: 10px 14px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-btn:hover  { color: white; }
+    .nav-btn.active { color: white; border-bottom-color: #f78166; }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 28px 20px 60px;
+    }
+
+    /* ── SECTIONS ── */
+    .section { display: none; }
+    .section.visible { display: block; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .card h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .card p { font-size: 14px; color: var(--text2); }
+    .card p + p { margin-top: 8px; }
+
+
+    /* ── MINI GUÍA CARDS ── */
+
+.container {
+  margin-top: 20px;
+}
+
+.container .card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: #f6f8fa;
+}
+
+/* iconos */
+.icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.yellow { background: #f4b400; }
+.green { background: #16a34a; }
+.blue { background: #3b82f6; }
+
+/* contenido */
+.content h3 {
+  font-size: 15px;
+  margin: 2px 0 4px;
+}
+
+.content p {
+  font-size: 13px;
+  color: var(--text2);
+}
+
+/* número */
+#step1, #step2, #step3 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50%;
+  margin-bottom: 4px;
+  background: #f4b400;
+  color: white;
+}
+
+#step2 {
+  background: #16a34a ;
+}
+
+#step3 {
+  background: #3b82f6;
+}
+
+
+
+/* badges */
+.green-badge {
+  margin-top: 8px;
+  background: var(--success-bg);
+  color: var(--success-text);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.blue-badge {
+  margin-top: 8px;
+  background: var(--accent-bg);
+  color: var(--accent-text);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* flechas */
+.arrow {
+  text-align: center;
+  font-size: 22px;
+  margin: 10px 0;
+  color: var(--text3);
+}
+    
+    /* ── STEPS ── */
+    .steps { list-style: none; counter-reset: s; }
+    .steps li {
+      counter-increment: s;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text2);
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: counter(s);
+      min-width: 22px; height: 22px;
+      background: var(--accent-bg);
+      color: var(--accent-text);
+      border-radius: 50%;
+      font-size: 12px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .steps li strong { color: var(--text); }
+
+    /* ── BADGES ── */
+    .badge {
+      display: inline-block;
+      font-size: 12px; font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .badge-warn    { background: var(--warn-bg);    color: var(--warn-text); }
+    .badge-success { background: var(--success-bg); color: var(--success-text); }
+    .badge-info    { background: var(--accent-bg);  color: var(--accent-text); }
+
+    /* ── ANALOGY BOX ── */
+    .analogy {
+      border-left: 3px solid var(--accent);
+      background: var(--accent-bg);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 12px 16px;
+      margin: 12px 0;
+    }
+    .analogy p { font-size: 14px; color: var(--accent-text); line-height: 1.6; }
+
+    /* ── COMPARE GRID ── */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 540px) { .compare { grid-template-columns: 1fr; } }
+    .cbox {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      background: var(--surface);
+    }
+    .cbox h3 { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
+    .cbox ul { list-style: none; }
+    .cbox ul li {
+      font-size: 13px; color: var(--text2);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .cbox ul li:last-child { border-bottom: none; }
+    .cbox ul li::before { content: "— "; color: var(--text3); }
+
+    /* ── VIDEO ── */
+    .video-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 12px;
+      background: #000;
+    }
+    .video-wrap iframe { display: block; width: 100%; }
+
+    /* ── LINK BUTTON ── */
+    .link-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 500;
+      color: var(--accent-text);
+      text-decoration: none;
+      padding: 7px 14px;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      background: var(--accent-bg);
+      margin-top: 14px;
+      transition: opacity 0.15s;
+    }
+    .link-btn:hover { opacity: 0.8; }
+
+    /* ── CMD GROUP ── */
+    .cmd-group { margin-bottom: 20px; }
+    .cmd-group-title {
+      font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--text3);
+      margin-bottom: 8px;
+    }
+    .cmd {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 6px;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .cmd:hover { border-color: var(--border2); background: #e8eaed; }
+    .cmd-text { flex: 1; }
+    .cmd-code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 13px;
+      color: var(--text);
+    }
+    .cmd-desc { font-size: 12px; color: var(--text3); margin-top: 2px; }
+    .cmd-copy {
+      font-size: 11px;
+      color: var(--text3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 10px;
+      background: var(--surface);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.1s;
+      flex-shrink: 0;
+    }
+    .cmd-copy:hover  { color: var(--text); border-color: var(--border2); }
+    .cmd-copy.copied { color: var(--success-text); border-color: var(--success-text); background: var(--success-bg); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #24292f;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 14px;
+      font-size: 13px;
+    }

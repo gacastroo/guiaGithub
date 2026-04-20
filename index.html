@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de GitHub</title>
+    <link href="./assets/img/favicon/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/navbar.css" type="text/css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="8" fill="#30363d" />
+            <path
+                d="M18 6C11.373 6 6 11.373 6 18c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0118 11.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C26.566 27.797 30 23.3 30 18c0-6.627-5.373-12-12-12z"
+                fill="white" />
+        </svg>
+        <div>
+            <h1>Guía de GitHub</h1>
+            <p>Aprende a usar GitHub paso a paso</p>
+        </div>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" onclick="show('instalacion', this)">Instalación</button>
+        <button class="nav-btn" onclick="show('registro', this)">Registro</button>
+        <button class="nav-btn" onclick="show('diferencias', this)">Git vs GitHub</button>
+        <button class="nav-btn" onclick="show('miniguia', this)">Crea tu propio repositorio</button>
+        <button class="nav-btn" onclick="show('comandos', this)">Comandos basicos</button>
+        <button class="nav-btn" onclick="show('ramas', this)">Ramas</button>
+        <button class="nav-btn" onclick="show('ejercicios', this)">Ejercicios</button>
+    </nav>
+
+    <main>
+        <!-- INSTALACIÓN -->
+        <div id="instalacion" class="section visible">
+            <div class="card">
+                <h2>Instalación de Git</h2>
+                <p>Descarga Git desde su página oficial e instálalo en tu sistema operativo.</p>
+                <a class="link-btn" href="https://git-scm.com/" target="_blank">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                        <path
+                            d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z" />
+                    </svg>
+                    Página oficial de Git
+                </a>
+            </div>
+        <div class="card">
+            <h2>Tutorial en vídeo</h2>
+            <p style="font-size:13px; color:var(--text3); margin-bottom: 0;">
+                Instalación y primeros pasos con Git
+            </p>
+            <div class="video-wrap">
+                <iframe 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    width="100%" 
+                    height="500" 
+                    src="https://www.youtube.com/embed/jdXKwLNUfmg"
+                    title="Instalación de Git"
+                    style="border:0;"
+                    allow="fullscreen">
+                </iframe>
+            </div>
+        </div>
+        </div>
+        <!-- REGISTRO -->
+        <div id="registro" class="section">
+            <div class="card">
+                <h2>Cómo registrarse en GitHub</h2>
+                <ol class="steps">
+                    <li>Navega a <a style="text-decoration: none;" href="https://github.com/"><strong>github.com</strong></a> en tu navegador</li>
+                    <li>Haz clic en <strong>Registrarse</strong> o en <strong>Continue with Google</strong> para usar tu
+                        cuenta de Google</li>
+                    <img style="padding: 20px;" width="800px" src="./assets/img/PNG/capturasRegistro/1.png">
+                    <img style="padding: 20px;" width="800px" src="./assets/img/PNG/capturasRegistro/2.png">                    
+                    <li>Sigue las indicaciones para crear tu cuenta personal</li>
+                    <li>Verifica tu dirección de correo electrónico <span class="badge badge-warn">Obligatorio</span>
+                    </li>
+                    <img style="padding: 20px;" width="800px" src="./assets/img/PNG/capturasRegistro/verify.png">
+                    <li>Listo ya tienes tu cuenta creada!</li>
+                    <img style="padding: 20px;" width="800px" src="./assets/img/PNG/capturasRegistro/3.png">
+                </ol>
+
+
+            </div>
+            <div class="card">
+                <h2>Cosas importantes</h2>
+                <p>Algunas empresas crean <strong>cuentas de usuario administradas</strong> para sus empleados. No
+                    puedes registrarte con un correo que ya esté vinculado a una cuenta administrada.</p>
+                <p>Si tienes problemas para verificar tu correo, consulta la guía <a style="text-decoration: none;" href="https://docs.github.com/es/account-and-profile/how-tos/email-preferences/verifying-your-email-address"><strong>Verificar tu dirección de
+                        correo electrónico</strong></a> dentro de la documentación oficial de GitHub.</p>
+            </div>
+            <div class="card">
+                <h2>Pasos siguientes</h2>
+                <p>Una vez tengas tu cuenta, explora el tutorial <a style="text-decoration: none;" href="https://docs.github.com/es/get-started/start-your-journey/hello-world"><strong>Hello World</strong></a> para aprender sobre
+                    repositorios, ramas (branches), commits y pull requests.</p>
+                <p style="margin-top: 10px;">Se recomienda activar <a style="text-decoration: none;" href="https://docs.github.com/es/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication"><strong>2FA (autenticación de dos factores)</strong></a>
+                    <span class="badge badge-success">Recomendado</span> para añadir una capa extra de seguridad a tu
+                    cuenta.</p> <br>
+                <img width="800px" src="./assets/img/PNG/capturasRegistro/4.png"><br><br>
+                <img width="300px" src="./assets/img/PNG/capturasRegistro/5.png"><br><br>
+                <img width="800px" src="./assets/img/PNG/capturasRegistro/6.png"><br><br>
+                <img width="800px" src="./assets/img/PNG/capturasRegistro/7.png"><br><br>
+            </div>
+        </div>
+
+        <!-- GIT VS GITHUB -->
+        <div id="diferencias" class="section">
+            <div class="card">
+                <h2>GIT VS GITHUB: La analogía más fácil</h2>
+                <div class="analogy">
+                    <p>"Git es el <strong>cerebro 🧠</strong>, GitHub es la <strong>red social 🌐</strong>."</p>
+                    <p style="margin-top:6px;">"Git guarda tu código, GitHub lo presume."</p>
+                </div>
+            </div>
+            <img style="border-radius: 5%;" width="800px" src="./assets/img/PNG/githubVsGit.png"><br><br>
+            <div class="compare" style="margin-bottom: 16px;">
+                <div class="cbox">
+                    <h3>Git</h3>
+                    <ul>
+                        <li>Software local (en tu ordenador)</li>
+                        <li>Control de versiones</li>
+                        <li>Guarda instantáneas del proyecto</li>
+                        <li>Ideal para uso individual</li>
+                        <li>Funciona sin internet</li>
+                    </ul>
+                </div>
+                <div class="cbox">
+                    <h3>GitHub</h3>
+                    <ul>
+                        <li>Plataforma web</li>
+                        <li>Colaboración en equipo</li>
+                        <li>Basado en Git</li>
+                        <li>Gestión de proyectos</li>
+                        <li>Red social para código</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <h2>¿Qué es el control de versiones?</h2>
+                <p>Un sistema que permite gestionar y rastrear los cambios en el código fuente a lo largo del tiempo,
+                    facilitando la colaboración y el desarrollo eficiente de software.</p>
+            </div>
+        </div>
+
+        <!-- COMANDOS -->
+        <div id="comandos" class="section">
+            <div class="card">
+                <p style="font-size:13px; color:var(--text3); margin-bottom: 16px;">Estos son algunos de los comandos básicos de git y los que posiblemente mas utilices, espero que te ayuden :D <br>Haz clic en cualquier comando para
+                    copiarlo al portapapeles.</p>
+
+                <div class="cmd-group">
+                    <p class="cmd-group-title">1 · Configuración inicial</p>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git config --global user.name "Tu Nombre"</div>
+                            <div class="cmd-desc">Configura tu nombre de usuario</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git config --global user.email "tu@email.com"</div>
+                            <div class="cmd-desc">Configura tu correo electrónico</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                </div>
+
+                <div class="cmd-group">
+                    <p class="cmd-group-title">2 · Iniciar un proyecto</p>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git init</div>
+                            <div class="cmd-desc">Crea un repositorio nuevo en la carpeta actual</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git remote add &lt;nombre&gt; &lt;url&gt;</div>
+                            <div class="cmd-desc">Crea una nueva conexión a un repositorio remoto.</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git clone &lt;url&gt;</div>
+                            <div class="cmd-desc">Descarga un repositorio existente</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                </div>
+
+                <div class="cmd-group">
+                    <p class="cmd-group-title">3 · El ciclo diario</p>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git status</div>
+                            <div class="cmd-desc">Muestra qué ha cambiado</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git add .</div>
+                            <div class="cmd-desc">Prepara todos los cambios para el commit</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git commit -m "mensaje claro"</div>
+                            <div class="cmd-desc">Guarda los cambios en el historial</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git push origin main</div>
+                            <div class="cmd-desc">Sube los cambios a GitHub</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git pull origin main</div>
+                            <div class="cmd-desc">Baja los cambios del remoto</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                </div>
+
+                <div class="cmd-group">
+                    <p class="cmd-group-title">4 · Ramas</p>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git switch -c mi-rama</div>
+                            <div class="cmd-desc">Crea y cambia a una rama nueva</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git switch main</div>
+                            <div class="cmd-desc">Vuelve a la rama principal</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git merge mi-rama</div>
+                            <div class="cmd-desc">Une la rama con la actual</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                </div>
+
+                <div class="cmd-group">
+                    <p class="cmd-group-title">5 · Si algo va mal</p>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git log --oneline</div>
+                            <div class="cmd-desc">Ver historial de commits resumido</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git restore &lt;archivo&gt;</div>
+                            <div class="cmd-desc">Descartar cambios en un archivo</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git restore --staged &lt;archivo&gt;</div>
+                            <div class="cmd-desc">Quitar un archivo del staging</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="miniguia" class="section">
+            <div class="card">
+                <h2>Miniguía: ¿Dónde vive tu código?</h2><br>
+                <p>Para trabajar con GitHub, imagina que tienes dos "copias" de tu proyecto:</p> <br>
+                <ul>
+                    <li style="list-style:none;"><strong>Repositorio Local:</strong> Es la carpeta en tu ordenador. Es donde editas tus
+                        archivos día a día. GitHub no ve esto hasta que tú lo envías.</li>
+                    <li style="list-style: none;"><strong>Repositorio Remoto:</strong> Es la copia en los servidores de GitHub. Es tu respaldo en
+                        la nube y el lugar donde los demás ven tu código.</li>
+                </ul> <br>
+                <h3>¿Cómo se conectan?</h3>
+                <p>Tú trabajas en tu <strong>Local</strong>. Cuando quieres que GitHub se entere, haces un
+                    <em>commit</em> (guardar foto instantánea) y luego un <em>push</em> (enviar a la nube).</p>
+                <div class="container">
+                    <!-- Tarjeta 1 -->
+                    <div class="card">
+                        <div class="icon yellow">✏️</div>
+                        <div class="content">
+                        <span id="step1">1</span>
+                        <h3>Escribes tu código</h3>
+                        <p>Trabajas en tu computadora, creas o modificas archivos</p>
+                        <p style="border-radius: 7px; background: rgba(27, 27, 27, 0.986); color: whitesmoke; padding: 10px; text-align: center;">git add . (añadir archivos modificados, creados)</p>
+                        </div>
+                    </div>
+
+                    <div class="arrow">↓</div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="card">
+                        <div class="icon green">💾</div>
+                        <div class="content">
+                        <span id="step2">2</span>
+                        <h3>Guardas los cambios</h3>
+                        <p>Haces un "commit" - es como tomar una foto de tu proyecto</p>
+                        <p style="border-radius: 7px; background: rgba(27, 27, 27, 0.986); color: whitesmoke; padding: 10px; text-align: center;">git -commit -m "tu mensaje aquí" (añadir archivos modificados, creados)</p>
+
+                        <div class="badge green-badge">💾 Se guarda en tu computadora</div>
+                        </div>
+                    </div>
+
+                    <div class="arrow">↓</div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="card">
+                        <div class="icon blue">☁️</div>
+                        <div class="content">
+                        <span id="step3">3</span>
+                        <h3>Subes a la nube</h3>
+                        <p>Haces un "push" - envías todo a GitHub para que otros lo vean</p>
+                        <p style="border-radius: 7px; background: rgba(27, 27, 27, 0.986); color: whitesmoke; padding: 10px; text-align: center;">git push origin main (Sube tus cambios a la rama principal (main) del repositorio remoto.)</p>
+                        <div class="badge blue-badge">☁️ Ahora está en internet</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="card">
+                <h2>1. Crear el repositorio en GitHub</h2>
+                <ol>
+                    <li>Inicia sesión en <strong>GitHub.com</strong>.</li>
+                    <li>Haz clic en el icono <strong>"+"</strong> (esquina superior derecha) > <strong>"New
+                            repository"</strong>.</li>
+                    <img width="800px" src="./assets/img/PNG/crearRepositorioEnGithub/1.png">
+                    <li>Ponle un nombre y elige si será <strong>Public</strong> o <strong>Private</strong>.</li>
+                    <li>Marca <strong>"Add a README file"</strong> (fundamental para documentar el proyecto).</li>
+                    <li>Haz clic en <strong>"Create repository"</strong>.</li>
+                    <img width="800px" src="./assets/img/PNG/crearRepositorioEnGithub/CrearRepositorio.png">
+                </ol>
+            </div>
+
+            <div class="card">
+                <h2>2. Trabajar profesionalmente (VS Code + GitHub)</h2>
+                <p><strong>Vincular GitHub con VS Code:</strong></p>
+                <ul>
+                    <li style="list-style: none;">Instala la extensión <strong>"GitHub Pull Requests and Issues"</strong>.</li>
+                    <li style="list-style: none;">Haz clic en el icono de usuario (abajo a la izquierda) > <strong>"Sign in to GitHub"</strong> y
+                        autoriza la conexión.</li>
+                </ul>
+                <p><strong>Hacer cambios (Flujo diario):</strong></p>
+                <ol>
+                    <li>Edita tus archivos y guárdalos.</li>
+                    <li>Ve a la pestaña de <strong>Source Control</strong> (icono de nodos a la izquierda).</li>
+                    <li>Haz clic en el <strong>"+"</strong> para preparar los cambios (Stage).</li>
+                    <li>Escribe un mensaje de commit y presiona el botón <strong>Commit</strong>.</li>
+                    <li>Haz clic en <strong>Sync Changes</strong> (o Push) para enviar todo a GitHub.</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <h2>3. Alternativa: Línea de comandos (Terminal)</h2>
+                <p>Para usar la terminal en VS Code, presiona <strong>Ctrl + Ñ</strong> o ve al menú <strong>Terminal >
+                        New Terminal</strong>. Una vez abierta, ejecuta estos comandos en orden:</p>
+
+                <pre><code>git add . # Prepara todos los archivos para subir<br>git commit -m "Tu mensaje"  # Crea el punto de guardado (commit)<br>git push origin main # Sube los cambios al repositorio remoto
+                </code></pre>
+
+                <p><em>Nota: Asegúrate de estar dentro de la carpeta de tu proyecto en la terminal antes de escribir
+                        estos comandos.</em></p>
+            </div>
+        </div>
+
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 Guía de GitHub · Guillermo Castro Abarca</p>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
