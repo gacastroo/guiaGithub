@@ -1184,3 +1184,8 @@
     }
 
     .next-step-desc a { color: var(--accent); }
+
+    a:link, :visited, :hover, :active{
+    color: #fff;
+    text-decoration: none;
+    }
