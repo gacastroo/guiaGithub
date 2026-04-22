@@ -34,6 +34,7 @@
         <button class="nav-btn" onclick="show('comandos', this)" data-es="Comandos básicos" data-en="Basic Commands">Comandos básicos</button>
         <button class="nav-btn" onclick="show('ramas', this)" data-es="Ramas" data-en="Branches">Ramas</button>
         <button class="nav-btn" onclick="show('ejercicios', this)" data-es="Ejercicios" data-en="Exercises">Ejercicios</button>
+        <button class="nav-btn" onclick="show('vscode', this)" data-es="VSCODE" data-en="VSCODE">VSCODE</button>
 
         <div class="nav-controls">
             <button class="nav-ctrl-btn" id="lang-toggle-btn" onclick="toggleLang()" title="Cambiar idioma">
@@ -809,6 +810,353 @@ console.log("Hello world");
                 <p id="sim-hint" style="font-size:12px;color:var(--text3);margin-top:10px;"></p>
             </div>
         </div>
+
+<!-- ============================================================
+     SECCIÓN: Bonus – Integración con VS Code
+     Audiencia: principiantes (nunca han usado Git)
+     Temas: Source Control panel · Ramas y merge · Conflictos
+     ============================================================ -->
+
+<div id="vscode" class="section">
+
+  <!-- ── INTRO ─────────────────────────────────────────────── -->
+  <div class="card">
+    <h2 data-es="Bonus: Integración con VS Code"
+        data-en="Bonus: Integration with VS Code">
+      Bonus: Integración con VS Code
+    </h2>
+
+    <p>
+      <strong>Visual Studio Code</strong> es un editor de código muy popular
+      que tiene integración nativa con Git. Esto significa que puedes hacer
+      commits, ver cambios, manejar ramas y resolver conflictos
+      <em>sin salir del editor</em>.
+    </p>
+
+    <p style="margin-top:12px;">
+      <em>
+        Nota: Para usar Git en VS Code, asegúrate de tener Git instalado en
+        tu sistema y que VS Code lo reconozca. Puedes comprobarlo abriendo la
+        terminal integrada y ejecutando <code>git --version</code>.
+      </em>
+    </p>
+
+    <figure class="img-figure" style="margin-top:14px;">
+      <img src="./assets/img/PNG/vscode-integration/1.png"
+           alt="Vista general de la integración de Git en VS Code">
+      <figcaption>Vista general de la integración de Git en VS Code</figcaption>
+    </figure>
+  </div><!-- /card intro -->
+
+
+  <!-- ── 1. SOURCE CONTROL PANEL ───────────────────────────── -->
+  <div class="card" style="margin-top:24px;">
+    <h3 data-es="1. El panel Source Control"
+        data-en="1. The Source Control Panel">
+      1. El panel Source Control
+    </h3>
+
+    <p>
+      El panel <strong>Source Control</strong> (icono de rama en la barra
+      lateral izquierda, o atajo <kbd>Ctrl+Shift+G</kbd>) es tu centro de
+      mando para Git. Desde aquí puedes ver qué archivos han cambiado,
+      añadirlos al área de preparación (<em>stage</em>) y crear commits, todo
+      de forma visual.
+    </p>
+
+    <!-- Sub-paso: ver cambios -->
+    <h4 style="margin-top:20px;">Ver los archivos modificados</h4>
+    <p>
+      Cuando editas un archivo, VS Code lo marca automáticamente en el
+      explorador de archivos con una letra:
+    </p>
+    <ul>
+      <li><strong>M</strong> (Modified) — archivo modificado.</li>
+      <li><strong>U</strong> (Untracked) — archivo nuevo que Git aún no conoce.</li>
+      <li><strong>D</strong> (Deleted) — archivo eliminado.</li>
+    </ul>
+    <p style="margin-top:8px;">
+      En el panel Source Control verás los mismos archivos agrupados en dos
+      secciones: <em>Changes</em> (cambios sin preparar) y
+      <em>Staged Changes</em> (cambios listos para el commit).
+    </p>
+
+    <figure class="img-figure" style="margin-top:14px;">
+      <img src="./assets/img/PNG/vscode-integration/2.png"
+           alt="Panel Source Control mostrando archivos modificados">
+      <figcaption>
+        El panel Source Control lista todos los archivos con cambios pendientes
+      </figcaption>
+    </figure>
+
+    <!-- Sub-paso: stage -->
+    <h4 style="margin-top:20px;">Preparar cambios (Stage)</h4>
+    <p>
+      Antes de hacer un commit debes <em>preparar</em> los archivos que
+      quieres incluir. En VS Code tienes dos formas de hacerlo:
+    </p>
+    <ul>
+      <li>
+        Haz clic en el icono <strong>+</strong> que aparece al pasar el ratón
+        por encima de un archivo en la sección <em>Changes</em> para añadirlo
+        individualmente.
+      </li>
+      <li>
+        Haz clic en el <strong>+</strong> junto al encabezado
+        <em>Changes</em> para preparar todos los archivos a la vez.
+      </li>
+    </ul>
+    <p style="margin-top:8px;">
+      Los archivos preparados se moverán a la sección
+      <em>Staged Changes</em>. Si cambias de opinión, haz clic en el icono
+      <strong>−</strong> para retirarlos del stage.
+    </p>
+
+    <figure class="img-figure" style="margin-top:14px;">
+      <img src="./assets/img/PNG/vscode-integration/3.png"
+           alt="Preparando archivos con el botón + en VS Code">
+      <figcaption>
+        Haz clic en <strong>+</strong> para mover un archivo a Staged Changes
+      </figcaption>
+    </figure>
+
+    <!-- Sub-paso: commit -->
+    <h4 style="margin-top:20px;">Crear un commit</h4>
+    <p>
+      Una vez preparados los archivos, escribe un mensaje descriptivo en el
+      campo de texto que dice <em>"Message (Ctrl+Enter to commit)"</em> y
+      pulsa <kbd>Ctrl+Enter</kbd> (o haz clic en el botón
+      <strong>Commit ✔</strong>). El commit quedará registrado en el
+      historial local de tu repositorio.
+    </p>
+    <p style="margin-top:8px;">
+      <strong>Consejo:</strong> Un buen mensaje de commit responde a la
+      pregunta "¿Qué hace este cambio?", por ejemplo:
+      <code>Añade formulario de contacto</code>.
+    </p>
+
+    <figure class="img-figure" style="margin-top:14px;">
+      <img src="./assets/img/PNG/vscode-integration/4.png"
+           alt="Campo de mensaje de commit en VS Code">
+      <figcaption>
+        Escribe el mensaje y pulsa Ctrl+Enter para confirmar el commit
+      </figcaption>
+    </figure>
+  </div><!-- /card source control -->
+
+
+  <!-- ── 2. RAMAS Y MERGE ───────────────────────────────────── -->
+  <div class="card" style="margin-top:24px;">
+    <h3 data-es="2. Ramas y merge desde VS Code"
+        data-en="2. Branches and merge from VS Code">
+      2. Ramas y merge desde VS Code
+    </h3>
+
+    <p>
+      Las <strong>ramas</strong> (<em>branches</em>) te permiten trabajar en
+      una nueva funcionalidad o corrección sin tocar el código principal. VS
+      Code hace que crear y cambiar entre ramas sea tan sencillo como hacer
+      clic en la barra de estado inferior.
+    </p>
+
+    <!-- Sub-paso: crear rama -->
+    <h4 style="margin-top:20px;">Crear una nueva rama</h4>
+    <p>
+      En la esquina inferior izquierda de VS Code verás el nombre de la rama
+      actual (normalmente <code>main</code> o <code>master</code>). Haz clic
+      sobre él para abrir el menú de ramas y selecciona
+      <strong>Create new branch…</strong>. Escribe el nombre de tu nueva rama
+      (por ejemplo, <code>feature/formulario-contacto</code>) y pulsa
+      <kbd>Enter</kbd>.
+    </p>
+    <p style="margin-top:8px;">
+      VS Code creará la rama y cambiará a ella automáticamente. Todos los
+      commits que hagas a partir de ahora irán a esta rama sin afectar a
+      <code>main</code>.
+    </p>
+
+    <figure class="img-figure" style="margin-top:14px;">
+      <img src="./assets/img/PNG/vscode-integration/5.png"
+           alt="Menú de ramas en la barra de estado de VS Code">
+      <figcaption>
+        Haz clic en el nombre de la rama (barra inferior) para ver todas las
+        opciones de rama
+      </figcaption>
+    </figure>
+
+    <!-- Sub-paso: cambiar de rama -->
+    <h4 style="margin-top:20px;">Cambiar entre ramas</h4>
+    <p>
+      Desde el mismo menú de la barra de estado puedes seleccionar cualquier
+      rama existente para cambiar a ella. VS Code actualizará los archivos del
+      proyecto al estado de esa rama de forma instantánea.
+    </p>
+
+    <figure class="img-figure" style="margin-top:14px;">
+      <img src="./assets/img/PNG/vscode-integration/6.png"
+           alt="Selección de rama existente en VS Code">
+      <figcaption>
+        La lista muestra todas las ramas locales; haz clic en una para
+        cambiarte a ella
+      </figcaption>
+    </figure>
+
+    <!-- Sub-paso: merge -->
+    <h4 style="margin-top:20px;">Fusionar ramas (Merge)</h4>
+    <p>
+      Cuando tu funcionalidad esté lista y quieras incorporarla a
+      <code>main</code>, sigue estos pasos dentro de VS Code:
+    </p>
+    <ol>
+      <li>
+        Cambia a la rama de destino (<code>main</code>) usando la barra de
+        estado inferior.
+      </li>
+      <li>
+        Abre la paleta de comandos con <kbd>Ctrl+Shift+P</kbd> y escribe
+        <strong>Git: Merge Branch…</strong>.
+      </li>
+      <li>
+        Selecciona la rama que quieres fusionar
+        (p.&nbsp;ej., <code>feature/formulario-contacto</code>).
+      </li>
+      <li>
+        Si no hay conflictos, VS Code completará el merge automáticamente y
+        los cambios quedarán integrados en <code>main</code>.
+      </li>
+    </ol>
+
+    <figure class="img-figure" style="margin-top:14px;">
+      <img src="./assets/img/PNG/vscode-integration/7.png"
+           alt="Paleta de comandos con Git Merge Branch en VS Code">
+      <figcaption>
+        Busca "Git: Merge Branch" en la paleta de comandos para iniciar la
+        fusión
+      </figcaption>
+    </figure>
+  </div><!-- /card ramas -->
+
+
+  <!-- ── 3. RESOLUCIÓN DE CONFLICTOS ───────────────────────── -->
+  <div class="card" style="margin-top:24px;">
+    <h3 data-es="3. Resolución de conflictos visual"
+        data-en="3. Visual conflict resolution">
+      3. Resolución de conflictos visual
+    </h3>
+
+    <p>
+      Un <strong>conflicto de merge</strong> ocurre cuando dos ramas han
+      modificado la misma parte de un archivo de forma distinta y Git no puede
+      decidir qué versión conservar. VS Code incluye una herramienta visual
+      que convierte este proceso —habitualmente frustrante— en algo manejable.
+    </p>
+
+    <!-- Cómo se ve -->
+    <h4 style="margin-top:20px;">Cómo detectar un conflicto</h4>
+    <p>
+      Cuando se produce un conflicto, VS Code marca el archivo con una
+      <strong>C</strong> roja en el explorador y en el panel Source Control.
+      Al abrirlo, verás el código dividido en bloques con marcadores especiales:
+    </p>
+    <ul>
+      <li>
+        <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> — inicio de tu versión
+        (rama actual).
+      </li>
+      <li>
+        <code>=======</code> — separador entre las dos versiones.
+      </li>
+      <li>
+        <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/…</code> — inicio de la
+        versión entrante (rama que estás fusionando).
+      </li>
+    </ul>
+
+    <figure class="img-figure" style="margin-top:14px;">
+      <img src="./assets/img/PNG/vscode-integration/8.png"
+           alt="Marcadores de conflicto en un archivo dentro de VS Code">
+      <figcaption>
+        VS Code resalta visualmente los bloques en conflicto con colores
+        diferenciados
+      </figcaption>
+    </figure>
+
+    <!-- Resolver -->
+    <h4 style="margin-top:20px;">Resolver el conflicto con los botones inline</h4>
+    <p>
+      Encima de cada bloque en conflicto aparecen cuatro acciones rápidas.
+      Elige la que mejor se adapte a tu caso:
+    </p>
+    <ul>
+      <li>
+        <strong>Accept Current Change</strong> — conserva únicamente
+        <em>tu versión</em> (HEAD).
+      </li>
+      <li>
+        <strong>Accept Incoming Change</strong> — conserva únicamente
+        la versión de la <em>otra rama</em>.
+      </li>
+      <li>
+        <strong>Accept Both Changes</strong> — incluye las dos versiones,
+        una detrás de la otra.
+      </li>
+      <li>
+        <strong>Compare Changes</strong> — abre una vista de diferencias en
+        dos paneles para decidir con más calma.
+      </li>
+    </ul>
+    <p style="margin-top:8px;">
+      También puedes editar el archivo manualmente: simplemente borra los
+      marcadores (<code>&lt;&lt;&lt;</code>, <code>===</code>,
+      <code>&gt;&gt;&gt;</code>) y deja el código exactamente como quieres
+      que quede.
+    </p>
+
+    <figure class="img-figure" style="margin-top:14px;">
+      <img src="./assets/img/PNG/vscode-integration/9.png"
+           alt="Botones inline para resolver conflictos en VS Code">
+      <figcaption>
+        Los botones inline aparecen justo encima de cada bloque en conflicto
+      </figcaption>
+    </figure>
+
+    <!-- Finalizar -->
+    <h4 style="margin-top:20px;">Finalizar la resolución</h4>
+    <p>
+      Una vez resueltos <strong>todos</strong> los conflictos del archivo,
+      guárdalo (<kbd>Ctrl+S</kbd>). VS Code dejará de marcarlo con la
+      <strong>C</strong> roja. Repite el proceso con cada archivo en conflicto
+      y, cuando todos estén limpios, ve al panel Source Control y realiza un
+      commit para cerrar el merge:
+    </p>
+    <ol>
+      <li>Prepara los archivos resueltos con <strong>+</strong>.</li>
+      <li>
+        Escribe un mensaje como
+        <code>Merge feature/formulario-contacto en main</code>.
+      </li>
+      <li>Pulsa <kbd>Ctrl+Enter</kbd> para confirmar.</li>
+    </ol>
+
+    <figure class="img-figure" style="margin-top:14px;">
+      <img src="./assets/img/PNG/vscode-integration/10.png"
+           alt="Commit final tras resolver los conflictos en VS Code">
+      <figcaption>
+        Tras resolver todos los conflictos, un commit final cierra el proceso
+        de merge
+      </figcaption>
+    </figure>
+
+    <p style="margin-top:16px;">
+      <strong>¡Enhorabuena!</strong> Ahora sabes usar VS Code como tu
+      interfaz principal de Git: puedes preparar y confirmar cambios, trabajar
+      con ramas y superar los conflictos de merge sin necesidad de recordar
+      ningún comando de terminal.
+    </p>
+  </div><!-- /card conflictos -->
+
+</div><!-- /section #vscode -->
+
     </main>
 
 
