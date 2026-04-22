@@ -63,6 +63,12 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1001;
     }
     header svg { flex-shrink: 0; }
     header h1 { font-size: 18px; font-weight: 600; }
@@ -76,7 +82,21 @@
       display: flex;
       align-items: center;
       gap: 4px;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-scroll {
+      display: flex;
+      align-items: center;
+      gap: 4px;
       overflow-x: auto;
+      flex: 1;
+      min-width: 0;
     }
 
     /* Nav controls group (lang + theme) */
@@ -133,6 +153,8 @@
       max-width: 860px;
       margin: 0 auto;
       padding: 28px 20px 60px;
+      padding-top: calc(28px + 57px + 44px); /* header ~57px + nav ~44px */
+      min-height: 100vh;
     }
 
     /* ── SECTIONS ── */
