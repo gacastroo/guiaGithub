@@ -232,6 +232,8 @@
 
                 <div class="cmd-group">
                     <p class="cmd-group-title">1 · Configuración inicial</p>
+                    <p>Una vez que has instalado Git, es recomendable configurar tu nombre de usuario y correo electrónico: 
+                    <p> ⚠️ Sin esto no te permitirá hacer commits.</p></p>
                     <div class="cmd" onclick="copyCmd(this)">
                         <div class="cmd-text">
                             <div class="cmd-code">git config --global user.name "Tu Nombre"</div>
@@ -252,6 +254,7 @@
 
                 <div class="cmd-group">
                     <p class="cmd-group-title">2 · Iniciar un proyecto</p>
+                    <p>Estos son los cambios que necesitas hacer para iniciar un proyecto con Git:</p>
                     <div class="cmd" onclick="copyCmd(this)">
                         <div class="cmd-text">
                             <div class="cmd-code">git init</div>
@@ -276,10 +279,19 @@
                         <button class="cmd-copy"
                             onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
                     </div>
+                                        <div class="cmd" onclick="copyCmd(this)">
+                        <div class="cmd-text">
+                            <div class="cmd-code">git pull &lt;url&gt;</div>
+                            <div class="cmd-desc">Descarga los cambios del repositorio remoto</div>
+                        </div>
+                        <button class="cmd-copy"
+                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
                 </div>
 
                 <div class="cmd-group">
                     <p class="cmd-group-title">3 · El ciclo diario</p>
+                    <p>Son los comandos que usas diariamente:</p>
                     <div class="cmd" onclick="copyCmd(this)">
                         <div class="cmd-text">
                             <div class="cmd-code">git status</div>
@@ -324,6 +336,7 @@
 
                 <div class="cmd-group">
                     <p class="cmd-group-title">4 · Ramas</p>
+                    <p>Estos son los comandos que usas para trabajar con ramas:</p>
                     <div class="cmd" onclick="copyCmd(this)">
                         <div class="cmd-text">
                             <div class="cmd-code">git switch -c mi-rama</div>
@@ -348,6 +361,7 @@
                         <button class="cmd-copy"
                             onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
                     </div>
+                    <p>⚠️ Un merge puede causar conflictos si los cambios en ambas ramas son incompatibles. Cuando haces un merge, no hay forma de deshacerlo una vez que se resuelven los conflictos.</p>
                 </div>
 
                 <div class="cmd-group">
@@ -377,6 +391,12 @@
                             onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
                     </div>
                 </div>
+
+                <p>Git guarda tu trabajo en dos pasos: preparar y guardar.
+
+Cuando cambias archivos, Git ve esos cambios, pero no los guarda directamente. Primero eliges qué cambios quieres incluir (eso es staging o preparar). Luego los guardas con un commit.
+
+Es como hacer una foto: primero eliges qué quieres que salga en la foto (preparar) y luego haces la foto (guardar).</p>
 
             </div>
         </div>
@@ -476,9 +496,35 @@ git commit -m "Tu mensaje"   # Crea el punto de guardado (commit)
 git push origin main         # Sube los cambios al repositorio remoto</code></pre>
                 <p style="margin-top: 12px;"><em>Nota: Asegúrate de estar dentro de la carpeta de tu proyecto en la terminal antes de escribir estos comandos.</em></p>
                 <figure class="img-figure" style="margin-top: 14px;">
-                    <img src="./assets/img/PNG/crearRepositorioEnGithub/url.png" alt="URL del repositorio remoto" class="img-compact">
-                    <figcaption>URL del repositorio remoto que se usa en git remote add</figcaption>
-                </figure>
+                </figure>   
+            </div>
+
+            <div class="card">
+                <h2 data-es="4. Como hacer un commit profesional" data-en="4. How to make a professional commit">4. Como hacer un commit profesional</h2>
+                <p><b>Un commit profesional</b> es claro, conciso y descriptivo. Sigue esta estructura:</p>
+                <p>
+                <strong><u>Estructura de un commit:</u></strong><br>
+                <p>commit -m "Tipo: Descripción"</p> <br>
+                <strong><u>Tipo:</u></strong><br>
+                    <strong>feat:</strong>     nueva funcionalidad<br>
+                    <strong>fix:</strong>      corrección de bugs<br>
+                    <strong>perf:</strong>     mejora de rendimiento<br>
+                    <strong>refactor:</strong> cambio interno sin afectar comportamiento<br>
+                    <strong>style:</strong>    formato (espacios, tabs, etc.)<br>
+                    <strong>docs:</strong>     documentación<br>
+                    <strong>test:</strong>     tests<br>
+                    <strong>build:</strong>    build, dependencias, scripts<br>
+                    <strong>ci:</strong>       integración continua<br><br>
+                    <strong><u>Reglas:</u></strong> <br>
+                    - Imperativo → "add", "fix", "update"<br>
+                    - Máx ~50 caracteres<br>
+                    - Sin punto final<br>
+                    - 1 commit = 1 cambio<br>
+                    - Mensaje claro (qué y por qué)<br>
+                </p>
+                <p style="margin-top: 12px;"><em>Nota: Cuanto más claro sea el mensaje, mejor será para otros desarrolladores. Asegurate de dejar claro que archivo estás modificando.</em></p>
+                <figure class="img-figure" style="margin-top: 14px;">
+                </figure>   
             </div>
         </div>
 

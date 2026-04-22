@@ -626,7 +626,7 @@ function handleSimCommand(cmd) {
     simUpdateHint();
     if (simStep >= SIM_CHALLENGES.length) {
       simPrint('════════════════════════════════', 'line-dim');
-      simPrint('🏆  ¡FELICIDADES! Completaste todos los retos.', 'line-info');
+      simPrint('🏆 ¡FELICIDADES! Completaste todos los retos.', 'line-info');
       simPrint('Ya sabes los comandos esenciales de Git. ¡A por el mundo!', 'line-ok');
     }
   } else {
