@@ -30,7 +30,6 @@
     <nav>
         <button class="nav-btn active" onclick="show('instalacion', this)" data-es="Instalación" data-en="Installation">Instalación</button>
         <button class="nav-btn" onclick="show('registro', this)" data-es="Primeros pasos" data-en="First Steps">Primeros pasos</button>
-        <button class="nav-btn" onclick="show('diferencias', this)" data-es="Git vs GitHub" data-en="Git vs GitHub">Git vs GitHub</button>
         <button class="nav-btn" onclick="show('miniguia', this)" data-es="Crea tu repositorio" data-en="Create Repository">Crea tu repositorio</button>
         <button class="nav-btn" onclick="show('comandos', this)" data-es="Comandos básicos" data-en="Basic Commands">Comandos básicos</button>
         <button class="nav-btn" onclick="show('ramas', this)" data-es="Ramas" data-en="Branches">Ramas</button>
@@ -78,6 +77,44 @@
                 </iframe>
             </div>
         </div>
+                    <div class="card">
+                <h2 data-es="GIT VS GITHUB: La analogía más fácil" data-en="GIT VS GITHUB: The easiest analogy">GIT VS GITHUB: La analogía más fácil</h2>
+                <div class="analogy">
+                    <p>"Git es el <strong>cerebro 🧠</strong>, GitHub es la <strong>red social 🌐</strong>."</p>
+                    <p style="margin-top:6px;">"Git guarda tu código, GitHub lo presume."</p>
+                </div>
+                <figure class="img-figure" style="margin-top: 16px;">
+                    <img src="./assets/img/PNG/githubVsGit.png" alt="Diferencias entre Git y GitHub" style="border-radius: 8px;">
+                    <figcaption>Comparativa visual entre Git y GitHub</figcaption>
+                </figure>
+            </div>
+            <div class="compare" style="margin-bottom: 16px;">
+                <div class="cbox">
+                    <h3>Git</h3>
+                    <ul>
+                        <li>Software local (en tu ordenador)</li>
+                        <li>Control de versiones</li>
+                        <li>Guarda instantáneas del proyecto</li>
+                        <li>Ideal para uso individual</li>
+                        <li>Funciona sin internet</li>
+                    </ul>
+                </div>
+                <div class="cbox">
+                    <h3>GitHub</h3>
+                    <ul>
+                        <li>Plataforma web</li>
+                        <li>Colaboración en equipo</li>
+                        <li>Basado en Git</li>
+                        <li>Gestión de proyectos</li>
+                        <li>Red social para código</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <h2 data-es="¿Qué es el control de versiones?" data-en="What is version control?">¿Qué es el control de versiones?</h2>
+                <p>Un sistema que permite gestionar y rastrear los cambios en el código fuente a lo largo del tiempo,
+                    facilitando la colaboración y el desarrollo eficiente de software.</p>
+            </div>
         </div>
         <!-- REGISTRO -->
         <div id="registro" class="section">
@@ -225,47 +262,6 @@
             </div>
         </div>
 
-        <!-- GIT VS GITHUB -->
-        <div id="diferencias" class="section">
-            <div class="card">
-                <h2 data-es="GIT VS GITHUB: La analogía más fácil" data-en="GIT VS GITHUB: The easiest analogy">GIT VS GITHUB: La analogía más fácil</h2>
-                <div class="analogy">
-                    <p>"Git es el <strong>cerebro 🧠</strong>, GitHub es la <strong>red social 🌐</strong>."</p>
-                    <p style="margin-top:6px;">"Git guarda tu código, GitHub lo presume."</p>
-                </div>
-                <figure class="img-figure" style="margin-top: 16px;">
-                    <img src="./assets/img/PNG/githubVsGit.png" alt="Diferencias entre Git y GitHub" style="border-radius: 8px;">
-                    <figcaption>Comparativa visual entre Git y GitHub</figcaption>
-                </figure>
-            </div>
-            <div class="compare" style="margin-bottom: 16px;">
-                <div class="cbox">
-                    <h3>Git</h3>
-                    <ul>
-                        <li>Software local (en tu ordenador)</li>
-                        <li>Control de versiones</li>
-                        <li>Guarda instantáneas del proyecto</li>
-                        <li>Ideal para uso individual</li>
-                        <li>Funciona sin internet</li>
-                    </ul>
-                </div>
-                <div class="cbox">
-                    <h3>GitHub</h3>
-                    <ul>
-                        <li>Plataforma web</li>
-                        <li>Colaboración en equipo</li>
-                        <li>Basado en Git</li>
-                        <li>Gestión de proyectos</li>
-                        <li>Red social para código</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <h2 data-es="¿Qué es el control de versiones?" data-en="What is version control?">¿Qué es el control de versiones?</h2>
-                <p>Un sistema que permite gestionar y rastrear los cambios en el código fuente a lo largo del tiempo,
-                    facilitando la colaboración y el desarrollo eficiente de software.</p>
-            </div>
-        </div>
 
         <!-- COMANDOS -->
         <div id="comandos" class="section">
