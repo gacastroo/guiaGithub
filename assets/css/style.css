@@ -1,4 +1,4 @@
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     img { max-width: 100%; height: auto; display: block; }
 
     :root {
@@ -9,7 +9,7 @@
       --border2: rgba(0,0,0,0.2);
       --text: #1c2128;
       --text2: #57606a;
-      --text3: #8c959f;
+      --text3: #ced0d1;
       --accent: #0969da;
       --accent-bg: #ddf4ff;
       --accent-text: #0550ae;
@@ -33,7 +33,7 @@
       --border2: rgba(255,255,255,0.18);
       --text: #e6edf3;
       --text2: #8b949e;
-      --text3: #6e7681;
+      --text3: #ffffff;
       --accent: #58a6ff;
       --accent-bg: #112d4e;
       --accent-text: #79c0ff;
@@ -1124,3 +1124,63 @@
     .step-card-inner {
       background: var(--surface2) !important;
     }
+
+    /* ══════════════════════════════════════════
+       PASOS SIGUIENTES (layout estático)
+    ══════════════════════════════════════════ */
+    .next-steps {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .next-step {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .next-step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .next-step:first-child {
+      padding-top: 0;
+    }
+
+    .next-step-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .next-step-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text3);
+      letter-spacing: 0.06em;
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      padding: 2px 8px;
+      flex-shrink: 0;
+    }
+
+    .next-step-icon {
+      font-size: 20px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .next-step-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .next-step-desc {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+
+    .next-step-desc a { color: var(--accent); }

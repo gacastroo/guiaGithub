@@ -3,6 +3,8 @@
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(id).classList.add('visible');
     btn.classList.add('active');
+    // Scroll to top so the section starts from the beginning
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   /* ── DARK MODE ── */
@@ -694,3 +696,4 @@ document.addEventListener('DOMContentLoaded', function () {
   buildSimulator();
   buildLightbox();
 });
+
