@@ -543,25 +543,30 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
                 <h2 data-es="4. Como hacer un commit profesional" data-en="4. How to make a professional commit">4. Como hacer un commit profesional</h2>
                 <p><b>Un commit profesional</b> es claro, conciso y descriptivo. Sigue esta estructura:</p>
                 <p>
-                <strong><u>Estructura de un commit:</u></strong><br>
-                <p>commit -m "Tipo: Descripción"</p> <br>
-                <strong><u>Tipo:</u></strong><br>
-                    <strong>feat:</strong>     nueva funcionalidad<br>
-                    <strong>fix:</strong>      corrección de bugs<br>
-                    <strong>perf:</strong>     mejora de rendimiento<br>
-                    <strong>refactor:</strong> cambio interno sin afectar comportamiento<br>
-                    <strong>style:</strong>    formato (espacios, tabs, etc.)<br>
-                    <strong>docs:</strong>     documentación<br>
-                    <strong>test:</strong>     tests<br>
-                    <strong>build:</strong>    build, dependencias, scripts<br>
-                    <strong>ci:</strong>       integración continua<br><br>
-                    <strong><u>Reglas:</u></strong> <br>
-                    - Imperativo → "add", "fix", "update"<br>
-                    - Máx ~50 caracteres<br>
-                    - Sin punto final<br>
-                    - 1 commit = 1 cambio<br>
-                    - Mensaje claro (qué y por qué)<br>
-                </p>
+                <p class="commit-section-title">Estructura de un commit</p>
+                <div class="commit-structure">git commit -m "tipo: descripción breve"</div>
+
+                <p class="commit-section-title">Tipos</p>
+                <table class="commit-table">
+                    <tr><td><span class="ct-badge">feat</span></td><td>Nueva funcionalidad</td></tr>
+                    <tr><td><span class="ct-badge">fix</span></td><td>Corrección de bugs</td></tr>
+                    <tr><td><span class="ct-badge">perf</span></td><td>Mejora de rendimiento</td></tr>
+                    <tr><td><span class="ct-badge">refactor</span></td><td>Cambio interno sin afectar comportamiento</td></tr>
+                    <tr><td><span class="ct-badge">style</span></td><td>Formato (espacios, tabs, etc.)</td></tr>
+                    <tr><td><span class="ct-badge">docs</span></td><td>Documentación</td></tr>
+                    <tr><td><span class="ct-badge">test</span></td><td>Tests</td></tr>
+                    <tr><td><span class="ct-badge">build</span></td><td>Build, dependencias, scripts</td></tr>
+                    <tr><td><span class="ct-badge">ci</span></td><td>Integración continua</td></tr>
+                </table>
+
+                <p class="commit-section-title">Reglas</p>
+                <ul class="commit-rules">
+                    <li>Imperativo → "add", "fix", "update"</li>
+                    <li>Máximo ~50 caracteres</li>
+                    <li>Sin punto final</li>
+                    <li>1 commit = 1 cambio</li>
+                    <li>Mensaje claro: qué y por qué</li>
+                </ul>
                 <p style="margin-top: 12px;"><em>Nota: Cuanto más claro sea el mensaje, mejor será para otros desarrolladores. Asegurate de dejar claro que archivo estás modificando.</em></p>
                 <figure class="img-figure" style="margin-top: 14px;">
                 </figure>   
@@ -727,6 +732,19 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
                         </div>
                         <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
                     </div>
+                    <div class="warn-box">
+                        <span class="warn-icon">⚠️</span>
+                        <div class="warn-body">
+                            <p class="warn-title">Consecuencias de hacer un merge</p>
+                            <ul>
+                                <li>Los commits de la rama fusionada quedan integrados permanentemente en la rama destino.</li>
+                                <li>Puede generar <strong>conflictos de merge</strong> si ambas ramas modificaron las mismas líneas. Tendrás que resolverlos manualmente antes de continuar.</li>
+                                <li>Una vez resueltos los conflictos y confirmado el merge, <strong>no se puede deshacer fácilmente</strong> (requiere <code>git revert</code> o <code>git reset</code> con cuidado).</li>
+                                <li>En proyectos compartidos, un merge directo sin Pull Request puede saltarse la revisión del equipo.</li>
+                                <li>Asegúrate de estar en la rama correcta antes de ejecutarlo (<code>git branch</code> para comprobarlo).</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="cmd" onclick="copyCmd(this)">
                         <div class="cmd-text">
                             <div class="cmd-code">git branch -d nombre-rama</div>
@@ -734,12 +752,35 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
                         </div>
                         <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
                     </div>
+                    <div class="warn-box danger">
+                        <span class="warn-icon">🚨</span>
+                        <div class="warn-body">
+                            <p class="warn-title">Consecuencias de eliminar una rama local</p>
+                            <ul>
+                                <li><code>git branch -d</code> solo borra la rama si ya fue fusionada, lo cual es una protección. Pero <code>git branch -D</code> (mayúscula) la elimina <strong>aunque tenga commits sin fusionar</strong>, perdiendo esos cambios.</li>
+                                <li>Una vez eliminada la rama local sin haber hecho push, <strong>los commits exclusivos de esa rama se pierden</strong>.</li>
+                                <li>Si otro compañero tenía esa rama como referencia, deberá actualizar su repositorio local.</li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="cmd" onclick="copyCmd(this)">
                         <div class="cmd-text">
                             <div class="cmd-code">git push origin --delete nombre-rama</div>
                             <div class="cmd-desc">Elimina la rama también del repositorio remoto</div>
                         </div>
                         <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
+                    </div>
+                    <div class="warn-box danger">
+                        <span class="warn-icon">🚨</span>
+                        <div class="warn-body">
+                            <p class="warn-title">Consecuencias de eliminar una rama remota</p>
+                            <ul>
+                                <li>La rama desaparece del repositorio remoto para <strong>todos los colaboradores</strong> del proyecto.</li>
+                                <li>Cualquier Pull Request abierto basado en esa rama quedará automáticamente <strong>cerrado o huérfano</strong>.</li>
+                                <li>Los compañeros que tengan la rama en local recibirán errores al hacer <code>git fetch</code> o <code>git pull</code> si intentan actualizarla.</li>
+                                <li>La acción <strong>no tiene confirmación previa</strong>: se ejecuta de inmediato. Confirma bien el nombre antes de lanzar el comando.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
