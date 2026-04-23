@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Contribuir - Guia GitHub</title>
+
+<style>
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --subtext: #8b949e;
+  --green: #238636;
+  --green-hover: #2ea043;
+  --blue: #58a6ff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HEADER */
+header {
+  padding: 40px 20px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+header p {
+  color: var(--subtext);
+  margin-top: 10px;
+}
+
+/* LINKS HEADER */
+.links {
+  margin-top: 20px;
+}
+
+.links a {
+  margin: 5px;
+  display: inline-block;
+  padding: 10px 15px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.2s;
+}
+
+.links a:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.button {
+  display: inline-block;
+  padding: 12px 18px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: var(--green-hover);
+}
+
+/* CODE */
+.code {
+  background: #010409;
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 6px;
+  font-family: monospace;
+  color: var(--blue);
+  white-space: pre-line;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--subtext);
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🤝 Contribuir a GuiaGitHub</h1>
+  <p>Proyecto abierto para aprender Git y GitHub de forma práctica</p>
+
+  <div class="links">
+    <a href="https://github.com/gacastroo/guiaGithub" target="_blank">📦 Repositorio</a>
+    <a href="https://gacastroo.github.io/guiaGithub/" target="_blank">🌐 Ver proyecto</a>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>🚀 Cómo contribuir</h2>
+    <ul>
+      <li>Haz un fork del repositorio</li>
+      <li>Crea una nueva rama</li>
+      <li>Realiza tus cambios</li>
+      <li>Envía un Pull Request</li>
+    </ul>
+
+    <a class="button" href="https://github.com/gacastroo/guiaGithub/fork" target="_blank">
+      Hacer Fork
+    </a>
+  </div>
+
+  <div class="card">
+    <h2>💻 Flujo básico</h2>
+    <div class="code">
+git clone https://github.com/gacastroo/guiaGithub.git
+cd guiaGithub
+git checkout -b mi-aporte
+git commit -m "Mi contribución"
+git push origin mi-aporte
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🐛 Reportar errores</h2>
+    <p>
+      Si encuentras un problema, abre un issue en GitHub explicando el error.
+    </p>
+    <a class="button" href="https://github.com/gacastroo/guiaGithub/issues" target="_blank">
+      Crear Issue
+    </a>
+  </div>
+
+  <div class="card">
+    <h2>💡 Ideas y mejoras</h2>
+    <p>
+      Puedes proponer nuevas funcionalidades o mejorar la documentación.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  Hecho con ❤️ por @gacastroo
+</footer>
+
+</body>
+</html>
