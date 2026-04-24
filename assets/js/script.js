@@ -3,9 +3,32 @@
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(id).classList.add('visible');
     btn.classList.add('active');
+    // Close mobile nav if open
+    closeMobileNav();
     // Scroll to top so the section starts from the beginning
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
+
+  /* ── MOBILE NAV ── */
+  function toggleMobileNav() {
+    const scroll = document.getElementById('nav-scroll');
+    const hamburger = document.getElementById('nav-hamburger');
+    scroll.classList.toggle('open');
+    hamburger.classList.toggle('open');
+  }
+
+  function closeMobileNav() {
+    const scroll = document.getElementById('nav-scroll');
+    const hamburger = document.getElementById('nav-hamburger');
+    scroll.classList.remove('open');
+    hamburger.classList.remove('open');
+  }
+
+  // Close nav when clicking outside
+  document.addEventListener('click', function(e) {
+    const nav = document.querySelector('nav');
+    if (!nav.contains(e.target)) closeMobileNav();
+  });
 
   /* ── DARK MODE ── */
   (function() {

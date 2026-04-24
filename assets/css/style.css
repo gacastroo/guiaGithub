@@ -88,6 +88,7 @@
       right: 0;
       width: 100%;
       z-index: 1000;
+      transition: box-shadow 0.2s;
     }
 
     .nav-scroll {
@@ -1334,4 +1335,225 @@
   border-radius: 6px;
   padding: 10px 14px;
   margin: 10px 0;
+}
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE FIRST ADDITIONS
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── VIDEO WRAP: aspect-ratio instead of fixed height ── */
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+.video-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ── HAMBURGER BUTTON ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  padding: 6px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.nav-hamburger:hover { background: rgba(255,255,255,0.16); }
+.nav-hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+/* Hamburger open state */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE NAV DROPDOWN ── */
+@media (max-width: 768px) {
+  /* Header: tighten on small screens */
+  header {
+    padding: 10px 14px;
+  }
+  header h1 { font-size: 15px; }
+  header p  { font-size: 12px; }
+  header svg { width: 28px; height: 28px; }
+
+  /* Nav becomes a 2-row bar: top row = hamburger + controls, bottom = items dropdown */
+  nav {
+    padding: 6px 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* Show hamburger */
+  .nav-hamburger { display: flex; }
+
+  /* Nav scroll: hidden by default, shown when open */
+  .nav-scroll {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 6px 0 4px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: 6px;
+    gap: 2px;
+    overflow-x: unset;
+  }
+  .nav-scroll.open { display: flex; }
+
+  .nav-btn {
+    padding: 10px 12px;
+    font-size: 13px;
+    border-bottom: none;
+    border-radius: 6px;
+    text-align: left;
+    width: 100%;
+  }
+  .nav-btn.active {
+    background: rgba(255,255,255,0.1);
+    border-bottom: none;
+    color: white;
+  }
+  .nav-btn:hover { background: rgba(255,255,255,0.08); }
+
+  /* Controls stay in top row, pushed to the right */
+  .nav-controls {
+    margin-left: auto;
+    border-left: none;
+    padding-left: 0;
+    gap: 5px;
+  }
+
+  /* Main content: padding gestionado por JS */
+  main {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Cards: reduce padding */
+  .card {
+    padding: 16px 14px;
+  }
+
+  /* Compare grid: 1 column on mobile */
+  .compare {
+    grid-template-columns: 1fr;
+  }
+
+  /* Container step cards: stack vertically */
+  .container .card {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .icon {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+  /* Command cards: hide copy button text on tiny screens */
+  .cmd {
+    padding: 9px 10px;
+    gap: 8px;
+  }
+  .cmd-code { font-size: 12px; }
+
+  /* Quiz nav: stack buttons */
+  #quiz-nav {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .quiz-nav-btn, #quiz-confirm-btn {
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+  }
+
+  /* Simulator input */
+  #sim-terminal { font-size: 12px; }
+
+  /* Branch diagram: let it scroll */
+  .branch-diagram { overflow-x: auto; }
+
+  /* Registro side-by-side images: stack */
+  .registro-step-body > div[style*="display:flex"] {
+    flex-direction: column !important;
+  }
+
+  /* Pre/code blocks: scroll */
+  pre { font-size: 11px; }
+
+  /* Commit table: tighter */
+  .commit-table td { font-size: 12px; padding: 5px 7px; }
+}
+
+/* ── TABLET (769px – 1024px) ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  header { padding: 12px 18px; }
+
+  nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 2px;
+  }
+  nav::-webkit-scrollbar { display: none; }
+
+  .nav-scroll { overflow-x: auto; }
+  .nav-scroll::-webkit-scrollbar { display: none; }
+
+  .card { padding: 18px 20px; }
+}
+
+/* ── VERY SMALL (max-width: 400px) ── */
+@media (max-width: 400px) {
+  header h1 { font-size: 13px; }
+  header p  { display: none; }
+  header svg { width: 24px; height: 24px; }
+
+  .nav-ctrl-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+  #lang-label { display: none; }
+
+  main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .card { padding: 12px 10px; }
+  .card h2 { font-size: 14px; }
+
+  .cmd-copy { display: none; }
+
+  .quiz-q-text { font-size: 14px; }
+
+  #quiz-result .result-score { font-size: 48px; }
+}
+
+/* ── NAV SCROLLED SHADOW ── */
+nav.scrolled {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
 }
