@@ -730,49 +730,12 @@
     }
 
     /* Very compact images (url bars, small UI) */
-    .img-compact {
-      max-width: 560px;
-      margin: 0 auto;
-    }
 
     /* Narrow/tall images (mobile screenshots) */
-    .img-figure--narrow {
-      max-width: 180px;
-      margin: 0 auto;
-    }
-    .img-narrow {
-      max-width: 180px;
-      margin: 0 auto;
-    }
 
     /* 2-column screenshot grid */
-    .img-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 14px;
-    }
-    @media (max-width: 580px) {
-      .img-grid-2 { grid-template-columns: 1fr; }
-    }
 
     /* Mixed grid for 2FA steps: 3 wide + 1 narrow */
-    .img-steps-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 12px;
-      align-items: start;
-    }
-    .img-steps-grid .img-figure--narrow {
-      max-width: 100%;
-      grid-column: auto;
-    }
-    @media (max-width: 640px) {
-      .img-steps-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 420px) {
-      .img-steps-grid { grid-template-columns: 1fr; }
-    }
 
     /* Fix pre/code blocks */
     pre {
@@ -876,10 +839,6 @@
 
     /* ── DARK MODE BRANCH DIAGRAM ── */
     [data-theme="dark"] .branch-diagram svg text { fill: #8b949e; }
-    [data-theme="dark"] .branch-diagram svg rect[fill="#ddf4ff"] { fill: #112d4e; }
-    [data-theme="dark"] .branch-diagram svg text[fill="#0550ae"] { fill: #79c0ff; }
-    [data-theme="dark"] .branch-diagram svg rect[fill="#dafbe1"] { fill: #112d21; }
-    [data-theme="dark"] .branch-diagram svg text[fill="#1a7f37"] { fill: #56d364; }
 
     /* ── QUIZ REDESIGN ── */
     #quiz-card {
@@ -1111,15 +1070,6 @@
     }
     .registro-step-body strong { color: var(--text); }
     .registro-step-body .img-figure { margin-top: 0; }
-    .registro-step-badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 20px;
-      margin-left: 6px;
-      vertical-align: middle;
-    }
 
     /* ── STEP CARD INNER (ramas workflow) ── */
     .step-card-inner {
@@ -1493,9 +1443,6 @@
   .branch-diagram { overflow-x: auto; }
 
   /* Registro side-by-side images: stack */
-  .registro-step-body > div[style*="display:flex"] {
-    flex-direction: column !important;
-  }
 
   /* Pre/code blocks: scroll */
   pre { font-size: 11px; }
@@ -1554,6 +1501,3 @@
 }
 
 /* ── NAV SCROLLED SHADOW ── */
-nav.scrolled {
-  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
-}
