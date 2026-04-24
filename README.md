@@ -17,6 +17,9 @@ El diseño está inspirado en la interfaz de GitHub, con estilos tipo Markdown p
 
 ---
 
+<img src="/assets/img/PNG/proyecto.png" width="1200">
+
+
 ## 🛠️ Tecnologías
 
 - HTML5
@@ -27,17 +30,7 @@ El diseño está inspirado en la interfaz de GitHub, con estilos tipo Markdown p
 
 ## 📂 Estructura
 
-```
-guiaGuithub/
-├── index.html
-├── assets/
-│   ├── css/
-│   │   ├── navbar.css
-│   │   └── style.css
-│   └── img/
-│       └── favicon/
-│           └── favicon.ico
-```
+<img src="/assets/img/PNG/estructura.PNG" width="300">
 
 ---
 
@@ -82,4 +75,4 @@ Este proyecto es de uso educativo.
 
 ## Autor
 
-Desarrollado como práctica de desarrollo web.
+Desarrollado como práctica de desarrollo web por Guillermo Castro Abarca
