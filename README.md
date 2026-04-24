@@ -30,7 +30,7 @@ El diseño está inspirado en la interfaz de GitHub, con estilos tipo Markdown p
 
 ## 📂 Estructura
 
-<img src="/assets/img/PNG/estructura.PNG" width="300">
+<img src="/assets/img/PNG/estructura.png" width="300">
 
 ---
 
