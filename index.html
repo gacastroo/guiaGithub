@@ -2330,6 +2330,171 @@ Thumbs.db
             style="font-size: 12px; color: var(--text3); margin-top: 10px"
           ></p>
         </div>
+        <div class="card" id="gitignore-exercise-card">
+          <h2
+            data-es="Ejercicio: crea tu .gitignore"
+            data-en="Exercise: create your .gitignore"
+          >
+            Ejercicio: crea tu .gitignore
+          </h2>
+
+          <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px">
+            <span
+              data-es="Tienes un proyecto Node.js. Escribe las reglas correctas en el .gitignore para que solo queden los archivos de código fuente. Observa cómo cambia el estado de cada archivo en tiempo real."
+              data-en="You have a Node.js project. Write the correct rules in the .gitignore so only source code files remain tracked. Watch each file's status change in real time."
+            >
+              Tienes un proyecto Node.js. Escribe las reglas correctas en el
+              <code>.gitignore</code> para que solo queden los archivos de
+              código fuente. Observa cómo cambia el estado de cada archivo en
+              tiempo real.
+            </span>
+          </p>
+
+          <!-- Barra de progreso -->
+          <div id="gi-ex-progress-wrap">
+            <div id="gi-ex-progress-bar"></div>
+          </div>
+          <p
+            id="gi-ex-progress-label"
+            style="
+              font-size: 12px;
+              color: var(--text3);
+              margin-bottom: 16px;
+              margin-top: 4px;
+            "
+          >
+            0 de 6 archivos ignorados correctamente
+          </p>
+
+          <!-- Grid: lista de archivos + editor -->
+          <div id="gi-ex-grid">
+            <!-- Panel izquierdo: archivos del proyecto -->
+            <div class="gi-ex-panel">
+              <p class="cmd-group-title" style="margin-bottom: 10px">
+                📁 Archivos del proyecto
+              </p>
+              <div id="gi-ex-file-list"></div>
+            </div>
+
+            <!-- Panel derecho: editor del .gitignore -->
+            <div class="gi-ex-panel">
+              <p class="cmd-group-title" style="margin-bottom: 6px">
+                📄 .gitignore
+              </p>
+              <p
+                style="font-size: 11px; color: var(--text3); margin-bottom: 6px"
+              >
+                # escribe tus reglas aquí, una por línea
+              </p>
+              <textarea
+                id="gi-ex-editor"
+                placeholder="node_modules/&#10;*.log&#10;.env"
+                spellcheck="false"
+                oninput="giEvalGitignore()"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Feedback -->
+          <div id="gi-ex-feedback"></div>
+
+          <!-- Acciones -->
+          <div
+            style="display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap"
+          >
+            <button
+              class="cmd-copy"
+              onclick="giShowHint()"
+              style="padding: 7px 16px; font-size: 13px"
+            >
+              💡 Ver pista
+            </button>
+            <button
+              class="cmd-copy"
+              onclick="giReset()"
+              style="padding: 7px 16px; font-size: 13px"
+            >
+              🔄 Reiniciar
+            </button>
+            <button
+              id="gi-ex-check-btn"
+              onclick="giCheckSolution()"
+              style="
+                padding: 7px 18px;
+                font-size: 13px;
+                font-weight: 600;
+                background: var(--accent);
+                color: white;
+                border: none;
+                border-radius: var(--radius);
+                cursor: pointer;
+                margin-left: auto;
+                transition: opacity 0.15s;
+              "
+            >
+              Comprobar solución ✓
+            </button>
+          </div>
+
+          <!-- Explicación de patrones (se muestra al acertar) -->
+          <div id="gi-ex-explanation" style="display: none; margin-top: 26px">
+            <p class="cmd-group-title" style="margin-bottom: 8px">
+              ¿Por qué estas reglas?
+            </p>
+            <table class="gi-table">
+              <thead>
+                <tr>
+                  <th>Patrón</th>
+                  <th>Por qué se ignora</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>node_modules/</td>
+                  <td>
+                    Carpeta de dependencias. Puede pesar cientos de MB y se
+                    reinstala con <code>npm install</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>dist/</td>
+                  <td>
+                    Salida del build (Webpack, Vite…). Se regenera a partir del
+                    código fuente.
+                  </td>
+                </tr>
+                <tr>
+                  <td>.env</td>
+                  <td>
+                    Variables de entorno sensibles: claves API, credenciales.
+                    Nunca debe subirse.
+                  </td>
+                </tr>
+                <tr>
+                  <td>.env.local</td>
+                  <td>
+                    Variante local del .env, igualmente sensible y específica de
+                    cada máquina.
+                  </td>
+                </tr>
+                <tr>
+                  <td>*.log</td>
+                  <td>
+                    Comodín que ignora todos los archivos .log. Son registros
+                    locales de ejecución.
+                  </td>
+                </tr>
+                <tr>
+                  <td>.DS_Store</td>
+                  <td>
+                    Metadatos internos de macOS. No aportan nada al repositorio.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- /card -->
       </div>
 
       <!-- ============================================================

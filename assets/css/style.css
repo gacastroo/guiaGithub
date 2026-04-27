@@ -1568,3 +1568,141 @@
     padding: 6px 7px;
   }
 }
+
+  /* Barra de progreso — misma estética que el quiz */
+  #gi-ex-progress-wrap {
+    background: var(--surface2);
+    border-radius: 99px;
+    height: 6px;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+  #gi-ex-progress-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 99px;
+    width: 0%;
+    transition: width 0.4s ease;
+  }
+ 
+  /* Grid dos columnas */
+  #gi-ex-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  @media (max-width: 600px) {
+    #gi-ex-grid { grid-template-columns: 1fr; }
+  }
+ 
+  /* Panel con borde — igual que .cbox */
+  .gi-ex-panel {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px;
+    background: var(--surface2);
+  }
+ 
+  /* Filas de archivo — mismo patrón que .cmd */
+  .gi-ex-file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: var(--radius);
+    font-size: 13px;
+    margin-bottom: 4px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+  }
+  .gi-ex-file-item.tracked {
+    background: var(--surface);
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .gi-ex-file-item.pending {
+    background: var(--warn-bg);
+    border-color: var(--border);
+    color: var(--warn-text);
+  }
+  .gi-ex-file-item.ignored {
+    opacity: 0.45;
+    text-decoration: line-through;
+    background: var(--surface2);
+    border-color: transparent;
+    color: var(--text3);
+  }
+  .gi-ex-file-name {
+    flex: 1;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 12px;
+  }
+  .gi-ex-file-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+  /* Reutiliza las clases .badge-* ya definidas en tu style.css */
+  .gi-ex-file-badge.badge-tracked { background: var(--success-bg); color: var(--success-text); }
+  .gi-ex-file-badge.badge-pending { background: var(--warn-bg);    color: var(--warn-text); }
+  .gi-ex-file-badge.badge-ignored { background: var(--surface);    color: var(--text3); border: 1px solid var(--border2); }
+ 
+  /* Textarea del editor — hereda el look oscuro de pre / #sim-terminal */
+  #gi-ex-editor {
+    width: 100%;
+    min-height: 200px;
+    background: #1c2128;
+    color: #e6edf3;
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    padding: 10px 12px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    resize: vertical;
+    outline: none;
+    caret-color: #56d364;
+    transition: border-color 0.15s;
+  }
+  #gi-ex-editor:focus { border-color: var(--accent); }
+ 
+  /* Feedback — mismo patrón que .quiz-feedback */
+  #gi-ex-feedback {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: none;
+    line-height: 1.5;
+  }
+  #gi-ex-feedback.ok {
+    background: var(--success-bg);
+    color: var(--success-text);
+    border-left: 3px solid var(--success-text);
+    display: block;
+  }
+  #gi-ex-feedback.err {
+    background: #ffebe9;
+    color: #cf222e;
+    border-left: 3px solid #cf222e;
+    display: block;
+  }
+  [data-theme="dark"] #gi-ex-feedback.err {
+    background: #2d1515;
+    color: #f85149;
+    border-left-color: #f85149;
+  }
+  #gi-ex-feedback.info {
+    background: var(--accent-bg);
+    color: var(--accent-text);
+    border-left: 3px solid var(--accent);
+    display: block;
+  }
+ 
+  /* Botón comprobar hover */
+  #gi-ex-check-btn:hover { opacity: 0.85; }
