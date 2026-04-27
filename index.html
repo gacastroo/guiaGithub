@@ -1872,19 +1872,24 @@ console.log("Hello world");
       <div id="gitignore" class="section">
         <div class="card">
           <h2>¿Qué es un .gitignore?</h2>
-          <img src="/guiaGithub/assets/img/PNG/gitignore.png"> <br>
+          <img
+            src="/guiaGithub/assets/img/PNG/gitignore.png"
+            alt=".gitignore"
+            style="border-radius: 8px; margin-bottom: 12px"
+          />
           <p>
-            Un archivo <code><strong>.gitignore</strong></code> es un fichero de configuración
-            utilizado por Git que le indica qué archivos o carpetas debe ignorar
-            (es decir, no incluir en el control de versiones).
+            Un archivo <code><strong>.gitignore</strong></code> es un fichero de
+            configuración utilizado por Git que le indica qué archivos o
+            carpetas debe ignorar, es decir, no incluir en el control de
+            versiones.
           </p>
           <p style="margin-top: 12px">
-            Esto significa que aunque esos archivos existan en tu proyecto, Git
-            no los rastreará ni los subirá al repositorio.
+            Aunque esos archivos existan en tu proyecto, Git no los rastreará ni
+            los subirá al repositorio.
           </p>
         </div>
 
-        <div class="card" style="margin-top: 24px">
+        <div class="card">
           <h2>¿Por qué usar .gitignore?</h2>
           <ul>
             <li>
@@ -1905,137 +1910,276 @@ console.log("Hello world");
           </ul>
         </div>
 
-        <div class="card" style="margin-top: 24px">
+        <div class="card">
           <h2>¿Cómo funciona?</h2>
           <p>
             El archivo <code>.gitignore</code> contiene patrones que indican qué
             ignorar:
           </p>
-
-          <pre
-            style="
-              background: #1c2128;
-              color: #e6edf3;
-              padding: 14px;
-              border-radius: 8px;
-              font-size: 12px;
-              overflow-x: auto;
-              margin-top: 10px;
-            "
-          >
-        <code>node_modules/
-        *.log
-        .env
-        dist/</code>
-                </pre>
-
-          <p style="margin-top: 12px"><strong>Explicación:</strong></p>
-          <ul>
-            <li><code>node_modules/</code> → ignora toda la carpeta</li>
-            <li><code>*.log</code> → ignora archivos de log</li>
-            <li><code>.env</code> → ignora variables sensibles</li>
-            <li><code>dist/</code> → ignora archivos generados</li>
-          </ul>
+          <pre><code>node_modules/
+*.log
+.env
+dist/</code></pre>
+          <table class="gi-table" style="margin-top: 14px">
+            <thead>
+              <tr>
+                <th>Patrón</th>
+                <th>Significado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>node_modules/</td>
+                <td>Ignora toda la carpeta de dependencias</td>
+              </tr>
+              <tr>
+                <td>*.log</td>
+                <td>Ignora cualquier archivo con extensión .log</td>
+              </tr>
+              <tr>
+                <td>.env</td>
+                <td>Ignora el archivo de variables de entorno sensibles</td>
+              </tr>
+              <tr>
+                <td>dist/</td>
+                <td>Ignora la carpeta de archivos generados en el build</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="card" style="margin-top: 24px">
+        <div class="card">
           <h2>Ejemplos según tecnología</h2>
 
-          <h3>JavaScript / Node.js</h3>
-          <pre
-            style="
-              background: #1c2128;
-              color: #e6edf3;
-              padding: 14px;
-              border-radius: 8px;
-              font-size: 12px;
-              overflow-x: auto;
-            "
-          >
-        <code>node_modules/
-        npm-debug.log*
-        yarn-debug.log*
-        .env
-        dist/
-        build/</code>
-                </pre>
+          <span class="gi-badge gi-badge-js">JavaScript / Node.js</span>
+          <pre><code>node_modules/
+npm-debug.log*
+yarn-debug.log*
+.env
+dist/
+build/</code></pre>
+          <table class="gi-table">
+            <thead>
+              <tr>
+                <th>Patrón</th>
+                <th>Por qué se ignora</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>node_modules/</td>
+                <td>
+                  Contiene todas las dependencias del proyecto. Pueden pesar
+                  cientos de MB y se reinstalan fácilmente con
+                  <code>npm install</code>.
+                </td>
+              </tr>
+              <tr>
+                <td>npm-debug.log*<br />yarn-debug.log*</td>
+                <td>
+                  Logs generados automáticamente cuando ocurre un error durante
+                  la instalación. Son locales y no aportan nada al repositorio.
+                </td>
+              </tr>
+              <tr>
+                <td>.env</td>
+                <td>
+                  Contiene variables de entorno sensibles: claves de API,
+                  credenciales de bases de datos, contraseñas. Subirlo supone un
+                  grave riesgo de seguridad.
+                </td>
+              </tr>
+              <tr>
+                <td>dist/ / build/</td>
+                <td>
+                  Carpetas generadas por el proceso de compilación o
+                  transpilación (Webpack, Vite…). Se regeneran a partir del
+                  código fuente, no tiene sentido versionar su contenido.
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-          <h3>Python</h3>
-          <pre
-            style="
-              background: #1c2128;
-              color: #e6edf3;
-              padding: 14px;
-              border-radius: 8px;
-              font-size: 12px;
-              overflow-x: auto;
-            "
+          <span
+            class="gi-badge gi-badge-py"
+            style="margin-top: 20px; display: inline-block"
+            >Python</span
           >
-        <code>__pycache__/
-        *.pyc
-        .env
-        venv/
-        dist/
-        build/</code>
-                </pre>
+          <pre><code>__pycache__/
+*.pyc
+.env
+venv/
+dist/
+build/</code></pre>
+          <table class="gi-table">
+            <thead>
+              <tr>
+                <th>Patrón</th>
+                <th>Por qué se ignora</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>__pycache__/</td>
+                <td>
+                  Carpeta que Python genera automáticamente para almacenar
+                  módulos en caché y acelerar su carga. Es específica de cada
+                  máquina y sistema operativo.
+                </td>
+              </tr>
+              <tr>
+                <td>*.pyc</td>
+                <td>
+                  Archivos de <strong>bytecode</strong> generados al interpretar
+                  los <code>.py</code>. No son código fuente y varían entre
+                  versiones de Python y entre sistemas.
+                </td>
+              </tr>
+              <tr>
+                <td>.env</td>
+                <td>
+                  Contiene variables de entorno sensibles que nunca deben
+                  compartirse públicamente.
+                </td>
+              </tr>
+              <tr>
+                <td>venv/</td>
+                <td>
+                  Entorno virtual local con las dependencias instaladas. Cada
+                  desarrollador crea el suyo con
+                  <code>python -m venv venv</code>. Contiene rutas absolutas que
+                  causan conflictos entre máquinas.
+                </td>
+              </tr>
+              <tr>
+                <td>dist/ / build/</td>
+                <td>
+                  Carpetas generadas al empaquetar el proyecto (con
+                  <code>setuptools</code> o <code>pyinstaller</code>). Se
+                  regeneran fácilmente y no deben versionarse.
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-          <h3>Java</h3>
-          <pre
-            style="
-              background: #1c2128;
-              color: #e6edf3;
-              padding: 14px;
-              border-radius: 8px;
-              font-size: 12px;
-              overflow-x: auto;
-            "
+          <span
+            class="gi-badge gi-badge-java"
+            style="margin-top: 20px; display: inline-block"
+            >Java</span
           >
-        <code>target/
-        *.class
-        *.jar
-        *.war
-        *.log</code>
-                </pre>
+          <pre><code>target/
+*.class
+*.jar
+*.war
+*.log</code></pre>
+          <table class="gi-table">
+            <thead>
+              <tr>
+                <th>Patrón</th>
+                <th>Por qué se ignora</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>target/</td>
+                <td>
+                  Carpeta donde Maven o Gradle depositan todos los archivos
+                  generados durante la compilación. Se regenera completamente al
+                  construir el proyecto.
+                </td>
+              </tr>
+              <tr>
+                <td>*.class</td>
+                <td>
+                  Bytecode compilado por <code>javac</code> a partir del código
+                  fuente <code>.java</code>. Es específico de la máquina virtual
+                  y se regenera en cada compilación.
+                </td>
+              </tr>
+              <tr>
+                <td>*.jar</td>
+                <td>
+                  Artefacto empaquetado con el código compilado y sus
+                  dependencias. Es la salida del build, no código fuente. Se
+                  regenera con <code>mvn package</code> o
+                  <code>gradle build</code>.
+                </td>
+              </tr>
+              <tr>
+                <td>*.war</td>
+                <td>
+                  Similar al <code>.jar</code> pero para aplicaciones web Java
+                  desplegadas en servidores como Tomcat. También es un artefacto
+                  de build, no fuente.
+                </td>
+              </tr>
+              <tr>
+                <td>*.log</td>
+                <td>
+                  Registros de ejecución generados localmente durante pruebas o
+                  el servidor. Son específicos de cada entorno y no aportan
+                  valor al repositorio.
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-          <h3>PHP</h3>
-          <pre
-            style="
-              background: #1c2128;
-              color: #e6edf3;
-              padding: 14px;
-              border-radius: 8px;
-              font-size: 12px;
-              overflow-x: auto;
-            "
+          <span
+            class="gi-badge gi-badge-php"
+            style="margin-top: 20px; display: inline-block"
+            >PHP</span
           >
-        <code>vendor/
-        *.log
-        .env</code>
-                </pre>
+          <pre><code>vendor/
+*.log
+.env</code></pre>
+          <table class="gi-table">
+            <thead>
+              <tr>
+                <th>Patrón</th>
+                <th>Por qué se ignora</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>vendor/</td>
+                <td>
+                  Carpeta donde Composer instala todas las dependencias. Puede
+                  ser muy pesada y se restaura completamente ejecutando
+                  <code>composer install</code> a partir del
+                  <code>composer.lock</code>.
+                </td>
+              </tr>
+              <tr>
+                <td>*.log</td>
+                <td>
+                  Archivos de log generados por el servidor web (Apache, Nginx)
+                  o el framework (Laravel, Symfony). Son locales y no deben
+                  versionarse.
+                </td>
+              </tr>
+              <tr>
+                <td>.env</td>
+                <td>
+                  Contiene configuración sensible del entorno: credenciales de
+                  base de datos, claves de cifrado, tokens de servicios
+                  externos. Nunca debe subirse al repositorio.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="card" style="margin-top: 24px">
+        <div class="card">
           <h2>Ejemplo general</h2>
-          <pre
-            style="
-              background: #1c2128;
-              color: #e6edf3;
-              padding: 14px;
-              border-radius: 8px;
-              font-size: 12px;
-              overflow-x: auto;
-            "
-          >
-        <code>.DS_Store
-        Thumbs.db
-        *.log
-        *.tmp
-        *.swp
-        .env</code>
-                </pre>
+          <pre><code>.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+.env</code></pre>
         </div>
 
-        <div class="card" style="margin-top: 24px">
+        <div class="card">
           <h2>Buenas prácticas</h2>
           <ul>
             <li>Añade <code>.gitignore</code> antes del primer commit.</li>
@@ -2043,65 +2187,60 @@ console.log("Hello world");
             <li>Revisa cambios con <code>git status</code>.</li>
             <li>
               Si un archivo ya está siendo trackeado, <code>.gitignore</code> no
-              lo eliminará automáticamente.
+              lo eliminará automáticamente: debes usar
+              <code>git rm --cached &lt;archivo&gt;</code>.
             </li>
           </ul>
         </div>
 
-        <div class="card" style="margin-top: 24px">
+        <div class="card">
           <h2>Ejemplo práctico</h2>
-          <pre
-            style="
-              background: #1c2128;
-              color: #e6edf3;
-              padding: 14px;
-              border-radius: 8px;
-              font-size: 12px;
-              overflow-x: auto;
-            "
-          >
-        <code>git init
-        touch .gitignore
-        git add .
-        git commit -m "Primer commit"</code>
-                </pre>
+          <pre><code>git init
+            touch .gitignore
+            git add .
+            git commit -m "Primer commit"</code></pre>
         </div>
 
-        <div class="card" style="margin-top: 24px">
+        <div class="card">
           <h2>Conclusión</h2>
           <p>
             El archivo <code>.gitignore</code> es una herramienta esencial para
-            mantener tus proyectos limpios, seguros y organizados. Aprender a
-            usarlo correctamente desde el inicio te evitará muchos problemas en
-            el futuro.
+            mantener tus proyectos limpios, seguros y organizados.
           </p>
         </div>
-        <div class="card" style="margin-top: 24px">
+        <div class="card">
           <h2>Recursos adicionales</h2>
           <ul>
             <li>
-              <a
-                href="https://git-scm.com/docs/gitignore"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Documentación oficial de .gitignore</a
+              <strong>Documentación oficial de Git sobre .gitignore: </strong
+              ><a href="https://git-scm.com/docs/gitignore" target="_blank"
+                >Documentación oficial de Git sobre .gitignore</a
               >
             </li>
             <li>
-              <a
-                href="https://github.com/github/gitignore"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Repositorio de .gitignore en GitHub</a
-              >
-            </li>
-            <li>
-              <a
+              <strong>Generador de .gitignore en línea: </strong
+              ><a
                 href="https://www.toptal.com/developers/gitignore"
                 target="_blank"
-                rel="noopener noreferrer"
-                >Pagina para generar tu propio .gitignore</a
+                >Generador de .gitignore en línea</a
               >
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Bonus: plantillas de .gitignore</h2>
+          <p>
+            GitHub ofrece una colección de plantillas de
+            <code>.gitignore</code> para diferentes lenguajes y frameworks.
+            Puedes usarlas como base para tu proyecto:
+          </p>
+          <ul>
+            <li>
+              <strong>Plantillas de .gitignore en GitHub: </strong
+              ><a href="https://github.com/github/gitignore" target="_blank"
+                >Plantillas de .gitignore en GitHub</a
+              >
+            </li>
           </ul>
         </div>
       </div>
