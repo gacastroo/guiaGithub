@@ -1,1211 +1,2601 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guía de GitHub</title>
-    <link href="./assets/img/favicon/favicon.ico" rel="icon" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/navbar.css" type="text/css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+    <link
+      href="./assets/img/favicon/favicon.ico"
+      rel="icon"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./assets/css/navbar.css" type="text/css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <header>
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <rect width="36" height="36" rx="8" fill="#30363d" />
-            <path
-                d="M18 6C11.373 6 6 11.373 6 18c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0118 11.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C26.566 27.797 30 23.3 30 18c0-6.627-5.373-12-12-12z"
-                fill="white" />
-        </svg>
-        <div>
-            <h1 data-es="Guía de GitHub" data-en="GitHub Guide">Guía de GitHub</h1>
-            <p data-es="Aprende a usar GitHub paso a paso" data-en="Learn to use GitHub step by step">Aprende a usar GitHub paso a paso</p>
-        </div>
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <rect width="36" height="36" rx="8" fill="#30363d" />
+        <path
+          d="M18 6C11.373 6 6 11.373 6 18c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0118 11.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C26.566 27.797 30 23.3 30 18c0-6.627-5.373-12-12-12z"
+          fill="white"
+        />
+      </svg>
+      <div>
+        <h1 data-es="Guía de GitHub" data-en="GitHub Guide">Guía de GitHub</h1>
+        <p
+          data-es="Aprende a usar GitHub paso a paso"
+          data-en="Learn to use GitHub step by step"
+        >
+          Aprende a usar GitHub paso a paso
+        </p>
+      </div>
     </header>
 
     <nav>
-        <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menú">
-            <span></span><span></span><span></span>
+      <button
+        class="nav-hamburger"
+        id="nav-hamburger"
+        onclick="toggleMobileNav()"
+        aria-label="Menú"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-scroll" id="nav-scroll">
+        <button
+          class="nav-btn active"
+          onclick="show('instalacion', this)"
+          data-es="Instalación"
+          data-en="Installation"
+        >
+          Instalación
         </button>
+        <button
+          class="nav-btn"
+          onclick="show('registro', this)"
+          data-es="Primeros pasos"
+          data-en="First Steps"
+        >
+          Primeros pasos
+        </button>
+        <button
+          class="nav-btn"
+          onclick="show('miniguia', this)"
+          data-es="Crea tu repositorio"
+          data-en="Create Repository"
+        >
+          Crea tu repositorio
+        </button>
+        <button
+          class="nav-btn"
+          onclick="show('comandos', this)"
+          data-es="Comandos básicos"
+          data-en="Basic Commands"
+        >
+          Comandos básicos
+        </button>
+        <button
+          class="nav-btn"
+          onclick="show('ramas', this)"
+          data-es="Ramas"
+          data-en="Branches"
+        >
+          Ramas
+        </button>
+        <button
+          class="nav-btn"
+          onclick="show('gitignore', this)"
+          data-es=".gitignore"
+          data-en=".gitignore"
+        >
+          .gitignore
+        </button>
+        <button
+          class="nav-btn"
+          onclick="show('ejercicios', this)"
+          data-es="Ejercicios"
+          data-en="Exercises"
+        >
+          Ejercicios
+        </button>
+        <button
+          class="nav-btn"
+          onclick="show('vscode', this)"
+          data-es="VSCODE"
+          data-en="VSCODE"
+        >
+          VSCODE
+        </button>
+      </div>
 
-        <div class="nav-scroll" id="nav-scroll">
-            <button class="nav-btn active" onclick="show('instalacion', this)" data-es="Instalación" data-en="Installation">Instalación</button>
-            <button class="nav-btn" onclick="show('registro', this)" data-es="Primeros pasos" data-en="First Steps">Primeros pasos</button>
-            <button class="nav-btn" onclick="show('miniguia', this)" data-es="Crea tu repositorio" data-en="Create Repository">Crea tu repositorio</button>
-            <button class="nav-btn" onclick="show('comandos', this)" data-es="Comandos básicos" data-en="Basic Commands">Comandos básicos</button>
-            <button class="nav-btn" onclick="show('ramas', this)" data-es="Ramas" data-en="Branches">Ramas</button>
-            <button class="nav-btn" onclick="show('ejercicios', this)" data-es="Ejercicios" data-en="Exercises">Ejercicios</button>
-            <button class="nav-btn" onclick="show('vscode', this)" data-es="VSCODE" data-en="VSCODE">VSCODE</button>
-        </div>
-
-        <div class="nav-controls">
-            <button class="nav-ctrl-btn" id="lang-toggle-btn" onclick="toggleLang()" title="Cambiar idioma">
-                <span id="lang-icon">🌐</span>
-                <span id="lang-label">EN</span>
-            </button>
-            <button class="nav-ctrl-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Cambiar tema">
-                <span id="theme-icon">🌙</span>
-            </button>
-            <a class="nav-ctrl-btn" href="./assets/html/contribution.html" target="_blank" title="Contribuciones">
-                🤝
-            </a>
-        </div>
+      <div class="nav-controls">
+        <button
+          class="nav-ctrl-btn"
+          id="lang-toggle-btn"
+          onclick="toggleLang()"
+          title="Cambiar idioma"
+        >
+          <span id="lang-icon">🌐</span>
+          <span id="lang-label">EN</span>
+        </button>
+        <button
+          class="nav-ctrl-btn"
+          id="theme-toggle-btn"
+          onclick="toggleTheme()"
+          title="Cambiar tema"
+        >
+          <span id="theme-icon">🌙</span>
+        </button>
+        <a
+          class="nav-ctrl-btn"
+          href="./assets/html/contribution.html"
+          target="_blank"
+          title="Contribuciones"
+        >
+          🤝
+        </a>
+      </div>
     </nav>
 
     <main>
-        <!-- INSTALACIÓN -->
-        <div id="instalacion" class="section visible">
-            <div class="card">
-                <h2 data-es="GIT VS GITHUB: La analogía más fácil" data-en="GIT VS GITHUB: The easiest analogy">GIT VS GITHUB: La analogía más fácil</h2>
-                <div class="analogy">
-                    <p>"Git es el <strong>cerebro 🧠</strong>, GitHub es la <strong>red social 🌐</strong>."</p>
-                    <p style="margin-top:6px;">"Git guarda tu código, GitHub lo presume."</p>
-                </div>
-                <figure class="img-figure" style="margin-top: 16px;">
-                    <img src="./assets/img/PNG/githubVsGit.png" alt="Diferencias entre Git y GitHub" style="border-radius: 8px;" loading="lazy">
-                    <figcaption>Comparativa visual entre Git y GitHub</figcaption>
-                </figure>
-            </div>
-            <div class="compare" style="margin-bottom: 16px;">
-                <div class="cbox">
-                    <h3>Git</h3>
-                    <ul>
-                        <li>Software local (en tu ordenador)</li>
-                        <li>Control de versiones</li>
-                        <li>Guarda instantáneas del proyecto</li>
-                        <li>Ideal para uso individual</li>
-                        <li>Funciona sin internet</li>
-                    </ul>
-                </div>
-                <div class="cbox">
-                    <h3>GitHub</h3>
-                    <ul>
-                        <li>Plataforma web</li>
-                        <li>Colaboración en equipo</li>
-                        <li>Basado en Git</li>
-                        <li>Gestión de proyectos</li>
-                        <li>Red social para código</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card">
-                <h2 data-es="¿Qué es el control de versiones?" data-en="What is version control?">¿Qué es el control de versiones?</h2>
-                <p>Un sistema que permite gestionar y rastrear los cambios en el código fuente a lo largo del tiempo,
-                    facilitando la colaboración y el desarrollo eficiente de software.</p>
-            </div>
-            <div class="card">
-                <h2 data-es="Instalación de Git" data-en="Git Installation">Instalación de Git</h2>
-                <p>Descarga Git desde su página oficial e instálalo en tu sistema operativo.</p>
-                <a class="link-btn" href="https://git-scm.com/" target="_blank">
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-                        <path
-                            d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z" />
-                    </svg>
-                    Página oficial de Git
-                </a>
-            </div>
+      <!-- INSTALACIÓN -->
+      <div id="instalacion" class="section visible">
         <div class="card">
-            <h2 data-es="Tutorial en vídeo" data-en="Video Tutorial">Tutorial en vídeo</h2>
-            <p style="font-size:13px; color:var(--text3); margin-bottom: 0;">
-                Instalación y primeros pasos con Git
+          <h2
+            data-es="GIT VS GITHUB: La analogía más fácil"
+            data-en="GIT VS GITHUB: The easiest analogy"
+          >
+            GIT VS GITHUB: La analogía más fácil
+          </h2>
+          <div class="analogy">
+            <p>
+              "Git es el <strong>cerebro 🧠</strong>, GitHub es la
+              <strong>red social 🌐</strong>."
             </p>
-            <div class="video-wrap">
-                <iframe 
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    src="https://www.youtube.com/embed/jdXKwLNUfmg"
-                    title="Instalación de Git"
-                    style="border:0;"
-                    allow="fullscreen">
-                </iframe>
-            </div>
+            <p style="margin-top: 6px">
+              "Git guarda tu código, GitHub lo presume."
+            </p>
+          </div>
+          <figure class="img-figure" style="margin-top: 16px">
+            <img
+              src="./assets/img/PNG/githubVsGit.png"
+              alt="Diferencias entre Git y GitHub"
+              style="border-radius: 8px"
+              loading="lazy"
+            />
+            <figcaption>Comparativa visual entre Git y GitHub</figcaption>
+          </figure>
         </div>
+        <div class="compare" style="margin-bottom: 16px">
+          <div class="cbox">
+            <h3>Git</h3>
+            <ul>
+              <li>Software local (en tu ordenador)</li>
+              <li>Control de versiones</li>
+              <li>Guarda instantáneas del proyecto</li>
+              <li>Ideal para uso individual</li>
+              <li>Funciona sin internet</li>
+            </ul>
+          </div>
+          <div class="cbox">
+            <h3>GitHub</h3>
+            <ul>
+              <li>Plataforma web</li>
+              <li>Colaboración en equipo</li>
+              <li>Basado en Git</li>
+              <li>Gestión de proyectos</li>
+              <li>Red social para código</li>
+            </ul>
+          </div>
         </div>
-        <!-- REGISTRO -->
-        <div id="registro" class="section">
-            <div class="card">
-                <h2 data-es="Cómo registrarse en GitHub" data-en="How to sign up on GitHub">Cómo registrarse en GitHub</h2>
-
-                <div class="registro-stepper">
-                    <div class="registro-step">
-                        <div class="registro-step-line">
-                            <div class="registro-step-num">1</div>
-                            <div class="registro-step-connector"></div>
-                        </div>
-                        <div class="registro-step-body">
-                            <p data-es='Navega a <a style="text-decoration:none;" href="https://github.com/"><strong>github.com</strong></a> en tu navegador.' data-en='Go to <a style="text-decoration:none;" href="https://github.com/"><strong>github.com</strong></a> in your browser.'>Navega a <a style="text-decoration:none;" href="https://github.com/"><strong>github.com</strong></a> en tu navegador.</p>
-                            <figure class="img-figure">
-                                <img src="./assets/img/PNG/capturasRegistro/1.png" alt="Pantalla de inicio de GitHub" loading="lazy">
-                                <figcaption data-es="Página principal de GitHub" data-en="GitHub homepage">Página principal de GitHub</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <div class="registro-step">
-                        <div class="registro-step-line">
-                            <div class="registro-step-num">2</div>
-                            <div class="registro-step-connector"></div>
-                        </div>
-                        <div class="registro-step-body">
-                            <p data-es='Haz clic en <strong>Registrarse</strong> o en <strong>Continue with Google</strong> para usar tu cuenta de Google.' data-en='Click <strong>Sign up</strong> or <strong>Continue with Google</strong> to use your Google account.'>Haz clic en <strong>Registrarse</strong> o en <strong>Continue with Google</strong> para usar tu cuenta de Google.</p>
-                            <figure class="img-figure">
-                                <img src="./assets/img/PNG/capturasRegistro/2.png" alt="Formulario de registro" loading="lazy">
-                                <figcaption data-es="Formulario de registro" data-en="Sign-up form">Formulario de registro</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <div class="registro-step">
-                        <div class="registro-step-line">
-                            <div class="registro-step-num">3</div>
-                            <div class="registro-step-connector"></div>
-                        </div>
-                        <div class="registro-step-body">
-                            <p data-es="Sigue las indicaciones para crear tu cuenta personal." data-en="Follow the prompts to create your personal account.">Sigue las indicaciones para crear tu cuenta personal.</p>
-                        </div>
-                    </div>
-
-                    <div class="registro-step">
-                        <div class="registro-step-line">
-                            <div class="registro-step-num">4</div>
-                            <div class="registro-step-connector"></div>
-                        </div>
-                        <div class="registro-step-body">
-                            <p data-es='Verifica tu dirección de correo electrónico <span class="badge badge-warn">Obligatorio</span>' data-en='Verify your email address <span class="badge badge-warn">Required</span>'>Verifica tu dirección de correo electrónico <span class="badge badge-warn">Obligatorio</span></p>
-                            <figure class="img-figure">
-                                <img src="./assets/img/PNG/capturasRegistro/verify.png" alt="Verificación de correo" class="img-medium" loading="lazy">
-                                <figcaption data-es="Correo de verificación de GitHub" data-en="GitHub verification email">Correo de verificación de GitHub</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <div class="registro-step">
-                        <div class="registro-step-line">
-                            <div class="registro-step-num">5</div>
-                        </div>
-                        <div class="registro-step-body">
-                            <p data-es="¡Listo, ya tienes tu cuenta creada!" data-en="Done, your account is all set!">¡Listo, ya tienes tu cuenta creada!</p>
-                            <figure class="img-figure">
-                                <img src="./assets/img/PNG/capturasRegistro/3.png" alt="Cuenta creada correctamente" loading="lazy">
-                                <figcaption data-es="Pantalla de bienvenida tras registrarse" data-en="Welcome screen after signing up">Pantalla de bienvenida tras registrarse</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <h2 data-es="Cosas importantes" data-en="Important notes">Cosas importantes</h2>
-                <p data-es='Algunas empresas crean <strong>cuentas de usuario administradas</strong> para sus empleados. No puedes registrarte con un correo que ya esté vinculado a una cuenta administrada.' data-en='Some companies create <strong>managed user accounts</strong> for their employees. You cannot sign up with an email already linked to a managed account.'>Algunas empresas crean <strong>cuentas de usuario administradas</strong> para sus empleados. No puedes registrarte con un correo que ya esté vinculado a una cuenta administrada.</p>
-                <p data-es='Si tienes problemas para verificar tu correo, consulta la guía <a style="text-decoration: none;" href="https://docs.github.com/es/account-and-profile/how-tos/email-preferences/verifying-your-email-address"><strong>Verificar tu dirección de correo electrónico</strong></a> dentro de la documentación oficial de GitHub.' data-en='If you have trouble verifying your email, check the guide <a style="text-decoration: none;" href="https://docs.github.com/es/account-and-profile/how-tos/email-preferences/verifying-your-email-address"><strong>Verifying your email address</strong></a> in the official GitHub docs.'>Si tienes problemas para verificar tu correo, consulta la guía <a style="text-decoration: none;" href="https://docs.github.com/es/account-and-profile/how-tos/email-preferences/verifying-your-email-address"><strong>Verificar tu dirección de correo electrónico</strong></a> dentro de la documentación oficial de GitHub.</p>
-            </div>
-            <div class="card">
-                <h2 data-es="Pasos siguientes" data-en="Next steps">Pasos siguientes</h2>
-
-                <div class="next-steps">
-
-                    <!-- Paso 1 -->
-                    <div class="next-step">
-                        <div class="next-step-header">
-                            <span class="next-step-num">01</span>
-                            <span class="next-step-icon">📖</span>
-                            <h3 class="next-step-title" data-es="Tutorial Hello World" data-en="Hello World Tutorial">Tutorial Hello World</h3>
-                            <span class="badge badge-info" style="margin-left:auto;">Esencial</span>
-                        </div>
-                        <p class="next-step-desc" data-es='Explora el tutorial oficial <a style="text-decoration:none;" href="https://docs.github.com/es/get-started/start-your-journey/hello-world"><strong>Hello World</strong></a> de GitHub para aprender sobre repositorios, ramas, commits y pull requests.' data-en='Explore the official <a style="text-decoration:none;" href="https://docs.github.com/es/get-started/start-your-journey/hello-world"><strong>Hello World</strong></a> tutorial to learn about repositories, branches, commits and pull requests.'>Explora el tutorial oficial <a style="text-decoration:none;" href="https://docs.github.com/es/get-started/start-your-journey/hello-world"><strong>Hello World</strong></a> de GitHub para aprender sobre repositorios, ramas, commits y pull requests.</p>
-                    </div>
-
-                    <!-- Paso 2 -->
-                    <div class="next-step">
-                        <div class="next-step-header">
-                            <span class="next-step-num">02</span>
-                            <span class="next-step-icon">🔐</span>
-                            <h3 class="next-step-title" data-es="Activar 2FA" data-en="Enable 2FA">Activar 2FA</h3>
-                            <span class="badge badge-success" style="margin-left:auto;">Recomendado</span>
-                        </div>
-                        <p class="next-step-desc" data-es='Activa la <a style="text-decoration:none;" href="https://docs.github.com/es/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication"><strong>autenticación de dos factores</strong></a> para añadir una capa extra de seguridad a tu cuenta.' data-en='Enable <a style="text-decoration:none;" href="https://docs.github.com/es/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication"><strong>two-factor authentication</strong></a> to add an extra layer of security to your account.'>Activa la <a style="text-decoration:none;" href="https://docs.github.com/es/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication"><strong>autenticación de dos factores</strong></a> para añadir una capa extra de seguridad a tu cuenta.</p>
-                        <figure class="img-figure" style="margin-top:12px;">
-                            <img src="./assets/img/PNG/capturasRegistro/4.png" alt="Ajustes de seguridad" loading="lazy">
-                            <figcaption data-es="Acceder a ajustes de seguridad" data-en="Access security settings">Acceder a ajustes de seguridad</figcaption>
-                        </figure>
-                    </div>
-
-                    <!-- Paso 3 -->
-                    <div class="next-step">
-                        <div class="next-step-header">
-                            <span class="next-step-num">03</span>
-                            <span class="next-step-icon">📱</span>
-                            <h3 class="next-step-title" data-es="Configura la app autenticadora" data-en="Set up authenticator app">Configura la app autenticadora</h3>
-                        </div>
-                        <p class="next-step-desc" data-es="Descarga Google Authenticator o Authy en tu móvil y escanea el código QR que te ofrece GitHub." data-en="Download Google Authenticator or Authy on your phone and scan the QR code GitHub provides.">Descarga Google Authenticator o Authy en tu móvil y escanea el código QR que te ofrece GitHub.</p>
-                        <div style="display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; align-items:flex-start;">
-                            <figure class="img-figure" style="flex:1; min-width:140px;">
-                                <img src="./assets/img/PNG/capturasRegistro/6.png" alt="Activar 2FA" loading="lazy">
-                                <figcaption data-es="Activar 2FA en ajustes" data-en="Enable 2FA in settings">Activar 2FA en ajustes</figcaption>
-                            </figure>
-                            <figure class="img-figure" style="flex:0 0 auto; width:130px;">
-                                <img src="./assets/img/PNG/capturasRegistro/5.png" alt="App autenticadora en móvil" loading="lazy">
-                                <figcaption data-es="App en móvil" data-en="App on mobile">App en móvil</figcaption>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- Paso 4 -->
-                    <div class="next-step">
-                        <div class="next-step-header">
-                            <span class="next-step-num">04</span>
-                            <span class="next-step-icon">✅</span>
-                            <h3 class="next-step-title" data-es="Confirma y guarda los códigos" data-en="Confirm and save backup codes">Confirma y guarda los códigos</h3>
-                        </div>
-                        <p class="next-step-desc" data-es="Introduce el código generado por la app para confirmar la configuración. Guarda los códigos de recuperación en un lugar seguro." data-en="Enter the code generated by the app to confirm the setup. Save the recovery codes somewhere safe.">Introduce el código generado por la app para confirmar la configuración. Guarda los códigos de recuperación en un lugar seguro.</p>
-                        <figure class="img-figure" style="margin-top:12px;">
-                            <img src="./assets/img/PNG/capturasRegistro/7.png" alt="Confirmar 2FA" loading="lazy">
-                            <figcaption data-es="Confirmar configuración 2FA" data-en="Confirm 2FA setup">Confirmar configuración 2FA</figcaption>
-                        </figure>
-                    </div>
-
-                </div>
-            </div>
+        <div class="card">
+          <h2
+            data-es="¿Qué es el control de versiones?"
+            data-en="What is version control?"
+          >
+            ¿Qué es el control de versiones?
+          </h2>
+          <p>
+            Un sistema que permite gestionar y rastrear los cambios en el código
+            fuente a lo largo del tiempo, facilitando la colaboración y el
+            desarrollo eficiente de software.
+          </p>
         </div>
-
-
-        <!-- COMANDOS -->
-        <div id="comandos" class="section">
-            <div class="card">
-                <p style="font-size:13px; color:var(--text3); margin-bottom: 16px;">Estos son algunos de los comandos básicos de git y los que posiblemente mas utilices, espero que te ayuden :D <br>Haz clic en cualquier comando para
-                    copiarlo al portapapeles.</p>
-
-                <div class="cmd-group">
-                    <p class="cmd-group-title">1 · Configuración inicial</p>
-                    <p>Una vez que has instalado Git, es recomendable configurar tu nombre de usuario y correo electrónico: 
-                    <p> ⚠️ Sin esto no te permitirá hacer commits.</p></p>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git config --global user.name "Tu Nombre"</div>
-                            <div class="cmd-desc">Configura tu nombre de usuario</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git config --global user.email "tu@email.com"</div>
-                            <div class="cmd-desc">Configura tu correo electrónico</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                </div>
-
-                <div class="cmd-group">
-                    <p class="cmd-group-title">2 · Iniciar un proyecto</p>
-                    <p>Estos son los cambios que necesitas hacer para iniciar un proyecto con Git:</p>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git init</div>
-                            <div class="cmd-desc">Crea un repositorio nuevo en la carpeta actual</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git remote add &lt;nombre&gt; &lt;url&gt;</div>
-                            <div class="cmd-desc">Crea una nueva conexión a un repositorio remoto.</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git clone &lt;url&gt;</div>
-                            <div class="cmd-desc">Descarga un repositorio existente</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                                        <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git pull &lt;url&gt;</div>
-                            <div class="cmd-desc">Descarga los cambios del repositorio remoto</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                </div>
-
-                <div class="cmd-group">
-                    <p class="cmd-group-title">3 · El ciclo diario</p>
-                    <p>Son los comandos que usas diariamente:</p>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git status</div>
-                            <div class="cmd-desc">Muestra qué ha cambiado</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git add .</div>
-                            <div class="cmd-desc">Prepara todos los cambios para el commit</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git commit -m "mensaje claro"</div>
-                            <div class="cmd-desc">Guarda los cambios en el historial</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git push origin main</div>
-                            <div class="cmd-desc">Sube los cambios a GitHub</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git pull origin main</div>
-                            <div class="cmd-desc">Baja los cambios del remoto</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                </div>
-
-                <div class="cmd-group">
-                    <p class="cmd-group-title">4 · Ramas</p>
-                    <p>Estos son los comandos que usas para trabajar con ramas:</p>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git switch -c mi-rama</div>
-                            <div class="cmd-desc">Crea y cambia a una rama nueva</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git switch main</div>
-                            <div class="cmd-desc">Vuelve a la rama principal</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git merge mi-rama</div>
-                            <div class="cmd-desc">Une la rama con la actual</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <p>⚠️ Un merge puede causar conflictos si los cambios en ambas ramas son incompatibles. Cuando haces un merge, no hay forma de deshacerlo una vez que se resuelven los conflictos.</p>
-                </div>
-
-                <div class="cmd-group">
-                    <p class="cmd-group-title">5 · Si algo va mal</p>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git log --oneline</div>
-                            <div class="cmd-desc">Ver historial de commits resumido</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git restore &lt;archivo&gt;</div>
-                            <div class="cmd-desc">Descartar cambios en un archivo</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git restore --staged &lt;archivo&gt;</div>
-                            <div class="cmd-desc">Quitar un archivo del staging</div>
-                        </div>
-                        <button class="cmd-copy"
-                            onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                </div>
-
-                <p>Git guarda tu trabajo en dos pasos: preparar y guardar.
-
-Cuando cambias archivos, Git ve esos cambios, pero no los guarda directamente. Primero eliges qué cambios quieres incluir (eso es staging o preparar). Luego los guardas con un commit.
-
-Es como hacer una foto: primero eliges qué quieres que salga en la foto (preparar) y luego haces la foto (guardar).</p>
-
-            </div>
+        <div class="card">
+          <h2 data-es="Instalación de Git" data-en="Git Installation">
+            Instalación de Git
+          </h2>
+          <p>
+            Descarga Git desde su página oficial e instálalo en tu sistema
+            operativo.
+          </p>
+          <a class="link-btn" href="https://git-scm.com/" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+              <path
+                d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"
+              />
+            </svg>
+            Página oficial de Git
+          </a>
         </div>
+        <div class="card">
+          <h2 data-es="Tutorial en vídeo" data-en="Video Tutorial">
+            Tutorial en vídeo
+          </h2>
+          <p style="font-size: 13px; color: var(--text3); margin-bottom: 0">
+            Instalación y primeros pasos con Git
+          </p>
+          <div class="video-wrap">
+            <iframe
+              referrerpolicy="strict-origin-when-cross-origin"
+              src="https://www.youtube.com/embed/jdXKwLNUfmg"
+              title="Instalación de Git"
+              style="border: 0"
+              allow="fullscreen"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <!-- REGISTRO -->
+      <div id="registro" class="section">
+        <div class="card">
+          <h2
+            data-es="Cómo registrarse en GitHub"
+            data-en="How to sign up on GitHub"
+          >
+            Cómo registrarse en GitHub
+          </h2>
 
-        <div id="miniguia" class="section">
-            <div class="card">
-                <h2 data-es="Miniguía: ¿Dónde vive tu código?" data-en="Mini-guide: Where does your code live?">Miniguía: ¿Dónde vive tu código?</h2>
-                <p style="margin-top: 8px;">Para trabajar con GitHub, imagina que tienes dos "copias" de tu proyecto:</p>
-                <ul style="margin-top: 10px; padding-left: 0;">
-                    <li style="list-style:none; margin-bottom: 6px;"><strong>Repositorio Local:</strong> Es la carpeta en tu ordenador. Es donde editas tus archivos día a día. GitHub no ve esto hasta que tú lo envías.</li>
-                    <li style="list-style: none;"><strong>Repositorio Remoto:</strong> Es la copia en los servidores de GitHub. Es tu respaldo en la nube y el lugar donde los demás ven tu código.</li>
-                </ul>
-                <h3 style="margin-top: 16px; margin-bottom: 8px; font-size: 14px;">¿Cómo se conectan?</h3>
-                <p>Tú trabajas en tu <strong>Local</strong>. Cuando quieres que GitHub se entere, haces un <em>commit</em> (guardar foto instantánea) y luego un <em>push</em> (enviar a la nube).</p>
-                <div class="container">
-                    <div class="card">
-                        <div class="icon yellow">✏️</div>
-                        <div class="content">
-                        <span id="step1">1</span>
-                        <h3>Escribes tu código</h3>
-                        <p>Trabajas en tu computadora, creas o modificas archivos</p>
-                        <p style="border-radius: 7px; background: rgba(27, 27, 27, 0.986); color: whitesmoke; padding: 10px; text-align: center; font-family: monospace; font-size: 13px;">git add .</p>
-                        </div>
-                    </div>
-                    <div class="arrow">↓</div>
-                    <div class="card">
-                        <div class="icon green">💾</div>
-                        <div class="content">
-                        <span id="step2">2</span>
-                        <h3>Guardas los cambios</h3>
-                        <p>Haces un "commit" — es como tomar una foto de tu proyecto</p>
-                        <p style="border-radius: 7px; background: rgba(27, 27, 27, 0.986); color: whitesmoke; padding: 10px; text-align: center; font-family: monospace; font-size: 13px;">git commit -m "tu mensaje aquí"</p>
-                        <div class="badge green-badge">💾 Se guarda en tu computadora</div>
-                        </div>
-                    </div>
-                    <div class="arrow">↓</div>
-                    <div class="card">
-                        <div class="icon blue">☁️</div>
-                        <div class="content">
-                        <span id="step3">3</span>
-                        <h3>Subes a la nube</h3>
-                        <p>Haces un "push" — envías todo a GitHub para que otros lo vean</p>
-                        <p style="border-radius: 7px; background: rgba(27, 27, 27, 0.986); color: whitesmoke; padding: 10px; text-align: center; font-family: monospace; font-size: 13px;">git push origin main</p>
-                        <div class="badge blue-badge">☁️ Ahora está en internet</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2 data-es="1. Crear el repositorio en GitHub" data-en="1. Create the repository on GitHub">1. Crear el repositorio en GitHub</h2>
-                <ol>
-                    <li>Inicia sesión en <strong>GitHub.com</strong>.</li>
-                    <li>Haz clic en el icono <strong>"+"</strong> (esquina superior derecha) → <strong>"New repository"</strong>.</li>
-                </ol>
-                <figure class="img-figure" style="margin: 14px 0;">
-                    <img src="./assets/img/PNG/crearRepositorioEnGithub/1.png" alt="Botón nuevo repositorio" loading="lazy">
-                    <figcaption>Acceder a la creación de un nuevo repositorio</figcaption>
+          <div class="registro-stepper">
+            <div class="registro-step">
+              <div class="registro-step-line">
+                <div class="registro-step-num">1</div>
+                <div class="registro-step-connector"></div>
+              </div>
+              <div class="registro-step-body">
+                <p
+                  data-es='Navega a <a style="text-decoration:none;" href="https://github.com/"><strong>github.com</strong></a> en tu navegador.'
+                  data-en='Go to <a style="text-decoration:none;" href="https://github.com/"><strong>github.com</strong></a> in your browser.'
+                >
+                  Navega a
+                  <a style="text-decoration: none" href="https://github.com/"
+                    ><strong>github.com</strong></a
+                  >
+                  en tu navegador.
+                </p>
+                <figure class="img-figure">
+                  <img
+                    src="./assets/img/PNG/capturasRegistro/1.png"
+                    alt="Pantalla de inicio de GitHub"
+                    loading="lazy"
+                  />
+                  <figcaption
+                    data-es="Página principal de GitHub"
+                    data-en="GitHub homepage"
+                  >
+                    Página principal de GitHub
+                  </figcaption>
                 </figure>
-                <ol start="3">
-                    <li>Ponle un nombre y elige si será <strong>Public</strong> o <strong>Private</strong>.</li>
-                    <li>Marca <strong>"Add a README file"</strong> (fundamental para documentar el proyecto).</li>
-                    <li>Haz clic en <strong>"Create repository"</strong>.</li>
-                </ol>
-                <figure class="img-figure" style="margin-top: 14px;">
-                    <img src="./assets/img/PNG/crearRepositorioEnGithub/CrearRepositorio.png" alt="Formulario creación de repositorio" loading="lazy">
-                    <figcaption>Formulario para configurar el nuevo repositorio</figcaption>
-                </figure>
-                <figure class="img-figure" style="margin-top: 14px;">
-                    <img src="./assets/img/PNG/crearRepositorioEnGithub/RepositorioCreado.png" alt="Repositorio creado" loading="lazy">
-                    <figcaption>Repositorio creado correctamente en GitHub</figcaption>
-                </figure>
+              </div>
             </div>
 
-            <div class="card">
-                <h2 data-es="2. Trabajar profesionalmente (VS Code + GitHub)" data-en="2. Work professionally (VS Code + GitHub)">2. Trabajar profesionalmente (VS Code + GitHub)</h2>
-                <p><strong>Vincular GitHub con VS Code:</strong></p>
-                <ul style="margin-top: 8px; padding-left: 0;">
-                    <li style="list-style: none; margin-bottom: 6px;">Instala la extensión <strong>"GitHub Pull Requests and Issues"</strong>.</li>
-                    <li style="list-style: none;">Haz clic en el icono de usuario (abajo a la izquierda) → <strong>"Sign in to GitHub"</strong> y autoriza la conexión.</li>
-                </ul>
-                <p style="margin-top: 14px;"><strong>Hacer cambios (Flujo diario):</strong></p>
-                <ol style="margin-top: 8px; padding-left: 18px;">
-                    <li>Edita tus archivos y guárdalos.</li>
-                    <li>Ve a la pestaña de <strong>Source Control</strong> (icono de nodos a la izquierda).</li>
-                    <li>Haz clic en el <strong>"+"</strong> para preparar los cambios (Stage).</li>
-                    <li>Escribe un mensaje de commit y presiona el botón <strong>Commit</strong>.</li>
-                    <li>Haz clic en <strong>Sync Changes</strong> (o Push) para enviar todo a GitHub.</li>
-                </ol>
+            <div class="registro-step">
+              <div class="registro-step-line">
+                <div class="registro-step-num">2</div>
+                <div class="registro-step-connector"></div>
+              </div>
+              <div class="registro-step-body">
+                <p
+                  data-es="Haz clic en <strong>Registrarse</strong> o en <strong>Continue with Google</strong> para usar tu cuenta de Google."
+                  data-en="Click <strong>Sign up</strong> or <strong>Continue with Google</strong> to use your Google account."
+                >
+                  Haz clic en <strong>Registrarse</strong> o en
+                  <strong>Continue with Google</strong> para usar tu cuenta de
+                  Google.
+                </p>
+                <figure class="img-figure">
+                  <img
+                    src="./assets/img/PNG/capturasRegistro/2.png"
+                    alt="Formulario de registro"
+                    loading="lazy"
+                  />
+                  <figcaption
+                    data-es="Formulario de registro"
+                    data-en="Sign-up form"
+                  >
+                    Formulario de registro
+                  </figcaption>
+                </figure>
+              </div>
             </div>
 
+            <div class="registro-step">
+              <div class="registro-step-line">
+                <div class="registro-step-num">3</div>
+                <div class="registro-step-connector"></div>
+              </div>
+              <div class="registro-step-body">
+                <p
+                  data-es="Sigue las indicaciones para crear tu cuenta personal."
+                  data-en="Follow the prompts to create your personal account."
+                >
+                  Sigue las indicaciones para crear tu cuenta personal.
+                </p>
+              </div>
+            </div>
+
+            <div class="registro-step">
+              <div class="registro-step-line">
+                <div class="registro-step-num">4</div>
+                <div class="registro-step-connector"></div>
+              </div>
+              <div class="registro-step-body">
+                <p
+                  data-es='Verifica tu dirección de correo electrónico <span class="badge badge-warn">Obligatorio</span>'
+                  data-en='Verify your email address <span class="badge badge-warn">Required</span>'
+                >
+                  Verifica tu dirección de correo electrónico
+                  <span class="badge badge-warn">Obligatorio</span>
+                </p>
+                <figure class="img-figure">
+                  <img
+                    src="./assets/img/PNG/capturasRegistro/verify.png"
+                    alt="Verificación de correo"
+                    class="img-medium"
+                    loading="lazy"
+                  />
+                  <figcaption
+                    data-es="Correo de verificación de GitHub"
+                    data-en="GitHub verification email"
+                  >
+                    Correo de verificación de GitHub
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <div class="registro-step">
+              <div class="registro-step-line">
+                <div class="registro-step-num">5</div>
+              </div>
+              <div class="registro-step-body">
+                <p
+                  data-es="¡Listo, ya tienes tu cuenta creada!"
+                  data-en="Done, your account is all set!"
+                >
+                  ¡Listo, ya tienes tu cuenta creada!
+                </p>
+                <figure class="img-figure">
+                  <img
+                    src="./assets/img/PNG/capturasRegistro/3.png"
+                    alt="Cuenta creada correctamente"
+                    loading="lazy"
+                  />
+                  <figcaption
+                    data-es="Pantalla de bienvenida tras registrarse"
+                    data-en="Welcome screen after signing up"
+                  >
+                    Pantalla de bienvenida tras registrarse
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h2 data-es="Cosas importantes" data-en="Important notes">
+            Cosas importantes
+          </h2>
+          <p
+            data-es="Algunas empresas crean <strong>cuentas de usuario administradas</strong> para sus empleados. No puedes registrarte con un correo que ya esté vinculado a una cuenta administrada."
+            data-en="Some companies create <strong>managed user accounts</strong> for their employees. You cannot sign up with an email already linked to a managed account."
+          >
+            Algunas empresas crean
+            <strong>cuentas de usuario administradas</strong> para sus
+            empleados. No puedes registrarte con un correo que ya esté vinculado
+            a una cuenta administrada.
+          </p>
+          <p
+            data-es='Si tienes problemas para verificar tu correo, consulta la guía <a style="text-decoration: none;" href="https://docs.github.com/es/account-and-profile/how-tos/email-preferences/verifying-your-email-address"><strong>Verificar tu dirección de correo electrónico</strong></a> dentro de la documentación oficial de GitHub.'
+            data-en='If you have trouble verifying your email, check the guide <a style="text-decoration: none;" href="https://docs.github.com/es/account-and-profile/how-tos/email-preferences/verifying-your-email-address"><strong>Verifying your email address</strong></a> in the official GitHub docs.'
+          >
+            Si tienes problemas para verificar tu correo, consulta la guía
+            <a
+              style="text-decoration: none"
+              href="https://docs.github.com/es/account-and-profile/how-tos/email-preferences/verifying-your-email-address"
+              ><strong>Verificar tu dirección de correo electrónico</strong></a
+            >
+            dentro de la documentación oficial de GitHub.
+          </p>
+        </div>
+        <div class="card">
+          <h2 data-es="Pasos siguientes" data-en="Next steps">
+            Pasos siguientes
+          </h2>
+
+          <div class="next-steps">
+            <!-- Paso 1 -->
+            <div class="next-step">
+              <div class="next-step-header">
+                <span class="next-step-num">01</span>
+                <span class="next-step-icon">📖</span>
+                <h3
+                  class="next-step-title"
+                  data-es="Tutorial Hello World"
+                  data-en="Hello World Tutorial"
+                >
+                  Tutorial Hello World
+                </h3>
+                <span class="badge badge-info" style="margin-left: auto"
+                  >Esencial</span
+                >
+              </div>
+              <p
+                class="next-step-desc"
+                data-es='Explora el tutorial oficial <a style="text-decoration:none;" href="https://docs.github.com/es/get-started/start-your-journey/hello-world"><strong>Hello World</strong></a> de GitHub para aprender sobre repositorios, ramas, commits y pull requests.'
+                data-en='Explore the official <a style="text-decoration:none;" href="https://docs.github.com/es/get-started/start-your-journey/hello-world"><strong>Hello World</strong></a> tutorial to learn about repositories, branches, commits and pull requests.'
+              >
+                Explora el tutorial oficial
+                <a
+                  style="text-decoration: none"
+                  href="https://docs.github.com/es/get-started/start-your-journey/hello-world"
+                  ><strong>Hello World</strong></a
+                >
+                de GitHub para aprender sobre repositorios, ramas, commits y
+                pull requests.
+              </p>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="next-step">
+              <div class="next-step-header">
+                <span class="next-step-num">02</span>
+                <span class="next-step-icon">🔐</span>
+                <h3
+                  class="next-step-title"
+                  data-es="Activar 2FA"
+                  data-en="Enable 2FA"
+                >
+                  Activar 2FA
+                </h3>
+                <span class="badge badge-success" style="margin-left: auto"
+                  >Recomendado</span
+                >
+              </div>
+              <p
+                class="next-step-desc"
+                data-es='Activa la <a style="text-decoration:none;" href="https://docs.github.com/es/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication"><strong>autenticación de dos factores</strong></a> para añadir una capa extra de seguridad a tu cuenta.'
+                data-en='Enable <a style="text-decoration:none;" href="https://docs.github.com/es/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication"><strong>two-factor authentication</strong></a> to add an extra layer of security to your account.'
+              >
+                Activa la
+                <a
+                  style="text-decoration: none"
+                  href="https://docs.github.com/es/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication"
+                  ><strong>autenticación de dos factores</strong></a
+                >
+                para añadir una capa extra de seguridad a tu cuenta.
+              </p>
+              <figure class="img-figure" style="margin-top: 12px">
+                <img
+                  src="./assets/img/PNG/capturasRegistro/4.png"
+                  alt="Ajustes de seguridad"
+                  loading="lazy"
+                />
+                <figcaption
+                  data-es="Acceder a ajustes de seguridad"
+                  data-en="Access security settings"
+                >
+                  Acceder a ajustes de seguridad
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="next-step">
+              <div class="next-step-header">
+                <span class="next-step-num">03</span>
+                <span class="next-step-icon">📱</span>
+                <h3
+                  class="next-step-title"
+                  data-es="Configura la app autenticadora"
+                  data-en="Set up authenticator app"
+                >
+                  Configura la app autenticadora
+                </h3>
+              </div>
+              <p
+                class="next-step-desc"
+                data-es="Descarga Google Authenticator o Authy en tu móvil y escanea el código QR que te ofrece GitHub."
+                data-en="Download Google Authenticator or Authy on your phone and scan the QR code GitHub provides."
+              >
+                Descarga Google Authenticator o Authy en tu móvil y escanea el
+                código QR que te ofrece GitHub.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  gap: 12px;
+                  margin-top: 12px;
+                  flex-wrap: wrap;
+                  align-items: flex-start;
+                "
+              >
+                <figure class="img-figure" style="flex: 1; min-width: 140px">
+                  <img
+                    src="./assets/img/PNG/capturasRegistro/6.png"
+                    alt="Activar 2FA"
+                    loading="lazy"
+                  />
+                  <figcaption
+                    data-es="Activar 2FA en ajustes"
+                    data-en="Enable 2FA in settings"
+                  >
+                    Activar 2FA en ajustes
+                  </figcaption>
+                </figure>
+                <figure class="img-figure" style="flex: 0 0 auto; width: 130px">
+                  <img
+                    src="./assets/img/PNG/capturasRegistro/5.png"
+                    alt="App autenticadora en móvil"
+                    loading="lazy"
+                  />
+                  <figcaption data-es="App en móvil" data-en="App on mobile">
+                    App en móvil
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="next-step">
+              <div class="next-step-header">
+                <span class="next-step-num">04</span>
+                <span class="next-step-icon">✅</span>
+                <h3
+                  class="next-step-title"
+                  data-es="Confirma y guarda los códigos"
+                  data-en="Confirm and save backup codes"
+                >
+                  Confirma y guarda los códigos
+                </h3>
+              </div>
+              <p
+                class="next-step-desc"
+                data-es="Introduce el código generado por la app para confirmar la configuración. Guarda los códigos de recuperación en un lugar seguro."
+                data-en="Enter the code generated by the app to confirm the setup. Save the recovery codes somewhere safe."
+              >
+                Introduce el código generado por la app para confirmar la
+                configuración. Guarda los códigos de recuperación en un lugar
+                seguro.
+              </p>
+              <figure class="img-figure" style="margin-top: 12px">
+                <img
+                  src="./assets/img/PNG/capturasRegistro/7.png"
+                  alt="Confirmar 2FA"
+                  loading="lazy"
+                />
+                <figcaption
+                  data-es="Confirmar configuración 2FA"
+                  data-en="Confirm 2FA setup"
+                >
+                  Confirmar configuración 2FA
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMANDOS -->
+      <div id="comandos" class="section">
+        <div class="card">
+          <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px">
+            Estos son algunos de los comandos básicos de git y los que
+            posiblemente mas utilices, espero que te ayuden :D <br />Haz clic en
+            cualquier comando para copiarlo al portapapeles.
+          </p>
+
+          <div class="cmd-group">
+            <p class="cmd-group-title">1 · Configuración inicial</p>
+            <p>
+              Una vez que has instalado Git, es recomendable configurar tu
+              nombre de usuario y correo electrónico:
+            </p>
+            <p>⚠️ Sin esto no te permitirá hacer commits.</p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">
+                  git config --global user.name "Tu Nombre"
+                </div>
+                <div class="cmd-desc">Configura tu nombre de usuario</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">
+                  git config --global user.email "tu@email.com"
+                </div>
+                <div class="cmd-desc">Configura tu correo electrónico</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <p class="cmd-group-title">2 · Iniciar un proyecto</p>
+            <p>
+              Estos son los cambios que necesitas hacer para iniciar un proyecto
+              con Git:
+            </p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git init</div>
+                <div class="cmd-desc">
+                  Crea un repositorio nuevo en la carpeta actual
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">
+                  git remote add &lt;nombre&gt; &lt;url&gt;
+                </div>
+                <div class="cmd-desc">
+                  Crea una nueva conexión a un repositorio remoto.
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git clone &lt;url&gt;</div>
+                <div class="cmd-desc">Descarga un repositorio existente</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git pull &lt;url&gt;</div>
+                <div class="cmd-desc">
+                  Descarga los cambios del repositorio remoto
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <p class="cmd-group-title">3 · El ciclo diario</p>
+            <p>Son los comandos que usas diariamente:</p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git status</div>
+                <div class="cmd-desc">Muestra qué ha cambiado</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git add .</div>
+                <div class="cmd-desc">
+                  Prepara todos los cambios para el commit
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git commit -m "mensaje claro"</div>
+                <div class="cmd-desc">Guarda los cambios en el historial</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git push origin main</div>
+                <div class="cmd-desc">Sube los cambios a GitHub</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git pull origin main</div>
+                <div class="cmd-desc">Baja los cambios del remoto</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <p class="cmd-group-title">4 · Ramas</p>
+            <p>Estos son los comandos que usas para trabajar con ramas:</p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git switch -c mi-rama</div>
+                <div class="cmd-desc">Crea y cambia a una rama nueva</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git switch main</div>
+                <div class="cmd-desc">Vuelve a la rama principal</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git merge mi-rama</div>
+                <div class="cmd-desc">Une la rama con la actual</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <p>
+              ⚠️ Un merge puede causar conflictos si los cambios en ambas ramas
+              son incompatibles. Cuando haces un merge, no hay forma de
+              deshacerlo una vez que se resuelven los conflictos.
+            </p>
+          </div>
+
+          <div class="cmd-group">
+            <p class="cmd-group-title">5 · Si algo va mal</p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git log --oneline</div>
+                <div class="cmd-desc">Ver historial de commits resumido</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git restore &lt;archivo&gt;</div>
+                <div class="cmd-desc">Descartar cambios en un archivo</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git restore --staged &lt;archivo&gt;</div>
+                <div class="cmd-desc">Quitar un archivo del staging</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+
+          <p>
+            Git guarda tu trabajo en dos pasos: preparar y guardar. Cuando
+            cambias archivos, Git ve esos cambios, pero no los guarda
+            directamente. Primero eliges qué cambios quieres incluir (eso es
+            staging o preparar). Luego los guardas con un commit. Es como hacer
+            una foto: primero eliges qué quieres que salga en la foto (preparar)
+            y luego haces la foto (guardar).
+          </p>
+        </div>
+      </div>
+
+      <div id="miniguia" class="section">
+        <div class="card">
+          <h2
+            data-es="Miniguía: ¿Dónde vive tu código?"
+            data-en="Mini-guide: Where does your code live?"
+          >
+            Miniguía: ¿Dónde vive tu código?
+          </h2>
+          <p style="margin-top: 8px">
+            Para trabajar con GitHub, imagina que tienes dos "copias" de tu
+            proyecto:
+          </p>
+          <ul style="margin-top: 10px; padding-left: 0">
+            <li style="list-style: none; margin-bottom: 6px">
+              <strong>Repositorio Local:</strong> Es la carpeta en tu ordenador.
+              Es donde editas tus archivos día a día. GitHub no ve esto hasta
+              que tú lo envías.
+            </li>
+            <li style="list-style: none">
+              <strong>Repositorio Remoto:</strong> Es la copia en los servidores
+              de GitHub. Es tu respaldo en la nube y el lugar donde los demás
+              ven tu código.
+            </li>
+          </ul>
+          <h3 style="margin-top: 16px; margin-bottom: 8px; font-size: 14px">
+            ¿Cómo se conectan?
+          </h3>
+          <p>
+            Tú trabajas en tu <strong>Local</strong>. Cuando quieres que GitHub
+            se entere, haces un <em>commit</em> (guardar foto instantánea) y
+            luego un <em>push</em> (enviar a la nube).
+          </p>
+          <div class="container">
             <div class="card">
-                <h2 data-es="3. Alternativa: Línea de comandos (Terminal)" data-en="3. Alternative: Command Line (Terminal)">3. Alternativa: Línea de comandos (Terminal)</h2>
-                <p>Para usar la terminal en VS Code, presiona <strong>Ctrl + Ñ</strong> o ve al menú <strong>Terminal → New Terminal</strong>. Una vez abierta, ejecuta estos comandos en orden:</p>
-                <pre><code>git add .                    # Prepara todos los archivos para subir
+              <div class="icon yellow">✏️</div>
+              <div class="content">
+                <span id="step1">1</span>
+                <h3>Escribes tu código</h3>
+                <p>Trabajas en tu computadora, creas o modificas archivos</p>
+                <p
+                  style="
+                    border-radius: 7px;
+                    background: rgba(27, 27, 27, 0.986);
+                    color: whitesmoke;
+                    padding: 10px;
+                    text-align: center;
+                    font-family: monospace;
+                    font-size: 13px;
+                  "
+                >
+                  git add .
+                </p>
+              </div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="card">
+              <div class="icon green">💾</div>
+              <div class="content">
+                <span id="step2">2</span>
+                <h3>Guardas los cambios</h3>
+                <p>Haces un "commit" — es como tomar una foto de tu proyecto</p>
+                <p
+                  style="
+                    border-radius: 7px;
+                    background: rgba(27, 27, 27, 0.986);
+                    color: whitesmoke;
+                    padding: 10px;
+                    text-align: center;
+                    font-family: monospace;
+                    font-size: 13px;
+                  "
+                >
+                  git commit -m "tu mensaje aquí"
+                </p>
+                <div class="badge green-badge">
+                  💾 Se guarda en tu computadora
+                </div>
+              </div>
+            </div>
+            <div class="arrow">↓</div>
+            <div class="card">
+              <div class="icon blue">☁️</div>
+              <div class="content">
+                <span id="step3">3</span>
+                <h3>Subes a la nube</h3>
+                <p>
+                  Haces un "push" — envías todo a GitHub para que otros lo vean
+                </p>
+                <p
+                  style="
+                    border-radius: 7px;
+                    background: rgba(27, 27, 27, 0.986);
+                    color: whitesmoke;
+                    padding: 10px;
+                    text-align: center;
+                    font-family: monospace;
+                    font-size: 13px;
+                  "
+                >
+                  git push origin main
+                </p>
+                <div class="badge blue-badge">☁️ Ahora está en internet</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2
+            data-es="1. Crear el repositorio en GitHub"
+            data-en="1. Create the repository on GitHub"
+          >
+            1. Crear el repositorio en GitHub
+          </h2>
+          <ol>
+            <li>Inicia sesión en <strong>GitHub.com</strong>.</li>
+            <li>
+              Haz clic en el icono <strong>"+"</strong> (esquina superior
+              derecha) → <strong>"New repository"</strong>.
+            </li>
+          </ol>
+          <figure class="img-figure" style="margin: 14px 0">
+            <img
+              src="./assets/img/PNG/crearRepositorioEnGithub/1.png"
+              alt="Botón nuevo repositorio"
+              loading="lazy"
+            />
+            <figcaption>
+              Acceder a la creación de un nuevo repositorio
+            </figcaption>
+          </figure>
+          <ol start="3">
+            <li>
+              Ponle un nombre y elige si será <strong>Public</strong> o
+              <strong>Private</strong>.
+            </li>
+            <li>
+              Marca <strong>"Add a README file"</strong> (fundamental para
+              documentar el proyecto).
+            </li>
+            <li>Haz clic en <strong>"Create repository"</strong>.</li>
+          </ol>
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/crearRepositorioEnGithub/CrearRepositorio.png"
+              alt="Formulario creación de repositorio"
+              loading="lazy"
+            />
+            <figcaption>
+              Formulario para configurar el nuevo repositorio
+            </figcaption>
+          </figure>
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/crearRepositorioEnGithub/RepositorioCreado.png"
+              alt="Repositorio creado"
+              loading="lazy"
+            />
+            <figcaption>Repositorio creado correctamente en GitHub</figcaption>
+          </figure>
+        </div>
+
+        <div class="card">
+          <h2
+            data-es="2. Trabajar profesionalmente (VS Code + GitHub)"
+            data-en="2. Work professionally (VS Code + GitHub)"
+          >
+            2. Trabajar profesionalmente (VS Code + GitHub)
+          </h2>
+          <p><strong>Vincular GitHub con VS Code:</strong></p>
+          <ul style="margin-top: 8px; padding-left: 0">
+            <li style="list-style: none; margin-bottom: 6px">
+              Instala la extensión
+              <strong>"GitHub Pull Requests and Issues"</strong>.
+            </li>
+            <li style="list-style: none">
+              Haz clic en el icono de usuario (abajo a la izquierda) →
+              <strong>"Sign in to GitHub"</strong> y autoriza la conexión.
+            </li>
+          </ul>
+          <p style="margin-top: 14px">
+            <strong>Hacer cambios (Flujo diario):</strong>
+          </p>
+          <ol style="margin-top: 8px; padding-left: 18px">
+            <li>Edita tus archivos y guárdalos.</li>
+            <li>
+              Ve a la pestaña de <strong>Source Control</strong> (icono de nodos
+              a la izquierda).
+            </li>
+            <li>
+              Haz clic en el <strong>"+"</strong> para preparar los cambios
+              (Stage).
+            </li>
+            <li>
+              Escribe un mensaje de commit y presiona el botón
+              <strong>Commit</strong>.
+            </li>
+            <li>
+              Haz clic en <strong>Sync Changes</strong> (o Push) para enviar
+              todo a GitHub.
+            </li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h2
+            data-es="3. Alternativa: Línea de comandos (Terminal)"
+            data-en="3. Alternative: Command Line (Terminal)"
+          >
+            3. Alternativa: Línea de comandos (Terminal)
+          </h2>
+          <p>
+            Para usar la terminal en VS Code, presiona
+            <strong>Ctrl + Ñ</strong> o ve al menú
+            <strong>Terminal → New Terminal</strong>. Una vez abierta, ejecuta
+            estos comandos en orden:
+          </p>
+          <pre><code>git add .                    # Prepara todos los archivos para subir
 git commit -m "Tu mensaje"   # Crea el punto de guardado (commit)
 git push origin main         # Sube los cambios al repositorio remoto</code></pre>
-                <p style="margin-top: 12px;"><em>Nota: Asegúrate de estar dentro de la carpeta de tu proyecto en la terminal antes de escribir estos comandos.</em></p>
-                <figure class="img-figure" style="margin-top: 14px;">
-                </figure>   
-            </div>
-
-            <div class="card">
-                <h2 data-es="4. Como hacer un commit profesional" data-en="4. How to make a professional commit">4. Como hacer un commit profesional</h2>
-                <p><b>Un commit profesional</b> es claro, conciso y descriptivo. Sigue esta estructura:</p>
-                <p>
-                <p class="commit-section-title">Estructura de un commit</p>
-                <div class="commit-structure">git commit -m "tipo: descripción breve"</div>
-
-                <p class="commit-section-title">Tipos</p>
-                <table class="commit-table">
-                    <tr><td><span class="ct-badge">feat</span></td><td>Nueva funcionalidad</td></tr>
-                    <tr><td><span class="ct-badge">fix</span></td><td>Corrección de bugs</td></tr>
-                    <tr><td><span class="ct-badge">perf</span></td><td>Mejora de rendimiento</td></tr>
-                    <tr><td><span class="ct-badge">refactor</span></td><td>Cambio interno sin afectar comportamiento</td></tr>
-                    <tr><td><span class="ct-badge">style</span></td><td>Formato (espacios, tabs, etc.)</td></tr>
-                    <tr><td><span class="ct-badge">docs</span></td><td>Documentación</td></tr>
-                    <tr><td><span class="ct-badge">test</span></td><td>Tests</td></tr>
-                    <tr><td><span class="ct-badge">build</span></td><td>Build, dependencias, scripts</td></tr>
-                    <tr><td><span class="ct-badge">ci</span></td><td>Integración continua</td></tr>
-                </table>
-
-                <p class="commit-section-title">Reglas</p>
-                <ul class="commit-rules">
-                    <li>Imperativo → "add", "fix", "update"</li>
-                    <li>Máximo ~50 caracteres</li>
-                    <li>Sin punto final</li>
-                    <li>1 commit = 1 cambio</li>
-                    <li>Mensaje claro: qué y por qué</li>
-                </ul>
-                <p style="margin-top: 12px;"><em>Nota: Cuanto más claro sea el mensaje, mejor será para otros desarrolladores. Asegurate de dejar claro que archivo estás modificando.</em></p>
-                <figure class="img-figure" style="margin-top: 14px;">
-                </figure>   
-            </div>
+          <p style="margin-top: 12px">
+            <em
+              >Nota: Asegúrate de estar dentro de la carpeta de tu proyecto en
+              la terminal antes de escribir estos comandos.</em
+            >
+          </p>
+          <figure class="img-figure" style="margin-top: 14px"></figure>
         </div>
 
+        <div class="card">
+          <h2
+            data-es="4. Como hacer un commit profesional"
+            data-en="4. How to make a professional commit"
+          >
+            4. Como hacer un commit profesional
+          </h2>
+          <p>
+            <b>Un commit profesional</b> es claro, conciso y descriptivo. Sigue
+            esta estructura:
+          </p>
+          <p></p>
+          <p class="commit-section-title">Estructura de un commit</p>
+          <div class="commit-structure">
+            git commit -m "tipo: descripción breve"
+          </div>
 
-        <!-- RAMAS -->
-        <div id="ramas" class="section">
-            <div class="card">
-                <h2 data-es="¿Qué es una rama (branch)?" data-en="What is a branch?">¿Qué es una rama (branch)?</h2>
-                <div class="analogy">
-                    <p>"Una rama es como una <strong>copia paralela</strong> de tu proyecto donde puedes experimentar sin miedo a romper nada."</p>
-                    <p style="margin-top:6px;">"La rama <strong>main</strong> es el tronco del árbol. El resto son ramas que crecen a los lados."</p>
-                </div>
-                <p style="margin-top:12px;">Cuando creas una nueva rama, Git hace una copia del estado actual de tu código. Puedes modificarla libremente y, si todo va bien, unirla de nuevo a <code>main</code>. Si algo sale mal, simplemente la eliminas.</p>
+          <p class="commit-section-title">Tipos</p>
+          <table class="commit-table">
+            <tr>
+              <td><span class="ct-badge">feat</span></td>
+              <td>Nueva funcionalidad</td>
+            </tr>
+            <tr>
+              <td><span class="ct-badge">fix</span></td>
+              <td>Corrección de bugs</td>
+            </tr>
+            <tr>
+              <td><span class="ct-badge">perf</span></td>
+              <td>Mejora de rendimiento</td>
+            </tr>
+            <tr>
+              <td><span class="ct-badge">refactor</span></td>
+              <td>Cambio interno sin afectar comportamiento</td>
+            </tr>
+            <tr>
+              <td><span class="ct-badge">style</span></td>
+              <td>Formato (espacios, tabs, etc.)</td>
+            </tr>
+            <tr>
+              <td><span class="ct-badge">docs</span></td>
+              <td>Documentación</td>
+            </tr>
+            <tr>
+              <td><span class="ct-badge">test</span></td>
+              <td>Tests</td>
+            </tr>
+            <tr>
+              <td><span class="ct-badge">build</span></td>
+              <td>Build, dependencias, scripts</td>
+            </tr>
+            <tr>
+              <td><span class="ct-badge">ci</span></td>
+              <td>Integración continua</td>
+            </tr>
+          </table>
+
+          <p class="commit-section-title">Reglas</p>
+          <ul class="commit-rules">
+            <li>Imperativo → "add", "fix", "update"</li>
+            <li>Máximo ~50 caracteres</li>
+            <li>Sin punto final</li>
+            <li>1 commit = 1 cambio</li>
+            <li>Mensaje claro: qué y por qué</li>
+          </ul>
+          <p style="margin-top: 12px">
+            <em
+              >Nota: Cuanto más claro sea el mensaje, mejor será para otros
+              desarrolladores. Asegurate de dejar claro que archivo estás
+              modificando.</em
+            >
+          </p>
+          <figure class="img-figure" style="margin-top: 14px"></figure>
+        </div>
+      </div>
+
+      <!-- RAMAS -->
+      <div id="ramas" class="section">
+        <div class="card">
+          <h2 data-es="¿Qué es una rama (branch)?" data-en="What is a branch?">
+            ¿Qué es una rama (branch)?
+          </h2>
+          <div class="analogy">
+            <p>
+              "Una rama es como una <strong>copia paralela</strong> de tu
+              proyecto donde puedes experimentar sin miedo a romper nada."
+            </p>
+            <p style="margin-top: 6px">
+              "La rama <strong>main</strong> es el tronco del árbol. El resto
+              son ramas que crecen a los lados."
+            </p>
+          </div>
+          <p style="margin-top: 12px">
+            Cuando creas una nueva rama, Git hace una copia del estado actual de
+            tu código. Puedes modificarla libremente y, si todo va bien, unirla
+            de nuevo a <code>main</code>. Si algo sale mal, simplemente la
+            eliminas.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 data-es="¿Por qué usar ramas?" data-en="Why use branches?">
+            ¿Por qué usar ramas?
+          </h2>
+          <div class="compare" style="margin-bottom: 0">
+            <div class="cbox">
+              <h3>❌ Sin ramas</h3>
+              <ul>
+                <li>Editas directamente en main</li>
+                <li>Un error rompe todo el proyecto</li>
+                <li>Difícil trabajar en equipo</li>
+                <li>No puedes probar cosas nuevas con seguridad</li>
+              </ul>
             </div>
-
-            <div class="card">
-                <h2 data-es="¿Por qué usar ramas?" data-en="Why use branches?">¿Por qué usar ramas?</h2>
-                <div class="compare" style="margin-bottom: 0;">
-                    <div class="cbox">
-                        <h3>❌ Sin ramas</h3>
-                        <ul>
-                            <li>Editas directamente en main</li>
-                            <li>Un error rompe todo el proyecto</li>
-                            <li>Difícil trabajar en equipo</li>
-                            <li>No puedes probar cosas nuevas con seguridad</li>
-                        </ul>
-                    </div>
-                    <div class="cbox">
-                        <h3>✅ Con ramas</h3>
-                        <ul>
-                            <li>Cada tarea tiene su propio espacio</li>
-                            <li>main siempre queda estable</li>
-                            <li>Varios desarrolladores trabajan en paralelo</li>
-                            <li>Experimentas sin miedo</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="cbox">
+              <h3>✅ Con ramas</h3>
+              <ul>
+                <li>Cada tarea tiene su propio espacio</li>
+                <li>main siempre queda estable</li>
+                <li>Varios desarrolladores trabajan en paralelo</li>
+                <li>Experimentas sin miedo</li>
+              </ul>
             </div>
+          </div>
+        </div>
 
-            <div class="card">
-                <h2 data-es="Visualización: cómo funcionan las ramas" data-en="Visualization: how branches work">Visualización: cómo funcionan las ramas</h2>
-                <p style="font-size:13px; color:var(--text3); margin-bottom:16px;">Este diagrama muestra cómo una rama se separa de main, recibe commits propios, y luego se fusiona.</p>
-                <div class="branch-diagram">
-                    <svg viewBox="0 0 680 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;margin:0 auto;">
-                        <!-- Main line -->
-                        <line x1="40" y1="80" x2="640" y2="80" stroke="#0969da" stroke-width="2.5" stroke-dasharray="0"/>
-                        <!-- Feature branch arc -->
-                        <path d="M 200 80 Q 260 30 320 30 L 460 30 Q 520 30 540 80" fill="none" stroke="#16a34a" stroke-width="2.5"/>
-                        <!-- Commits on main -->
-                        <circle cx="80"  cy="80" r="10" fill="#0969da"/>
-                        <circle cx="200" cy="80" r="10" fill="#0969da"/>
-                        <circle cx="540" cy="80" r="10" fill="#0969da"/>
-                        <circle cx="620" cy="80" r="10" fill="#0969da"/>
-                        <!-- Commits on feature -->
-                        <circle cx="320" cy="30" r="10" fill="#16a34a"/>
-                        <circle cx="400" cy="30" r="10" fill="#16a34a"/>
-                        <circle cx="460" cy="30" r="10" fill="#16a34a"/>
-                        <!-- Labels on main commits -->
-                        <text x="80"  y="105" text-anchor="middle" font-size="10" fill="#57606a">commit A</text>
-                        <text x="200" y="105" text-anchor="middle" font-size="10" fill="#57606a">branch!</text>
-                        <text x="540" y="105" text-anchor="middle" font-size="10" fill="#57606a">merge</text>
-                        <text x="620" y="105" text-anchor="middle" font-size="10" fill="#57606a">commit E</text>
-                        <!-- Labels on feature commits -->
-                        <text x="320" y="18" text-anchor="middle" font-size="10" fill="#16a34a">commit B</text>
-                        <text x="400" y="18" text-anchor="middle" font-size="10" fill="#16a34a">commit C</text>
-                        <text x="460" y="18" text-anchor="middle" font-size="10" fill="#16a34a">commit D</text>
-                        <!-- Branch labels -->
-                        <rect x="10" y="70" width="40" height="18" rx="4" fill="#ddf4ff"/>
-                        <text x="30" y="83" text-anchor="middle" font-size="10" font-weight="600" fill="#0550ae">main</text>
-                        <rect x="280" y="4" width="82" height="18" rx="4" fill="#dafbe1"/>
-                        <text x="321" y="17" text-anchor="middle" font-size="10" font-weight="600" fill="#1a7f37">feature/nueva</text>
-                    </svg>
-                </div>
+        <div class="card">
+          <h2
+            data-es="Visualización: cómo funcionan las ramas"
+            data-en="Visualization: how branches work"
+          >
+            Visualización: cómo funcionan las ramas
+          </h2>
+          <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px">
+            Este diagrama muestra cómo una rama se separa de main, recibe
+            commits propios, y luego se fusiona.
+          </p>
+          <div class="branch-diagram">
+            <svg
+              viewBox="0 0 680 160"
+              xmlns="http://www.w3.org/2000/svg"
+              style="
+                width: 100%;
+                max-width: 680px;
+                display: block;
+                margin: 0 auto;
+              "
+            >
+              <!-- Main line -->
+              <line
+                x1="40"
+                y1="80"
+                x2="640"
+                y2="80"
+                stroke="#0969da"
+                stroke-width="2.5"
+                stroke-dasharray="0"
+              />
+              <!-- Feature branch arc -->
+              <path
+                d="M 200 80 Q 260 30 320 30 L 460 30 Q 520 30 540 80"
+                fill="none"
+                stroke="#16a34a"
+                stroke-width="2.5"
+              />
+              <!-- Commits on main -->
+              <circle cx="80" cy="80" r="10" fill="#0969da" />
+              <circle cx="200" cy="80" r="10" fill="#0969da" />
+              <circle cx="540" cy="80" r="10" fill="#0969da" />
+              <circle cx="620" cy="80" r="10" fill="#0969da" />
+              <!-- Commits on feature -->
+              <circle cx="320" cy="30" r="10" fill="#16a34a" />
+              <circle cx="400" cy="30" r="10" fill="#16a34a" />
+              <circle cx="460" cy="30" r="10" fill="#16a34a" />
+              <!-- Labels on main commits -->
+              <text
+                x="80"
+                y="105"
+                text-anchor="middle"
+                font-size="10"
+                fill="#57606a"
+              >
+                commit A
+              </text>
+              <text
+                x="200"
+                y="105"
+                text-anchor="middle"
+                font-size="10"
+                fill="#57606a"
+              >
+                branch!
+              </text>
+              <text
+                x="540"
+                y="105"
+                text-anchor="middle"
+                font-size="10"
+                fill="#57606a"
+              >
+                merge
+              </text>
+              <text
+                x="620"
+                y="105"
+                text-anchor="middle"
+                font-size="10"
+                fill="#57606a"
+              >
+                commit E
+              </text>
+              <!-- Labels on feature commits -->
+              <text
+                x="320"
+                y="18"
+                text-anchor="middle"
+                font-size="10"
+                fill="#16a34a"
+              >
+                commit B
+              </text>
+              <text
+                x="400"
+                y="18"
+                text-anchor="middle"
+                font-size="10"
+                fill="#16a34a"
+              >
+                commit C
+              </text>
+              <text
+                x="460"
+                y="18"
+                text-anchor="middle"
+                font-size="10"
+                fill="#16a34a"
+              >
+                commit D
+              </text>
+              <!-- Branch labels -->
+              <rect
+                x="10"
+                y="70"
+                width="40"
+                height="18"
+                rx="4"
+                fill="#ddf4ff"
+              />
+              <text
+                x="30"
+                y="83"
+                text-anchor="middle"
+                font-size="10"
+                font-weight="600"
+                fill="#0550ae"
+              >
+                main
+              </text>
+              <rect
+                x="280"
+                y="4"
+                width="82"
+                height="18"
+                rx="4"
+                fill="#dafbe1"
+              />
+              <text
+                x="321"
+                y="17"
+                text-anchor="middle"
+                font-size="10"
+                font-weight="600"
+                fill="#1a7f37"
+              >
+                feature/nueva
+              </text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 data-es="Flujo de trabajo con ramas" data-en="Branch workflow">
+            Flujo de trabajo con ramas
+          </h2>
+          <div class="container" style="margin-top: 8px">
+            <div class="card" class="step-card-inner">
+              <div class="icon" style="background: #8b5cf6">🌿</div>
+              <div class="content">
+                <span
+                  style="
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 22px;
+                    height: 22px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    border-radius: 50%;
+                    margin-bottom: 4px;
+                    background: #8b5cf6;
+                    color: white;
+                  "
+                  >1</span
+                >
+                <h3>Crea la rama</h3>
+                <p>Parte siempre desde main actualizado</p>
+                <p
+                  style="
+                    border-radius: 7px;
+                    background: rgba(27, 27, 27, 0.986);
+                    color: whitesmoke;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 6px;
+                  "
+                >
+                  git switch -c feature/mi-nueva-funcionalidad
+                </p>
+              </div>
             </div>
-
-            <div class="card">
-                <h2 data-es="Flujo de trabajo con ramas" data-en="Branch workflow">Flujo de trabajo con ramas</h2>
-                <div class="container" style="margin-top:8px;">
-                    <div class="card" class="step-card-inner">
-                        <div class="icon" style="background:#8b5cf6;">🌿</div>
-                        <div class="content">
-                            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;font-size:12px;font-weight:600;border-radius:50%;margin-bottom:4px;background:#8b5cf6;color:white;">1</span>
-                            <h3>Crea la rama</h3>
-                            <p>Parte siempre desde main actualizado</p>
-                            <p style="border-radius:7px;background:rgba(27,27,27,0.986);color:whitesmoke;padding:10px;text-align:center;margin-top:6px;">git switch -c feature/mi-nueva-funcionalidad</p>
-                        </div>
-                    </div>
-                    <div class="arrow">↓</div>
-                    <div class="card" class="step-card-inner">
-                        <div class="icon yellow">✏️</div>
-                        <div class="content">
-                            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;font-size:12px;font-weight:600;border-radius:50%;margin-bottom:4px;background:#f4b400;color:white;">2</span>
-                            <h3>Trabaja y haz commits</h3>
-                            <p>Edita archivos y guarda tus avances con commits descriptivos</p>
-                            <p style="border-radius:7px;background:rgba(27,27,27,0.986);color:whitesmoke;padding:10px;text-align:center;margin-top:6px;">git add . &amp;&amp; git commit -m "feat: añadir login"</p>
-                        </div>
-                    </div>
-                    <div class="arrow">↓</div>
-                    <div class="card" class="step-card-inner">
-                        <div class="icon blue">☁️</div>
-                        <div class="content">
-                            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;font-size:12px;font-weight:600;border-radius:50%;margin-bottom:4px;background:#3b82f6;color:white;">3</span>
-                            <h3>Sube la rama a GitHub</h3>
-                            <p>Publica tu rama para que otros la vean o para hacer un Pull Request</p>
-                            <p style="border-radius:7px;background:rgba(27,27,27,0.986);color:whitesmoke;padding:10px;text-align:center;margin-top:6px;">git push origin feature/mi-nueva-funcionalidad</p>
-                        </div>
-                    </div>
-                    <div class="arrow">↓</div>
-                    <div class="card" class="step-card-inner">
-                        <div class="icon green">🔀</div>
-                        <div class="content">
-                            <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;font-size:12px;font-weight:600;border-radius:50%;margin-bottom:4px;background:#16a34a;color:white;">4</span>
-                            <h3>Fusiona con main (merge)</h3>
-                            <p>Vuelve a main y une tu rama. ¡Tu código ya está integrado!</p>
-                            <p style="border-radius:7px;background:rgba(27,27,27,0.986);color:whitesmoke;padding:10px;text-align:center;margin-top:6px;">git switch main &amp;&amp; git merge feature/mi-nueva-funcionalidad</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="arrow">↓</div>
+            <div class="card" class="step-card-inner">
+              <div class="icon yellow">✏️</div>
+              <div class="content">
+                <span
+                  style="
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 22px;
+                    height: 22px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    border-radius: 50%;
+                    margin-bottom: 4px;
+                    background: #f4b400;
+                    color: white;
+                  "
+                  >2</span
+                >
+                <h3>Trabaja y haz commits</h3>
+                <p>
+                  Edita archivos y guarda tus avances con commits descriptivos
+                </p>
+                <p
+                  style="
+                    border-radius: 7px;
+                    background: rgba(27, 27, 27, 0.986);
+                    color: whitesmoke;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 6px;
+                  "
+                >
+                  git add . &amp;&amp; git commit -m "feat: añadir login"
+                </p>
+              </div>
             </div>
-
-            <div class="card">
-                <h2 data-es="Comandos esenciales de ramas" data-en="Essential branch commands">Comandos esenciales de ramas</h2>
-                <div class="cmd-group">
-                    <p class="cmd-group-title">Crear y navegar</p>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git switch -c nombre-rama</div>
-                            <div class="cmd-desc">Crea una rama nueva y cambia a ella directamente</div>
-                        </div>
-                        <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git switch nombre-rama</div>
-                            <div class="cmd-desc">Cambia a una rama ya existente</div>
-                        </div>
-                        <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git branch</div>
-                            <div class="cmd-desc">Lista todas las ramas locales (la activa aparece con *)</div>
-                        </div>
-                        <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git branch -a</div>
-                            <div class="cmd-desc">Lista ramas locales Y remotas</div>
-                        </div>
-                        <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                </div>
-                <div class="cmd-group">
-                    <p class="cmd-group-title">Fusionar y eliminar</p>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git merge nombre-rama</div>
-                            <div class="cmd-desc">Fusiona la rama indicada en la rama actual</div>
-                        </div>
-                        <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="warn-box">
-                        <span class="warn-icon">⚠️</span>
-                        <div class="warn-body">
-                            <p class="warn-title">Consecuencias de hacer un merge</p>
-                            <ul>
-                                <li>Los commits de la rama fusionada quedan integrados permanentemente en la rama destino.</li>
-                                <li>Puede generar <strong>conflictos de merge</strong> si ambas ramas modificaron las mismas líneas. Tendrás que resolverlos manualmente antes de continuar.</li>
-                                <li>Una vez resueltos los conflictos y confirmado el merge, <strong>no se puede deshacer fácilmente</strong> (requiere <code>git revert</code> o <code>git reset</code> con cuidado).</li>
-                                <li>En proyectos compartidos, un merge directo sin Pull Request puede saltarse la revisión del equipo.</li>
-                                <li>Asegúrate de estar en la rama correcta antes de ejecutarlo (<code>git branch</code> para comprobarlo).</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git branch -d nombre-rama</div>
-                            <div class="cmd-desc">Elimina una rama local (solo si ya fue fusionada)</div>
-                        </div>
-                        <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="warn-box danger">
-                        <span class="warn-icon">🚨</span>
-                        <div class="warn-body">
-                            <p class="warn-title">Consecuencias de eliminar una rama local</p>
-                            <ul>
-                                <li><code>git branch -d</code> solo borra la rama si ya fue fusionada, lo cual es una protección. Pero <code>git branch -D</code> (mayúscula) la elimina <strong>aunque tenga commits sin fusionar</strong>, perdiendo esos cambios.</li>
-                                <li>Una vez eliminada la rama local sin haber hecho push, <strong>los commits exclusivos de esa rama se pierden</strong>.</li>
-                                <li>Si otro compañero tenía esa rama como referencia, deberá actualizar su repositorio local.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="cmd" onclick="copyCmd(this)">
-                        <div class="cmd-text">
-                            <div class="cmd-code">git push origin --delete nombre-rama</div>
-                            <div class="cmd-desc">Elimina la rama también del repositorio remoto</div>
-                        </div>
-                        <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement)">Copiar</button>
-                    </div>
-                    <div class="warn-box danger">
-                        <span class="warn-icon">🚨</span>
-                        <div class="warn-body">
-                            <p class="warn-title">Consecuencias de eliminar una rama remota</p>
-                            <ul>
-                                <li>La rama desaparece del repositorio remoto para <strong>todos los colaboradores</strong> del proyecto.</li>
-                                <li>Cualquier Pull Request abierto basado en esa rama quedará automáticamente <strong>cerrado o huérfano</strong>.</li>
-                                <li>Los compañeros que tengan la rama en local recibirán errores al hacer <code>git fetch</code> o <code>git pull</code> si intentan actualizarla.</li>
-                                <li>La acción <strong>no tiene confirmación previa</strong>: se ejecuta de inmediato. Confirma bien el nombre antes de lanzar el comando.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="arrow">↓</div>
+            <div class="card" class="step-card-inner">
+              <div class="icon blue">☁️</div>
+              <div class="content">
+                <span
+                  style="
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 22px;
+                    height: 22px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    border-radius: 50%;
+                    margin-bottom: 4px;
+                    background: #3b82f6;
+                    color: white;
+                  "
+                  >3</span
+                >
+                <h3>Sube la rama a GitHub</h3>
+                <p>
+                  Publica tu rama para que otros la vean o para hacer un Pull
+                  Request
+                </p>
+                <p
+                  style="
+                    border-radius: 7px;
+                    background: rgba(27, 27, 27, 0.986);
+                    color: whitesmoke;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 6px;
+                  "
+                >
+                  git push origin feature/mi-nueva-funcionalidad
+                </p>
+              </div>
             </div>
-
-            <div class="card">
-                <h2 data-es="Pull Request: la pieza clave en equipo" data-en="Pull Request: the key piece for teamwork">Pull Request: la pieza clave en equipo</h2>
-                <p>Cuando trabajas en GitHub, en lugar de hacer <code>merge</code> directamente, lo normal es abrir un <strong>Pull Request (PR)</strong>. Es una solicitud para que tus compañeros revisen tu código antes de integrarlo en <code>main</code>.</p>
-                <ol class="steps" style="margin-top:14px;">
-                    <li>Sube tu rama con <code>git push origin nombre-rama</code></li>
-                    <li>En GitHub, aparece un botón <strong>"Compare &amp; pull request"</strong> — haz clic</li>
-                    <li>Escribe una descripción de qué cambios hiciste y por qué</li>
-                    <li>Tus compañeros revisan, comentan y aprueban (o piden cambios)</li>
-                    <li>Cuando todo está bien, se hace clic en <strong>"Merge pull request"</strong> ✅</li>
-                </ol>
+            <div class="arrow">↓</div>
+            <div class="card" class="step-card-inner">
+              <div class="icon green">🔀</div>
+              <div class="content">
+                <span
+                  style="
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 22px;
+                    height: 22px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    border-radius: 50%;
+                    margin-bottom: 4px;
+                    background: #16a34a;
+                    color: white;
+                  "
+                  >4</span
+                >
+                <h3>Fusiona con main (merge)</h3>
+                <p>
+                  Vuelve a main y une tu rama. ¡Tu código ya está integrado!
+                </p>
+                <p
+                  style="
+                    border-radius: 7px;
+                    background: rgba(27, 27, 27, 0.986);
+                    color: whitesmoke;
+                    padding: 10px;
+                    text-align: center;
+                    margin-top: 6px;
+                  "
+                >
+                  git switch main &amp;&amp; git merge
+                  feature/mi-nueva-funcionalidad
+                </p>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <div class="card">
-                <h2 data-es="Conflictos de merge: ¿qué son y cómo resolverlos?" data-en="Merge conflicts: what are they and how to solve them?">Conflictos de merge: ¿qué son y cómo resolverlos?</h2>
-                <p>Un <strong>conflicto</strong> ocurre cuando dos ramas modifican la misma línea de un archivo. Git no sabe cuál versión conservar y te pide que decidas tú.</p>
-                <div class="analogy" style="margin-top:12px;">
-                    <p>Git marcará el conflicto así en el archivo:</p>
+        <div class="card">
+          <h2
+            data-es="Comandos esenciales de ramas"
+            data-en="Essential branch commands"
+          >
+            Comandos esenciales de ramas
+          </h2>
+          <div class="cmd-group">
+            <p class="cmd-group-title">Crear y navegar</p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git switch -c nombre-rama</div>
+                <div class="cmd-desc">
+                  Crea una rama nueva y cambia a ella directamente
                 </div>
-                <pre style="background:#1c2128;color:#e6edf3;padding:14px;border-radius:8px;font-size:12px;overflow-x:auto;margin-top:10px;"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD (tu rama actual)
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git switch nombre-rama</div>
+                <div class="cmd-desc">Cambia a una rama ya existente</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git branch</div>
+                <div class="cmd-desc">
+                  Lista todas las ramas locales (la activa aparece con *)
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git branch -a</div>
+                <div class="cmd-desc">Lista ramas locales Y remotas</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+          <div class="cmd-group">
+            <p class="cmd-group-title">Fusionar y eliminar</p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git merge nombre-rama</div>
+                <div class="cmd-desc">
+                  Fusiona la rama indicada en la rama actual
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="warn-box">
+              <span class="warn-icon">⚠️</span>
+              <div class="warn-body">
+                <p class="warn-title">Consecuencias de hacer un merge</p>
+                <ul>
+                  <li>
+                    Los commits de la rama fusionada quedan integrados
+                    permanentemente en la rama destino.
+                  </li>
+                  <li>
+                    Puede generar <strong>conflictos de merge</strong> si ambas
+                    ramas modificaron las mismas líneas. Tendrás que resolverlos
+                    manualmente antes de continuar.
+                  </li>
+                  <li>
+                    Una vez resueltos los conflictos y confirmado el merge,
+                    <strong>no se puede deshacer fácilmente</strong> (requiere
+                    <code>git revert</code> o <code>git reset</code> con
+                    cuidado).
+                  </li>
+                  <li>
+                    En proyectos compartidos, un merge directo sin Pull Request
+                    puede saltarse la revisión del equipo.
+                  </li>
+                  <li>
+                    Asegúrate de estar en la rama correcta antes de ejecutarlo
+                    (<code>git branch</code> para comprobarlo).
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git branch -d nombre-rama</div>
+                <div class="cmd-desc">
+                  Elimina una rama local (solo si ya fue fusionada)
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="warn-box danger">
+              <span class="warn-icon">🚨</span>
+              <div class="warn-body">
+                <p class="warn-title">
+                  Consecuencias de eliminar una rama local
+                </p>
+                <ul>
+                  <li>
+                    <code>git branch -d</code> solo borra la rama si ya fue
+                    fusionada, lo cual es una protección. Pero
+                    <code>git branch -D</code> (mayúscula) la elimina
+                    <strong>aunque tenga commits sin fusionar</strong>,
+                    perdiendo esos cambios.
+                  </li>
+                  <li>
+                    Una vez eliminada la rama local sin haber hecho push,
+                    <strong
+                      >los commits exclusivos de esa rama se pierden</strong
+                    >.
+                  </li>
+                  <li>
+                    Si otro compañero tenía esa rama como referencia, deberá
+                    actualizar su repositorio local.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git push origin --delete nombre-rama</div>
+                <div class="cmd-desc">
+                  Elimina la rama también del repositorio remoto
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="warn-box danger">
+              <span class="warn-icon">🚨</span>
+              <div class="warn-body">
+                <p class="warn-title">
+                  Consecuencias de eliminar una rama remota
+                </p>
+                <ul>
+                  <li>
+                    La rama desaparece del repositorio remoto para
+                    <strong>todos los colaboradores</strong> del proyecto.
+                  </li>
+                  <li>
+                    Cualquier Pull Request abierto basado en esa rama quedará
+                    automáticamente <strong>cerrado o huérfano</strong>.
+                  </li>
+                  <li>
+                    Los compañeros que tengan la rama en local recibirán errores
+                    al hacer <code>git fetch</code> o <code>git pull</code> si
+                    intentan actualizarla.
+                  </li>
+                  <li>
+                    La acción <strong>no tiene confirmación previa</strong>: se
+                    ejecuta de inmediato. Confirma bien el nombre antes de
+                    lanzar el comando.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2
+            data-es="Pull Request: la pieza clave en equipo"
+            data-en="Pull Request: the key piece for teamwork"
+          >
+            Pull Request: la pieza clave en equipo
+          </h2>
+          <p>
+            Cuando trabajas en GitHub, en lugar de hacer
+            <code>merge</code> directamente, lo normal es abrir un
+            <strong>Pull Request (PR)</strong>. Es una solicitud para que tus
+            compañeros revisen tu código antes de integrarlo en
+            <code>main</code>.
+          </p>
+          <ol class="steps" style="margin-top: 14px">
+            <li>Sube tu rama con <code>git push origin nombre-rama</code></li>
+            <li>
+              En GitHub, aparece un botón
+              <strong>"Compare &amp; pull request"</strong> — haz clic
+            </li>
+            <li>Escribe una descripción de qué cambios hiciste y por qué</li>
+            <li>
+              Tus compañeros revisan, comentan y aprueban (o piden cambios)
+            </li>
+            <li>
+              Cuando todo está bien, se hace clic en
+              <strong>"Merge pull request"</strong> ✅
+            </li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h2
+            data-es="Conflictos de merge: ¿qué son y cómo resolverlos?"
+            data-en="Merge conflicts: what are they and how to solve them?"
+          >
+            Conflictos de merge: ¿qué son y cómo resolverlos?
+          </h2>
+          <p>
+            Un <strong>conflicto</strong> ocurre cuando dos ramas modifican la
+            misma línea de un archivo. Git no sabe cuál versión conservar y te
+            pide que decidas tú.
+          </p>
+          <div class="analogy" style="margin-top: 12px">
+            <p>Git marcará el conflicto así en el archivo:</p>
+          </div>
+          <pre
+            style="
+              background: #1c2128;
+              color: #e6edf3;
+              padding: 14px;
+              border-radius: 8px;
+              font-size: 12px;
+              overflow-x: auto;
+              margin-top: 10px;
+            "
+          ><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD (tu rama actual)
 console.log("Hola mundo");
 =======
 console.log("Hello world");
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/traduccion</code></pre>
-                <p style="margin-top:12px;">Simplemente edita el archivo, deja solo la versión correcta, guarda y haz un commit nuevo. ¡Conflicto resuelto!</p>
-            </div>
+          <p style="margin-top: 12px">
+            Simplemente edita el archivo, deja solo la versión correcta, guarda
+            y haz un commit nuevo. ¡Conflicto resuelto!
+          </p>
+        </div>
+      </div>
+      <div id="gitignore" class="section">
+        <div class="card">
+          <h2>¿Qué es un .gitignore?</h2>
+          <img src="/guiaGithub/assets/img/PNG/gitignore.png"> <br>
+          <p>
+            Un archivo <code><strong>.gitignore</strong></code> es un fichero de configuración
+            utilizado por Git que le indica qué archivos o carpetas debe ignorar
+            (es decir, no incluir en el control de versiones).
+          </p>
+          <p style="margin-top: 12px">
+            Esto significa que aunque esos archivos existan en tu proyecto, Git
+            no los rastreará ni los subirá al repositorio.
+          </p>
         </div>
 
-        <!-- EJERCICIOS -->
-        <div id="ejercicios" class="section">
-            <!-- TEST -->
-            <div class="card" id="quiz-card">
-                <h2 data-es="Test de conocimientos" data-en=" Knowledge Quiz"> Test de conocimientos</h2>
-                <p style="font-size:13px;color:var(--text3);margin-bottom:16px;"><span data-es="Pon a prueba lo que has aprendido. Una pregunta a la vez." data-en="Test what you have learned. One question at a time.">Pon a prueba lo que has aprendido. Una pregunta a la vez.</span></p>
-
-                <div id="quiz-progress-bar-wrap"><div id="quiz-progress-bar"></div></div>
-                <div id="quiz-progress-label">
-                    <span id="quiz-progress-text">Pregunta 1 de 10</span>
-                    <div id="quiz-dots"></div>
-                </div>
-
-                <div id="quiz-viewport"></div>
-
-                <div id="quiz-nav">
-                    <button class="quiz-nav-btn" id="quiz-prev-btn" onclick="quizPrev()" disabled>← Anterior</button>
-                    <button id="quiz-confirm-btn" onclick="quizConfirm()" disabled>Confirmar</button>
-                    <button class="quiz-nav-btn" id="quiz-next-btn" onclick="quizNext()" disabled>Siguiente →</button>
-                </div>
-
-                <div id="quiz-result"></div>
-            </div>
-
-            <!-- SIMULADOR INTERACTIVO -->
-            <div class="card" id="sim-card">
-                <h2 data-es="Simulador de terminal Git" data-en="Git Terminal Simulator"> Simulador de terminal Git</h2>
-                <p style="font-size:13px;color:var(--text3);margin-bottom:16px;"><span data-es="Practica los comandos reales de Git en un terminal simulado. Completa los 5 retos para ganar." data-en="Practice real Git commands in a simulated terminal. Complete 5 challenges to win.">Practica los comandos reales de Git en un terminal simulado. Completa los 5 retos para ganar.</span></p>
-                <div id="sim-challenge-bar" style="margin-bottom:14px;"></div>
-                <div id="sim-terminal">
-                    <div id="sim-output"></div>
-                    <div id="sim-input-row">
-                        <span id="sim-prompt">$&nbsp;</span>
-                        <input id="sim-input" type="text" autocomplete="off" spellcheck="false" placeholder="escribe un comando git...">
-                    </div>
-                </div>
-                <p id="sim-hint" style="font-size:12px;color:var(--text3);margin-top:10px;"></p>
-            </div>
+        <div class="card" style="margin-top: 24px">
+          <h2>¿Por qué usar .gitignore?</h2>
+          <ul>
+            <li>
+              <strong>Seguridad:</strong> evita subir datos sensibles como
+              contraseñas o claves API.
+            </li>
+            <li>
+              <strong>Rendimiento:</strong> reduce el tamaño del repositorio.
+            </li>
+            <li>
+              <strong>Orden:</strong> evita incluir archivos innecesarios o
+              generados automáticamente.
+            </li>
+            <li>
+              <strong>Colaboración:</strong> mantiene el proyecto limpio y
+              consistente entre equipos.
+            </li>
+          </ul>
         </div>
 
-<!-- ============================================================
+        <div class="card" style="margin-top: 24px">
+          <h2>¿Cómo funciona?</h2>
+          <p>
+            El archivo <code>.gitignore</code> contiene patrones que indican qué
+            ignorar:
+          </p>
+
+          <pre
+            style="
+              background: #1c2128;
+              color: #e6edf3;
+              padding: 14px;
+              border-radius: 8px;
+              font-size: 12px;
+              overflow-x: auto;
+              margin-top: 10px;
+            "
+          >
+        <code>node_modules/
+        *.log
+        .env
+        dist/</code>
+                </pre>
+
+          <p style="margin-top: 12px"><strong>Explicación:</strong></p>
+          <ul>
+            <li><code>node_modules/</code> → ignora toda la carpeta</li>
+            <li><code>*.log</code> → ignora archivos de log</li>
+            <li><code>.env</code> → ignora variables sensibles</li>
+            <li><code>dist/</code> → ignora archivos generados</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top: 24px">
+          <h2>Ejemplos según tecnología</h2>
+
+          <h3>JavaScript / Node.js</h3>
+          <pre
+            style="
+              background: #1c2128;
+              color: #e6edf3;
+              padding: 14px;
+              border-radius: 8px;
+              font-size: 12px;
+              overflow-x: auto;
+            "
+          >
+        <code>node_modules/
+        npm-debug.log*
+        yarn-debug.log*
+        .env
+        dist/
+        build/</code>
+                </pre>
+
+          <h3>Python</h3>
+          <pre
+            style="
+              background: #1c2128;
+              color: #e6edf3;
+              padding: 14px;
+              border-radius: 8px;
+              font-size: 12px;
+              overflow-x: auto;
+            "
+          >
+        <code>__pycache__/
+        *.pyc
+        .env
+        venv/
+        dist/
+        build/</code>
+                </pre>
+
+          <h3>Java</h3>
+          <pre
+            style="
+              background: #1c2128;
+              color: #e6edf3;
+              padding: 14px;
+              border-radius: 8px;
+              font-size: 12px;
+              overflow-x: auto;
+            "
+          >
+        <code>target/
+        *.class
+        *.jar
+        *.war
+        *.log</code>
+                </pre>
+
+          <h3>PHP</h3>
+          <pre
+            style="
+              background: #1c2128;
+              color: #e6edf3;
+              padding: 14px;
+              border-radius: 8px;
+              font-size: 12px;
+              overflow-x: auto;
+            "
+          >
+        <code>vendor/
+        *.log
+        .env</code>
+                </pre>
+        </div>
+
+        <div class="card" style="margin-top: 24px">
+          <h2>Ejemplo general</h2>
+          <pre
+            style="
+              background: #1c2128;
+              color: #e6edf3;
+              padding: 14px;
+              border-radius: 8px;
+              font-size: 12px;
+              overflow-x: auto;
+            "
+          >
+        <code>.DS_Store
+        Thumbs.db
+        *.log
+        *.tmp
+        *.swp
+        .env</code>
+                </pre>
+        </div>
+
+        <div class="card" style="margin-top: 24px">
+          <h2>Buenas prácticas</h2>
+          <ul>
+            <li>Añade <code>.gitignore</code> antes del primer commit.</li>
+            <li>No ignores archivos importantes por error.</li>
+            <li>Revisa cambios con <code>git status</code>.</li>
+            <li>
+              Si un archivo ya está siendo trackeado, <code>.gitignore</code> no
+              lo eliminará automáticamente.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top: 24px">
+          <h2>Ejemplo práctico</h2>
+          <pre
+            style="
+              background: #1c2128;
+              color: #e6edf3;
+              padding: 14px;
+              border-radius: 8px;
+              font-size: 12px;
+              overflow-x: auto;
+            "
+          >
+        <code>git init
+        touch .gitignore
+        git add .
+        git commit -m "Primer commit"</code>
+                </pre>
+        </div>
+
+        <div class="card" style="margin-top: 24px">
+          <h2>Conclusión</h2>
+          <p>
+            El archivo <code>.gitignore</code> es una herramienta esencial para
+            mantener tus proyectos limpios, seguros y organizados. Aprender a
+            usarlo correctamente desde el inicio te evitará muchos problemas en
+            el futuro.
+          </p>
+        </div>
+        <div class="card" style="margin-top: 24px">
+          <h2>Recursos adicionales</h2>
+          <ul>
+            <li>
+              <a
+                href="https://git-scm.com/docs/gitignore"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Documentación oficial de .gitignore</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/github/gitignore"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Repositorio de .gitignore en GitHub</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.toptal.com/developers/gitignore"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Pagina para generar tu propio .gitignore</a
+              >
+          </ul>
+        </div>
+      </div>
+
+      <!-- EJERCICIOS -->
+      <div id="ejercicios" class="section">
+        <!-- TEST -->
+        <div class="card" id="quiz-card">
+          <h2 data-es="Test de conocimientos" data-en=" Knowledge Quiz">
+            Test de conocimientos
+          </h2>
+          <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px">
+            <span
+              data-es="Pon a prueba lo que has aprendido. Una pregunta a la vez."
+              data-en="Test what you have learned. One question at a time."
+              >Pon a prueba lo que has aprendido. Una pregunta a la vez.</span
+            >
+          </p>
+
+          <div id="quiz-progress-bar-wrap">
+            <div id="quiz-progress-bar"></div>
+          </div>
+          <div id="quiz-progress-label">
+            <span id="quiz-progress-text">Pregunta 1 de 10</span>
+            <div id="quiz-dots"></div>
+          </div>
+
+          <div id="quiz-viewport"></div>
+
+          <div id="quiz-nav">
+            <button
+              class="quiz-nav-btn"
+              id="quiz-prev-btn"
+              onclick="quizPrev()"
+              disabled
+            >
+              ← Anterior
+            </button>
+            <button id="quiz-confirm-btn" onclick="quizConfirm()" disabled>
+              Confirmar
+            </button>
+            <button
+              class="quiz-nav-btn"
+              id="quiz-next-btn"
+              onclick="quizNext()"
+              disabled
+            >
+              Siguiente →
+            </button>
+          </div>
+
+          <div id="quiz-result"></div>
+        </div>
+
+        <!-- SIMULADOR INTERACTIVO -->
+        <div class="card" id="sim-card">
+          <h2
+            data-es="Simulador de terminal Git"
+            data-en="Git Terminal Simulator"
+          >
+            Simulador de terminal Git
+          </h2>
+          <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px">
+            <span
+              data-es="Practica los comandos reales de Git en un terminal simulado. Completa los 5 retos para ganar."
+              data-en="Practice real Git commands in a simulated terminal. Complete 5 challenges to win."
+              >Practica los comandos reales de Git en un terminal simulado.
+              Completa los 5 retos para ganar.</span
+            >
+          </p>
+          <div id="sim-challenge-bar" style="margin-bottom: 14px"></div>
+          <div id="sim-terminal">
+            <div id="sim-output"></div>
+            <div id="sim-input-row">
+              <span id="sim-prompt">$&nbsp;</span>
+              <input
+                id="sim-input"
+                type="text"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="escribe un comando git..."
+              />
+            </div>
+          </div>
+          <p
+            id="sim-hint"
+            style="font-size: 12px; color: var(--text3); margin-top: 10px"
+          ></p>
+        </div>
+      </div>
+
+      <!-- ============================================================
      SECCIÓN: Bonus – Integración con VS Code
      Audiencia: principiantes (nunca han usado Git)
      Temas: Source Control panel · Ramas y merge · Conflictos
      ============================================================ -->
 
-<div id="vscode" class="section">
+      <div id="vscode" class="section">
+        <!-- ── INTRO ─────────────────────────────────────────────── -->
+        <div class="card">
+          <h2
+            data-es="Bonus: Integración con VS Code"
+            data-en="Bonus: Integration with VS Code"
+          >
+            Bonus: Integración con VS Code
+          </h2>
 
-  <!-- ── INTRO ─────────────────────────────────────────────── -->
-  <div class="card">
-    <h2 data-es="Bonus: Integración con VS Code"
-        data-en="Bonus: Integration with VS Code">
-      Bonus: Integración con VS Code
-    </h2>
+          <p>
+            <strong>Visual Studio Code</strong> es un editor de código muy
+            popular que tiene integración nativa con Git. Esto significa que
+            puedes hacer commits, ver cambios, manejar ramas y resolver
+            conflictos <em>sin salir del editor</em>.
+          </p>
 
-    <p>
-      <strong>Visual Studio Code</strong> es un editor de código muy popular
-      que tiene integración nativa con Git. Esto significa que puedes hacer
-      commits, ver cambios, manejar ramas y resolver conflictos
-      <em>sin salir del editor</em>.
-    </p>
+          <p style="margin-top: 12px">
+            <em>
+              Nota: Para usar Git en VS Code, asegúrate de tener Git instalado
+              en tu sistema y que VS Code lo reconozca. Puedes comprobarlo
+              abriendo la terminal integrada y ejecutando
+              <code>git --version</code>.
+            </em>
+          </p>
 
-    <p style="margin-top:12px;">
-      <em>
-        Nota: Para usar Git en VS Code, asegúrate de tener Git instalado en
-        tu sistema y que VS Code lo reconozca. Puedes comprobarlo abriendo la
-        terminal integrada y ejecutando <code>git --version</code>.
-      </em>
-    </p>
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/capturasVSCODE/vscode-1.png"
+              alt="Vista general de la integración de Git en VS Code"
+              loading="lazy"
+            />
+            <figcaption>
+              Vista general de la integración de Git en VS Code
+            </figcaption>
+          </figure>
+        </div>
+        <!-- /card intro -->
 
-    <figure class="img-figure" style="margin-top:14px;">
-      <img src="./assets/img/PNG/capturasVSCODE/vscode-1.png"
-           alt="Vista general de la integración de Git en VS Code" loading="lazy">
-      <figcaption>Vista general de la integración de Git en VS Code</figcaption>
-    </figure>
-  </div><!-- /card intro -->
+        <!-- ── 1. SOURCE CONTROL PANEL ───────────────────────────── -->
+        <div class="card" style="margin-top: 24px">
+          <h3
+            data-es="1. El panel Source Control"
+            data-en="1. The Source Control Panel"
+          >
+            1. El panel Source Control
+          </h3>
 
+          <p>
+            El panel <strong>Source Control</strong> (icono de rama en la barra
+            lateral izquierda, o atajo <kbd>Ctrl+Shift+G</kbd>) es tu centro de
+            mando para Git. Desde aquí puedes ver qué archivos han cambiado,
+            añadirlos al área de preparación (<em>stage</em>) y crear commits,
+            todo de forma visual.
+          </p>
 
-  <!-- ── 1. SOURCE CONTROL PANEL ───────────────────────────── -->
-  <div class="card" style="margin-top:24px;">
-    <h3 data-es="1. El panel Source Control"
-        data-en="1. The Source Control Panel">
-      1. El panel Source Control
-    </h3>
+          <!-- Sub-paso: ver cambios -->
+          <h4 style="margin-top: 20px">Ver los archivos modificados</h4>
+          <p>
+            Cuando editas un archivo, VS Code lo marca automáticamente en el
+            explorador de archivos con una letra:
+          </p>
+          <ul>
+            <li><strong>M</strong> (Modified) — archivo modificado.</li>
+            <li>
+              <strong>U</strong> (Untracked) — archivo nuevo que Git aún no
+              conoce.
+            </li>
+            <li><strong>D</strong> (Deleted) — archivo eliminado.</li>
+          </ul>
+          <p style="margin-top: 8px">
+            En el panel Source Control verás los mismos archivos agrupados en
+            dos secciones: <em>Changes</em> (cambios sin preparar) y
+            <em>Staged Changes</em> (cambios listos para el commit).
+          </p>
 
-    <p>
-      El panel <strong>Source Control</strong> (icono de rama en la barra
-      lateral izquierda, o atajo <kbd>Ctrl+Shift+G</kbd>) es tu centro de
-      mando para Git. Desde aquí puedes ver qué archivos han cambiado,
-      añadirlos al área de preparación (<em>stage</em>) y crear commits, todo
-      de forma visual.
-    </p>
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/capturasVSCODE/vscode-2.png"
+              alt="Panel Source Control mostrando archivos modificados"
+              loading="lazy"
+            />
+            <figcaption>
+              El panel Source Control lista todos los archivos con cambios
+              pendientes
+            </figcaption>
+          </figure>
 
-    <!-- Sub-paso: ver cambios -->
-    <h4 style="margin-top:20px;">Ver los archivos modificados</h4>
-    <p>
-      Cuando editas un archivo, VS Code lo marca automáticamente en el
-      explorador de archivos con una letra:
-    </p>
-    <ul>
-      <li><strong>M</strong> (Modified) — archivo modificado.</li>
-      <li><strong>U</strong> (Untracked) — archivo nuevo que Git aún no conoce.</li>
-      <li><strong>D</strong> (Deleted) — archivo eliminado.</li>
-    </ul>
-    <p style="margin-top:8px;">
-      En el panel Source Control verás los mismos archivos agrupados en dos
-      secciones: <em>Changes</em> (cambios sin preparar) y
-      <em>Staged Changes</em> (cambios listos para el commit).
-    </p>
+          <!-- Sub-paso: stage -->
+          <h4 style="margin-top: 20px">Preparar cambios (Stage)</h4>
+          <p>
+            Antes de hacer un commit debes <em>preparar</em> los archivos que
+            quieres incluir. En VS Code tienes dos formas de hacerlo:
+          </p>
+          <ul>
+            <li>
+              Haz clic en el icono <strong>+</strong> que aparece al pasar el
+              ratón por encima de un archivo en la sección <em>Changes</em> para
+              añadirlo individualmente.
+            </li>
+            <li>
+              Haz clic en el <strong>+</strong> junto al encabezado
+              <em>Changes</em> para preparar todos los archivos a la vez.
+            </li>
+          </ul>
+          <p style="margin-top: 8px">
+            Los archivos preparados se moverán a la sección
+            <em>Staged Changes</em>. Si cambias de opinión, haz clic en el icono
+            <strong>−</strong> para retirarlos del stage.
+          </p>
 
-    <figure class="img-figure" style="margin-top:14px;">
-      <img src="./assets/img/PNG/capturasVSCODE/vscode-2.png"
-           alt="Panel Source Control mostrando archivos modificados" loading="lazy">
-      <figcaption>
-        El panel Source Control lista todos los archivos con cambios pendientes
-      </figcaption>
-    </figure>
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/capturasVSCODE/vscode-3.png"
+              alt="Preparando archivos con el botón + en VS Code"
+              loading="lazy"
+            />
+            <figcaption>
+              Haz clic en <strong>+</strong> para mover un archivo a Staged
+              Changes
+            </figcaption>
+          </figure>
 
-    <!-- Sub-paso: stage -->
-    <h4 style="margin-top:20px;">Preparar cambios (Stage)</h4>
-    <p>
-      Antes de hacer un commit debes <em>preparar</em> los archivos que
-      quieres incluir. En VS Code tienes dos formas de hacerlo:
-    </p>
-    <ul>
-      <li>
-        Haz clic en el icono <strong>+</strong> que aparece al pasar el ratón
-        por encima de un archivo en la sección <em>Changes</em> para añadirlo
-        individualmente.
-      </li>
-      <li>
-        Haz clic en el <strong>+</strong> junto al encabezado
-        <em>Changes</em> para preparar todos los archivos a la vez.
-      </li>
-    </ul>
-    <p style="margin-top:8px;">
-      Los archivos preparados se moverán a la sección
-      <em>Staged Changes</em>. Si cambias de opinión, haz clic en el icono
-      <strong>−</strong> para retirarlos del stage.
-    </p>
+          <!-- Sub-paso: commit -->
+          <h4 style="margin-top: 20px">Crear un commit</h4>
+          <p>
+            Una vez preparados los archivos, escribe un mensaje descriptivo en
+            el campo de texto que dice
+            <em>"Message (Ctrl+Enter to commit)"</em> y pulsa
+            <kbd>Ctrl+Enter</kbd> (o haz clic en el botón
+            <strong>Commit ✔</strong>). El commit quedará registrado en el
+            historial local de tu repositorio.
+          </p>
+          <p style="margin-top: 8px">
+            <strong>Consejo:</strong> Un buen mensaje de commit responde a la
+            pregunta "¿Qué hace este cambio?", por ejemplo:
+            <code>Añade formulario de contacto</code>.
+          </p>
 
-    <figure class="img-figure" style="margin-top:14px;">
-      <img src="./assets/img/PNG/capturasVSCODE/vscode-3.png"
-           alt="Preparando archivos con el botón + en VS Code" loading="lazy">
-      <figcaption>
-        Haz clic en <strong>+</strong> para mover un archivo a Staged Changes
-      </figcaption>
-    </figure>
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/capturasVSCODE/vscode-4.png"
+              alt="Campo de mensaje de commit en VS Code"
+              loading="lazy"
+            />
+            <figcaption>
+              Escribe el mensaje y pulsa Ctrl+Enter para confirmar el commit
+            </figcaption>
+          </figure>
+        </div>
+        <!-- /card source control -->
 
-    <!-- Sub-paso: commit -->
-    <h4 style="margin-top:20px;">Crear un commit</h4>
-    <p>
-      Una vez preparados los archivos, escribe un mensaje descriptivo en el
-      campo de texto que dice <em>"Message (Ctrl+Enter to commit)"</em> y
-      pulsa <kbd>Ctrl+Enter</kbd> (o haz clic en el botón
-      <strong>Commit ✔</strong>). El commit quedará registrado en el
-      historial local de tu repositorio.
-    </p>
-    <p style="margin-top:8px;">
-      <strong>Consejo:</strong> Un buen mensaje de commit responde a la
-      pregunta "¿Qué hace este cambio?", por ejemplo:
-      <code>Añade formulario de contacto</code>.
-    </p>
+        <!-- ── 2. RAMAS Y MERGE ───────────────────────────────────── -->
+        <div class="card" style="margin-top: 24px">
+          <h3
+            data-es="2. Ramas y merge desde VS Code"
+            data-en="2. Branches and merge from VS Code"
+          >
+            2. Ramas y merge desde VS Code
+          </h3>
 
-    <figure class="img-figure" style="margin-top:14px;">
-      <img src="./assets/img/PNG/capturasVSCODE/vscode-4.png"
-           alt="Campo de mensaje de commit en VS Code" loading="lazy">
-      <figcaption>
-        Escribe el mensaje y pulsa Ctrl+Enter para confirmar el commit
-      </figcaption>
-    </figure>
-  </div><!-- /card source control -->
+          <p>
+            Las <strong>ramas</strong> (<em>branches</em>) te permiten trabajar
+            en una nueva funcionalidad o corrección sin tocar el código
+            principal. VS Code hace que crear y cambiar entre ramas sea tan
+            sencillo como hacer clic en la barra de estado inferior.
+          </p>
 
+          <!-- Sub-paso: crear rama -->
+          <h4 style="margin-top: 20px">Crear una nueva rama</h4>
+          <p>
+            En la esquina inferior izquierda de VS Code verás el nombre de la
+            rama actual (normalmente <code>main</code> o <code>master</code>).
+            Haz clic sobre él para abrir el menú de ramas y selecciona
+            <strong>Create new branch…</strong>. Escribe el nombre de tu nueva
+            rama (por ejemplo, <code>feature/formulario-contacto</code>) y pulsa
+            <kbd>Enter</kbd>.
+          </p>
+          <p style="margin-top: 8px">
+            VS Code creará la rama y cambiará a ella automáticamente. Todos los
+            commits que hagas a partir de ahora irán a esta rama sin afectar a
+            <code>main</code>.
+          </p>
 
-  <!-- ── 2. RAMAS Y MERGE ───────────────────────────────────── -->
-  <div class="card" style="margin-top:24px;">
-    <h3 data-es="2. Ramas y merge desde VS Code"
-        data-en="2. Branches and merge from VS Code">
-      2. Ramas y merge desde VS Code
-    </h3>
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/capturasVSCODE/vscode-5.png"
+              alt="Menú de ramas en la barra de estado de VS Code"
+              loading="lazy"
+            />
+            <img
+              src="./assets/img/PNG/capturasVSCODE/vscode-6.png"
+              alt="Menú de ramas en la barra de estado de VS Code"
+              loading="lazy"
+            />
+            <figcaption>
+              Haz clic en el nombre de la rama (barra inferior) para ver todas
+              las opciones de rama
+            </figcaption>
+          </figure>
 
-    <p>
-      Las <strong>ramas</strong> (<em>branches</em>) te permiten trabajar en
-      una nueva funcionalidad o corrección sin tocar el código principal. VS
-      Code hace que crear y cambiar entre ramas sea tan sencillo como hacer
-      clic en la barra de estado inferior.
-    </p>
+          <!-- Sub-paso: cambiar de rama -->
+          <h4 style="margin-top: 20px">Cambiar entre ramas</h4>
+          <p>
+            Desde el mismo menú de la barra de estado puedes seleccionar
+            cualquier rama existente para cambiar a ella. VS Code actualizará
+            los archivos del proyecto al estado de esa rama de forma
+            instantánea.
+          </p>
 
-    <!-- Sub-paso: crear rama -->
-    <h4 style="margin-top:20px;">Crear una nueva rama</h4>
-    <p>
-      En la esquina inferior izquierda de VS Code verás el nombre de la rama
-      actual (normalmente <code>main</code> o <code>master</code>). Haz clic
-      sobre él para abrir el menú de ramas y selecciona
-      <strong>Create new branch…</strong>. Escribe el nombre de tu nueva rama
-      (por ejemplo, <code>feature/formulario-contacto</code>) y pulsa
-      <kbd>Enter</kbd>.
-    </p>
-    <p style="margin-top:8px;">
-      VS Code creará la rama y cambiará a ella automáticamente. Todos los
-      commits que hagas a partir de ahora irán a esta rama sin afectar a
-      <code>main</code>.
-    </p>
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/capturasVSCODE/vscode-7.png"
+              alt="Selección de rama existente en VS Code"
+              loading="lazy"
+            />
+            <figcaption>
+              La lista muestra todas las ramas locales; haz clic en una para
+              cambiarte a ella
+            </figcaption>
+          </figure>
 
-    <figure class="img-figure" style="margin-top:14px;">
-        <img src="./assets/img/PNG/capturasVSCODE/vscode-5.png"
-           alt="Menú de ramas en la barra de estado de VS Code" loading="lazy">
-      <img src="./assets/img/PNG/capturasVSCODE/vscode-6.png"
-           alt="Menú de ramas en la barra de estado de VS Code" loading="lazy">
-      <figcaption>
-        Haz clic en el nombre de la rama (barra inferior) para ver todas las
-        opciones de rama
-      </figcaption>
-    </figure>
+          <!-- Sub-paso: merge -->
+          <h4 style="margin-top: 20px">Fusionar ramas (Merge)</h4>
+          <p>
+            Cuando tu funcionalidad esté lista y quieras incorporarla a
+            <code>main</code>, sigue estos pasos dentro de VS Code:
+          </p>
+          <ol>
+            <li>
+              Cambia a la rama de destino (<code>main</code>) usando la barra de
+              estado inferior.
+            </li>
+            <li>
+              Abre la paleta de comandos con <kbd>Ctrl+Shift+P</kbd> y escribe
+              <strong>Git: Merge Branch…</strong>.
+            </li>
+            <li>
+              Selecciona la rama que quieres fusionar (p.&nbsp;ej.,
+              <code>feature/formulario-contacto</code>).
+            </li>
+            <li>
+              Si no hay conflictos, VS Code completará el merge automáticamente
+              y los cambios quedarán integrados en <code>main</code>.
+            </li>
+          </ol>
 
-    <!-- Sub-paso: cambiar de rama -->
-    <h4 style="margin-top:20px;">Cambiar entre ramas</h4>
-    <p>
-      Desde el mismo menú de la barra de estado puedes seleccionar cualquier
-      rama existente para cambiar a ella. VS Code actualizará los archivos del
-      proyecto al estado de esa rama de forma instantánea.
-    </p>
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/capturasVSCODE/vscode-8.png"
+              alt="Paleta de comandos con Git Merge Branch en VS Code"
+              loading="lazy"
+            />
+            <figcaption>
+              Busca "Git: Merge Branch" en la paleta de comandos para iniciar la
+              fusión
+            </figcaption>
+          </figure>
+        </div>
+        <!-- /card ramas -->
 
-    <figure class="img-figure" style="margin-top:14px;">
-      <img src="./assets/img/PNG/capturasVSCODE/vscode-7.png"
-           alt="Selección de rama existente en VS Code" loading="lazy">
-      <figcaption>
-        La lista muestra todas las ramas locales; haz clic en una para
-        cambiarte a ella
-      </figcaption>
-    </figure>
+        <!-- ── 3. RESOLUCIÓN DE CONFLICTOS ───────────────────────── -->
+        <div class="card" style="margin-top: 24px">
+          <h3
+            data-es="3. Resolución de conflictos visual"
+            data-en="3. Visual conflict resolution"
+          >
+            3. Resolución de conflictos visual
+          </h3>
 
-    <!-- Sub-paso: merge -->
-    <h4 style="margin-top:20px;">Fusionar ramas (Merge)</h4>
-    <p>
-      Cuando tu funcionalidad esté lista y quieras incorporarla a
-      <code>main</code>, sigue estos pasos dentro de VS Code:
-    </p>
-    <ol>
-      <li>
-        Cambia a la rama de destino (<code>main</code>) usando la barra de
-        estado inferior.
-      </li>
-      <li>
-        Abre la paleta de comandos con <kbd>Ctrl+Shift+P</kbd> y escribe
-        <strong>Git: Merge Branch…</strong>.
-      </li>
-      <li>
-        Selecciona la rama que quieres fusionar
-        (p.&nbsp;ej., <code>feature/formulario-contacto</code>).
-      </li>
-      <li>
-        Si no hay conflictos, VS Code completará el merge automáticamente y
-        los cambios quedarán integrados en <code>main</code>.
-      </li>
-    </ol>
+          <p>
+            Un <strong>conflicto de merge</strong> ocurre cuando dos ramas han
+            modificado la misma parte de un archivo de forma distinta y Git no
+            puede decidir qué versión conservar. VS Code incluye una herramienta
+            visual que convierte este proceso —habitualmente frustrante— en algo
+            manejable.
+          </p>
 
-    <figure class="img-figure" style="margin-top:14px;">
-      <img src="./assets/img/PNG/capturasVSCODE/vscode-8.png"
-           alt="Paleta de comandos con Git Merge Branch en VS Code" loading="lazy">
-      <figcaption>
-        Busca "Git: Merge Branch" en la paleta de comandos para iniciar la
-        fusión
-      </figcaption>
-    </figure>
-  </div><!-- /card ramas -->
+          <!-- Cómo se ve -->
+          <h4 style="margin-top: 20px">Cómo detectar un conflicto</h4>
+          <p>
+            Cuando se produce un conflicto, VS Code marca el archivo con una
+            <strong>C</strong> roja en el explorador y en el panel Source
+            Control. Al abrirlo, verás el código dividido en bloques con
+            marcadores especiales:
+          </p>
+          <ul>
+            <li>
+              <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> — inicio de tu
+              versión (rama actual).
+            </li>
+            <li><code>=======</code> — separador entre las dos versiones.</li>
+            <li>
+              <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/…</code> — inicio de la
+              versión entrante (rama que estás fusionando).
+            </li>
+          </ul>
 
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/capturasVSCODE/merge-conflict-solve-vs-code.gif"
+              alt="Marcadores de conflicto en un archivo dentro de VS Code"
+              loading="lazy"
+            />
+            <figcaption>
+              VS Code resalta visualmente los bloques en conflicto con colores
+              diferenciados
+            </figcaption>
+          </figure>
 
-  <!-- ── 3. RESOLUCIÓN DE CONFLICTOS ───────────────────────── -->
-  <div class="card" style="margin-top:24px;">
-    <h3 data-es="3. Resolución de conflictos visual"
-        data-en="3. Visual conflict resolution">
-      3. Resolución de conflictos visual
-    </h3>
+          <!-- Resolver -->
+          <h4 style="margin-top: 20px">
+            Resolver el conflicto con los botones inline
+          </h4>
+          <p>
+            Encima de cada bloque en conflicto aparecen cuatro acciones rápidas.
+            Elige la que mejor se adapte a tu caso:
+          </p>
+          <ul>
+            <li>
+              <strong>Accept Current Change</strong> — conserva únicamente
+              <em>tu versión</em> (HEAD).
+            </li>
+            <li>
+              <strong>Accept Incoming Change</strong> — conserva únicamente la
+              versión de la <em>otra rama</em>.
+            </li>
+            <li>
+              <strong>Accept Both Changes</strong> — incluye las dos versiones,
+              una detrás de la otra.
+            </li>
+            <li>
+              <strong>Compare Changes</strong> — abre una vista de diferencias
+              en dos paneles para decidir con más calma.
+            </li>
+          </ul>
+          <p style="margin-top: 8px">
+            También puedes editar el archivo manualmente: simplemente borra los
+            marcadores (<code>&lt;&lt;&lt;</code>, <code>===</code>,
+            <code>&gt;&gt;&gt;</code>) y deja el código exactamente como quieres
+            que quede.
+          </p>
 
-    <p>
-      Un <strong>conflicto de merge</strong> ocurre cuando dos ramas han
-      modificado la misma parte de un archivo de forma distinta y Git no puede
-      decidir qué versión conservar. VS Code incluye una herramienta visual
-      que convierte este proceso —habitualmente frustrante— en algo manejable.
-    </p>
+          <!-- Finalizar -->
+          <h4 style="margin-top: 20px">Finalizar la resolución</h4>
+          <p>
+            Una vez resueltos <strong>todos</strong> los conflictos del archivo,
+            guárdalo (<kbd>Ctrl+S</kbd>). VS Code dejará de marcarlo con la
+            <strong>C</strong> roja. Repite el proceso con cada archivo en
+            conflicto y, cuando todos estén limpios, ve al panel Source Control
+            y realiza un commit para cerrar el merge:
+          </p>
+          <ol>
+            <li>Prepara los archivos resueltos con <strong>+</strong>.</li>
+            <li>
+              Escribe un mensaje como
+              <code>Merge feature/formulario-contacto en main</code>.
+            </li>
+            <li>Pulsa <kbd>Ctrl+Enter</kbd> para confirmar.</li>
+          </ol>
 
-    <!-- Cómo se ve -->
-    <h4 style="margin-top:20px;">Cómo detectar un conflicto</h4>
-    <p>
-      Cuando se produce un conflicto, VS Code marca el archivo con una
-      <strong>C</strong> roja en el explorador y en el panel Source Control.
-      Al abrirlo, verás el código dividido en bloques con marcadores especiales:
-    </p>
-    <ul>
-      <li>
-        <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> — inicio de tu versión
-        (rama actual).
-      </li>
-      <li>
-        <code>=======</code> — separador entre las dos versiones.
-      </li>
-      <li>
-        <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/…</code> — inicio de la
-        versión entrante (rama que estás fusionando).
-      </li>
-    </ul>
+          <figure class="img-figure" style="margin-top: 14px">
+            <img
+              src="./assets/img/PNG/capturasVSCODE/vscode-10.png"
+              alt="Commit final tras resolver los conflictos en VS Code"
+              loading="lazy"
+            />
+            <figcaption>
+              Tras resolver todos los conflictos, un commit final cierra el
+              proceso de merge
+            </figcaption>
+          </figure>
 
-    <figure class="img-figure" style="margin-top:14px;">
-      <img src="./assets/img/PNG/capturasVSCODE/merge-conflict-solve-vs-code.gif"
-           alt="Marcadores de conflicto en un archivo dentro de VS Code" loading="lazy">
-      <figcaption>
-        VS Code resalta visualmente los bloques en conflicto con colores
-        diferenciados
-      </figcaption>
-    </figure>
-
-    <!-- Resolver -->
-    <h4 style="margin-top:20px;">Resolver el conflicto con los botones inline</h4>
-    <p>
-      Encima de cada bloque en conflicto aparecen cuatro acciones rápidas.
-      Elige la que mejor se adapte a tu caso:
-    </p>
-    <ul>
-      <li>
-        <strong>Accept Current Change</strong> — conserva únicamente
-        <em>tu versión</em> (HEAD).
-      </li>
-      <li>
-        <strong>Accept Incoming Change</strong> — conserva únicamente
-        la versión de la <em>otra rama</em>.
-      </li>
-      <li>
-        <strong>Accept Both Changes</strong> — incluye las dos versiones,
-        una detrás de la otra.
-      </li>
-      <li>
-        <strong>Compare Changes</strong> — abre una vista de diferencias en
-        dos paneles para decidir con más calma.
-      </li>
-    </ul>
-    <p style="margin-top:8px;">
-      También puedes editar el archivo manualmente: simplemente borra los
-      marcadores (<code>&lt;&lt;&lt;</code>, <code>===</code>,
-      <code>&gt;&gt;&gt;</code>) y deja el código exactamente como quieres
-      que quede.
-    </p>
-
-    <!-- Finalizar -->
-    <h4 style="margin-top:20px;">Finalizar la resolución</h4>
-    <p>
-      Una vez resueltos <strong>todos</strong> los conflictos del archivo,
-      guárdalo (<kbd>Ctrl+S</kbd>). VS Code dejará de marcarlo con la
-      <strong>C</strong> roja. Repite el proceso con cada archivo en conflicto
-      y, cuando todos estén limpios, ve al panel Source Control y realiza un
-      commit para cerrar el merge:
-    </p>
-    <ol>
-      <li>Prepara los archivos resueltos con <strong>+</strong>.</li>
-      <li>
-        Escribe un mensaje como
-        <code>Merge feature/formulario-contacto en main</code>.
-      </li>
-      <li>Pulsa <kbd>Ctrl+Enter</kbd> para confirmar.</li>
-    </ol>
-
-    <figure class="img-figure" style="margin-top:14px;">
-      <img src="./assets/img/PNG/capturasVSCODE/vscode-10.png"
-           alt="Commit final tras resolver los conflictos en VS Code" loading="lazy">
-      <figcaption>
-        Tras resolver todos los conflictos, un commit final cierra el proceso
-        de merge
-      </figcaption>
-    </figure>
-
-    <p style="margin-top:16px;">
-      <strong>¡Enhorabuena!</strong> Ahora sabes usar VS Code como tu
-      interfaz principal de Git: puedes preparar y confirmar cambios, trabajar
-      con ramas y superar los conflictos de merge sin necesidad de recordar
-      ningún comando de terminal.
-    </p>
-  </div><!-- /card conflictos -->
-</div><!-- /section #vscode -->
-
+          <p style="margin-top: 16px">
+            <strong>¡Enhorabuena!</strong> Ahora sabes usar VS Code como tu
+            interfaz principal de Git: puedes preparar y confirmar cambios,
+            trabajar con ramas y superar los conflictos de merge sin necesidad
+            de recordar ningún comando de terminal.
+          </p>
+        </div>
+        <!-- /card conflictos -->
+      </div>
+      <!-- /section #vscode -->
     </main>
 
-
     <footer>
-        <p>© 2026 Guía de GitHub · <a style="text-decoration: none;" href="https://github.com/gacastroo" target="_blank">Guillermo Castro Abarca</a></p>
+      <p>
+        © 2026 Guía de GitHub ·
+        <a
+          style="text-decoration: none"
+          href="https://github.com/gacastroo"
+          target="_blank"
+          >Guillermo Castro Abarca</a
+        >
+      </p>
     </footer>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/navbar.js"></script>
-</body>
-
+  </body>
 </html>
