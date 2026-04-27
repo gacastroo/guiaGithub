@@ -1,11 +1,13 @@
+  /* ═══════════════════════════════
+   NAVEGACIÓN ENTRE SECCIONES
+═══════════════════════════════ */
+// Cambia de sección visible al hacer clic en el menú
   function show(id, btn) {
     document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
     document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
     document.getElementById(id).classList.add('visible');
     btn.classList.add('active');
-    // Close mobile nav if open
     closeMobileNav();
-    // Scroll to top so the section starts from the beginning
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
@@ -24,13 +26,15 @@
     hamburger.classList.remove('open');
   }
 
-  // Close nav when clicking outside
+
   document.addEventListener('click', function(e) {
     const nav = document.querySelector('nav');
     if (!nav.contains(e.target)) closeMobileNav();
   });
 
-  /* ── DARK MODE ── */
+  /* ═══════════════════════════════
+   DARK MODE TOGGLE
+═══════════════════════════════ */
   (function() {
     const saved = localStorage.getItem('theme');
     if (saved === 'dark') {
@@ -60,7 +64,9 @@
     }
   });
 
-  /* ── LANGUAGE TOGGLE ── */
+    /* ═══════════════════════════════
+   LANGUAGE TOGGLE
+═══════════════════════════════ */
   let currentLang = localStorage.getItem('lang') || 'es';
 
   function applyLang(lang) {
@@ -664,7 +670,9 @@ function handleSimCommand(cmd) {
   }
 }
 
-// ── LIGHTBOX ──────────────────────────────────────────────────────────────
+  /* ═══════════════════════════════
+  LIGHTBOX PARA IMÁGENES
+═══════════════════════════════ */
 function buildLightbox() {
   const overlay = document.createElement('div');
   overlay.id = 'lightbox-overlay';
@@ -712,6 +720,10 @@ function buildLightbox() {
     });
   });
 }
+
+  /* ═══════════════════════════════
+  SIMULADOR DE .GITIGNORE
+═══════════════════════════════ */
 
 (function () {
   const FILES = [
@@ -896,7 +908,6 @@ function buildLightbox() {
     }
   };
 
-  // 🚀 INIT CORREGIDO
   document.addEventListener('DOMContentLoaded', function () {
     if (typeof buildQuiz === "function") buildQuiz();
     if (typeof buildSimulator === "function") buildSimulator();
