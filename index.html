@@ -2370,6 +2370,86 @@ Thumbs.db
             style="font-size: 12px; color: var(--text3); margin-top: 10px"
           ></p>
         </div>
+        <!-- EJERCICIO FLUJO COMMIT PUSH -->
+        <div class="card" id="commit-push-exercise-card">
+          <h2 data-es="Ejercicio: flujo completo add → commit → push" data-en="Exercise: full add → commit → push flow">
+            Ejercicio: flujo completo add → commit → push
+          </h2>
+          <p style="font-size:13px;color:var(--text3);margin-bottom:16px">
+            <span data-es="Terminal simulada con autocompletado (Tab), historial (↑↓) y sintaxis coloreada. Completa los 6 pasos del flujo real." data-en="Simulated terminal with autocomplete (Tab), history (↑↓) and colored syntax. Complete the 6 steps of the real flow.">
+              Terminal simulada con autocompletado (Tab), historial (↑↓) y sintaxis coloreada. Completa los 6 pasos del flujo real.
+            </span>
+          </p>
+
+          <!-- Barra de pasos -->
+          <div id="cpe-step-bar" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1rem"></div>
+
+          <!-- Estado de archivos -->
+          <p style="font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">Estado de archivos</p>
+          <div id="cpe-file-status" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem"></div>
+
+          <!-- Panel de log (aparece tras primer commit) -->
+          <div id="cpe-log-panel" style="background:#0d1117;border-radius:8px;border:0.5px solid #30363d;padding:8px 12px;font-family:monospace;font-size:12px;display:none;margin-bottom:1rem"></div>
+
+          <!-- Pista -->
+          <div id="cpe-hint" style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 13px;margin-bottom:1rem;display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--text2);line-height:1.5">
+            <span style="font-size:14px;flex-shrink:0">💡</span>
+            <div id="cpe-hint-text"></div>
+          </div>
+
+          <!-- Terminal -->
+          <div id="cpe-term" style="border-radius:10px;border:0.5px solid #30363d;overflow:hidden;margin-bottom:1rem;background:#0d1117">
+            <div style="background:#1c2128;padding:0 14px;height:38px;display:flex;align-items:center;gap:0;border-bottom:0.5px solid #30363d">
+              <div style="display:flex;gap:6px;margin-right:12px">
+                <div style="width:11px;height:11px;border-radius:50%;background:#f85149"></div>
+                <div style="width:11px;height:11px;border-radius:50%;background:#e3b341"></div>
+                <div style="width:11px;height:11px;border-radius:50%;background:#56d364"></div>
+              </div>
+              <span style="flex:1;text-align:center;font-size:12px;color:#6e7681;font-family:monospace">bash — mi-proyecto</span>
+              <span id="cpe-branch-badge" style="font-size:11px;background:#1a2540;color:#79c0ff;padding:2px 8px;border-radius:4px;border:0.5px solid #1f3058;margin-left:8px">main</span>
+            </div>
+            <div id="cpe-output" style="padding:10px 16px;min-height:180px;max-height:320px;overflow-y:auto;font-family:monospace;font-size:13px;line-height:1.75"></div>
+            <div style="background:#0d1117">
+              <div id="cpe-ac-box" style="background:#161b22;border:0.5px solid #30363d;border-radius:0 0 6px 6px;overflow:hidden;display:none;margin:0 14px 0;border-top:none"></div>
+              <div style="display:flex;align-items:center;padding:0 14px;min-height:44px;border-top:0.5px solid #21262d">
+                <div style="display:flex;align-items:center;gap:0;flex-shrink:0;font-family:monospace;font-size:13px;white-space:nowrap">
+                  <span style="color:#56d364">usuario</span><span style="color:#6e7681">@</span><span style="color:#56d364">pc</span><span style="color:#6e7681">:</span><span style="color:#79c0ff">~/mi-proyecto</span><span id="cpe-branch-prompt" style="color:#e3b341;background:#1f1d0e;border:0.5px solid #3d3500;padding:1px 6px;border-radius:3px;margin:0 4px;font-size:11px">main</span><span style="color:#56d364;margin-left:4px">$&nbsp;</span>
+                </div>
+                <input id="cpe-input" type="text" autocomplete="off" spellcheck="false" placeholder="escribe un comando git..." style="flex:1;background:transparent;border:none;outline:none;color:#e6edf3;font-family:monospace;font-size:13px;padding:0 8px;caret-color:#56d364"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cheatsheet -->
+          <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin-bottom:1rem">
+            <p style="font-size:12px;font-weight:500;color:var(--text3);margin-bottom:8px;letter-spacing:.04em;text-transform:uppercase">Comandos disponibles</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:4px 16px;font-size:12px">
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git status</code><span style="color:var(--text3)">ver estado</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git add .</code><span style="color:var(--text3)">añadir todo al staging</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git add &lt;archivo&gt;</code><span style="color:var(--text3)">añadir un archivo</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git commit -m "msg"</code><span style="color:var(--text3)">crear commit</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git log</code><span style="color:var(--text3)">historial completo</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git log --oneline</code><span style="color:var(--text3)">historial compacto</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git push origin main</code><span style="color:var(--text3)">subir a remoto</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git diff</code><span style="color:var(--text3)">ver cambios</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git restore --staged .</code><span style="color:var(--text3)">quitar del staging</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git branch</code><span style="color:var(--text3)">listar ramas</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">git remote -v</code><span style="color:var(--text3)">ver remotos</span></div>
+              <div style="display:flex;gap:6px;padding:2px 0"><code style="color:#79c0ff;white-space:nowrap">ls / clear / help</code><span style="color:var(--text3)">utilidades</span></div>
+            </div>
+          </div>
+
+          <!-- Panel victoria -->
+          <div id="cpe-win" style="display:none;background:#071a0f;border:0.5px solid #56d364;border-radius:10px;padding:1.25rem;text-align:center">
+            <p style="font-size:18px;font-weight:500;color:#56d364;margin-bottom:6px" data-es="¡Flujo completado!" data-en="Flow completed!">¡Flujo completado!</p>
+            <p style="font-size:13px;color:#6e7681;margin-bottom:1rem;line-height:1.5" data-es="Has dominado el ciclo completo de Git: desde archivos sin rastrear hasta el repositorio remoto." data-en="You have mastered the complete Git cycle: from untracked files to the remote repository.">
+              Has dominado el ciclo completo de Git: desde archivos sin rastrear hasta el repositorio remoto.
+            </p>
+            <button onclick="cpeReset()" style="font-size:13px;padding:7px 18px;border-radius:8px;cursor:pointer" data-es="Volver a empezar" data-en="Start over">Volver a empezar</button>
+          </div>
+        </div>
+
+
         <div class="card" id="gitignore-exercise-card">
           <h2
             data-es="Ejercicio: crea tu .gitignore"
@@ -2940,6 +3020,339 @@ Thumbs.db
       </p>
     </footer>
     <script src="./assets/js/script.js"></script>
+
+    <script>
+/* ═══════════════════════════════════════════
+   EJERCICIO: FLUJO COMPLETO ADD → COMMIT → PUSH
+   ═══════════════════════════════════════════ */
+(function() {
+  const CPE_FILES = [
+    { name: 'index.html', state: 'u' },
+    { name: 'styles.css', state: 'u' },
+    { name: 'app.js',     state: 'u' },
+  ];
+  const CPE_AC = [
+    { cmd: 'git status',                                        desc: 'ver estado del repo' },
+    { cmd: 'git add .',                                         desc: 'añadir todo al staging' },
+    { cmd: 'git add -A',                                        desc: 'añadir todo (alternativa)' },
+    { cmd: 'git add index.html',                                desc: 'añadir archivo concreto' },
+    { cmd: 'git add styles.css',                                desc: 'añadir archivo concreto' },
+    { cmd: 'git add app.js',                                    desc: 'añadir archivo concreto' },
+    { cmd: 'git commit -m "primer commit"',                     desc: 'crear commit' },
+    { cmd: 'git log',                                           desc: 'historial de commits' },
+    { cmd: 'git log --oneline',                                 desc: 'historial compacto' },
+    { cmd: 'git log --oneline --graph',                         desc: 'historial con árbol' },
+    { cmd: 'git push origin main',                              desc: 'subir al remoto' },
+    { cmd: 'git push',                                          desc: 'subir (rama actual)' },
+    { cmd: 'git diff',                                          desc: 'cambios sin staged' },
+    { cmd: 'git diff --staged',                                 desc: 'cambios en staging' },
+    { cmd: 'git restore --staged .',                            desc: 'quitar todo del staging' },
+    { cmd: 'git restore .',                                     desc: 'descartar cambios locales' },
+    { cmd: 'git branch',                                        desc: 'listar ramas' },
+    { cmd: 'git branch -v',                                     desc: 'ramas con último commit' },
+    { cmd: 'git remote -v',                                     desc: 'ver remotos configurados' },
+    { cmd: 'git remote add origin https://github.com/usuario/repo.git', desc: 'añadir remoto' },
+    { cmd: 'git show HEAD',                                     desc: 'ver último commit' },
+    { cmd: 'git stash',                                         desc: 'guardar cambios temporalmente' },
+    { cmd: 'git stash pop',                                     desc: 'recuperar stash' },
+    { cmd: 'ls',   desc: 'listar archivos' },
+    { cmd: 'clear',desc: 'limpiar terminal' },
+    { cmd: 'help', desc: 'mostrar ayuda' },
+  ];
+
+  let cpeState = { step: 0, commits: [], commitMsg: null, commitHash: null, lastCmd: '', history: [], histIdx: -1 };
+  let cpeAcSel = -1;
+
+  const CPE_STEPS = [
+    { id:'s1', label:'1. git status', hint:'Observa qué archivos están sin rastrear. Escribe <code>git status</code>', check: c => c === 'git status', action() { cpePrintStatus(); cpeState.step++; } },
+    { id:'s2', label:'2. git add',    hint:'Añade los archivos al staging. Usa <code>git add .</code>, <code>git add -A</code> o <code>git add index.html</code>', check: c => /^git add(\s(\.|(-A|--all)|index\.html|styles\.css|app\.js))+$/.test(c),
+      action() {
+        const c = cpeState.lastCmd;
+        if (/git add (\.|(-A|--all))/.test(c)) { CPE_FILES.forEach(f => f.state = 's'); }
+        else { const m = c.match(/git add (.+)/); if (m) m[1].trim().split(/\s+/).forEach(n => { const f = CPE_FILES.find(x => x.name === n); if (f) f.state = 's'; }); }
+        if (CPE_FILES.every(f => f.state === 's')) { cpeState.step++; }
+        else if (CPE_FILES.some(f => f.state === 's')) { cpePrint('Parcial: ' + CPE_FILES.filter(f => f.state === 's').map(f => f.name).join(', ') + ' añadidos. Añade el resto.', 'line-warn'); }
+        cpePrint('', '');
+      }
+    },
+    { id:'s3', label:'3. git status', hint:'Comprueba que los archivos están en staging (en verde). Escribe <code>git status</code>', check: c => c === 'git status', action() { cpePrintStatus(); cpeState.step++; } },
+    { id:'s4', label:'4. git commit', hint:'Crea un commit con un mensaje. Ej: <code>git commit -m "primer commit"</code>', check: c => /^git commit -m ".+"$/.test(c),
+      action() {
+        const msg = cpeState.lastCmd.match(/"(.+)"/)?.[1] || 'commit';
+        cpeState.commitMsg = msg;
+        const h = Math.random().toString(16).slice(2, 9);
+        cpeState.commitHash = h;
+        CPE_FILES.forEach(f => f.state = 'c');
+        cpePrint(`[main (root-commit) ${h}] ${msg}`, 'line-ok');
+        cpePrint(' 3 files changed, 48 insertions(+)', 'line-dim');
+        CPE_FILES.forEach(f => cpePrint(` create mode 100644 ${f.name}`, 'line-dim'));
+        cpePrint('', '');
+        cpeState.commits.push({ hash: h, msg, ref: 'HEAD -> main, origin/HEAD' });
+        cpeUpdateLogPanel();
+        cpeState.step++;
+      }
+    },
+    { id:'s5', label:'5. git log', hint:'Revisa el historial. Prueba <code>git log</code>, <code>git log --oneline</code> o con <code>--graph</code>', check: c => /^git log/.test(c),
+      action() { cpePrintLog(/--oneline/.test(cpeState.lastCmd), /--graph/.test(cpeState.lastCmd)); cpeState.step++; }
+    },
+    { id:'s6', label:'6. git push', hint:'Sube tu commit a GitHub. Escribe <code>git push origin main</code> (o <code>git push</code>)', check: c => /^git push(\s+origin\s+main)?$/.test(c),
+      action() {
+        CPE_FILES.forEach(f => f.state = 'p');
+        ['Enumerating objects: 6, done.','Counting objects: 100% (6/6), done.','Delta compression using up to 8 threads','Compressing objects: 100% (4/4), done.','Writing objects: 100% (6/6), 1.23 KiB | 1.23 MiB/s, done.','Total 6 (delta 0), reused 0 (delta 0), pack-reused 0'].forEach(l => cpePrint(l, 'line-dim'));
+        cpePrint('To https://github.com/usuario/mi-proyecto.git', 'line-info');
+        cpePrint(' * [new branch]      main -> main', 'line-ok');
+        cpePrint("Branch 'main' set up to track remote branch 'main' from 'origin'.", 'line-dim');
+        cpePrint('', '');
+        if (cpeState.commits[0]) cpeState.commits[0].ref = 'HEAD -> main, origin/main, origin/HEAD';
+        cpeUpdateLogPanel();
+        cpeState.step++;
+      }
+    },
+  ];
+
+  const CPE_EXTRAS = {
+    'git status': () => cpePrintStatus(),
+    'git log': () => cpePrintLog(false, false),
+    'git log --oneline': () => cpePrintLog(true, false),
+    'git log --oneline --graph': () => cpePrintLog(true, true),
+    'git log --graph': () => cpePrintLog(false, true),
+    'git diff': () => {
+      if (cpeState.step < 1) { cpePrint('diff --git a/index.html b/index.html','line-dim'); cpePrint('--- /dev/null','line-dim'); cpePrint('+++ b/index.html','line-dim'); cpePrint('@@ -0,0 +1,3 @@','line-info'); cpePrint('+<html>','line-ok'); cpePrint('+  <body><h1>Mi proyecto</h1></body>','line-ok'); cpePrint('+</html>','line-ok'); }
+      else { cpePrint('(no hay cambios sin rastrear)', 'line-dim'); }
+      cpePrint('', '');
+    },
+    'git diff --staged': () => {
+      if (CPE_FILES.some(f => f.state === 's')) { cpePrint('diff --git a/index.html b/index.html','line-dim'); cpePrint('+++ b/index.html','line-dim'); cpePrint('@@ -0,0 +1 @@','line-info'); cpePrint('+<html><body></body></html>','line-ok'); }
+      else { cpePrint('(nada en staging)', 'line-dim'); }
+      cpePrint('', '');
+    },
+    'git restore --staged .': () => {
+      if (CPE_FILES.some(f => f.state === 's')) { CPE_FILES.filter(f => f.state === 's').forEach(f => f.state = 'u'); cpePrint('Archivos removidos del staging', 'line-warn'); cpeUpdateFiles(); }
+      else { cpePrint('(nada en staging para quitar)', 'line-dim'); }
+      cpePrint('', '');
+    },
+    'git restore .': () => { cpePrint('(archivos restaurados a su estado previo)', 'line-warn'); cpePrint('', ''); },
+    'git branch': () => { cpePrint('* main', 'line-ok'); cpePrint('', ''); },
+    'git branch -v': () => { const h = cpeState.commitHash || '(ninguno)'; const m = cpeState.commitMsg || 'sin commits'; cpePrint(`* main  ${h}  ${m}`, 'line-ok'); cpePrint('', ''); },
+    'git remote -v': () => { cpePrint('origin  https://github.com/usuario/mi-proyecto.git (fetch)', 'line-dim'); cpePrint('origin  https://github.com/usuario/mi-proyecto.git (push)', 'line-dim'); cpePrint('', ''); },
+    'git remote add origin https://github.com/usuario/repo.git': () => { cpePrint("Remoto 'origin' configurado.", 'line-ok'); cpePrint('', ''); },
+    'git show HEAD': () => {
+      if (!cpeState.commits.length) { cpePrint("fatal: tu rama 'main' no tiene commits todavía", 'line-err'); cpePrint('', ''); return; }
+      const c = cpeState.commits[0];
+      cpePrint(`commit ${c.hash}abe91f2d0e4c`, 'line-info'); cpePrint(`Author: Usuario Local <usuario@correo.com>`, 'line-dim'); cpePrint(`Date:   ${new Date().toDateString()}`, 'line-dim'); cpePrint(`    ${c.msg}`, 'line-ok'); cpePrint('', '');
+    },
+    'git stash': () => { cpePrint("Saved working directory and index state WIP on main: stash", 'line-ok'); cpePrint('', ''); },
+    'git stash pop': () => { cpePrint('On branch main', 'line-dim'); cpePrint('nothing to commit, working tree clean', 'line-ok'); cpePrint('', ''); },
+    'ls': () => { cpePrint('index.html   styles.css   app.js', 'line-dim'); cpePrint('', ''); },
+    'clear': () => { document.getElementById('cpe-output').innerHTML = ''; },
+    'pwd': () => { cpePrint('/home/usuario/mi-proyecto', 'line-dim'); cpePrint('', ''); },
+    'help': () => {
+      cpePrint('Comandos disponibles:', 'line-info');
+      cpePrint('  Estado:    git status, git diff, git diff --staged', 'line-dim');
+      cpePrint('  Staging:   git add . | git add -A | git add <archivo>', 'line-dim');
+      cpePrint('             git restore --staged .', 'line-dim');
+      cpePrint('  Commit:    git commit -m "mensaje"', 'line-dim');
+      cpePrint('  Historial: git log, git log --oneline, git log --graph', 'line-dim');
+      cpePrint('             git log --oneline --graph, git show HEAD', 'line-dim');
+      cpePrint('  Remoto:    git push origin main, git push', 'line-dim');
+      cpePrint('             git remote -v, git remote add origin <url>', 'line-dim');
+      cpePrint('  Ramas:     git branch, git branch -v', 'line-dim');
+      cpePrint('  Misc:      ls, pwd, clear, git stash, git stash pop', 'line-dim');
+      cpePrint('  Tab → autocompletado | ↑↓ → historial de comandos', 'line-dim');
+      cpePrint('', '');
+    },
+  };
+
+  function cpePrint(text, cls) {
+    const out = document.getElementById('cpe-output');
+    const d = document.createElement('div'); d.className = cls || ''; d.textContent = text;
+    out.appendChild(d); out.scrollTop = out.scrollHeight;
+  }
+
+  function cpePrintStatus() {
+    const allU = CPE_FILES.every(f => f.state === 'u');
+    const allS = CPE_FILES.every(f => f.state === 's');
+    const allC = CPE_FILES.every(f => ['c','p'].includes(f.state));
+    const out = document.getElementById('cpe-output');
+    cpePrint('On branch main', 'line-dim');
+    if (allC) { cpePrint('nothing to commit, working tree clean', 'line-ok'); cpePrint('', ''); return; }
+    if (allS || (!allU && !allC)) {
+      cpePrint('Changes to be committed:', 'line-info');
+      cpePrint('  (use "git restore --staged <file>..." to unstage)', 'line-dim');
+      CPE_FILES.filter(f => f.state === 's').forEach(f => { const d = document.createElement('div'); d.className = 'line-ok'; d.textContent = `\tnew file:   ${f.name}`; out.appendChild(d); });
+    }
+    if (allU || (!allS && !allC)) {
+      cpePrint('', ''); cpePrint('Untracked files:', 'line-warn');
+      cpePrint('  (use "git add <file>..." to include in what will be committed)', 'line-dim');
+      CPE_FILES.filter(f => f.state === 'u').forEach(f => { const d = document.createElement('div'); d.className = 'line-err'; d.textContent = `\t${f.name}`; out.appendChild(d); });
+      cpePrint('', ''); cpePrint('nothing added to commit but untracked files present (use "git add" to track)', 'line-dim');
+    }
+    out.scrollTop = 9999; cpePrint('', '');
+  }
+
+  function cpePrintLog(oneline, graph) {
+    if (!cpeState.commits.length) { cpePrint("fatal: tu rama 'main' no tiene commits todavía", 'line-err'); cpePrint('', ''); return; }
+    const out = document.getElementById('cpe-output');
+    cpeState.commits.slice().reverse().forEach(c => {
+      if (oneline) {
+        const d = document.createElement('div');
+        d.innerHTML = (graph ? '* ' : '') + `<span style="color:#d2a8ff">${c.hash}</span> <span style="color:#79c0ff">(${c.ref})</span> <span style="color:#e6edf3">${c.msg}</span>`;
+        out.appendChild(d);
+      } else {
+        [
+          `<span style="color:#d2a8ff">commit ${c.hash}abe91f2d0e4c</span> <span style="color:#79c0ff">(${c.ref})</span>`,
+          `<span style="color:#6e7681">Author: Usuario Local &lt;usuario@correo.com&gt;</span>`,
+          `<span style="color:#6e7681">Date:   ${new Date().toDateString()}</span>`,
+          ``, `<span style="color:#e6edf3">    ${c.msg}</span>`, ``
+        ].forEach(r => { const d = document.createElement('div'); d.innerHTML = r; out.appendChild(d); });
+      }
+    });
+    out.scrollTop = 9999; cpePrint('', ''); cpeUpdateLogPanel();
+  }
+
+  function cpeUpdateLogPanel() {
+    if (!cpeState.commits.length) return;
+    const p = document.getElementById('cpe-log-panel'); p.style.display = 'block';
+    p.innerHTML = '<div style="font-size:11px;color:#6e7681;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em">Commits</div>' +
+      cpeState.commits.map(c => `<div style="display:flex;gap:8px;align-items:baseline;padding:3px 0;border-bottom:0.5px solid #1e2530"><span style="color:#d2a8ff">${c.hash}</span><span style="color:#79c0ff;font-size:11px">(${c.ref})</span><span style="color:#e6edf3">${c.msg}</span><span style="color:#6e7681;font-size:11px">— usuario</span></div>`).join('');
+  }
+
+  function cpeUpdateSteps() {
+    document.getElementById('cpe-step-bar').innerHTML = CPE_STEPS.map((s, i) => {
+      const done = i < cpeState.step, active = i === cpeState.step;
+      return `<span style="font-size:11px;padding:4px 10px;border-radius:20px;border:0.5px solid ${active?'#1D9E75':done?'#1D9E75':'var(--border)'};background:${active?'#1D9E75':'var(--bg2)'};color:${active?'#fff':done?'#1D9E75':'var(--text3)'};white-space:nowrap">${done?'✓ ':''}${s.label}</span>`;
+    }).join('');
+  }
+
+  function cpeUpdateFiles() {
+    const icons = { u:'? ', s:'+ ', c:'✓ ', p:'↑ ' };
+    const colors = { u:'#f85149', s:'#56d364', c:'#3fb988', p:'#79c0ff' };
+    const bg = { u:'#1c1214', s:'#0e2117', c:'#0e1c1a', p:'#101624' };
+    const bd = { u:'#f85149', s:'#56d364', c:'#1D9E75', p:'#79c0ff' };
+    document.getElementById('cpe-file-status').innerHTML = CPE_FILES.map(f =>
+      `<span style="font-size:11px;font-family:monospace;padding:3px 9px;border-radius:5px;border:0.5px solid ${bd[f.state]};background:${bg[f.state]};color:${colors[f.state]};display:inline-flex;align-items:center;gap:4px">${icons[f.state]}${f.name}</span>`
+    ).join('');
+  }
+
+  function cpeUpdateHint() {
+    if (cpeState.step >= CPE_STEPS.length) { document.getElementById('cpe-hint').style.display = 'none'; return; }
+    document.getElementById('cpe-hint-text').innerHTML = CPE_STEPS[cpeState.step].hint;
+  }
+
+  function cpeGetAC(val) { return val ? CPE_AC.filter(a => a.cmd.startsWith(val) && a.cmd !== val).slice(0, 6) : []; }
+
+  function cpeRenderAC(val) {
+    const box = document.getElementById('cpe-ac-box');
+    const sugg = cpeGetAC(val);
+    if (!sugg.length) { box.style.display = 'none'; cpeAcSel = -1; return; }
+    box.style.display = 'block';
+    box.innerHTML = sugg.map((s, i) =>
+      `<div style="padding:5px 14px;font-family:monospace;font-size:12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;${i===cpeAcSel?'background:#1f2937;color:#e6edf3':'color:#8b949e'}" data-cmd="${s.cmd}" onmouseover="this.style.background='#1f2937';this.style.color='#e6edf3'" onmouseout="this.style.background='';this.style.color='${i===cpeAcSel?'#e6edf3':'#8b949e'}'" onclick="cpeApplyAC('${s.cmd.replace(/'/g,"\\'")}')">
+        <span style="color:#e6edf3">${s.cmd}</span>
+        <span style="font-size:11px;color:#484f58">${s.desc}</span>
+      </div>`
+    ).join('');
+  }
+
+  window.cpeApplyAC = function(cmd) {
+    const input = document.getElementById('cpe-input');
+    input.value = cmd;
+    document.getElementById('cpe-ac-box').style.display = 'none';
+    cpeAcSel = -1; input.focus();
+  };
+
+  function cpeHandleCmd(raw) {
+    const cmd = raw.trim(); if (!cmd) return;
+    cpeState.history.unshift(cmd); cpeState.histIdx = -1; cpeState.lastCmd = cmd;
+    document.getElementById('cpe-ac-box').style.display = 'none';
+    cpePrint('$ ' + cmd, 'line-cmd');
+    if (cpeState.step >= CPE_STEPS.length) {
+      if (CPE_EXTRAS[cmd]) CPE_EXTRAS[cmd]();
+      else { cpePrint('Flujo completado. Sigue explorando comandos o reinicia.', 'line-info'); cpePrint('', ''); }
+      return;
+    }
+    const cur = CPE_STEPS[cpeState.step];
+    if (cur.check(cmd)) {
+      cur.action(); cpeUpdateSteps(); cpeUpdateFiles(); cpeUpdateHint();
+      if (cpeState.step >= CPE_STEPS.length) { document.getElementById('cpe-win').style.display = 'block'; document.getElementById('cpe-hint').style.display = 'none'; }
+    } else if (CPE_EXTRAS[cmd]) {
+      CPE_EXTRAS[cmd]();
+    } else if (/^git add/.test(cmd) && cpeState.step > 1) {
+      cpePrint('Los archivos ya están añadidos. Continúa con el siguiente paso.', 'line-warn'); cpePrint('', '');
+    } else if (/^git commit/.test(cmd) && cpeState.step < 3) {
+      cpePrint('Primero añade los archivos al staging con git add', 'line-warn'); cpePrint('', '');
+    } else if (/^git push/.test(cmd) && cpeState.step < 5) {
+      cpePrint('Necesitas hacer un commit antes de hacer push', 'line-warn'); cpePrint('', '');
+    } else {
+      const base = cmd.split(' ')[0];
+      cpePrint(base === 'git' ? `git: '${cmd.split(' ')[1]}' no reconocido. Escribe 'help'` : `${base}: comando no encontrado. Escribe 'help'`, 'line-err');
+      cpePrint('', '');
+    }
+  }
+
+  window.cpeReset = function() {
+    cpeState = { step:0, commits:[], commitMsg:null, commitHash:null, lastCmd:'', history:[], histIdx:-1 };
+    CPE_FILES.forEach(f => f.state = 'u');
+    document.getElementById('cpe-output').innerHTML = '';
+    document.getElementById('cpe-win').style.display = 'none';
+    document.getElementById('cpe-hint').style.display = 'flex';
+    document.getElementById('cpe-log-panel').style.display = 'none';
+    document.getElementById('cpe-log-panel').innerHTML = '';
+    cpeUpdateSteps(); cpeUpdateFiles(); cpeUpdateHint();
+    cpePrint('Repositorio reiniciado. Escribe help para ver los comandos.', 'line-info'); cpePrint('', '');
+  };
+
+  const cpeInput = document.getElementById('cpe-input');
+  cpeInput.addEventListener('input', function() { cpeRenderAC(this.value); cpeAcSel = -1; });
+  cpeInput.addEventListener('keydown', function(e) {
+    const box = document.getElementById('cpe-ac-box');
+    const items = box.querySelectorAll('div[data-cmd]');
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      if (items.length) { cpeApplyAC((cpeAcSel >= 0 ? items[cpeAcSel] : items[0]).dataset.cmd); }
+      else { const s = cpeGetAC(this.value); if (s.length === 1) cpeApplyAC(s[0].cmd); }
+    } else if (e.key === 'ArrowDown' && box.style.display === 'block') {
+      e.preventDefault(); cpeAcSel = Math.min(cpeAcSel + 1, items.length - 1); cpeRenderAC(this.value);
+    } else if (e.key === 'ArrowUp' && box.style.display === 'block') {
+      e.preventDefault(); cpeAcSel = Math.max(cpeAcSel - 1, -1); cpeRenderAC(this.value);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault(); if (cpeState.history.length) { cpeState.histIdx = Math.min(cpeState.histIdx + 1, cpeState.history.length - 1); this.value = cpeState.history[cpeState.histIdx]; }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault(); cpeState.histIdx = Math.max(cpeState.histIdx - 1, -1); this.value = cpeState.histIdx >= 0 ? cpeState.history[cpeState.histIdx] : '';
+    } else if (e.key === 'Escape') {
+      box.style.display = 'none'; cpeAcSel = -1;
+    } else if (e.key === 'Enter') {
+      const v = this.value; if (v.trim()) { cpeHandleCmd(v); cpeUpdateFiles(); } this.value = ''; box.style.display = 'none'; cpeAcSel = -1;
+    }
+  });
+  document.getElementById('cpe-term').addEventListener('click', () => cpeInput.focus());
+
+  /* Estilos de output */
+  const styleTag = document.createElement('style');
+  styleTag.textContent = `
+    #cpe-output .line-cmd  { color: #79c0ff; }
+    #cpe-output .line-ok   { color: #56d364; }
+    #cpe-output .line-err  { color: #f85149; }
+    #cpe-output .line-info { color: #d2a8ff; }
+    #cpe-output .line-dim  { color: #6e7681; }
+    #cpe-output .line-warn { color: #e3b341; }
+    #cpe-output { scrollbar-width: thin; scrollbar-color: #30363d #0d1117; }
+    #cpe-output::-webkit-scrollbar { width: 5px; }
+    #cpe-output::-webkit-scrollbar-track { background: #0d1117; }
+    #cpe-output::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+    #cpe-input::placeholder { color: #3c4249; }
+  `;
+  document.head.appendChild(styleTag);
+
+  cpeUpdateSteps(); cpeUpdateFiles(); cpeUpdateHint();
+  cpePrint('Repositorio iniciado: ~/mi-proyecto (3 archivos sin rastrear)', 'line-info');
+  cpePrint('Usa Tab para autocompletar y ↑↓ para el historial de comandos.', 'line-dim');
+  cpePrint("Escribe 'help' para ver todos los comandos disponibles.", 'line-dim');
+  cpePrint('', '');
+})();
+
+    </script>
+
     <script src="./assets/js/navbar.js"></script>
   </body>
 </html>
