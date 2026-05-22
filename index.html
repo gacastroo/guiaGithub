@@ -9,7 +9,6 @@
       rel="icon"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./assets/css/navbar.css" type="text/css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link
       rel="stylesheet"
@@ -593,7 +592,7 @@
         </div>
       </div>
 
-      <!-- COMANDOS -->
+       <!-- COMANDOS -->
       <div id="comandos" class="section">
         <div class="card">
           <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px">
@@ -917,7 +916,6 @@
           </p>
         </div>
       </div>
-
       <div id="miniguia" class="section">
         <div class="card">
           <h2
@@ -926,26 +924,39 @@
           >
             Miniguía: ¿Dónde vive tu código?
           </h2>
-          <p style="margin-top: 8px">
+          <p style="margin-top: 8px"
+            data-es='Para trabajar con GitHub, imagina que tienes dos "copias" de tu proyecto:'
+            data-en="To work with GitHub, imagine you have two 'copies' of your project:"
+          >
             Para trabajar con GitHub, imagina que tienes dos "copias" de tu
             proyecto:
           </p>
           <ul style="margin-top: 10px; padding-left: 0">
             <li style="list-style: none; margin-bottom: 6px">
-              <strong>Repositorio Local:</strong> Es la carpeta en tu ordenador.
+              <strong data-es="Repositorio Local:" data-en="Local Repository:">Repositorio Local:</strong>
+              <span data-es="Es la carpeta en tu ordenador. Es donde editas tus archivos día a día. GitHub no ve esto hasta que tú lo envías."
+                data-en="It's the folder on your computer. This is where you edit your files day to day. GitHub doesn't see this until you send it.">Es la carpeta en tu ordenador.
               Es donde editas tus archivos día a día. GitHub no ve esto hasta
-              que tú lo envías.
+              que tú lo envías.</span>
             </li>
             <li style="list-style: none">
-              <strong>Repositorio Remoto:</strong> Es la copia en los servidores
+              <strong data-es="Repositorio Remoto:" data-en="Remote Repository:">Repositorio Remoto:</strong>
+              <span data-es="Es la copia en los servidores de GitHub. Es tu respaldo en la nube y el lugar donde los demás ven tu código."
+                data-en="It's the copy on GitHub's servers. It's your cloud backup and the place where others see your code.">Es la copia en los servidores
               de GitHub. Es tu respaldo en la nube y el lugar donde los demás
-              ven tu código.
+              ven tu código.</span>
             </li>
           </ul>
-          <h3 style="margin-top: 16px; margin-bottom: 8px; font-size: 14px">
+          <h3 style="margin-top: 16px; margin-bottom: 8px; font-size: 14px"
+            data-es="¿Cómo se conectan?"
+            data-en="How do they connect?"
+          >
             ¿Cómo se conectan?
           </h3>
-          <p>
+          <p
+            data-es="Tú trabajas en tu <strong>Local</strong>. Cuando quieres que GitHub se entere, haces un <em>commit</em> (guardar foto instantánea) y luego un <em>push</em> (enviar a la nube)."
+            data-en="You work on your <strong>Local</strong>. When you want GitHub to know about it, you make a <em>commit</em> (save a snapshot) and then a <em>push</em> (send it to the cloud)."
+          >
             Tú trabajas en tu <strong>Local</strong>. Cuando quieres que GitHub
             se entere, haces un <em>commit</em> (guardar foto instantánea) y
             luego un <em>push</em> (enviar a la nube).
@@ -955,8 +966,8 @@
               <div class="icon yellow">✏️</div>
               <div class="content">
                 <span id="step1">1</span>
-                <h3>Escribes tu código</h3>
-                <p>Trabajas en tu computadora, creas o modificas archivos</p>
+                <h3 data-es="Escribes tu código" data-en="You write your code">Escribes tu código</h3>
+                <p data-es="Trabajas en tu computadora, creas o modificas archivos" data-en="You work on your computer, creating or modifying files">Trabajas en tu computadora, creas o modificas archivos</p>
                 <p
                   style="
                     border-radius: 7px;
@@ -977,8 +988,8 @@
               <div class="icon green">💾</div>
               <div class="content">
                 <span id="step2">2</span>
-                <h3>Guardas los cambios</h3>
-                <p>Haces un "commit" — es como tomar una foto de tu proyecto</p>
+                <h3 data-es="Guardas los cambios" data-en="You save the changes">Guardas los cambios</h3>
+                <p data-es='Haces un "commit" — es como tomar una foto de tu proyecto' data-en='You make a "commit" — it's like taking a snapshot of your project'>Haces un "commit" — es como tomar una foto de tu proyecto</p>
                 <p
                   style="
                     border-radius: 7px;
@@ -993,7 +1004,7 @@
                   git commit -m "tu mensaje aquí"
                 </p>
                 <div class="badge green-badge">
-                  💾 Se guarda en tu computadora
+                  <span data-es="💾 Se guarda en tu computadora" data-en="💾 Saved on your computer">💾 Se guarda en tu computadora</span>
                 </div>
               </div>
             </div>
@@ -1002,8 +1013,8 @@
               <div class="icon blue">☁️</div>
               <div class="content">
                 <span id="step3">3</span>
-                <h3>Subes a la nube</h3>
-                <p>
+                <h3 data-es="Subes a la nube" data-en="You upload to the cloud">Subes a la nube</h3>
+                <p data-es='Haces un "push" — envías todo a GitHub para que otros lo vean' data-en='You do a "push" — you send everything to GitHub so others can see it'>
                   Haces un "push" — envías todo a GitHub para que otros lo vean
                 </p>
                 <p
@@ -1019,7 +1030,7 @@
                 >
                   git push origin main
                 </p>
-                <div class="badge blue-badge">☁️ Ahora está en internet</div>
+                <div class="badge blue-badge"><span data-es="☁️ Ahora está en internet" data-en="☁️ Now it's on the internet">☁️ Ahora está en internet</span></div>
               </div>
             </div>
           </div>
@@ -1033,8 +1044,11 @@
             1. Crear el repositorio en GitHub
           </h2>
           <ol>
-            <li>Inicia sesión en <strong>GitHub.com</strong>.</li>
-            <li>
+            <li data-es="Inicia sesión en <strong>GitHub.com</strong>." data-en="Sign in to <strong>GitHub.com</strong>.">Inicia sesión en <strong>GitHub.com</strong>.</li>
+            <li
+              data-es="Haz clic en el icono <strong>&quot;+&quot;</strong> (esquina superior derecha) → <strong>&quot;New repository&quot;</strong>."
+              data-en="Click the <strong>&quot;+&quot;</strong> icon (top right corner) → <strong>&quot;New repository&quot;</strong>."
+            >
               Haz clic en el icono <strong>"+"</strong> (esquina superior
               derecha) → <strong>"New repository"</strong>.
             </li>
@@ -1050,15 +1064,21 @@
             </figcaption>
           </figure>
           <ol start="3">
-            <li>
+            <li
+              data-es="Ponle un nombre y elige si será <strong>Public</strong> o <strong>Private</strong>."
+              data-en="Give it a name and choose if it will be <strong>Public</strong> or <strong>Private</strong>."
+            >
               Ponle un nombre y elige si será <strong>Public</strong> o
               <strong>Private</strong>.
             </li>
-            <li>
+            <li
+              data-es="Marca <strong>&quot;Add a README file&quot;</strong> (fundamental para documentar el proyecto)."
+              data-en="Check <strong>&quot;Add a README file&quot;</strong> (essential for documenting the project)."
+            >
               Marca <strong>"Add a README file"</strong> (fundamental para
               documentar el proyecto).
             </li>
-            <li>Haz clic en <strong>"Create repository"</strong>.</li>
+            <li data-es="Haz clic en <strong>&quot;Create repository&quot;</strong>." data-en="Click <strong>&quot;Create repository&quot;</strong>.">Haz clic en <strong>"Create repository"</strong>.</li>
           </ol>
           <figure class="img-figure" style="margin-top: 14px">
             <img
@@ -1082,12 +1102,199 @@
 
         <div class="card">
           <h2
-            data-es="2. Trabajar profesionalmente (VS Code + GitHub)"
-            data-en="2. Work professionally (VS Code + GitHub)"
+            data-es="2. Vincular tu repositorio con GitHub"
+            data-en="2. Link your repository with GitHub"
           >
-            2. Trabajar profesionalmente (VS Code + GitHub)
+            2. Vincular tu repositorio con GitHub
           </h2>
-          <p><strong>Vincular GitHub con VS Code:</strong></p>
+
+          <p
+            data-es="Antes de empezar a trabajar, necesitas conectar tu proyecto local con el repositorio remoto de GitHub. Hay dos formas principales de hacerlo:"
+            data-en="Before you start working, you need to connect your local project to the remote GitHub repository. There are two main ways to do this:"
+          >
+            Antes de empezar a trabajar, necesitas conectar tu proyecto local
+            con el repositorio remoto de GitHub. Hay dos formas principales de
+            hacerlo:
+          </p>
+
+          <div class="compare" style="margin-top: 14px; margin-bottom: 16px">
+            <div class="cbox">
+              <h3 data-es="Opción A · Clonar un repositorio" data-en="Option A · Clone a repository">Opción A · Clonar un repositorio</h3>
+              <p
+                data-es="Usa esta opción si el repositorio ya existe en GitHub y quieres descargarlo a tu computadora."
+                data-en="Use this option if the repository already exists on GitHub and you want to download it to your computer."
+              >
+                Usa esta opción si el repositorio ya existe en GitHub y quieres
+                descargarlo a tu computadora.
+              </p>
+            </div>
+
+            <div class="cbox">
+              <h3 data-es="Opción B · Vincular una carpeta local" data-en="Option B · Link a local folder">Opción B · Vincular una carpeta local</h3>
+              <p
+                data-es="Usa esta opción si ya tienes una carpeta con archivos en tu computadora y quieres subirla a GitHub."
+                data-en="Use this option if you already have a folder with files on your computer and want to upload it to GitHub."
+              >
+                Usa esta opción si ya tienes una carpeta con archivos en tu
+                computadora y quieres subirla a GitHub.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 16px; margin-bottom: 8px; font-size: 14px"
+            data-es="Opción A: Clonar un repositorio existente"
+            data-en="Option A: Clone an existing repository"
+          >
+            Opción A: Clonar un repositorio existente
+          </h3>
+
+          <ol style="margin-top: 8px; padding-left: 18px">
+            <li>Entra al repositorio en GitHub.</li>
+            <li>
+              Haz clic en el botón verde <strong>Code</strong> y copia la URL
+              del repositorio.
+            </li>
+            <li>
+              Abre la terminal en VS Code con <strong>Ctrl + Ñ</strong> o desde
+              <strong>Terminal → New Terminal</strong>.
+            </li>
+            <li>
+              Ve a la carpeta donde quieres guardar el proyecto, por ejemplo:
+            </li>
+          </ol>
+
+          <pre><code>cd Desktop</code></pre>
+
+          <p style="margin-top: 12px">
+            Después, ejecuta el comando <code>git clone</code>:
+          </p>
+
+          <pre><code>git clone https://github.com/usuario/nombre-repositorio.git</code></pre>
+
+          <p style="margin-top: 12px">
+            Entra dentro de la carpeta que se acaba de descargar:
+          </p>
+
+          <pre><code>cd nombre-repositorio</code></pre>
+
+          <p style="margin-top: 12px">
+            Al clonar un repositorio, Git crea automáticamente la conexión con
+            GitHub. Esa conexión se llama normalmente <strong>origin</strong>.
+          </p>
+
+          <p>Puedes comprobarlo con:</p>
+
+          <pre><code>git remote -v</code></pre>
+
+          <p style="margin-top: 12px">
+            Si todo está correcto, verás algo parecido a esto:
+          </p>
+
+          <pre><code>origin  https://github.com/usuario/nombre-repositorio.git (fetch)
+            origin  https://github.com/usuario/nombre-repositorio.git (push)</code></pre>
+
+          <h3 style="margin-top: 22px; margin-bottom: 8px; font-size: 14px"
+            data-es="Opción B: Vincular una carpeta local con GitHub"
+            data-en="Option B: Link a local folder with GitHub"
+          >
+            Opción B: Vincular una carpeta local con GitHub
+          </h3>
+
+          <p>
+            Usa esta opción si ya tienes tu proyecto creado en tu computadora y
+            quieres conectarlo con un repositorio nuevo de GitHub.
+          </p>
+
+          <ol style="margin-top: 8px; padding-left: 18px">
+            <li>Crea un repositorio nuevo en GitHub.</li>
+            <li>Copia la URL del repositorio. Será parecida a esta:</li>
+          </ol>
+
+          <pre><code>https://github.com/usuario/nombre-repositorio.git</code></pre>
+
+          <p style="margin-top: 12px">
+            Abre tu proyecto en VS Code y asegúrate de estar dentro de la
+            carpeta correcta en la terminal.
+          </p>
+
+          <p>Puedes comprobarlo con:</p>
+
+          <pre><code>pwd</code></pre>
+
+          <p style="margin-top: 12px">Ahora ejecuta estos comandos en orden:</p>
+
+          <pre><code>git init
+            git add .
+            git commit -m "feat: initial commit"
+            git branch -M main
+            git remote add origin https://github.com/usuario/nombre-repositorio.git
+            git push -u origin main</code></pre>
+
+          <p style="margin-top: 12px">
+            <strong>¿Qué hace cada comando?</strong>
+          </p>
+
+          <ul style="margin-top: 8px; padding-left: 18px">
+            <li>
+              <code>git init</code>: convierte tu carpeta en un repositorio
+              local.
+            </li>
+            <li>
+              <code>git add .</code>: prepara todos los archivos para
+              guardarlos.
+            </li>
+            <li>
+              <code>git commit -m "feat: initial commit"</code>: crea el primer
+              punto de guardado.
+            </li>
+            <li>
+              <code>git branch -M main</code>: asegura que la rama principal se
+              llame <strong>main</strong>.
+            </li>
+            <li>
+              <code>git remote add origin</code>: conecta tu repositorio local
+              con el repositorio remoto de GitHub.
+            </li>
+            <li>
+              <code>git push -u origin main</code>: sube tu proyecto a GitHub y
+              deja la rama conectada para futuros pushes.
+            </li>
+          </ul>
+
+          <div class="analogy" style="margin-top: 16px">
+            <p>
+              <strong>Resumen fácil:</strong> <code>git clone</code> descarga un
+              proyecto que ya existe en GitHub.
+              <code>git remote add origin</code> conecta una carpeta local con
+              un repositorio remoto.
+            </p>
+          </div>
+
+          <p style="margin-top: 12px">
+            Después de hacer esto una vez, tu flujo diario será:
+          </p>
+
+          <pre><code>git add .
+          git commit -m "tipo: mensaje claro"
+          git push</code></pre>
+
+          <p style="margin-top: 12px">
+            <em>
+              Nota: sustituye <strong>usuario</strong> y
+              <strong>nombre-repositorio</strong> por los datos reales de tu
+              cuenta y de tu repositorio.
+            </em>
+          </p>
+        </div>
+
+        <div class="card">
+          <h2
+            data-es="3. Trabajar profesionalmente (VS Code + GitHub)"
+            data-en="3. Work professionally (VS Code + GitHub)"
+          >
+            3. Trabajar profesionalmente (VS Code + GitHub)
+          </h2>
+          <p><strong data-es="Vincular GitHub con VS Code:" data-en="Link GitHub with VS Code:">Vincular GitHub con VS Code:</strong></p>
           <ul style="margin-top: 8px; padding-left: 0">
             <li style="list-style: none; margin-bottom: 6px">
               Instala la extensión
@@ -1099,7 +1306,7 @@
             </li>
           </ul>
           <p style="margin-top: 14px">
-            <strong>Hacer cambios (Flujo diario):</strong>
+            <strong data-es="Hacer cambios (Flujo diario):" data-en="Making changes (Daily workflow):">Hacer cambios (Flujo diario):</strong>
           </p>
           <ol style="margin-top: 8px; padding-left: 18px">
             <li>Edita tus archivos y guárdalos.</li>
@@ -1124,10 +1331,10 @@
 
         <div class="card">
           <h2
-            data-es="3. Alternativa: Línea de comandos (Terminal)"
-            data-en="3. Alternative: Command Line (Terminal)"
+            data-es="4. Alternativa: Línea de comandos (Terminal)"
+            data-en="4. Alternative: Command Line (Terminal)"
           >
-            3. Alternativa: Línea de comandos (Terminal)
+            4. Alternativa: Línea de comandos (Terminal)
           </h2>
           <p>
             Para usar la terminal en VS Code, presiona
@@ -1149,12 +1356,15 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
 
         <div class="card">
           <h2
-            data-es="4. Como hacer un commit profesional"
-            data-en="4. How to make a professional commit"
+            data-es="5. Como hacer un commit profesional"
+            data-en="5. How to make a professional commit"
           >
-            4. Como hacer un commit profesional
+            5. Como hacer un commit profesional
           </h2>
-          <p>
+          <p
+            data-es="<b>Un commit profesional</b> es claro, conciso y descriptivo. Sigue esta estructura:"
+            data-en="<b>A professional commit</b> is clear, concise, and descriptive. Follow this structure:"
+          >
             <b>Un commit profesional</b> es claro, conciso y descriptivo. Sigue
             esta estructura:
           </p>
@@ -1212,7 +1422,10 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
             <li>1 commit = 1 cambio</li>
             <li>Mensaje claro: qué y por qué</li>
           </ul>
-          <p style="margin-top: 12px">
+          <p style="margin-top: 12px"
+            data-es="<em>Nota: Cuanto más claro sea el mensaje, mejor será para otros desarrolladores. Asegurate de dejar claro que archivo estás modificando.</em>"
+            data-en="<em>Note: The clearer the message, the better for other developers. Make sure to clarify which file you are modifying.</em>"
+          >
             <em
               >Nota: Cuanto más claro sea el mensaje, mejor será para otros
               desarrolladores. Asegurate de dejar claro que archivo estás
@@ -1239,7 +1452,10 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
               son ramas que crecen a los lados."
             </p>
           </div>
-          <p style="margin-top: 12px">
+          <p style="margin-top: 12px"
+            data-es="Cuando creas una nueva rama, Git hace una copia del estado actual de tu código. Puedes modificarla libremente y, si todo va bien, unirla de nuevo a <code>main</code>. Si algo sale mal, simplemente la eliminas."
+            data-en="When you create a new branch, Git makes a copy of your code's current state. You can freely modify it and, if all goes well, merge it back into <code>main</code>. If something goes wrong, simply delete it."
+          >
             Cuando creas una nueva rama, Git hace una copia del estado actual de
             tu código. Puedes modificarla libremente y, si todo va bien, unirla
             de nuevo a <code>main</code>. Si algo sale mal, simplemente la
@@ -1253,21 +1469,21 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
           </h2>
           <div class="compare" style="margin-bottom: 0">
             <div class="cbox">
-              <h3>❌ Sin ramas</h3>
+              <h3 data-es="❌ Sin ramas" data-en="❌ Without branches">❌ Sin ramas</h3>
               <ul>
-                <li>Editas directamente en main</li>
-                <li>Un error rompe todo el proyecto</li>
-                <li>Difícil trabajar en equipo</li>
-                <li>No puedes probar cosas nuevas con seguridad</li>
+                <li data-es="Editas directamente en main" data-en="You edit directly on main">Editas directamente en main</li>
+                <li data-es="Un error rompe todo el proyecto" data-en="One error breaks the entire project">Un error rompe todo el proyecto</li>
+                <li data-es="Difícil trabajar en equipo" data-en="Hard to work as a team">Difícil trabajar en equipo</li>
+                <li data-es="No puedes probar cosas nuevas con seguridad" data-en="You can't safely try new things">No puedes probar cosas nuevas con seguridad</li>
               </ul>
             </div>
             <div class="cbox">
-              <h3>✅ Con ramas</h3>
+              <h3 data-es="✅ Con ramas" data-en="✅ With branches">✅ Con ramas</h3>
               <ul>
-                <li>Cada tarea tiene su propio espacio</li>
-                <li>main siempre queda estable</li>
-                <li>Varios desarrolladores trabajan en paralelo</li>
-                <li>Experimentas sin miedo</li>
+                <li data-es="Cada tarea tiene su propio espacio" data-en="Each task has its own space">Cada tarea tiene su propio espacio</li>
+                <li data-es="main siempre queda estable" data-en="main always stays stable">main siempre queda estable</li>
+                <li data-es="Varios desarrolladores trabajan en paralelo" data-en="Multiple developers work in parallel">Varios desarrolladores trabajan en paralelo</li>
+                <li data-es="Experimentas sin miedo" data-en="You experiment without fear">Experimentas sin miedo</li>
               </ul>
             </div>
           </div>
@@ -1280,7 +1496,10 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
           >
             Visualización: cómo funcionan las ramas
           </h2>
-          <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px">
+          <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px"
+            data-es="Este diagrama muestra cómo una rama se separa de main, recibe commits propios, y luego se fusiona."
+            data-en="This diagram shows how a branch splits off from main, receives its own commits, and is then merged back."
+          >
             Este diagrama muestra cómo una rama se separa de main, recibe
             commits propios, y luego se fusiona.
           </p>
@@ -1451,8 +1670,8 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
                   "
                   >1</span
                 >
-                <h3>Crea la rama</h3>
-                <p>Parte siempre desde main actualizado</p>
+                <h3 data-es="Crea la rama" data-en="Create the branch">Crea la rama</h3>
+                <p data-es="Parte siempre desde main actualizado" data-en="Always start from an up-to-date main">Parte siempre desde main actualizado</p>
                 <p
                   style="
                     border-radius: 7px;
@@ -1487,8 +1706,11 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
                   "
                   >2</span
                 >
-                <h3>Trabaja y haz commits</h3>
-                <p>
+                <h3 data-es="Trabaja y haz commits" data-en="Work and commit">Trabaja y haz commits</h3>
+                <p
+                  data-es="Edita archivos y guarda tus avances con commits descriptivos"
+                  data-en="Edit files and save your progress with descriptive commits"
+                >
                   Edita archivos y guarda tus avances con commits descriptivos
                 </p>
                 <p
@@ -1525,8 +1747,11 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
                   "
                   >3</span
                 >
-                <h3>Sube la rama a GitHub</h3>
-                <p>
+                <h3 data-es="Sube la rama a GitHub" data-en="Push the branch to GitHub">Sube la rama a GitHub</h3>
+                <p
+                  data-es="Publica tu rama para que otros la vean o para hacer un Pull Request"
+                  data-en="Publish your branch so others can see it or to open a Pull Request"
+                >
                   Publica tu rama para que otros la vean o para hacer un Pull
                   Request
                 </p>
@@ -1564,8 +1789,11 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
                   "
                   >4</span
                 >
-                <h3>Fusiona con main (merge)</h3>
-                <p>
+                <h3 data-es="Fusiona con main (merge)" data-en="Merge into main">Fusiona con main (merge)</h3>
+                <p
+                  data-es="Vuelve a main y une tu rama. ¡Tu código ya está integrado!"
+                  data-en="Switch back to main and merge your branch. Your code is now integrated!"
+                >
                   Vuelve a main y une tu rama. ¡Tu código ya está integrado!
                 </p>
                 <p
@@ -1809,7 +2037,10 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
           >
             Pull Request: la pieza clave en equipo
           </h2>
-          <p>
+          <p
+            data-es="Cuando trabajas en GitHub, en lugar de hacer <code>merge</code> directamente, lo normal es abrir un <strong>Pull Request (PR)</strong>. Es una solicitud para que tus compañeros revisen tu código antes de integrarlo en <code>main</code>."
+            data-en="When working on GitHub, instead of merging directly, the standard practice is to open a <strong>Pull Request (PR)</strong>. It's a request for your teammates to review your code before merging it into <code>main</code>."
+          >
             Cuando trabajas en GitHub, en lugar de hacer
             <code>merge</code> directamente, lo normal es abrir un
             <strong>Pull Request (PR)</strong>. Es una solicitud para que tus
@@ -1840,7 +2071,10 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
           >
             Conflictos de merge: ¿qué son y cómo resolverlos?
           </h2>
-          <p>
+          <p
+            data-es="Un <strong>conflicto</strong> ocurre cuando dos ramas modifican la misma línea de un archivo. Git no sabe cuál versión conservar y te pide que decidas tú."
+            data-en="A <strong>conflict</strong> occurs when two branches modify the same line of a file. Git doesn't know which version to keep and asks you to decide."
+          >
             Un <strong>conflicto</strong> ocurre cuando dos ramas modifican la
             misma línea de un archivo. Git no sabe cuál versión conservar y te
             pide que decidas tú.
@@ -1863,7 +2097,10 @@ console.log("Hola mundo");
 =======
 console.log("Hello world");
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; feature/traduccion</code></pre>
-          <p style="margin-top: 12px">
+          <p style="margin-top: 12px"
+            data-es="Simplemente edita el archivo, deja solo la versión correcta, guarda y haz un commit nuevo. ¡Conflicto resuelto!"
+            data-en="Simply edit the file, keep only the correct version, save it, and make a new commit. Conflict resolved!"
+          >
             Simplemente edita el archivo, deja solo la versión correcta, guarda
             y haz un commit nuevo. ¡Conflicto resuelto!
           </p>
@@ -1871,39 +2108,45 @@ console.log("Hello world");
       </div>
       <div id="gitignore" class="section">
         <div class="card">
-          <h2>¿Qué es un .gitignore?</h2>
+          <h2 data-es="¿Qué es un .gitignore?" data-en="What is a .gitignore?">¿Qué es un .gitignore?</h2>
           <img
             src="./assets/img/PNG/gitignore.png"
             alt=".gitignore"
             style="border-radius: 8px; margin-bottom: 12px"
           />
-          <p>
+          <p
+            data-es="Un archivo <code><strong>.gitignore</strong></code> es un fichero de configuración utilizado por Git que le indica qué archivos o carpetas debe ignorar, es decir, no incluir en el control de versiones."
+            data-en="A <code><strong>.gitignore</strong></code> file is a configuration file used by Git that tells it which files or folders to ignore — i.e. not include in version control."
+          >
             Un archivo <code><strong>.gitignore</strong></code> es un fichero de
             configuración utilizado por Git que le indica qué archivos o
             carpetas debe ignorar, es decir, no incluir en el control de
             versiones.
           </p>
-          <p style="margin-top: 12px">
+          <p style="margin-top: 12px"
+            data-es="Aunque esos archivos existan en tu proyecto, Git no los rastreará ni los subirá al repositorio."
+            data-en="Even if those files exist in your project, Git will not track them or upload them to the repository."
+          >
             Aunque esos archivos existan en tu proyecto, Git no los rastreará ni
             los subirá al repositorio.
           </p>
         </div>
 
         <div class="card">
-          <h2>¿Por qué usar .gitignore?</h2>
+          <h2 data-es="¿Por qué usar .gitignore?" data-en="Why use .gitignore?">¿Por qué usar .gitignore?</h2>
           <ul>
-            <li>
+            <li data-es="<strong>Seguridad:</strong> evita subir datos sensibles como contraseñas o claves API." data-en="<strong>Security:</strong> prevents uploading sensitive data like passwords or API keys.">
               <strong>Seguridad:</strong> evita subir datos sensibles como
               contraseñas o claves API.
             </li>
-            <li>
+            <li data-es="<strong>Rendimiento:</strong> reduce el tamaño del repositorio." data-en="<strong>Performance:</strong> reduces the size of the repository.">
               <strong>Rendimiento:</strong> reduce el tamaño del repositorio.
             </li>
-            <li>
+            <li data-es="<strong>Orden:</strong> evita incluir archivos innecesarios o generados automáticamente." data-en="<strong>Order:</strong> avoids including unnecessary or auto-generated files.">
               <strong>Orden:</strong> evita incluir archivos innecesarios o
               generados automáticamente.
             </li>
-            <li>
+            <li data-es="<strong>Colaboración:</strong> mantiene el proyecto limpio y consistente entre equipos." data-en="<strong>Collaboration:</strong> keeps the project clean and consistent across teams.">
               <strong>Colaboración:</strong> mantiene el proyecto limpio y
               consistente entre equipos.
             </li>
@@ -1911,8 +2154,11 @@ console.log("Hello world");
         </div>
 
         <div class="card">
-          <h2>¿Cómo funciona?</h2>
-          <p>
+          <h2 data-es="¿Cómo funciona?" data-en="How does it work?">¿Cómo funciona?</h2>
+          <p
+            data-es="El archivo <code>.gitignore</code> contiene patrones que indican qué ignorar:"
+            data-en="The <code>.gitignore</code> file contains patterns that indicate what to ignore:"
+          >
             El archivo <code>.gitignore</code> contiene patrones que indican qué
             ignorar:
           </p>
@@ -1949,7 +2195,7 @@ dist/</code></pre>
         </div>
 
         <div class="card">
-          <h2>Ejemplos según tecnología</h2>
+          <h2 data-es="Ejemplos según tecnología" data-en="Examples by technology">Ejemplos según tecnología</h2>
 
           <span class="gi-badge gi-badge-js">JavaScript / Node.js</span>
           <pre><code>node_modules/
@@ -2170,7 +2416,7 @@ build/</code></pre>
         </div>
 
         <div class="card">
-          <h2>Ejemplo general</h2>
+          <h2 data-es="Ejemplo general" data-en="General example">Ejemplo general</h2>
           <pre><code>.DS_Store
 Thumbs.db
 *.log
@@ -2180,12 +2426,15 @@ Thumbs.db
         </div>
 
         <div class="card">
-          <h2>Buenas prácticas</h2>
+          <h2 data-es="Buenas prácticas" data-en="Best practices">Buenas prácticas</h2>
           <ul>
-            <li>Añade <code>.gitignore</code> antes del primer commit.</li>
-            <li>No ignores archivos importantes por error.</li>
-            <li>Revisa cambios con <code>git status</code>.</li>
-            <li>
+            <li data-es="Añade <code>.gitignore</code> antes del primer commit." data-en="Add <code>.gitignore</code> before your first commit.">Añade <code>.gitignore</code> antes del primer commit.</li>
+            <li data-es="No ignores archivos importantes por error." data-en="Don't accidentally ignore important files.">No ignores archivos importantes por error.</li>
+            <li data-es="Revisa cambios con <code>git status</code>." data-en="Review changes with <code>git status</code>.">Revisa cambios con <code>git status</code>.</li>
+            <li
+              data-es="Si un archivo ya está siendo trackeado, <code>.gitignore</code> no lo eliminará automáticamente: debes usar <code>git rm --cached &lt;archivo&gt;</code>."
+              data-en="If a file is already tracked, <code>.gitignore</code> won't remove it automatically: you must use <code>git rm --cached &lt;file&gt;</code>."
+            >
               Si un archivo ya está siendo trackeado, <code>.gitignore</code> no
               lo eliminará automáticamente: debes usar
               <code>git rm --cached &lt;archivo&gt;</code>.
@@ -2194,7 +2443,7 @@ Thumbs.db
         </div>
 
         <div class="card">
-          <h2>Ejemplo práctico</h2>
+          <h2 data-es="Ejemplo práctico" data-en="Practical example">Ejemplo práctico</h2>
           <pre><code>git init
             touch .gitignore
             git add .
@@ -2202,85 +2451,53 @@ Thumbs.db
         </div>
 
         <div class="card">
-          <h2>Conclusión</h2>
-          <p>
+          <h2 data-es="Conclusión" data-en="Conclusion">Conclusión</h2>
+          <p
+            data-es="El archivo <code>.gitignore</code> es una herramienta esencial para mantener tus proyectos limpios, seguros y organizados."
+            data-en="The <code>.gitignore</code> file is an essential tool for keeping your projects clean, secure, and organized."
+          >
             El archivo <code>.gitignore</code> es una herramienta esencial para
             mantener tus proyectos limpios, seguros y organizados.
           </p>
         </div>
         <div class="card">
-          <h2>Recursos adicionales</h2>
+          <h2 data-es="Recursos adicionales" data-en="Additional resources">Recursos adicionales</h2>
           <ul>
-            <li>
-              <strong>Documentación oficial de Git sobre .gitignore: </strong
-              ><a
-                class="link-btn"
-                href="https://git-scm.com/docs/gitignore"
-                target="_blank"
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"
-                  />
+            <li data-es="&lt;strong&gt;Documentación oficial de Git sobre .gitignore: &lt;/strong&gt;&lt;a class=&quot;link-btn&quot; href=&quot;https://git-scm.com/docs/gitignore&quot; target=&quot;_blank&quot;&gt;
+                &lt;svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot;&gt;
+                  &lt;path d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;
+                &lt;/svg&gt;
+                Documentación oficial de Git sobre .gitignore&lt;/a&gt;" data-en="Official Git documentation about .gitignore: Official Git documentation about .gitignore" data-i18n-generated="true"><strong>Documentación oficial de Git sobre .gitignore: </strong><a class="link-btn" href="https://git-scm.com/docs/gitignore" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
                 </svg>
-                Documentación oficial de Git sobre .gitignore</a
-              >
-            </li>
-            <li>
-              <strong>Generador de .gitignore en línea: </strong>
-              <a
-                class="link-btn"
-                href="https://www.toptal.com/developers/gitignore"
-                target="_blank"
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"
-                  />
+                Documentación oficial de Git sobre .gitignore</a></li>
+            <li data-es="&lt;strong&gt;Generador de .gitignore en línea: &lt;/strong&gt;
+              &lt;a class=&quot;link-btn&quot; href=&quot;https://www.toptal.com/developers/gitignore&quot; target=&quot;_blank&quot;&gt;
+                &lt;svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot;&gt;
+                  &lt;path d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;
+                &lt;/svg&gt;
+                Generador de .gitignore en línea&lt;/a&gt;" data-en="Online .gitignore generator: Online .gitignore generator" data-i18n-generated="true"><strong>Generador de .gitignore en línea: </strong>
+              <a class="link-btn" href="https://www.toptal.com/developers/gitignore" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
                 </svg>
-                Generador de .gitignore en línea</a
-              >
-            </li>
+                Generador de .gitignore en línea</a></li>
           </ul>
         </div>
         <div class="card">
-          <h2>Bonus: plantillas de .gitignore</h2>
-          <p>
-            GitHub ofrece una colección de plantillas de
-            <code>.gitignore</code> para diferentes lenguajes y frameworks.
-            Puedes usarlas como base para tu proyecto:
-          </p>
+          <h2 data-es="Bonus: plantillas de .gitignore" data-en="Bonus: .gitignore templates">Bonus: plantillas de .gitignore</h2>
+          <p data-es="GitHub ofrece una colección de plantillas de &lt;code&gt;.gitignore&lt;/code&gt; para diferentes lenguajes y frameworks. Puedes usarlas como base para tu proyecto:" data-en="GitHub offers a collection of &lt;code&gt;.gitignore&lt;/code&gt; templates for different languages and frameworks. You can use them as a starting point for your project:">GitHub ofrece una colección de plantillas de <code>.gitignore</code> para diferentes lenguajes y frameworks. Puedes usarlas como base para tu proyecto:</p>
           <ul>
-            <li>
-              <strong>Plantillas de .gitignore en GitHub: </strong
-              ><a
-                class="link-btn"
-                href="https://github.com/github/gitignore"
-                target="_blank"
-              >
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"
-                  />
+            <li data-es="&lt;strong&gt;Plantillas de .gitignore en GitHub: &lt;/strong&gt;&lt;a class=&quot;link-btn&quot; href=&quot;https://github.com/github/gitignore&quot; target=&quot;_blank&quot;&gt;
+                &lt;svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 16 16&quot; fill=&quot;currentColor&quot;&gt;
+                  &lt;path d=&quot;M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z&quot;&gt;&lt;/path&gt;
+                &lt;/svg&gt;
+                Plantillas de .gitignore en GitHub&lt;/a&gt;" data-en="GitHub .gitignore templates: GitHub .gitignore templates" data-i18n-generated="true"><strong>Plantillas de .gitignore en GitHub: </strong><a class="link-btn" href="https://github.com/github/gitignore" target="_blank">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
                 </svg>
-                Plantillas de .gitignore en GitHub</a
-              >
-            </li>
+                Plantillas de .gitignore en GitHub</a></li>
           </ul>
         </div>
       </div>
@@ -2633,14 +2850,20 @@ Thumbs.db
             Bonus: Integración con VS Code
           </h2>
 
-          <p>
+          <p
+            data-es="<strong>Visual Studio Code</strong> es un editor de código muy popular que tiene integración nativa con Git. Esto significa que puedes hacer commits, ver cambios, manejar ramas y resolver conflictos <em>sin salir del editor</em>."
+            data-en="<strong>Visual Studio Code</strong> is a very popular code editor with native Git integration. This means you can commit, view changes, manage branches and resolve conflicts <em>without leaving the editor</em>."
+          >
             <strong>Visual Studio Code</strong> es un editor de código muy
             popular que tiene integración nativa con Git. Esto significa que
             puedes hacer commits, ver cambios, manejar ramas y resolver
             conflictos <em>sin salir del editor</em>.
           </p>
 
-          <p style="margin-top: 12px">
+          <p style="margin-top: 12px"
+            data-es="<em>Nota: Para usar Git en VS Code, asegúrate de tener Git instalado en tu sistema y que VS Code lo reconozca. Puedes comprobarlo abriendo la terminal integrada y ejecutando <code>git --version</code>.</em>"
+            data-en="<em>Note: To use Git in VS Code, make sure you have Git installed on your system and that VS Code recognizes it. You can check by opening the integrated terminal and running <code>git --version</code>.</em>"
+          >
             <em>
               Nota: Para usar Git en VS Code, asegúrate de tener Git instalado
               en tu sistema y que VS Code lo reconozca. Puedes comprobarlo
@@ -2671,7 +2894,10 @@ Thumbs.db
             1. El panel Source Control
           </h3>
 
-          <p>
+          <p
+            data-es="El panel <strong>Source Control</strong> (icono de rama en la barra lateral izquierda, o atajo <kbd>Ctrl+Shift+G</kbd>) es tu centro de mando para Git. Desde aquí puedes ver qué archivos han cambiado, añadirlos al área de preparación (<em>stage</em>) y crear commits, todo de forma visual."
+            data-en="The <strong>Source Control</strong> panel (branch icon in the left sidebar, or shortcut <kbd>Ctrl+Shift+G</kbd>) is your Git command center. From here you can see which files have changed, add them to the staging area, and create commits — all visually."
+          >
             El panel <strong>Source Control</strong> (icono de rama en la barra
             lateral izquierda, o atajo <kbd>Ctrl+Shift+G</kbd>) es tu centro de
             mando para Git. Desde aquí puedes ver qué archivos han cambiado,
@@ -2680,7 +2906,7 @@ Thumbs.db
           </p>
 
           <!-- Sub-paso: ver cambios -->
-          <h4 style="margin-top: 20px">Ver los archivos modificados</h4>
+          <h4 style="margin-top: 20px" data-es="Ver los archivos modificados" data-en="Viewing modified files">Ver los archivos modificados</h4>
           <p>
             Cuando editas un archivo, VS Code lo marca automáticamente en el
             explorador de archivos con una letra:
@@ -2712,7 +2938,7 @@ Thumbs.db
           </figure>
 
           <!-- Sub-paso: stage -->
-          <h4 style="margin-top: 20px">Preparar cambios (Stage)</h4>
+          <h4 style="margin-top: 20px" data-es="Preparar cambios (Stage)" data-en="Staging changes">Preparar cambios (Stage)</h4>
           <p>
             Antes de hacer un commit debes <em>preparar</em> los archivos que
             quieres incluir. En VS Code tienes dos formas de hacerlo:
@@ -2747,7 +2973,7 @@ Thumbs.db
           </figure>
 
           <!-- Sub-paso: commit -->
-          <h4 style="margin-top: 20px">Crear un commit</h4>
+          <h4 style="margin-top: 20px" data-es="Crear un commit" data-en="Creating a commit">Crear un commit</h4>
           <p>
             Una vez preparados los archivos, escribe un mensaje descriptivo en
             el campo de texto que dice
@@ -2784,7 +3010,10 @@ Thumbs.db
             2. Ramas y merge desde VS Code
           </h3>
 
-          <p>
+          <p
+            data-es="Las <strong>ramas</strong> (<em>branches</em>) te permiten trabajar en una nueva funcionalidad o corrección sin tocar el código principal. VS Code hace que crear y cambiar entre ramas sea tan sencillo como hacer clic en la barra de estado inferior."
+            data-en="<strong>Branches</strong> let you work on a new feature or fix without touching the main code. VS Code makes creating and switching between branches as easy as clicking the status bar at the bottom."
+          >
             Las <strong>ramas</strong> (<em>branches</em>) te permiten trabajar
             en una nueva funcionalidad o corrección sin tocar el código
             principal. VS Code hace que crear y cambiar entre ramas sea tan
@@ -2792,7 +3021,7 @@ Thumbs.db
           </p>
 
           <!-- Sub-paso: crear rama -->
-          <h4 style="margin-top: 20px">Crear una nueva rama</h4>
+          <h4 style="margin-top: 20px" data-es="Crear una nueva rama" data-en="Creating a new branch">Crear una nueva rama</h4>
           <p>
             En la esquina inferior izquierda de VS Code verás el nombre de la
             rama actual (normalmente <code>main</code> o <code>master</code>).
@@ -2825,7 +3054,7 @@ Thumbs.db
           </figure>
 
           <!-- Sub-paso: cambiar de rama -->
-          <h4 style="margin-top: 20px">Cambiar entre ramas</h4>
+          <h4 style="margin-top: 20px" data-es="Cambiar entre ramas" data-en="Switching between branches">Cambiar entre ramas</h4>
           <p>
             Desde el mismo menú de la barra de estado puedes seleccionar
             cualquier rama existente para cambiar a ella. VS Code actualizará
@@ -2846,7 +3075,7 @@ Thumbs.db
           </figure>
 
           <!-- Sub-paso: merge -->
-          <h4 style="margin-top: 20px">Fusionar ramas (Merge)</h4>
+          <h4 style="margin-top: 20px" data-es="Fusionar ramas (Merge)" data-en="Merging branches">Fusionar ramas (Merge)</h4>
           <p>
             Cuando tu funcionalidad esté lista y quieras incorporarla a
             <code>main</code>, sigue estos pasos dentro de VS Code:
@@ -2893,7 +3122,10 @@ Thumbs.db
             3. Resolución de conflictos visual
           </h3>
 
-          <p>
+          <p
+            data-es="Un <strong>conflicto de merge</strong> ocurre cuando dos ramas han modificado la misma parte de un archivo de forma distinta y Git no puede decidir qué versión conservar. VS Code incluye una herramienta visual que convierte este proceso —habitualmente frustrante— en algo manejable."
+            data-en="A <strong>merge conflict</strong> occurs when two branches have modified the same part of a file differently and Git can't decide which version to keep. VS Code includes a visual tool that turns this — usually frustrating — process into something manageable."
+          >
             Un <strong>conflicto de merge</strong> ocurre cuando dos ramas han
             modificado la misma parte de un archivo de forma distinta y Git no
             puede decidir qué versión conservar. VS Code incluye una herramienta
@@ -2902,7 +3134,7 @@ Thumbs.db
           </p>
 
           <!-- Cómo se ve -->
-          <h4 style="margin-top: 20px">Cómo detectar un conflicto</h4>
+          <h4 style="margin-top: 20px" data-es="Cómo detectar un conflicto" data-en="How to detect a conflict">Cómo detectar un conflicto</h4>
           <p>
             Cuando se produce un conflicto, VS Code marca el archivo con una
             <strong>C</strong> roja en el explorador y en el panel Source
@@ -2934,7 +3166,7 @@ Thumbs.db
           </figure>
 
           <!-- Resolver -->
-          <h4 style="margin-top: 20px">
+          <h4 style="margin-top: 20px" data-es="Resolver el conflicto con los botones inline" data-en="Resolving the conflict with inline buttons">
             Resolver el conflicto con los botones inline
           </h4>
           <p>
@@ -2967,7 +3199,7 @@ Thumbs.db
           </p>
 
           <!-- Finalizar -->
-          <h4 style="margin-top: 20px">Finalizar la resolución</h4>
+          <h4 style="margin-top: 20px" data-es="Finalizar la resolución" data-en="Finishing the resolution">Finalizar la resolución</h4>
           <p>
             Una vez resueltos <strong>todos</strong> los conflictos del archivo,
             guárdalo (<kbd>Ctrl+S</kbd>). VS Code dejará de marcarlo con la
@@ -2996,7 +3228,10 @@ Thumbs.db
             </figcaption>
           </figure>
 
-          <p style="margin-top: 16px">
+          <p style="margin-top: 16px"
+            data-es="<strong>¡Enhorabuena!</strong> Ahora sabes usar VS Code como tu interfaz principal de Git: puedes preparar y confirmar cambios, trabajar con ramas y superar los conflictos de merge sin necesidad de recordar ningún comando de terminal."
+            data-en="<strong>Congratulations!</strong> You now know how to use VS Code as your main Git interface: you can stage and commit changes, work with branches, and resolve merge conflicts without needing to remember any terminal commands."
+          >
             <strong>¡Enhorabuena!</strong> Ahora sabes usar VS Code como tu
             interfaz principal de Git: puedes preparar y confirmar cambios,
             trabajar con ramas y superar los conflictos de merge sin necesidad
