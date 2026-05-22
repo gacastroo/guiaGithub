@@ -592,24 +592,321 @@
         </div>
       </div>
 
-      <!-- COMANDOS -->
+       <!-- COMANDOS -->
       <div id="comandos" class="section">
         <div class="card">
-          <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px"
-            data-es="Estos son algunos de los comandos básicos de git y los que posiblemente mas utilices, espero que te ayuden :D Haz clic en cualquier comando para copiarlo al portapapeles."
-            data-en="These are some of the basic git commands you'll likely use the most — hope they help :D Click any command to copy it to the clipboard."
-          >
+          <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px">
             Estos son algunos de los comandos básicos de git y los que
             posiblemente mas utilices, espero que te ayuden :D <br />Haz clic en
             cualquier comando para copiarlo al portapapeles.
           </p>
 
-          <div id="basic-commands"></div>
+          <div class="cmd-group">
+            <p class="cmd-group-title">1 · Configuración inicial</p>
+            <p>
+              Una vez que has instalado Git, es recomendable configurar tu
+              nombre de usuario y correo electrónico:
+            </p>
+            <p>⚠️ Sin esto no te permitirá hacer commits.</p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">
+                  git config --global user.name "Tu Nombre"
+                </div>
+                <div class="cmd-desc">Configura tu nombre de usuario</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">
+                  git config --global user.email "tu@email.com"
+                </div>
+                <div class="cmd-desc">Configura tu correo electrónico</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
 
-          <p
-            data-es="Git guarda tu trabajo en dos pasos: preparar y guardar. Cuando cambias archivos, Git ve esos cambios, pero no los guarda directamente. Primero eliges qué cambios quieres incluir (eso es staging o preparar). Luego los guardas con un commit. Es como hacer una foto: primero eliges qué quieres que salga en la foto (preparar) y luego haces la foto (guardar)."
-            data-en="Git saves your work in two steps: staging and committing. When you change files, Git sees those changes but doesn't save them directly. First you choose which changes to include (that's staging). Then you save them with a commit. It's like taking a photo: first you choose what to include in the shot (staging), then you take the photo (committing)."
-          >
+          <div class="cmd-group">
+            <p class="cmd-group-title">2 · Iniciar un proyecto</p>
+            <p>
+              Estos son los cambios que necesitas hacer para iniciar un proyecto
+              con Git:
+            </p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git init</div>
+                <div class="cmd-desc">
+                  Crea un repositorio nuevo en la carpeta actual
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">
+                  git remote add &lt;nombre&gt; &lt;url&gt;
+                </div>
+                <div class="cmd-desc">
+                  Crea una nueva conexión a un repositorio remoto.
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git clone &lt;url&gt;</div>
+                <div class="cmd-desc">Descarga un repositorio existente</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git pull &lt;url&gt;</div>
+                <div class="cmd-desc">
+                  Descarga los cambios del repositorio remoto
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <p class="cmd-group-title">3 · El ciclo diario</p>
+            <p>Son los comandos que usas diariamente:</p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git status</div>
+                <div class="cmd-desc">Muestra qué ha cambiado</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git add .</div>
+                <div class="cmd-desc">
+                  Prepara todos los cambios para el commit
+                </div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git commit -m "mensaje claro"</div>
+                <div class="cmd-desc">Guarda los cambios en el historial</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git push origin main</div>
+                <div class="cmd-desc">Sube los cambios a GitHub</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git pull origin main</div>
+                <div class="cmd-desc">Baja los cambios del remoto</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+
+          <div class="cmd-group">
+            <p class="cmd-group-title">4 · Ramas</p>
+            <p>Estos son los comandos que usas para trabajar con ramas:</p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git switch -c mi-rama</div>
+                <div class="cmd-desc">Crea y cambia a una rama nueva</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git switch main</div>
+                <div class="cmd-desc">Vuelve a la rama principal</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git merge mi-rama</div>
+                <div class="cmd-desc">Une la rama con la actual</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <p>
+              ⚠️ Un merge puede causar conflictos si los cambios en ambas ramas
+              son incompatibles. Cuando haces un merge, no hay forma de
+              deshacerlo una vez que se resuelven los conflictos.
+            </p>
+          </div>
+
+          <div class="cmd-group">
+            <p class="cmd-group-title">5 · Si algo va mal</p>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git log --oneline</div>
+                <div class="cmd-desc">Ver historial de commits resumido</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git restore &lt;archivo&gt;</div>
+                <div class="cmd-desc">Descartar cambios en un archivo</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git restore --staged &lt;archivo&gt;</div>
+                <div class="cmd-desc">Quitar un archivo del staging</div>
+              </div>
+              <button
+                class="cmd-copy"
+                onclick="
+                  event.stopPropagation();
+                  copyCmd(this.parentElement);
+                "
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+
+          <p>
             Git guarda tu trabajo en dos pasos: preparar y guardar. Cuando
             cambias archivos, Git ve esos cambios, pero no los guarda
             directamente. Primero eliges qué cambios quieres incluir (eso es
@@ -619,7 +916,6 @@
           </p>
         </div>
       </div>
-
       <div id="miniguia" class="section">
         <div class="card">
           <h2
