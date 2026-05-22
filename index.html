@@ -1082,10 +1082,182 @@
 
         <div class="card">
           <h2
-            data-es="2. Trabajar profesionalmente (VS Code + GitHub)"
-            data-en="2. Work professionally (VS Code + GitHub)"
+            data-es="2. Vincular tu repositorio con GitHub"
+            data-en="2. Link your repository with GitHub"
           >
-            2. Trabajar profesionalmente (VS Code + GitHub)
+            2. Vincular tu repositorio con GitHub
+          </h2>
+
+          <p>
+            Antes de empezar a trabajar, necesitas conectar tu proyecto local
+            con el repositorio remoto de GitHub. Hay dos formas principales de
+            hacerlo:
+          </p>
+
+          <div class="compare" style="margin-top: 14px; margin-bottom: 16px">
+            <div class="cbox">
+              <h3>Opción A · Clonar un repositorio</h3>
+              <p>
+                Usa esta opción si el repositorio ya existe en GitHub y quieres
+                descargarlo a tu computadora.
+              </p>
+            </div>
+
+            <div class="cbox">
+              <h3>Opción B · Vincular una carpeta local</h3>
+              <p>
+                Usa esta opción si ya tienes una carpeta con archivos en tu
+                computadora y quieres subirla a GitHub.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 16px; margin-bottom: 8px; font-size: 14px">
+            Opción A: Clonar un repositorio existente
+          </h3>
+
+          <ol style="margin-top: 8px; padding-left: 18px">
+            <li>Entra al repositorio en GitHub.</li>
+            <li>
+              Haz clic en el botón verde <strong>Code</strong> y copia la URL
+              del repositorio.
+            </li>
+            <li>
+              Abre la terminal en VS Code con <strong>Ctrl + Ñ</strong> o desde
+              <strong>Terminal → New Terminal</strong>.
+            </li>
+            <li>
+              Ve a la carpeta donde quieres guardar el proyecto, por ejemplo:
+            </li>
+          </ol>
+
+          <pre><code>cd Desktop</code></pre>
+
+          <p style="margin-top: 12px">
+            Después, ejecuta el comando <code>git clone</code>:
+          </p>
+
+          <pre><code>git clone https://github.com/usuario/nombre-repositorio.git</code></pre>
+
+          <p style="margin-top: 12px">
+            Entra dentro de la carpeta que se acaba de descargar:
+          </p>
+
+          <pre><code>cd nombre-repositorio</code></pre>
+
+          <p style="margin-top: 12px">
+            Al clonar un repositorio, Git crea automáticamente la conexión con
+            GitHub. Esa conexión se llama normalmente <strong>origin</strong>.
+          </p>
+
+          <p>Puedes comprobarlo con:</p>
+
+          <pre><code>git remote -v</code></pre>
+
+          <p style="margin-top: 12px">
+            Si todo está correcto, verás algo parecido a esto:
+          </p>
+
+          <pre><code>origin  https://github.com/usuario/nombre-repositorio.git (fetch)
+            origin  https://github.com/usuario/nombre-repositorio.git (push)</code></pre>
+
+          <h3 style="margin-top: 22px; margin-bottom: 8px; font-size: 14px">
+            Opción B: Vincular una carpeta local con GitHub
+          </h3>
+
+          <p>
+            Usa esta opción si ya tienes tu proyecto creado en tu computadora y
+            quieres conectarlo con un repositorio nuevo de GitHub.
+          </p>
+
+          <ol style="margin-top: 8px; padding-left: 18px">
+            <li>Crea un repositorio nuevo en GitHub.</li>
+            <li>Copia la URL del repositorio. Será parecida a esta:</li>
+          </ol>
+
+          <pre><code>https://github.com/usuario/nombre-repositorio.git</code></pre>
+
+          <p style="margin-top: 12px">
+            Abre tu proyecto en VS Code y asegúrate de estar dentro de la
+            carpeta correcta en la terminal.
+          </p>
+
+          <p>Puedes comprobarlo con:</p>
+
+          <pre><code>pwd</code></pre>
+
+          <p style="margin-top: 12px">Ahora ejecuta estos comandos en orden:</p>
+
+          <pre><code>git init
+            git add .
+            git commit -m "feat: initial commit"
+            git branch -M main
+            git remote add origin https://github.com/usuario/nombre-repositorio.git
+            git push -u origin main</code></pre>
+
+          <p style="margin-top: 12px">
+            <strong>¿Qué hace cada comando?</strong>
+          </p>
+
+          <ul style="margin-top: 8px; padding-left: 18px">
+            <li>
+              <code>git init</code>: convierte tu carpeta en un repositorio
+              local.
+            </li>
+            <li>
+              <code>git add .</code>: prepara todos los archivos para
+              guardarlos.
+            </li>
+            <li>
+              <code>git commit -m "feat: initial commit"</code>: crea el primer
+              punto de guardado.
+            </li>
+            <li>
+              <code>git branch -M main</code>: asegura que la rama principal se
+              llame <strong>main</strong>.
+            </li>
+            <li>
+              <code>git remote add origin</code>: conecta tu repositorio local
+              con el repositorio remoto de GitHub.
+            </li>
+            <li>
+              <code>git push -u origin main</code>: sube tu proyecto a GitHub y
+              deja la rama conectada para futuros pushes.
+            </li>
+          </ul>
+
+          <div class="analogy" style="margin-top: 16px">
+            <p>
+              <strong>Resumen fácil:</strong> <code>git clone</code> descarga un
+              proyecto que ya existe en GitHub.
+              <code>git remote add origin</code> conecta una carpeta local con
+              un repositorio remoto.
+            </p>
+          </div>
+
+          <p style="margin-top: 12px">
+            Después de hacer esto una vez, tu flujo diario será:
+          </p>
+
+          <pre><code>git add .
+          git commit -m "tipo: mensaje claro"
+          git push</code></pre>
+
+          <p style="margin-top: 12px">
+            <em>
+              Nota: sustituye <strong>usuario</strong> y
+              <strong>nombre-repositorio</strong> por los datos reales de tu
+              cuenta y de tu repositorio.
+            </em>
+          </p>
+        </div>
+
+        <div class="card">
+          <h2
+            data-es="3. Trabajar profesionalmente (VS Code + GitHub)"
+            data-en="3. Work professionally (VS Code + GitHub)"
+          >
+            3. Trabajar profesionalmente (VS Code + GitHub)
           </h2>
           <p><strong>Vincular GitHub con VS Code:</strong></p>
           <ul style="margin-top: 8px; padding-left: 0">
@@ -1124,10 +1296,10 @@
 
         <div class="card">
           <h2
-            data-es="3. Alternativa: Línea de comandos (Terminal)"
-            data-en="3. Alternative: Command Line (Terminal)"
+            data-es="4. Alternativa: Línea de comandos (Terminal)"
+            data-en="4. Alternative: Command Line (Terminal)"
           >
-            3. Alternativa: Línea de comandos (Terminal)
+            4. Alternativa: Línea de comandos (Terminal)
           </h2>
           <p>
             Para usar la terminal en VS Code, presiona
@@ -1149,10 +1321,10 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
 
         <div class="card">
           <h2
-            data-es="4. Como hacer un commit profesional"
-            data-en="4. How to make a professional commit"
+            data-es="5. Como hacer un commit profesional"
+            data-en="5. How to make a professional commit"
           >
-            4. Como hacer un commit profesional
+            5. Como hacer un commit profesional
           </h2>
           <p>
             <b>Un commit profesional</b> es claro, conciso y descriptivo. Sigue
