@@ -9,6 +9,18 @@
       rel="icon"
       type="image/x-icon"
     />
+    <!-- ── Security Headers ── -->
+    <!-- Protección contra clickjacking -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <!-- Content Security Policy: permite recursos propios + CDNs usadas -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self';
+                   script-src 'self' 'unsafe-inline';
+                   style-src  'self' 'unsafe-inline' https://cdn.jsdelivr.net;
+                   img-src    'self' data:;
+                   font-src   'self' https://cdn.jsdelivr.net;
+                   frame-ancestors 'self';" />
+    <!-- /Security Headers ── -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link
       rel="stylesheet"
