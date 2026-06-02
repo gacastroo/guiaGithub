@@ -13,17 +13,23 @@
 
   /* ── MOBILE NAV ── */
   function toggleMobileNav() {
+    const nav = document.querySelector('nav');
     const scroll = document.getElementById('nav-scroll');
     const hamburger = document.getElementById('nav-hamburger');
+    nav.classList.toggle('open');
     scroll.classList.toggle('open');
     hamburger.classList.toggle('open');
+    adjustLayout();
   }
 
   function closeMobileNav() {
+    const nav = document.querySelector('nav');
     const scroll = document.getElementById('nav-scroll');
     const hamburger = document.getElementById('nav-hamburger');
+    nav.classList.remove('open');
     scroll.classList.remove('open');
     hamburger.classList.remove('open');
+    adjustLayout();
   }
 
 
