@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="../img/favicon/favicon.ico" rel="icon" type="image/x-icon">
-<title>GuiaGitHub contribuciones</title>
+<title data-title-es="GuiaGitHub contribuciones" data-title-en="GuiaGitHub contributions">GuiaGitHub contribuciones</title>
 
 <style>
 :root {
@@ -27,6 +28,7 @@ body {
 
 /* HEADER */
 header {
+  position: relative;
   padding: 40px 20px;
   border-bottom: 1px solid var(--border);
   text-align: center;
@@ -40,6 +42,43 @@ header h1 {
 header p {
   color: var(--subtext);
   margin-top: 10px;
+}
+
+/* CONTROL DE IDIOMA */
+.lang-controls {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lang-toggle-btn {
+  min-width: 48px;
+  height: 34px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.85);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.lang-toggle-btn:hover {
+  background: rgba(255,255,255,0.18);
+  color: white;
+  border-color: rgba(255,255,255,0.22);
 }
 
 /* LINKS HEADER */
@@ -96,7 +135,7 @@ header p {
   background: var(--green-hover);
 }
 
-/* BOTÓN VOLVER (ARREGLADO) */
+/* BOTÓN VOLVER */
 #btn-back {
   display: flex;
   justify-content: center;
@@ -127,52 +166,133 @@ footer {
   border-top: 1px solid var(--border);
   margin-top: 40px;
 }
+
+@media (max-width: 640px) {
+  header {
+    padding: 56px 16px 32px;
+  }
+
+  header h1 {
+    font-size: 1.65rem;
+  }
+
+  .lang-controls {
+    top: 12px;
+    right: 14px;
+  }
+
+  .container {
+    margin: 28px auto;
+    padding: 0 14px;
+  }
+
+  .card {
+    padding: 18px 16px;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>🤝 ¿Quieres Contribuir a mi proyecto GuiaGitHub?</h1>
-  <p>Proyecto abierto para aprender Git y GitHub de forma práctica</p>
-      <img
-      src="../img/JPEG/profile.png"
-      alt="Foto de perfil de @gacastroo"
-      style="
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid var(--border);
-        display: block;
-        margin: 0 auto 20px;
-      "
+  <div class="lang-controls">
+    <button
+      class="lang-toggle-btn"
+      id="lang-toggle-btn"
+      type="button"
+      onclick="toggleContributionLang()"
+      title="Cambiar idioma"
+      data-title-es="Cambiar idioma"
+      data-title-en="Change language"
+      aria-label="Cambiar idioma"
+      data-aria-label-es="Cambiar idioma"
+      data-aria-label-en="Change language"
     >
+      <span id="lang-icon">🌐</span>
+      <span id="lang-label">EN</span>
+    </button>
+  </div>
+
+  <h1
+    data-es="🤝 ¿Quieres contribuir a mi proyecto GuiaGitHub?"
+    data-en="🤝 Do you want to contribute to my GuiaGitHub project?"
+  >
+    🤝 ¿Quieres contribuir a mi proyecto GuiaGitHub?
+  </h1>
+  <p
+    data-es="Proyecto abierto para aprender Git y GitHub de forma práctica"
+    data-en="An open project to learn Git and GitHub in a practical way"
+  >
+    Proyecto abierto para aprender Git y GitHub de forma práctica
+  </p>
+  <img
+    src="../img/JPEG/profile.png"
+    alt="Foto de perfil de @gacastroo"
+    data-alt-es="Foto de perfil de @gacastroo"
+    data-alt-en="Profile photo of @gacastroo"
+    style="
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      display: block;
+      margin: 0 auto 20px;
+    "
+  >
   <div class="links">
-    <a href="https://github.com/gacastroo/guiaGithub" target="_blank" rel="noopener noreferrer">📦 Repositorio</a>
-    <a href="https://gacastroo.github.io/guiaGithub/" target="_blank" rel="noopener noreferrer">🌐 Ver proyecto</a>
+    <a
+      href="https://github.com/gacastroo/guiaGithub"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-es="📦 Repositorio"
+      data-en="📦 Repository"
+    >📦 Repositorio</a>
+    <a
+      href="https://gacastroo.github.io/guiaGithub/"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-es="🌐 Ver proyecto"
+      data-en="🌐 View project"
+    >🌐 Ver proyecto</a>
   </div>
 </header>
 
 <div class="container">
 
   <div class="card">
-    <h2>Cómo contribuir</h2>
+    <h2 data-es="Cómo contribuir" data-en="How to contribute">Cómo contribuir</h2>
     <ul>
-      <li>Haz un fork del repositorio</li>
-      <li>Crea una nueva rama</li>
-      <li>Realiza tus cambios</li>
-      <li>Envía un Pull Request</li>
+      <li data-es="Haz un fork del repositorio" data-en="Fork the repository">Haz un fork del repositorio</li>
+      <li data-es="Crea una nueva rama" data-en="Create a new branch">Crea una nueva rama</li>
+      <li data-es="Realiza tus cambios" data-en="Make your changes">Realiza tus cambios</li>
+      <li data-es="Envía un Pull Request" data-en="Send a Pull Request">Envía un Pull Request</li>
     </ul>
 
-    <a class="button" href="https://github.com/gacastroo/guiaGithub/fork" target="_blank" rel="noopener noreferrer">
+    <a
+      class="button"
+      href="https://github.com/gacastroo/guiaGithub/fork"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-es="Hacer Fork"
+      data-en="Fork repository"
+    >
       Hacer Fork
     </a>
   </div>
 
   <div class="card">
-    <h2>💻 Flujo básico</h2>
-    <div class="code">
+    <h2 data-es="💻 Flujo básico" data-en="💻 Basic workflow">💻 Flujo básico</h2>
+    <div class="code" data-es="git clone https://github.com/gacastroo/guiaGithub.git
+cd guiaGithub
+git checkout -b mi-aporte
+git commit -m &quot;Mi contribución&quot;
+git push origin mi-aporte" data-en="git clone https://github.com/gacastroo/guiaGithub.git
+cd guiaGithub
+git checkout -b my-contribution
+git commit -m &quot;My contribution&quot;
+git push origin my-contribution">
 git clone https://github.com/gacastroo/guiaGithub.git
 cd guiaGithub
 git checkout -b mi-aporte
@@ -182,31 +302,53 @@ git push origin mi-aporte
   </div>
 
   <div class="card">
-    <h2>🐛 Reportar errores</h2>
-    <p>
+    <h2 data-es="🐛 Reportar errores" data-en="🐛 Report bugs">🐛 Reportar errores</h2>
+    <p
+      data-es="Si encuentras un problema, abre un issue en GitHub explicando el error."
+      data-en="If you find a problem, open an issue on GitHub explaining the error."
+    >
       Si encuentras un problema, abre un issue en GitHub explicando el error.
     </p>
-    <a class="button" href="https://github.com/gacastroo/guiaGithub/issues" target="_blank" rel="noopener noreferrer">
+    <a
+      class="button"
+      href="https://github.com/gacastroo/guiaGithub/issues"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-es="Crear Issue"
+      data-en="Create Issue"
+    >
       Crear Issue
     </a>
   </div>
 
   <div class="card">
-    <h2>💡 Ideas y mejoras</h2>
-    <p>
+    <h2 data-es="💡 Ideas y mejoras" data-en="💡 Ideas and improvements">💡 Ideas y mejoras</h2>
+    <p
+      data-es="Puedes proponer nuevas funcionalidades o mejorar la documentación."
+      data-en="You can suggest new features or improve the documentation."
+    >
       Puedes proponer nuevas funcionalidades o mejorar la documentación.
     </p>
   </div>
 
-  
-    <a id="btn-back" class="button" href="https://gacastroo.github.io/guiaGithub/" target="_blank" rel="noopener noreferrer">
-      VOLVER AL PROYECTO
-    </a>
+  <a
+    id="btn-back"
+    class="button"
+    href="https://gacastroo.github.io/guiaGithub/"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-es="VOLVER AL PROYECTO"
+    data-en="BACK TO PROJECT"
+  >
+    VOLVER AL PROYECTO
+  </a>
 </div>
 
-<footer>
+<footer data-es="Hecho con ❤️ por @gacastroo" data-en="Made with ❤️ by @gacastroo">
   Hecho con ❤️ por @gacastroo
 </footer>
+
+<script src="../js/contribution.js"></script>
 
 </body>
 </html>
