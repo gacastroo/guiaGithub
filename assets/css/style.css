@@ -131,23 +131,37 @@ nav {
 }
 
 .nav-ctrl-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.8);
+  width: 48px;
+  height: 34px;
+  padding: 8px 35px;
+  margin: 5px 0;
+  box-sizing: border-box;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.8);
+
   font-size: 12px;
   font-weight: 600;
-  padding: 5px 10px;
+  line-height: 1;
+
   border-radius: 6px;
   cursor: pointer;
   white-space: nowrap;
-  transition:
-    background 0.15s,
-    color 0.15s;
-  display: flex;
+  transition: background 0.15s, color 0.15s;
+
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  gap: 4px;
+
+  text-decoration: none;
+  vertical-align: middle;
+  appearance: none;
+  font-family: inherit;
   letter-spacing: 0.02em;
 }
+
 .nav-ctrl-btn:hover {
   background: rgba(255, 255, 255, 0.18);
   color: white;
@@ -1853,8 +1867,9 @@ a:active {
     height: 24px;
   }
   .nav-ctrl-btn {
-    padding: 4px 8px;
-    font-size: 11px;
+    min-width: 42px;
+    height: 32px;
+    padding: 0 8px;
   }
   #lang-label {
     display: none;
