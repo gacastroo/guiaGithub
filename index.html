@@ -21,18 +21,14 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self';
                    script-src  'self' 'unsafe-inline';
-                   style-src   'self' 'unsafe-inline' https://cdn.jsdelivr.net;
+                  style-src   'self' 'unsafe-inline';
                    img-src     'self' data: https:;
-                   font-src    'self' https://cdn.jsdelivr.net;
-                   frame-src   https://www.youtube.com https://www.youtube-nocookie.com;
-                   connect-src 'self' https://cdn.jsdelivr.net;"
+                  font-src    'self';
+                  frame-src   https://www.youtube.com https://www.youtube-nocookie.com;
+                  connect-src 'self'";
     />
     <!-- /Security Headers ── -->
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css"
-    />
   </head>
 
   <body>
@@ -1444,7 +1440,6 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
               la terminal antes de escribir estos comandos.</em
             >
           </p>
-          <figure class="img-figure" style="margin-top: 14px"></figure>
         </div>
 
         <div class="card">
@@ -1526,7 +1521,6 @@ git push origin main         # Sube los cambios al repositorio remoto</code></pr
               modificando.</em
             >
           </p>
-          <figure class="img-figure" style="margin-top: 14px"></figure>
         </div>
       </div>
 
@@ -3745,7 +3739,177 @@ Thumbs.db
             </table>
           </div>
         </div>
-        <!-- /card -->
+        <!-- EJERCICIO: CONFLICTOS ENTRE RAMAS -->
+        <div class="card" id="conflict-exercise-card">
+          <h2
+            data-es="Ejercicio: resuelve un conflicto entre ramas"
+            data-en="Exercise: solve a branch conflict"
+          >
+            Ejercicio: resuelve un conflicto entre ramas
+          </h2>
+
+          <p style="font-size: 13px; color: var(--text3); margin-bottom: 16px">
+            <span
+              data-es="Practica un caso real: dos ramas modifican la misma línea de index.html. Tendrás que provocar el conflicto, resolverlo y finalizar el merge."
+              data-en="Practice a real case: two branches modify the same line in index.html. You will trigger the conflict, solve it and finish the merge."
+            >
+              Practica un caso real: dos ramas modifican la misma línea de
+              <code>index.html</code>. Tendrás que provocar el conflicto,
+              resolverlo y finalizar el merge.
+            </span>
+          </p>
+
+          <div id="cf-progress-wrap">
+            <div id="cf-progress-bar"></div>
+          </div>
+
+          <p
+            id="cf-progress-label"
+            style="
+              font-size: 12px;
+              color: var(--text3);
+              margin-bottom: 16px;
+              margin-top: 4px;
+            "
+          >
+            Paso 1 de 6
+          </p>
+
+          <div id="cf-grid">
+            <div class="gi-ex-panel">
+              <p class="cmd-group-title" style="margin-bottom: 10px">
+                🌿 Estado del repositorio
+              </p>
+
+              <div id="cf-state"></div>
+
+              <div id="cf-task-box"></div>
+            </div>
+
+            <div class="gi-ex-panel">
+              <p class="cmd-group-title" style="margin-bottom: 6px">
+                📄 index.html
+              </p>
+
+              <p
+                style="font-size: 11px; color: var(--text3); margin-bottom: 6px"
+              >
+                Cuando Git marque el conflicto, elimina los marcadores
+                <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>,
+                <code>=======</code> y
+                <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.
+              </p>
+
+              <div id="cf-conflict-view"></div>
+
+              <textarea id="cf-editor" spellcheck="false" disabled></textarea>
+            </div>
+          </div>
+
+          <div id="cf-terminal">
+            <div id="cf-output"></div>
+
+            <div id="cf-input-row">
+              <span id="cf-prompt">$</span>
+              <input
+                id="cf-input"
+                type="text"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="escribe un comando git..."
+              />
+            </div>
+          </div>
+
+          <div id="cf-feedback"></div>
+
+          <div
+            style="display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap"
+          >
+            <button
+              class="cmd-copy"
+              onclick="cfShowHint()"
+              style="padding: 7px 16px; font-size: 13px"
+            >
+              💡 Ver pista
+            </button>
+
+            <button
+              class="cmd-copy"
+              onclick="cfReset()"
+              style="padding: 7px 16px; font-size: 13px"
+            >
+              🔄 Reiniciar
+            </button>
+
+            <button
+              id="cf-check-btn"
+              onclick="cfCheckResolution()"
+              style="
+                padding: 7px 18px;
+                font-size: 13px;
+                font-weight: 600;
+                background: var(--accent);
+                color: white;
+                border: none;
+                border-radius: var(--radius);
+                cursor: pointer;
+                margin-left: auto;
+                transition: opacity 0.15s;
+              "
+              disabled
+            >
+              Comprobar resolución ✓
+            </button>
+          </div>
+
+          <div id="cf-explanation" style="display: none; margin-top: 26px">
+            <p class="cmd-group-title" style="margin-bottom: 8px">
+              ¿Qué significan los marcadores del conflicto?
+            </p>
+
+            <table class="gi-table">
+              <thead>
+                <tr>
+                  <th>Marcador</th>
+                  <th>Significado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</td>
+                  <td>
+                    Es la versión de la rama actual. En este caso, la versión
+                    que había en <code>main</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>=======</td>
+                  <td>
+                    Separa las dos versiones que Git no sabe combinar
+                    automáticamente.
+                  </td>
+                </tr>
+                <tr>
+                  <td>&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature-titulo</td>
+                  <td>
+                    Es la versión que viene desde la rama que estás fusionando.
+                  </td>
+                </tr>
+                <tr>
+                  <td>git add index.html</td>
+                  <td>Marca el archivo como resuelto después de limpiarlo.</td>
+                </tr>
+                <tr>
+                  <td>git commit</td>
+                  <td>
+                    Finaliza el merge y guarda la resolución del conflicto.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
 
       <!-- ============================================================

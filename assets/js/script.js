@@ -56,11 +56,6 @@
     }
   }
 
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (nav) nav.classList.toggle('scrolled', window.scrollY > 0);
-  }, { passive: true });
-
   window.addEventListener('resize', adjustLayout);
   document.addEventListener('DOMContentLoaded', adjustLayout);
 
@@ -454,123 +449,16 @@
     if (typeof buildQuiz === 'function') buildQuiz();
   }
 
-  function applyLang(lang) {
-    setLanguage(lang);
-  }
 
   function toggleLang() {
     setLanguage(currentLang === 'es' ? 'en' : 'es');
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    if (typeof renderBasicCommands === 'function') renderBasicCommands();
-    setLanguage(currentLang);
-  });
+document.addEventListener('DOMContentLoaded', function() {
+  setLanguage(currentLang);
+});
 
-  const BASIC_COMMAND_GROUPS = [
-    {
-      title: ['1 · Configuración inicial', '1 · Initial setup'],
-      intro: [
-        ['Una vez que has instalado Git, es recomendable configurar tu nombre de usuario y correo electrónico:', 'Once you have installed Git, it is recommended to configure your username and email address:'],
-        ['⚠️ Sin esto no te permitirá hacer commits.', "⚠️ Without this, Git won't let you make commits."]
-      ],
-      commands: [
-        ['git config --global user.name "Tu Nombre"', 'Configura tu nombre de usuario', 'Sets your username'],
-        ['git config --global user.email "tu@email.com"', 'Configura tu correo electrónico', 'Sets your email address']
-      ]
-    },
-    {
-      title: ['2 · Iniciar un proyecto', '2 · Start a project'],
-      intro: [['Estos son los cambios que necesitas hacer para iniciar un proyecto con Git:', 'These are the steps you need to start a project with Git:']],
-      commands: [
-        ['git init', 'Crea un repositorio nuevo en la carpeta actual', 'Creates a new repository in the current folder'],
-        ['git remote add <nombre> <url>', 'Crea una nueva conexión a un repositorio remoto.', 'Creates a new connection to a remote repository.'],
-        ['git clone <url>', 'Descarga un repositorio existente', 'Downloads an existing repository'],
-        ['git pull <url>', 'Descarga los cambios del repositorio remoto', 'Downloads changes from the remote repository']
-      ]
-    },
-    {
-      title: ['3 · El ciclo diario', '3 · The daily workflow'],
-      intro: [['Son los comandos que usas diariamente:', 'These are the commands you use every day:']],
-      commands: [
-        ['git status', 'Muestra qué ha cambiado', 'Shows what has changed'],
-        ['git add .', 'Prepara todos los cambios para el commit', 'Stages all changes for the commit'],
-        ['git commit -m "mensaje claro"', 'Guarda los cambios en el historial', 'Saves the changes in the history'],
-        ['git push origin main', 'Sube los cambios a GitHub', 'Uploads changes to GitHub'],
-        ['git pull origin main', 'Baja los cambios del remoto', 'Pulls changes from the remote']
-      ]
-    },
-    {
-      title: ['4 · Ramas', '4 · Branches'],
-      intro: [['Estos son los comandos que usas para trabajar con ramas:', 'These are the commands you use to work with branches:']],
-      commands: [
-        ['git switch -c mi-rama', 'Crea y cambia a una rama nueva', 'Creates and switches to a new branch'],
-        ['git switch main', 'Vuelve a la rama principal', 'Switches back to the main branch'],
-        ['git merge mi-rama', 'Une la rama con la actual', 'Merges the branch into the current one']
-      ],
-      after: [['⚠️ Un merge puede causar conflictos si los cambios en ambas ramas son incompatibles. Cuando haces un merge, no hay forma de deshacerlo una vez que se resuelven los conflictos.', '⚠️ A merge can cause conflicts if changes in both branches are incompatible. Once conflicts are resolved, the merge cannot be undone easily.']]
-    },
-    {
-      title: ['5 · Si algo va mal', '5 · If something goes wrong'],
-      commands: [
-        ['git log --oneline', 'Ver historial de commits resumido', 'View a summarized commit history'],
-        ['git restore <archivo>', 'Descartar cambios en un archivo', 'Discard changes in a file'],
-        ['git restore --staged <archivo>', 'Quitar un archivo del staging', 'Remove a file from staging']
-      ]
-    }
-  ];
-
-  function createI18nElement(tag, className, es, en) {
-    const el = document.createElement(tag);
-    if (className) el.className = className;
-    el.dataset.es = es;
-    el.dataset.en = en;
-    el.innerHTML = es;
-    return el;
-  }
-
-  function renderBasicCommands() {
-    const root = document.getElementById('basic-commands');
-    if (!root || root.dataset.rendered === 'true') return;
-
-    BASIC_COMMAND_GROUPS.forEach((group) => {
-      const groupEl = document.createElement('div');
-      groupEl.className = 'cmd-group';
-      groupEl.appendChild(createI18nElement('p', 'cmd-group-title', group.title[0], group.title[1]));
-
-      (group.intro || []).forEach(([es, en]) => groupEl.appendChild(createI18nElement('p', '', es, en)));
-
-      group.commands.forEach(([code, descEs, descEn]) => {
-        const cmd = document.createElement('div');
-        cmd.className = 'cmd';
-        cmd.addEventListener('click', () => copyCmd(cmd));
-
-        const text = document.createElement('div');
-        text.className = 'cmd-text';
-
-        const codeEl = document.createElement('div');
-        codeEl.className = 'cmd-code';
-        codeEl.textContent = code;
-
-        text.append(codeEl, createI18nElement('div', 'cmd-desc', descEs, descEn));
-
-        const button = createI18nElement('button', 'cmd-copy', 'Copiar', 'Copy');
-        button.addEventListener('click', (event) => {
-          event.stopPropagation();
-          copyCmd(cmd);
-        });
-
-        cmd.append(text, button);
-        groupEl.appendChild(cmd);
-      });
-
-      (group.after || []).forEach(([es, en]) => groupEl.appendChild(createI18nElement('p', '', es, en)));
-      root.appendChild(groupEl);
-    });
-
-    root.dataset.rendered = 'true';
-  }
-
+  
   function copyCmd(el) {
     const code = el.querySelector('.cmd-code').textContent.trim();
     const btn  = el.querySelector('.cmd-copy');
@@ -1382,10 +1270,524 @@ function buildLightbox() {
     if (typeof buildQuiz === "function") buildQuiz();
     if (typeof buildSimulator === "function") buildSimulator();
     if (typeof buildLightbox === "function") buildLightbox();
-
+    if (typeof buildConflictExercise === "function") buildConflictExercise();
     renderFiles([]);
   });
 
 })();
+
+/* ═══════════════════════════════
+   EJERCICIO: CONFLICTOS ENTRE RAMAS
+═══════════════════════════════ */
+
+const CF_INITIAL_FILE = `<header>
+  <h1>Guía básica de GitHub</h1>
+  <p>Aprende Git y GitHub paso a paso.</p>
+</header>`;
+
+const CF_CONFLICT_FILE = `<header>
+<<<<<<< HEAD
+  <h1>Guía básica de GitHub con ejercicios interactivos</h1>
+=======
+  <h1>Guía práctica de GitHub para principiantes</h1>
+>>>>>>> feature-titulo
+  <p>Aprende Git y GitHub paso a paso.</p>
+</header>`;
+
+const CF_STEPS = [
+  {
+    title: "Crea una rama nueva",
+    task: "Crea una rama llamada feature-titulo. En esa rama se cambiará el título de la página.",
+    hint: "Usa: git switch -c feature-titulo",
+    valid: [
+      /^git switch -c feature-titulo$/i,
+      /^git checkout -b feature-titulo$/i
+    ],
+    output: "Switched to a new branch 'feature-titulo'\n[feature-titulo a12b34c] Cambia título para principiantes",
+    after: function () {
+      cfState.branch = "feature-titulo";
+      cfState.featureCommit = true;
+      cfState.fileContent = `<header>
+  <h1>Guía práctica de GitHub para principiantes</h1>
+  <p>Aprende Git y GitHub paso a paso.</p>
+</header>`;
+    }
+  },
+  {
+    title: "Vuelve a main",
+    task: "Vuelve a la rama main. Allí también se cambiará la misma línea del archivo.",
+    hint: "Usa: git switch main",
+    valid: [
+      /^git switch main$/i,
+      /^git checkout main$/i
+    ],
+    output: "Switched to branch 'main'\n[main d45e67f] Añade ejercicios interactivos al título",
+    after: function () {
+      cfState.branch = "main";
+      cfState.mainCommit = true;
+      cfState.fileContent = `<header>
+  <h1>Guía básica de GitHub con ejercicios interactivos</h1>
+  <p>Aprende Git y GitHub paso a paso.</p>
+</header>`;
+    }
+  },
+  {
+    title: "Fusiona la rama",
+    task: "Fusiona feature-titulo dentro de main. Como ambas ramas tocaron la misma línea, aparecerá un conflicto.",
+    hint: "Usa: git merge feature-titulo",
+    valid: [
+      /^git merge feature-titulo$/i
+    ],
+    output:
+      "Auto-merging index.html\nCONFLICT (content): Merge conflict in index.html\nAutomatic merge failed; fix conflicts and then commit the result.",
+    after: function () {
+      cfState.conflict = true;
+      cfState.fileContent = CF_CONFLICT_FILE;
+    }
+  },
+  {
+    title: "Resuelve el archivo",
+    task: "Edita index.html. Elimina los marcadores del conflicto y deja un único título que combine las dos ideas.",
+    hint: "Borra <<<<<<<, ======= y >>>>>>>. Quédate con un solo <h1> que incluya principiantes y ejercicios interactivos.",
+    valid: [],
+    output: "",
+    after: function () {
+      cfState.conflict = false;
+      cfState.resolved = true;
+    }
+  },
+  {
+    title: "Marca el conflicto como resuelto",
+    task: "Usa git add para decirle a Git que index.html ya está resuelto.",
+    hint: "Usa: git add index.html",
+    valid: [
+      /^git add index\.html$/i,
+      /^git add \.$/i
+    ],
+    output: "Archivo preparado. Git ya sabe que el conflicto está resuelto.",
+    after: function () {
+      cfState.staged = true;
+    }
+  },
+  {
+    title: "Finaliza el merge",
+    task: "Haz un commit para cerrar el merge y guardar la resolución del conflicto.",
+    hint: 'Usa: git commit -m "resuelve conflicto en título"',
+    valid: [
+      /^git commit$/i,
+      /^git commit -m .+$/i
+    ],
+    output: "[main f89a10b] Resuelve conflicto en título\nMerge finalizado correctamente.",
+    after: function () {
+      cfState.done = true;
+    }
+  }
+];
+
+let cfState = {};
+let cfHistory = [];
+
+function cfResetState() {
+  cfState = {
+    step: 0,
+    branch: "main",
+    featureCommit: false,
+    mainCommit: false,
+    conflict: false,
+    resolved: false,
+    staged: false,
+    done: false,
+    fileContent: CF_INITIAL_FILE
+  };
+
+  cfHistory = [];
+}
+
+function cfPrint(text, cls) {
+  const out = document.getElementById("cf-output");
+  if (!out) return;
+
+  const div = document.createElement("div");
+  div.className = cls || "line-dim";
+  div.textContent = text;
+
+  out.appendChild(div);
+
+  const term = document.getElementById("cf-terminal");
+  if (term) term.scrollTop = term.scrollHeight;
+}
+
+function cfSetFeedback(msg, type) {
+  const fb = document.getElementById("cf-feedback");
+  if (!fb) return;
+
+  fb.className = type || "info";
+  fb.innerHTML = msg;
+}
+
+function cfClearFeedback() {
+  const fb = document.getElementById("cf-feedback");
+  if (!fb) return;
+
+  fb.className = "";
+  fb.innerHTML = "";
+}
+
+function cfCurrentStep() {
+  return CF_STEPS[Math.min(cfState.step, CF_STEPS.length - 1)];
+}
+
+function cfRender() {
+  const card = document.getElementById("conflict-exercise-card");
+  if (!card) return;
+
+  const step = cfCurrentStep();
+  const progress = cfState.done
+    ? 100
+    : Math.round((cfState.step / CF_STEPS.length) * 100);
+
+  const bar = document.getElementById("cf-progress-bar");
+  if (bar) bar.style.width = progress + "%";
+
+  const label = document.getElementById("cf-progress-label");
+  if (label) {
+    label.textContent = cfState.done
+      ? "Ejercicio completado"
+      : `Paso ${cfState.step + 1} de ${CF_STEPS.length}`;
+  }
+
+  const state = document.getElementById("cf-state");
+  if (state) {
+    state.innerHTML = `
+      <div class="cf-state-row">
+        <span class="cf-state-label">Rama actual</span>
+        <span class="cf-state-value">
+          <span class="cf-pill active">${cfState.branch}</span>
+        </span>
+      </div>
+
+      <div class="cf-state-row">
+        <span class="cf-state-label">Commit en feature</span>
+        <span class="cf-state-value">
+          <span class="cf-pill ${cfState.featureCommit ? "ok" : ""}">
+            ${cfState.featureCommit ? "hecho" : "pendiente"}
+          </span>
+        </span>
+      </div>
+
+      <div class="cf-state-row">
+        <span class="cf-state-label">Commit en main</span>
+        <span class="cf-state-value">
+          <span class="cf-pill ${cfState.mainCommit ? "ok" : ""}">
+            ${cfState.mainCommit ? "hecho" : "pendiente"}
+          </span>
+        </span>
+      </div>
+
+      <div class="cf-state-row">
+        <span class="cf-state-label">Estado del merge</span>
+        <span class="cf-state-value">
+          ${cfMergeBadge()}
+        </span>
+      </div>
+    `;
+  }
+
+  const task = document.getElementById("cf-task-box");
+  if (task) {
+    task.innerHTML = `<strong>${step.title}</strong><br>${step.task}`;
+  }
+
+  const editor = document.getElementById("cf-editor");
+  if (editor) {
+    editor.value = cfState.fileContent;
+    editor.disabled = cfState.step !== 3 || cfState.done;
+  }
+
+  cfRenderConflictView();
+
+
+  const input = document.getElementById("cf-input");
+  if (input) {
+    input.disabled = cfState.step === 3 || cfState.done;
+    input.placeholder = cfState.step === 3
+      ? "resuelve primero el archivo en el editor..."
+      : "escribe un comando git...";
+  }
+
+  const checkBtn = document.getElementById("cf-check-btn");
+  if (checkBtn) {
+    checkBtn.disabled = cfState.step !== 3 || cfState.done;
+  }
+
+  const explanation = document.getElementById("cf-explanation");
+  if (explanation) {
+    explanation.style.display = cfState.done ? "block" : "none";
+  }
+}
+
+function cfMergeBadge() {
+  if (cfState.done) {
+    return '<span class="cf-pill ok">finalizado</span>';
+  }
+
+  if (cfState.staged) {
+    return '<span class="cf-pill warn">pendiente de commit</span>';
+  }
+
+  if (cfState.resolved) {
+    return '<span class="cf-pill warn">resuelto sin add</span>';
+  }
+
+  if (cfState.conflict) {
+    return '<span class="cf-pill err">conflicto</span>';
+  }
+
+  return '<span class="cf-pill">sin iniciar</span>';
+}
+
+function cfRunCommand(command) {
+  const normalized = command.replace(/\s+/g, " ").trim();
+
+  if (!normalized) return;
+
+  cfPrint("$ " + normalized, "line-cmd");
+
+  if (normalized.toLowerCase() === "git status") {
+    cfPrint(cfGitStatus(), "line-info");
+    cfRender();
+    return;
+  }
+
+  if (normalized.toLowerCase() === "clear" || normalized.toLowerCase() === "cls") {
+    const out = document.getElementById("cf-output");
+    if (out) out.innerHTML = "";
+    return;
+  }
+
+  if (!normalized.toLowerCase().startsWith("git")) {
+    cfPrint('Este simulador solo acepta comandos de Git. Prueba con "git status".', "line-err");
+    cfSetFeedback("❌ Escribe un comando que empiece por <code>git</code>.", "err");
+    return;
+  }
+
+  if (cfState.done) {
+    cfPrint("El ejercicio ya está completado.", "line-dim");
+    return;
+  }
+
+  const step = cfCurrentStep();
+
+  if (cfState.step === 3) {
+    cfPrint("Ahora no toca escribir comandos. Primero resuelve el archivo en el editor.", "line-err");
+    return;
+  }
+
+  const isValid = step.valid.some(regex => regex.test(normalized));
+
+  if (!isValid) {
+    cfPrint("Comando incorrecto para este paso.", "line-err");
+    cfSetFeedback(
+      '❌ Ese comando no es el que toca ahora. Puedes escribir <code>git status</code> para orientarte.',
+      "err"
+    );
+    return;
+  }
+
+  step.after();
+
+  if (step.output) {
+    const cls = step.output.includes("CONFLICT") ? "line-err" : "line-ok";
+    cfPrint(step.output, cls);
+  }
+
+  cfState.step++;
+
+  if (cfState.done) {
+    cfSetFeedback(
+      "✅ Ejercicio completado. Has provocado un conflicto, lo has resuelto y has cerrado el merge.",
+      "ok"
+    );
+  } else {
+    cfSetFeedback("✅ Correcto. Continúa con el siguiente paso.", "ok");
+  }
+
+  cfRender();
+}
+
+function cfGitStatus() {
+  if (cfState.done) {
+    return "On branch main\nnothing to commit, working tree clean";
+  }
+
+  if (cfState.conflict) {
+    return `On branch main
+You have unmerged paths.
+
+Unmerged paths:
+  both modified:   index.html
+
+fix conflicts and run "git add index.html"`;
+  }
+
+  if (cfState.resolved && !cfState.staged) {
+    return `On branch main
+Changes not staged for commit:
+  modified: index.html`;
+  }
+
+  if (cfState.staged) {
+    return `On branch main
+All conflicts fixed but you are still merging.
+
+Changes to be committed:
+  modified: index.html`;
+  }
+
+  return `On branch ${cfState.branch}
+nothing to commit, working tree clean`;
+}
+
+window.cfCheckResolution = function () {
+  const editor = document.getElementById("cf-editor");
+  if (!editor) return;
+
+  const content = editor.value.trim();
+
+  const hasMarkers =
+    content.includes("<<<<<<<") ||
+    content.includes("=======") ||
+    content.includes(">>>>>>>");
+
+  const hasH1 = /<h1>.*<\/h1>/i.test(content);
+  const hasGithub = /github/i.test(content);
+  const hasBeginners = /principiantes/i.test(content);
+  const hasExercises = /ejercicios interactivos/i.test(content);
+
+  if (hasMarkers) {
+    cfSetFeedback(
+      "❌ Todavía quedan marcadores de conflicto. Elimina <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> y <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.",
+      "err"
+    );
+    return;
+  }
+
+  if (!hasH1 || !hasGithub) {
+    cfSetFeedback(
+      "❌ La solución debe conservar una línea <code>&lt;h1&gt;</code> relacionada con GitHub.",
+      "err"
+    );
+    return;
+  }
+
+  if (!hasBeginners || !hasExercises) {
+    cfSetFeedback(
+      "⚠️ La idea es combinar las dos versiones: debe aparecer la idea de <strong>principiantes</strong> y la de <strong>ejercicios interactivos</strong>.",
+      "err"
+    );
+    return;
+  }
+
+  cfState.fileContent = content;
+  cfCurrentStep().after();
+  cfState.step++;
+
+  cfPrint("index.html editado correctamente. El conflicto ya no tiene marcadores.", "line-ok");
+  cfSetFeedback("✅ Resolución correcta. Ahora usa <code>git add index.html</code>.", "ok");
+  cfRender();
+};
+
+window.cfShowHint = function () {
+  if (cfState.done) {
+    cfSetFeedback("🏆 Ya has completado el ejercicio.", "info");
+    return;
+  }
+
+  cfSetFeedback("💡 " + cfCurrentStep().hint, "info");
+};
+
+window.cfReset = function () {
+  cfResetState();
+
+  const out = document.getElementById("cf-output");
+  if (out) out.innerHTML = "";
+
+  cfPrint("Bienvenido al ejercicio de conflictos entre ramas.", "line-info");
+  cfPrint('Puedes escribir "git status" en cualquier momento para ver el estado.', "line-dim");
+
+  cfClearFeedback();
+  cfRender();
+};
+
+function buildConflictExercise() {
+  const input = document.getElementById("cf-input");
+  if (!input) return;
+
+  cfResetState();
+
+  cfPrint("Bienvenido al ejercicio de conflictos entre ramas.", "line-info");
+  cfPrint('Puedes escribir "git status" en cualquier momento para ver el estado.', "line-dim");
+
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      const value = this.value.trim();
+      if (!value) return;
+
+      cfHistory.push(value);
+      this.value = "";
+      cfRunCommand(value);
+    }
+
+    if (e.key === "ArrowUp" && cfHistory.length) {
+      this.value = cfHistory[cfHistory.length - 1];
+    }
+  });
+
+  cfRender();
+}
+
+function cfEscapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function cfRenderConflictView() {
+  const view = document.getElementById("cf-conflict-view");
+  if (!view) return;
+
+  if (!cfState.conflict) {
+    view.style.display = "none";
+    view.innerHTML = "";
+    return;
+  }
+
+  let mode = "normal";
+
+  const html = cfState.fileContent.split("\n").map(line => {
+    let cls = "cf-code-line cf-line-normal";
+
+    if (line.startsWith("<<<<<<<")) {
+      mode = "head";
+      cls = "cf-code-line cf-line-head cf-line-marker";
+    } else if (line.startsWith("=======")) {
+      mode = "incoming";
+      cls = "cf-code-line cf-line-separator cf-line-marker";
+    } else if (line.startsWith(">>>>>>>")) {
+      cls = "cf-code-line cf-line-incoming cf-line-marker";
+      mode = "normal";
+    } else if (mode === "head") {
+      cls = "cf-code-line cf-line-head";
+    } else if (mode === "incoming") {
+      cls = "cf-code-line cf-line-incoming";
+    }
+
+    return `<span class="${cls}">${cfEscapeHtml(line)}</span>`;
+  }).join("");
+
+  view.innerHTML = html;
+  view.style.display = "block";
+}
 
 
