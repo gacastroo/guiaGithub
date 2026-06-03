@@ -72,17 +72,29 @@ document.addEventListener("DOMContentLoaded", adjustLayout);
   }
 })();
 
+function getThemeIcon() {
+  const themeToggle = document.getElementById('theme-toggle-btn');
+
+  if (themeToggle && !document.getElementById('theme-icon')) {
+    themeToggle.innerHTML = '<span id="theme-icon">🌙</span>';
+  }
+
+  return document.getElementById('theme-icon');
+}
+
 function toggleTheme() {
   const html = document.documentElement;
-  const isDark = html.getAttribute("data-theme") === "dark";
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  const icon = getThemeIcon();
+
   if (isDark) {
-    html.removeAttribute("data-theme");
-    localStorage.setItem("theme", "light");
-    document.getElementById("theme-icon").textContent = "🌙";
+    html.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+    if (icon) icon.textContent = '🌙';
   } else {
-    html.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");
-    document.getElementById("theme-icon").textContent = "☀️";
+    html.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    if (icon) icon.textContent = '☀️';
   }
 }
 
@@ -1260,8 +1272,12 @@ function uiTranslate(es) {
 }
 
 function isEligibleForGeneratedTranslation(el) {
-  if (el.id === "lang-toggle-btn" || el.closest?.("#lang-toggle-btn"))
-    return false;
+  if (
+    el.id === "lang-toggle-btn" ||
+    el.closest?.("#lang-toggle-btn") ||
+    el.id === "theme-toggle-btn" ||
+    el.closest?.("#theme-toggle-btn")
+  ) return false;
   const tag = el.tagName.toLowerCase();
   const directTags = new Set([
     "p",
@@ -1376,6 +1392,10 @@ function setLanguage(lang) {
 
   const label = document.getElementById("lang-label");
   if (label) label.textContent = lang === "en" ? "ES" : "EN";
+  const themeIcon = getThemeIcon();
+  if (themeIcon) {
+    themeIcon.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+  }
 
   document.documentElement.lang = lang;
   if (typeof buildQuiz === "function") buildQuiz();
@@ -2497,7 +2517,12 @@ function cfRender() {
   const card = document.getElementById("conflict-exercise-card");
   if (!card) return;
 
+  if (!cfState || !Number.isInteger(cfState.step)) {
+    cfResetState();
+  }
+
   const step = cfCurrentStep();
+  if (!step) return;
   const progress = cfState.done
     ? 100
     : Math.round((cfState.step / CF_STEPS.length) * 100);
