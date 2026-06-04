@@ -1,87 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="es">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="../img/favicon/favicon.ico" rel="icon" type="image/x-icon"/>
-<title data-title-en="GuiaGitHub contributions" data-title-es="GuiaGitHub contribuciones">GuiaGitHub contribuciones</title>
-<link href="../css/contribution.css" rel="stylesheet"/>
-
-</head>
-<body>
-<header>
-<div class="lang-controls">
-<button aria-label="Cambiar idioma" class="lang-toggle-btn" data-aria-label-en="Change language" data-aria-label-es="Cambiar idioma" data-title-en="Change language" data-title-es="Cambiar idioma" id="lang-toggle-btn" onclick="toggleContributionLang()" title="Cambiar idioma" type="button">
-<span id="lang-icon">🌐</span>
-<span id="lang-label">EN</span>
-</button>
-</div>
-<h1 data-en="🤝 Do you want to contribute to my GuiaGitHub project?" data-es="🤝 ¿Quieres contribuir a mi proyecto GuiaGitHub?">
-    🤝 ¿Quieres contribuir a mi proyecto GuiaGitHub?
-  </h1>
-<p data-en="An open project to learn Git and GitHub in a practical way" data-es="Proyecto abierto para aprender Git y GitHub de forma práctica">
-    Proyecto abierto para aprender Git y GitHub de forma práctica
-  </p>
-<img alt="Foto de perfil de @gacastroo" data-alt-en="Profile photo of @gacastroo" data-alt-es="Foto de perfil de @gacastroo" decoding="async" height="320" loading="lazy" src="../img/webp/JPEG/profile.webp" class="profile-avatar" width="320"/>
-<div class="links">
-<a data-en="📦 Repository" data-es="📦 Repositorio" href="https://github.com/gacastroo/guiaGithub" rel="noopener noreferrer" target="_blank">📦 Repositorio</a>
-<a data-en="🌐 View project" data-es="🌐 Ver proyecto" href="https://gacastroo.github.io/guiaGithub/" rel="noopener noreferrer" target="_blank">🌐 Ver proyecto</a>
-</div>
-</header>
-<div class="container">
-<div class="card">
-<h2 data-en="How to contribute" data-es="Cómo contribuir">Cómo contribuir</h2>
-<ul>
-<li data-en="Fork the repository" data-es="Haz un fork del repositorio">Haz un fork del repositorio</li>
-<li data-en="Create a new branch" data-es="Crea una nueva rama">Crea una nueva rama</li>
-<li data-en="Make your changes" data-es="Realiza tus cambios">Realiza tus cambios</li>
-<li data-en="Send a Pull Request" data-es="Envía un Pull Request">Envía un Pull Request</li>
-</ul>
-<a class="button" data-en="Fork repository" data-es="Hacer Fork" href="https://github.com/gacastroo/guiaGithub/fork" rel="noopener noreferrer" target="_blank">
-      Hacer Fork
-    </a>
-</div>
-<div class="card">
-<h2 data-en="💻 Basic workflow" data-es="💻 Flujo básico">💻 Flujo básico</h2>
-<div class="code" data-en='git clone https://github.com/gacastroo/guiaGithub.git
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="../img/favicon/favicon.ico" rel="icon" type="image/x-icon" />
+    <title data-title-en="GuiaGitHub contributions" data-title-es="GuiaGitHub contribuciones">
+      GuiaGitHub contribuciones
+    </title>
+    <link href="../css/contribution.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="lang-controls">
+        <button
+          aria-label="Cambiar idioma"
+          class="lang-toggle-btn"
+          data-aria-label-en="Change language"
+          data-aria-label-es="Cambiar idioma"
+          data-title-en="Change language"
+          data-title-es="Cambiar idioma"
+          id="lang-toggle-btn"
+          onclick="toggleContributionLang()"
+          title="Cambiar idioma"
+          type="button"
+        >
+          <span id="lang-icon">🌐</span>
+          <span id="lang-label">EN</span>
+        </button>
+      </div>
+      <h1
+        data-en="🤝 Do you want to contribute to my GuiaGitHub project?"
+        data-es="🤝 ¿Quieres contribuir a mi proyecto GuiaGitHub?"
+      >
+        🤝 ¿Quieres contribuir a mi proyecto GuiaGitHub?
+      </h1>
+      <p
+        data-en="An open project to learn Git and GitHub in a practical way"
+        data-es="Proyecto abierto para aprender Git y GitHub de forma práctica"
+      >
+        Proyecto abierto para aprender Git y GitHub de forma práctica
+      </p>
+      <img
+        alt="Foto de perfil de @gacastroo"
+        data-alt-en="Profile photo of @gacastroo"
+        data-alt-es="Foto de perfil de @gacastroo"
+        decoding="async"
+        height="320"
+        loading="lazy"
+        src="../img/webp/JPEG/profile.webp"
+        class="profile-avatar"
+        width="320"
+      />
+      <div class="links">
+        <a
+          data-en="📦 Repository"
+          data-es="📦 Repositorio"
+          href="https://github.com/gacastroo/guiaGithub"
+          rel="noopener noreferrer"
+          target="_blank"
+          >📦 Repositorio</a
+        >
+        <a
+          data-en="🌐 View project"
+          data-es="🌐 Ver proyecto"
+          href="https://gacastroo.github.io/guiaGithub/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >🌐 Ver proyecto</a
+        >
+      </div>
+    </header>
+    <div class="container">
+      <div class="card">
+        <h2 data-en="How to contribute" data-es="Cómo contribuir">Cómo contribuir</h2>
+        <ul>
+          <li data-en="Fork the repository" data-es="Haz un fork del repositorio">
+            Haz un fork del repositorio
+          </li>
+          <li data-en="Create a new branch" data-es="Crea una nueva rama">Crea una nueva rama</li>
+          <li data-en="Make your changes" data-es="Realiza tus cambios">Realiza tus cambios</li>
+          <li data-en="Send a Pull Request" data-es="Envía un Pull Request">
+            Envía un Pull Request
+          </li>
+        </ul>
+        <a
+          class="button"
+          data-en="Fork repository"
+          data-es="Hacer Fork"
+          href="https://github.com/gacastroo/guiaGithub/fork"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Hacer Fork
+        </a>
+      </div>
+      <div class="card">
+        <h2 data-en="💻 Basic workflow" data-es="💻 Flujo básico">💻 Flujo básico</h2>
+        <div
+          class="code"
+          data-en='git clone https://github.com/gacastroo/guiaGithub.git
 cd guiaGithub
 git checkout -b my-contribution
 git commit -m "My contribution"
-git push origin my-contribution' data-es='git clone https://github.com/gacastroo/guiaGithub.git
+git push origin my-contribution'
+          data-es='git clone https://github.com/gacastroo/guiaGithub.git
 cd guiaGithub
 git checkout -b mi-aporte
 git commit -m "Mi contribución"
-git push origin mi-aporte'>
-git clone https://github.com/gacastroo/guiaGithub.git
-cd guiaGithub
-git checkout -b mi-aporte
-git commit -m "Mi contribución"
-git push origin mi-aporte
+git push origin mi-aporte'
+        >
+          git clone https://github.com/gacastroo/guiaGithub.git cd guiaGithub git checkout -b
+          mi-aporte git commit -m "Mi contribución" git push origin mi-aporte
+        </div>
+      </div>
+      <div class="card">
+        <h2 data-en="🐛 Report bugs" data-es="🐛 Reportar errores">🐛 Reportar errores</h2>
+        <p
+          data-en="If you find a problem, open an issue on GitHub explaining the error."
+          data-es="Si encuentras un problema, abre un issue en GitHub explicando el error."
+        >
+          Si encuentras un problema, abre un issue en GitHub explicando el error.
+        </p>
+        <a
+          class="button"
+          data-en="Create Issue"
+          data-es="Crear Issue"
+          href="https://github.com/gacastroo/guiaGithub/issues"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Crear Issue
+        </a>
+      </div>
+      <div class="card">
+        <h2 data-en="💡 Ideas and improvements" data-es="💡 Ideas y mejoras">💡 Ideas y mejoras</h2>
+        <p
+          data-en="You can suggest new features or improve the documentation."
+          data-es="Puedes proponer nuevas funcionalidades o mejorar la documentación."
+        >
+          Puedes proponer nuevas funcionalidades o mejorar la documentación.
+        </p>
+      </div>
+      <a
+        class="button"
+        data-en="BACK TO PROJECT"
+        data-es="VOLVER AL PROYECTO"
+        href="https://gacastroo.github.io/guiaGithub/"
+        id="btn-back"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        VOLVER AL PROYECTO
+      </a>
     </div>
-</div>
-<div class="card">
-<h2 data-en="🐛 Report bugs" data-es="🐛 Reportar errores">🐛 Reportar errores</h2>
-<p data-en="If you find a problem, open an issue on GitHub explaining the error." data-es="Si encuentras un problema, abre un issue en GitHub explicando el error.">
-      Si encuentras un problema, abre un issue en GitHub explicando el error.
-    </p>
-<a class="button" data-en="Create Issue" data-es="Crear Issue" href="https://github.com/gacastroo/guiaGithub/issues" rel="noopener noreferrer" target="_blank">
-      Crear Issue
-    </a>
-</div>
-<div class="card">
-<h2 data-en="💡 Ideas and improvements" data-es="💡 Ideas y mejoras">💡 Ideas y mejoras</h2>
-<p data-en="You can suggest new features or improve the documentation." data-es="Puedes proponer nuevas funcionalidades o mejorar la documentación.">
-      Puedes proponer nuevas funcionalidades o mejorar la documentación.
-    </p>
-</div>
-<a class="button" data-en="BACK TO PROJECT" data-es="VOLVER AL PROYECTO" href="https://gacastroo.github.io/guiaGithub/" id="btn-back" rel="noopener noreferrer" target="_blank">
-    VOLVER AL PROYECTO
-  </a>
-</div>
-<footer data-en="Made with ❤️ by @gacastroo" data-es="Hecho con ❤️ por @gacastroo">
-  Hecho con ❤️ por @gacastroo
-</footer>
-<script src="../js/contribution.js"></script>
-</body>
+    <footer data-en="Made with ❤️ by @gacastroo" data-es="Hecho con ❤️ por @gacastroo">
+      Hecho con ❤️ por @gacastroo
+    </footer>
+    <script src="../js/contribution.js"></script>
+  </body>
 </html>

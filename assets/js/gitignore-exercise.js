@@ -15,7 +15,7 @@
     { name: "error.log", icon: "📝", shouldIgnore: true },
     { name: ".DS_Store", icon: "💻", shouldIgnore: true },
     { name: "src/app.js", icon: "📄", shouldIgnore: false },
-    { name: "README.md", icon: "📘", shouldIgnore: false },
+    { name: "README.md", icon: "📘", shouldIgnore: false }
   ];
 
   const TOTAL = FILES.filter((f) => f.shouldIgnore).length;
@@ -25,7 +25,7 @@
     "Piensa: ¿qué carpetas se generan automáticamente y nunca necesitas subir?",
     "node_modules/ y dist/ son carpetas que no se suben nunca al repositorio.",
     "Los archivos .env contienen secretos. Los .log son ruido. .DS_Store es de macOS.",
-    "Prueba con: node_modules/ · dist/ · .env · .env.local · *.log · .DS_Store",
+    "Prueba con: node_modules/ · dist/ · .env · .env.local · *.log · .DS_Store"
   ];
 
   function getRules(text) {
@@ -133,10 +133,8 @@
   window.giShowHint = () => {
     if (hintLevel >= HINTS.length) {
       showFeedback(
-        uiTranslate(
-          "Ya has visto todas las pistas. ¡Inténtalo con lo que sabes!",
-        ),
-        "info",
+        uiTranslate("Ya has visto todas las pistas. ¡Inténtalo con lo que sabes!"),
+        "info"
       );
       return;
     }
@@ -174,9 +172,9 @@
     if (missed.length === 0 && wrong.length === 0) {
       showFeedback(
         uiTranslate(
-          "✅ ¡Perfecto! Tu .gitignore es correcto. Todos los archivos sensibles están ignorados y el código fuente queda trackeado.",
+          "✅ ¡Perfecto! Tu .gitignore es correcto. Todos los archivos sensibles están ignorados y el código fuente queda trackeado."
         ),
-        "ok",
+        "ok"
       );
 
       const expl = document.getElementById("gi-ex-explanation");
@@ -205,4 +203,3 @@
     renderFiles(editor ? getRules(editor.value) : []);
   };
 })();
-

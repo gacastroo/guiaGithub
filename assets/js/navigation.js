@@ -3,12 +3,8 @@
 ═══════════════════════════════ */
 // Cambia de sección visible al hacer clic en el menú
 function show(id, btn) {
-  document
-    .querySelectorAll(".section")
-    .forEach((s) => s.classList.remove("visible"));
-  document
-    .querySelectorAll(".nav-btn")
-    .forEach((b) => b.classList.remove("active"));
+  document.querySelectorAll(".section").forEach((s) => s.classList.remove("visible"));
+  document.querySelectorAll(".nav-btn").forEach((b) => b.classList.remove("active"));
   document.getElementById(id).classList.add("visible");
   btn.classList.add("active");
   closeMobileNav();
@@ -61,4 +57,3 @@ function adjustLayout() {
 
 window.addEventListener("resize", adjustLayout);
 document.addEventListener("DOMContentLoaded", adjustLayout);
-

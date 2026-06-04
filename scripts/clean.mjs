@@ -6,11 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const root = path.resolve(__dirname, "..");
 
-const targets = [
-  "dist",
-  "dist-package",
-  "guiaGithub-package.zip"
-];
+const targets = ["dist", "dist-package", "guiaGithub-package.zip"];
 
 for (const target of targets) {
   const targetPath = path.join(root, target);

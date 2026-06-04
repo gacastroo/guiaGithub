@@ -60,8 +60,7 @@ img {
 }
 
 body {
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -139,9 +138,9 @@ nav {
   margin: 5px 0;
   box-sizing: border-box;
 
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
 
   font-size: 12px;
   font-weight: 600;
@@ -150,7 +149,9 @@ nav {
   border-radius: 6px;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 
   display: inline-flex;
   align-items: center;
@@ -994,8 +995,6 @@ pre code {
 .card ul li strong {
   color: var(--text);
 }
-
-
 
 /* ── ERRORES COMUNES ── */
 #errores {

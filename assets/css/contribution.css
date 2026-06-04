@@ -49,10 +49,10 @@ header p {
   height: 34px;
   padding: 0 10px;
   box-sizing: border-box;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 6px;
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
   cursor: pointer;
   font-family: inherit;
   font-size: 12px;
@@ -63,13 +63,16 @@ header p {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
 }
 
 .lang-toggle-btn:hover {
-  background: rgba(255,255,255,0.18);
+  background: rgba(255, 255, 255, 0.18);
   color: white;
-  border-color: rgba(255,255,255,0.22);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 /* LINKS HEADER */

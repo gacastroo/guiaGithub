@@ -1,17 +1,14 @@
 /* ═══════════════════════════════
    LANGUAGE TOGGLE / I18N
 ═══════════════════════════════ */
-let currentLang =
-  localStorage.getItem("lang") || localStorage.getItem("site-lang") || "es";
+let currentLang = localStorage.getItem("lang") || localStorage.getItem("site-lang") || "es";
 
 const STATIC_TRANSLATIONS = {
   "🌐 EN": "🌐 EN",
   '"Git es el cerebro 🧠 , GitHub es la red social 🌐 ."':
     '"Git is the brain 🧠, GitHub is the social network 🌐."',
-  '"Git guarda tu código, GitHub lo presume."':
-    '"Git saves your code, GitHub shows it off."',
-  "Comparativa visual entre Git y GitHub":
-    "Visual comparison between Git and GitHub",
+  '"Git guarda tu código, GitHub lo presume."': '"Git saves your code, GitHub shows it off."',
+  "Comparativa visual entre Git y GitHub": "Visual comparison between Git and GitHub",
   Git: "Git",
   "Software local (en tu ordenador)": "Local software (on your computer)",
   "Control de versiones": "Version control",
@@ -29,8 +26,7 @@ const STATIC_TRANSLATIONS = {
   "Descarga Git desde su página oficial e instálalo en tu sistema operativo.":
     "Download Git from its official website and install it on your operating system.",
   "Página oficial de Git": "Official Git website",
-  "Instalación y primeros pasos con Git":
-    "Installation and first steps with Git",
+  "Instalación y primeros pasos con Git": "Installation and first steps with Git",
   Esencial: "Essential",
   Recomendado: "Recommended",
   "1 · Configuración inicial": "1 · Initial setup",
@@ -45,12 +41,10 @@ const STATIC_TRANSLATIONS = {
   "Crea una nueva conexión a un repositorio remoto.":
     "Creates a new connection to a remote repository.",
   "Descarga un repositorio existente": "Downloads an existing repository",
-  "Descarga los cambios del repositorio remoto":
-    "Downloads changes from the remote repository",
+  "Descarga los cambios del repositorio remoto": "Downloads changes from the remote repository",
   "3 · El ciclo diario": "3 · The daily workflow",
   "Muestra qué ha cambiado": "Shows what has changed",
-  "Prepara todos los cambios para el commit":
-    "Stages all changes for the commit",
+  "Prepara todos los cambios para el commit": "Stages all changes for the commit",
   "Guarda los cambios en el historial": "Saves the changes in the history",
   "Sube los cambios a GitHub": "Uploads changes to GitHub",
   "Baja los cambios del remoto": "Pulls changes from the remote",
@@ -68,12 +62,9 @@ const STATIC_TRANSLATIONS = {
     "Remote Repository: This is the copy on GitHub's servers. It is your cloud backup and the place where others can see your code.",
   "💾 Se guarda en tu computadora": "💾 Saved on your computer",
   "☁️ Ahora está en internet": "☁️ Now it is on the internet",
-  "Acceder a la creación de un nuevo repositorio":
-    "Access the new repository creation screen",
-  "Formulario para configurar el nuevo repositorio":
-    "Form to configure the new repository",
-  "Repositorio creado correctamente en GitHub":
-    "Repository created successfully on GitHub",
+  "Acceder a la creación de un nuevo repositorio": "Access the new repository creation screen",
+  "Formulario para configurar el nuevo repositorio": "Form to configure the new repository",
+  "Repositorio creado correctamente en GitHub": "Repository created successfully on GitHub",
   "Entra al repositorio en GitHub.": "Open the repository on GitHub.",
   "Haz clic en el botón verde Code y copia la URL del repositorio.":
     "Click the green Code button and copy the repository URL.",
@@ -113,8 +104,7 @@ const STATIC_TRANSLATIONS = {
   "Edita tus archivos y guárdalos.": "Edit your files and save them.",
   "Ve a la pestaña de Source Control (icono de nodos a la izquierda).":
     "Go to the Source Control tab (branch icon on the left).",
-  'Haz clic en el "+" para preparar los cambios (Stage).':
-    'Click the "+" to stage the changes.',
+  'Haz clic en el "+" para preparar los cambios (Stage).': 'Click the "+" to stage the changes.',
   "Escribe un mensaje de commit y presiona el botón Commit .":
     "Write a commit message and press the Commit button.",
   "Haz clic en Sync Changes (o Push) para enviar todo a GitHub.":
@@ -132,8 +122,7 @@ const STATIC_TRANSLATIONS = {
   perf: "perf",
   "Mejora de rendimiento": "Performance improvement",
   refactor: "refactor",
-  "Cambio interno sin afectar comportamiento":
-    "Internal change without affecting behavior",
+  "Cambio interno sin afectar comportamiento": "Internal change without affecting behavior",
   style: "style",
   "Formato (espacios, tabs, etc.)": "Formatting (spaces, tabs, etc.)",
   docs: "docs",
@@ -177,16 +166,14 @@ const STATIC_TRANSLATIONS = {
     "Make sure you are on the correct branch before running it (use git branch to check).",
   "Elimina una rama local (solo si ya fue fusionada)":
     "Deletes a local branch (only if it has already been merged)",
-  "Consecuencias de eliminar una rama local":
-    "Consequences of deleting a local branch",
+  "Consecuencias de eliminar una rama local": "Consequences of deleting a local branch",
   "Una vez eliminada la rama local sin haber hecho push, los commits exclusivos de esa rama se pierden .":
     "Once the local branch is deleted without being pushed, the commits that only existed on that branch are lost.",
   "Si otro compañero tenía esa rama como referencia, deberá actualizar su repositorio local.":
     "If another teammate had that branch as a reference, they will need to update their local repository.",
   "Elimina la rama también del repositorio remoto":
     "Deletes the branch from the remote repository too",
-  "Consecuencias de eliminar una rama remota":
-    "Consequences of deleting a remote branch",
+  "Consecuencias de eliminar una rama remota": "Consequences of deleting a remote branch",
   "La rama desaparece del repositorio remoto para todos los colaboradores del proyecto.":
     "The branch disappears from the remote repository for all project collaborators.",
   "Cualquier Pull Request abierto basado en esa rama quedará automáticamente cerrado o huérfano .":
@@ -209,10 +196,8 @@ const STATIC_TRANSLATIONS = {
     "Git will mark the conflict like this in the file:",
   Patrón: "Pattern",
   Significado: "Meaning",
-  "Ignora toda la carpeta de dependencias":
-    "Ignores the entire dependencies folder",
-  "Ignora cualquier archivo con extensión .log":
-    "Ignores any file with the .log extension",
+  "Ignora toda la carpeta de dependencias": "Ignores the entire dependencies folder",
+  "Ignora cualquier archivo con extensión .log": "Ignores any file with the .log extension",
   "Ignora el archivo de variables de entorno sensibles":
     "Ignores the sensitive environment variables file",
   "Ignora la carpeta de archivos generados en el build":
@@ -260,8 +245,7 @@ const STATIC_TRANSLATIONS = {
     "Contains sensitive environment configuration: database credentials, encryption keys, external service tokens. It should never be uploaded to the repository.",
   "Documentación oficial de Git sobre .gitignore: Documentación oficial de Git sobre .gitignore":
     "Official Git documentation about .gitignore: Official Git documentation about .gitignore",
-  "Documentación oficial de Git sobre .gitignore":
-    "Official Git documentation about .gitignore",
+  "Documentación oficial de Git sobre .gitignore": "Official Git documentation about .gitignore",
   "Generador de .gitignore en línea: Generador de .gitignore en línea":
     "Online .gitignore generator: Online .gitignore generator",
   "Generador de .gitignore en línea": "Online .gitignore generator",
@@ -282,10 +266,8 @@ const STATIC_TRANSLATIONS = {
   "0 de 6 archivos ignorados correctamente": "0 of 6 files ignored correctly",
   "📁 Archivos del proyecto": "📁 Project files",
   "📄 .gitignore": "📄 .gitignore",
-  "# escribe tus reglas aquí, una por línea":
-    "# write your rules here, one per line",
-  "💡 Ver pista 🔄 Reiniciar Comprobar solución ✓":
-    "💡 Show hint 🔄 Restart Check solution ✓",
+  "# escribe tus reglas aquí, una por línea": "# write your rules here, one per line",
+  "💡 Ver pista 🔄 Reiniciar Comprobar solución ✓": "💡 Show hint 🔄 Restart Check solution ✓",
   "💡 Ver pista": "💡 Show hint",
   "🔄 Reiniciar": "🔄 Restart",
   "Comprobar solución ✓": "Check solution ✓",
@@ -302,8 +284,7 @@ const STATIC_TRANSLATIONS = {
     "Wildcard that ignores all .log files. They are local execution logs.",
   "Metadatos internos de macOS. No aportan nada al repositorio.":
     "Internal macOS metadata. It adds nothing to the repository.",
-  "Vista general de la integración de Git en VS Code":
-    "Overview of Git integration in VS Code",
+  "Vista general de la integración de Git en VS Code": "Overview of Git integration in VS Code",
   "Cuando editas un archivo, VS Code lo marca automáticamente en el explorador de archivos con una letra:":
     "When you edit a file, VS Code automatically marks it in the file explorer with a letter:",
   "M (Modified) — archivo modificado.": "M (Modified) — modified file.",
@@ -356,8 +337,7 @@ const STATIC_TRANSLATIONS = {
     "When a conflict occurs, VS Code marks the file with a red C in the explorer and in the Source Control panel. When you open it, you will see the code divided into blocks with special markers:",
   "<<<<<<< HEAD — inicio de tu versión (rama actual).":
     "<<<<<<< HEAD — start of your version (current branch).",
-  "======= — separador entre las dos versiones.":
-    "======= — separator between the two versions.",
+  "======= — separador entre las dos versiones.": "======= — separator between the two versions.",
   ">>>>>>> feature/… — inicio de la versión entrante (rama que estás fusionando).":
     ">>>>>>> feature/… — start of the incoming version (the branch you are merging).",
   "VS Code resalta visualmente los bloques en conflicto con colores diferenciados":
@@ -384,7 +364,7 @@ const STATIC_TRANSLATIONS = {
     "After resolving all conflicts, a final commit closes the merge process",
   "© 2026 Guía de GitHub · Guillermo Castro Abarca":
     "© 2026 GitHub Guide · Guillermo Castro Abarca",
-  "Guillermo Castro Abarca": "Guillermo Castro Abarca",
+  "Guillermo Castro Abarca": "Guillermo Castro Abarca"
 };
 
 const EXTRA_STATIC_TRANSLATIONS = {
@@ -395,10 +375,8 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "🤝": "🤝",
   '"Git es el cerebro 🧠 , GitHub es la red social 🌐 ."':
     '"Git is the brain 🧠, GitHub is the social network 🌐."',
-  '"Git guarda tu código, GitHub lo presume."':
-    '"Git saves your code, GitHub shows it off."',
-  "Comparativa visual entre Git y GitHub":
-    "Visual comparison between Git and GitHub",
+  '"Git guarda tu código, GitHub lo presume."': '"Git saves your code, GitHub shows it off."',
+  "Comparativa visual entre Git y GitHub": "Visual comparison between Git and GitHub",
   Git: "Git",
   GitHub: "GitHub",
   "Software local (en tu ordenador)": "Local software (on your computer)",
@@ -416,8 +394,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Descarga Git desde su página oficial e instálalo en tu sistema operativo.":
     "Download Git from its official website and install it on your operating system.",
   "Página oficial de Git": "Official Git website",
-  "Instalación y primeros pasos con Git":
-    "Installation and first steps with Git",
+  "Instalación y primeros pasos con Git": "Installation and first steps with Git",
   "01": "01",
   "02": "02",
   "03": "03",
@@ -450,14 +427,11 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Crea una nueva conexión a un repositorio remoto.":
     "Creates a new connection to a remote repository.",
   "Descarga un repositorio existente": "Downloads an existing repository",
-  "Descarga los cambios del repositorio remoto":
-    "Downloads changes from the remote repository",
+  "Descarga los cambios del repositorio remoto": "Downloads changes from the remote repository",
   "3 · El ciclo diario": "3 · Daily workflow",
-  "Son los comandos que usas diariamente:":
-    "These are the commands you use every day:",
+  "Son los comandos que usas diariamente:": "These are the commands you use every day:",
   "Muestra qué ha cambiado": "Shows what has changed",
-  "Prepara todos los cambios para el commit":
-    "Stages all changes for the commit",
+  "Prepara todos los cambios para el commit": "Stages all changes for the commit",
   "Guarda los cambios en el historial": "Saves the changes in the history",
   "Sube los cambios a GitHub": "Pushes the changes to GitHub",
   "Baja los cambios del remoto": "Pulls changes from the remote",
@@ -486,12 +460,9 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "git add .": "git add .",
   'git commit -m "tu mensaje aquí"': 'git commit -m "your message here"',
   "git push origin main": "git push origin main",
-  "Acceder a la creación de un nuevo repositorio":
-    "Access the new repository creation screen",
-  "Formulario para configurar el nuevo repositorio":
-    "Form to configure the new repository",
-  "Repositorio creado correctamente en GitHub":
-    "Repository created successfully on GitHub",
+  "Acceder a la creación de un nuevo repositorio": "Access the new repository creation screen",
+  "Formulario para configurar el nuevo repositorio": "Form to configure the new repository",
+  "Repositorio creado correctamente en GitHub": "Repository created successfully on GitHub",
   "Entra al repositorio en GitHub.": "Open the repository on GitHub.",
   "Haz clic en el botón verde Code y copia la URL del repositorio.":
     "Click the green Code button and copy the repository URL.",
@@ -543,8 +514,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Edita tus archivos y guárdalos.": "Edit your files and save them.",
   "Ve a la pestaña de Source Control (icono de nodos a la izquierda).":
     "Go to the Source Control tab (branch icon on the left).",
-  'Haz clic en el "+" para preparar los cambios (Stage).':
-    'Click the "+" to stage the changes.',
+  'Haz clic en el "+" para preparar los cambios (Stage).': 'Click the "+" to stage the changes.',
   "Escribe un mensaje de commit y presiona el botón Commit .":
     "Write a commit message and press the Commit button.",
   "Haz clic en Sync Changes (o Push) para enviar todo a GitHub.":
@@ -554,8 +524,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Nota: Asegúrate de estar dentro de la carpeta de tu proyecto en la terminal antes de escribir estos comandos.":
     "Note: Make sure you are inside your project folder in the terminal before typing these commands.",
   "Estructura de un commit": "Commit structure",
-  'git commit -m "tipo: descripción breve"':
-    'git commit -m "type: short description"',
+  'git commit -m "tipo: descripción breve"': 'git commit -m "type: short description"',
   Tipos: "Types",
   feat: "feat",
   "Nueva funcionalidad": "New feature",
@@ -564,8 +533,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   perf: "perf",
   "Mejora de rendimiento": "Performance improvement",
   refactor: "refactor",
-  "Cambio interno sin afectar comportamiento":
-    "Internal change without affecting behavior",
+  "Cambio interno sin afectar comportamiento": "Internal change without affecting behavior",
   style: "style",
   "Formato (espacios, tabs, etc.)": "Formatting (spaces, tabs, etc.)",
   docs: "docs",
@@ -586,12 +554,9 @@ const EXTRA_STATIC_TRANSLATIONS = {
     '"A branch is like a parallel copy of your project where you can experiment without fear of breaking anything."',
   '"La rama main es el tronco del árbol. El resto son ramas que crecen a los lados."':
     '"The main branch is the tree trunk. The others are branches that grow from the sides."',
-  "git switch -c feature/mi-nueva-funcionalidad":
-    "git switch -c feature/my-new-feature",
-  'git add . && git commit -m "feat: añadir login"':
-    'git add . && git commit -m "feat: add login"',
-  "git push origin feature/mi-nueva-funcionalidad":
-    "git push origin feature/my-new-feature",
+  "git switch -c feature/mi-nueva-funcionalidad": "git switch -c feature/my-new-feature",
+  'git add . && git commit -m "feat: añadir login"': 'git add . && git commit -m "feat: add login"',
+  "git push origin feature/mi-nueva-funcionalidad": "git push origin feature/my-new-feature",
   "git switch main && git merge feature/mi-nueva-funcionalidad":
     "git switch main && git merge feature/my-new-feature",
   "Crear y navegar": "Create and navigate",
@@ -617,8 +582,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "Make sure you are on the correct branch before running it (use git branch to check).",
   "Elimina una rama local (solo si ya fue fusionada)":
     "Deletes a local branch (only if it has already been merged)",
-  "Consecuencias de eliminar una rama local":
-    "Consequences of deleting a local branch",
+  "Consecuencias de eliminar una rama local": "Consequences of deleting a local branch",
   "git branch -d solo borra la rama si ya fue fusionada, lo cual es una protección. Pero git branch -D (mayúscula) la elimina aunque tenga commits sin fusionar , perdiendo esos cambios.":
     "git branch -d only deletes the branch if it has already been merged, which is a protection. But git branch -D (uppercase) deletes it even if it has unmerged commits, losing those changes.",
   "Una vez eliminada la rama local sin haber hecho push, los commits exclusivos de esa rama se pierden .":
@@ -627,8 +591,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "If another teammate had that branch as a reference, they will need to update their local repository.",
   "Elimina la rama también del repositorio remoto":
     "Deletes the branch from the remote repository too",
-  "Consecuencias de eliminar una rama remota":
-    "Consequences of deleting a remote branch",
+  "Consecuencias de eliminar una rama remota": "Consequences of deleting a remote branch",
   "La rama desaparece del repositorio remoto para todos los colaboradores del proyecto.":
     "The branch disappears from the remote repository for all project collaborators.",
   "Cualquier Pull Request abierto basado en esa rama quedará automáticamente cerrado o huérfano .":
@@ -654,13 +617,11 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "rama main": "main branch",
   "# commit base (compartido)": "# base commit (shared)",
   '"Hola"': '"Hello"',
-  "# commit B — alguien en main escribe:":
-    "# commit B — someone on main writes:",
+  "# commit B — alguien en main escribe:": "# commit B — someone on main writes:",
   '"Hola mundo"': '"Hello world"',
   "mismo archivo": "same file",
   "rama feature": "feature branch",
-  "# commit D — alguien en feature escribe:":
-    "# commit D — someone on feature writes:",
+  "# commit D — alguien en feature escribe:": "# commit D — someone on feature writes:",
   '"Hello world"': '"Hello world"',
   "# Git no sabe qué línea elegir y marca el conflicto así:":
     "# Git does not know which line to choose and marks the conflict like this:",
@@ -680,8 +641,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "End of the block from the branch you are merging.",
   "Estos son los conflictos que encontrarás con más frecuencia en proyectos reales.":
     "These are the conflicts you will find most often in real projects.",
-  "Escenario 1 · Texto cambiado en la misma línea":
-    "Scenario 1 · Text changed on the same line",
+  "Escenario 1 · Texto cambiado en la misma línea": "Scenario 1 · Text changed on the same line",
   "El caso más común. Dos personas editan el mensaje de un mismo botón o la misma variable de configuración.":
     "The most common case. Two people edit the text of the same button or the same configuration variable.",
   "Solución: elige uno de los dos valores (o escribe uno nuevo), borra los tres marcadores y guarda.":
@@ -692,8 +652,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "One person adds validation to a function; another refactors it at the same time.",
   "Solución: en este caso lo correcto probablemente es combinar ambos cambios manualmente:":
     "Solution: in this case, the right thing is probably to combine both changes manually:",
-  "Escenario 3 · Archivo eliminado vs. modificado":
-    "Scenario 3 · File deleted vs. modified",
+  "Escenario 3 · Archivo eliminado vs. modificado": "Scenario 3 · File deleted vs. modified",
   "Una rama elimina un archivo que la otra ha modificado. Git no sabe si debes conservarlo o borrarlo.":
     "One branch deletes a file that the other branch modified. Git does not know whether you should keep it or delete it.",
   "Solución: decide explícitamente si el archivo debe existir o no:":
@@ -710,14 +669,12 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Abre el archivo y edítalo": "Open the file and edit it",
   "Busca los marcadores <<< , === y >>> . Decide qué versión conservar (o combina las dos). Borra todos los marcadores. Guarda el archivo.":
     "Look for the <<<, === and >>> markers. Decide which version to keep (or combine both). Delete all markers. Save the file.",
-  "Marca el archivo como resuelto y haz commit":
-    "Mark the file as resolved and commit",
+  "Marca el archivo como resuelto y haz commit": "Mark the file as resolved and commit",
   "Una vez editado, añade el archivo al stage y cierra el merge con un commit.":
     "Once edited, add the file to the stage and close the merge with a commit.",
   'git add src/saludo.js git commit -m "fix: resolver conflicto en saludo.js"':
     'git add src/hello.js git commit -m "fix: resolve conflict in hello.js"',
-  "¿Te has liado? Puedes abortar el merge":
-    "Got stuck? You can abort the merge",
+  "¿Te has liado? Puedes abortar el merge": "Got stuck? You can abort the merge",
   "Si en medio de la resolución te das cuenta de que algo no cuadra, puedes cancelar el merge y volver al estado anterior como si nada hubiera ocurrido:":
     "If, while resolving the conflict, you realize something is wrong, you can cancel the merge and return to the previous state as if nothing had happened:",
   "Los conflictos no se pueden eliminar del todo, pero sí reducir con buenos hábitos de equipo:":
@@ -737,11 +694,9 @@ const EXTRA_STATIC_TRANSLATIONS = {
   Patrón: "Pattern",
   Significado: "Meaning",
   "node_modules/": "node_modules/",
-  "Ignora toda la carpeta de dependencias":
-    "Ignores the whole dependencies folder",
+  "Ignora toda la carpeta de dependencias": "Ignores the whole dependencies folder",
   "*.log": "*.log",
-  "Ignora cualquier archivo con extensión .log":
-    "Ignores any file with the .log extension",
+  "Ignora cualquier archivo con extensión .log": "Ignores any file with the .log extension",
   ".env": ".env",
   "Ignora el archivo de variables de entorno sensibles":
     "Ignores the sensitive environment variables file",
@@ -810,8 +765,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "0 de 6 archivos ignorados correctamente": "0 of 6 files ignored correctly",
   "📁 Archivos del proyecto": "📁 Project files",
   "📄 .gitignore": "📄 .gitignore",
-  "# escribe tus reglas aquí, una por línea":
-    "# write your rules here, one per line",
+  "# escribe tus reglas aquí, una por línea": "# write your rules here, one per line",
   "💡 Ver pista": "💡 Show hint",
   "🔄 Reiniciar": "🔄 Reset",
   "Comprobar solución ✓": "Check solution ✓",
@@ -838,8 +792,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Cuando Git marque el conflicto, elimina los marcadores <<<<<<< , ======= y >>>>>>> .":
     "When Git marks the conflict, remove the <<<<<<<, ======= and >>>>>>> markers.",
   "Comprobar resolución ✓": "Check resolution ✓",
-  "¿Qué significan los marcadores del conflicto?":
-    "What do the conflict markers mean?",
+  "¿Qué significan los marcadores del conflicto?": "What do the conflict markers mean?",
   "Es la versión de la rama actual. En este caso, la versión que había en main .":
     "This is the version from the current branch. In this case, the version that was on main.",
   "Separa las dos versiones que Git no sabe combinar automáticamente.":
@@ -853,8 +806,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "git commit": "git commit",
   "Finaliza el merge y guarda la resolución del conflicto.":
     "Finishes the merge and saves the conflict resolution.",
-  "Vista general de la integración de Git en VS Code":
-    "Overview of Git integration in VS Code",
+  "Vista general de la integración de Git en VS Code": "Overview of Git integration in VS Code",
   "Cuando editas un archivo, VS Code lo marca automáticamente en el explorador de archivos con una letra:":
     "When you edit a file, VS Code automatically marks it in the file explorer with a letter:",
   "M (Modified) — archivo modificado.": "M (Modified) — modified file.",
@@ -907,8 +859,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "When a conflict occurs, VS Code marks the file with a red C in the explorer and in the Source Control panel. When you open it, you will see the code divided into blocks with special markers:",
   "<<<<<<< HEAD — inicio de tu versión (rama actual).":
     "<<<<<<< HEAD — start of your version (current branch).",
-  "======= — separador entre las dos versiones.":
-    "======= — separator between the two versions.",
+  "======= — separador entre las dos versiones.": "======= — separator between the two versions.",
   ">>>>>>> feature/… — inicio de la versión entrante (rama que estás fusionando).":
     ">>>>>>> feature/… — start of the incoming version (the branch you are merging).",
   "VS Code resalta visualmente los bloques en conflicto con colores diferenciados":
@@ -936,8 +887,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "© 2026 Guía de GitHub · Guillermo Castro Abarca":
     "© 2026 GitHub Guide · Guillermo Castro Abarca",
   "Guillermo Castro Abarca": "Guillermo Castro Abarca",
-  "Inicializa un repositorio en la carpeta actual":
-    "Initialize a repository in the current folder",
+  "Inicializa un repositorio en la carpeta actual": "Initialize a repository in the current folder",
   "¡Repositorio creado! Ahora Git está vigilando esta carpeta.":
     "Repository created! Git is now watching this folder.",
   "2. Añadir archivos": "2. Add files",
@@ -1006,8 +956,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Vuelve a la rama main. Allí también se cambiará la misma línea del archivo.":
     "Go back to the main branch. The same line in the file will also be changed there.",
   "Usa: git switch main": "Use: git switch main",
-  "Añade ejercicios interactivos al título":
-    "Add interactive exercises to the title",
+  "Añade ejercicios interactivos al título": "Add interactive exercises to the title",
   "Fusiona la rama": "Merge the branch",
   "Fusiona feature-titulo dentro de main. Como ambas ramas tocaron la misma línea, aparecerá un conflicto.":
     "Merge feature-title into main. Since both branches touched the same line, a conflict will appear.",
@@ -1041,8 +990,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "resuelto sin add": "resolved without add",
   conflicto: "conflict",
   "sin iniciar": "not started",
-  "resuelve primero el archivo en el editor...":
-    "resolve the file in the editor first...",
+  "resuelve primero el archivo en el editor...": "resolve the file in the editor first...",
   "escribe un comando git...": "write a git command...",
   'Este simulador solo acepta comandos de Git. Prueba con "git status".':
     'This simulator only accepts Git commands. Try "git status".',
@@ -1056,8 +1004,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "❌ That is not the command for this step. You can type <code>git status</code> to orient yourself.",
   "✅ Ejercicio completado. Has provocado un conflicto, lo has resuelto y has cerrado el merge.":
     "✅ Exercise completed. You triggered a conflict, resolved it and closed the merge.",
-  "✅ Correcto. Continúa con el siguiente paso.":
-    "✅ Correct. Continue with the next step.",
+  "✅ Correcto. Continúa con el siguiente paso.": "✅ Correct. Continue with the next step.",
   "❌ Todavía quedan marcadores de conflicto. Elimina <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> y <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.":
     "❌ There are still conflict markers. Remove <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.",
   "❌ La solución debe conservar una línea <code>&lt;h1&gt;</code> relacionada con GitHub.":
@@ -1068,12 +1015,10 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "index.html edited correctly. The conflict no longer has markers.",
   "✅ Resolución correcta. Ahora usa <code>git add index.html</code>.":
     "✅ Correct resolution. Now use <code>git add index.html</code>.",
-  "🏆 Ya has completado el ejercicio.":
-    "🏆 You have already completed the exercise.",
-  "Bienvenido al ejercicio de conflictos entre ramas.":
-    "Welcome to the branch conflict exercise.",
+  "🏆 Ya has completado el ejercicio.": "🏆 You have already completed the exercise.",
+  "Bienvenido al ejercicio de conflictos entre ramas.": "Welcome to the branch conflict exercise.",
   'Puedes escribir "git status" en cualquier momento para ver el estado.':
-    'You can type "git status" at any time to see the status.',
+    'You can type "git status" at any time to see the status.'
 };
 Object.assign(STATIC_TRANSLATIONS, EXTRA_STATIC_TRANSLATIONS);
 const LAST_I18N_PATCH = {
@@ -1088,9 +1033,8 @@ const LAST_I18N_PATCH = {
   "Guía básica de GitHub": "Basic GitHub Guide",
   "Guía básica de GitHub con ejercicios interactivos":
     "Basic GitHub Guide with interactive exercises",
-  "Guía práctica de GitHub para principiantes":
-    "Practical GitHub Guide for beginners",
-  "Aprende Git y GitHub paso a paso.": "Learn Git and GitHub step by step.",
+  "Guía práctica de GitHub para principiantes": "Practical GitHub Guide for beginners",
+  "Aprende Git y GitHub paso a paso.": "Learn Git and GitHub step by step."
 };
 Object.assign(STATIC_TRANSLATIONS, LAST_I18N_PATCH);
 
@@ -1099,10 +1043,10 @@ const ATTR_TRANSLATIONS = {
     "Cambiar idioma": "Change language",
     "Cambiar tema": "Change theme",
     Contribuciones: "Contributions",
-    "Instalación de Git": "Git Installation",
+    "Instalación de Git": "Git Installation"
   },
   "aria-label": {
-    Menú: "Menu",
+    Menú: "Menu"
   },
   alt: {
     "Diferencias entre Git y GitHub": "Differences between Git and GitHub",
@@ -1117,40 +1061,33 @@ const ATTR_TRANSLATIONS = {
     "Activar 2FA": "Enable 2FA",
     "App autenticadora en móvil": "Authenticator app on mobile",
     "Confirmar 2FA": "Confirm 2FA",
-    "Vista general de integración Git en VS Code":
-      "Overview of Git integration in VS Code",
+    "Vista general de integración Git en VS Code": "Overview of Git integration in VS Code",
     "Commit final tras resolver los conflictos en VS Code":
-      "Final commit after resolving conflicts in VS Code",
-  },
+      "Final commit after resolving conflicts in VS Code"
+  }
 };
 
 const EXTRA_ATTR_TRANSLATIONS = {
   alt: {
     "Panel Source Control mostrando archivos modificados":
       "Source Control panel showing modified files",
-    "Preparando archivos con el botón + en VS Code":
-      "Staging files with the + button in VS Code",
+    "Preparando archivos con el botón + en VS Code": "Staging files with the + button in VS Code",
     "Campo de mensaje de commit en VS Code": "Commit message field in VS Code",
-    "Menú de ramas en la barra de estado de VS Code":
-      "Branch menu in the VS Code status bar",
-    "Selección de rama existente en VS Code":
-      "Existing branch selection in VS Code",
+    "Menú de ramas en la barra de estado de VS Code": "Branch menu in the VS Code status bar",
+    "Selección de rama existente en VS Code": "Existing branch selection in VS Code",
     "Paleta de comandos con Git Merge Branch en VS Code":
       "Command palette with Git Merge Branch in VS Code",
     "Marcadores de conflicto en un archivo dentro de VS Code":
       "Conflict markers in a file inside VS Code",
-    ".gitignore": ".gitignore",
+    ".gitignore": ".gitignore"
   },
   placeholder: {
     "escribe un comando git...": "write a git command...",
-    "node_modules/\n*.log\n.env": "node_modules/\n*.log\n.env",
-  },
+    "node_modules/\n*.log\n.env": "node_modules/\n*.log\n.env"
+  }
 };
 Object.entries(EXTRA_ATTR_TRANSLATIONS).forEach(([attr, translations]) => {
-  ATTR_TRANSLATIONS[attr] = Object.assign(
-    ATTR_TRANSLATIONS[attr] || {},
-    translations,
-  );
+  ATTR_TRANSLATIONS[attr] = Object.assign(ATTR_TRANSLATIONS[attr] || {}, translations);
 });
 
 const norm = (value) => (value || "").replace(/\s+/g, " ").trim();
@@ -1170,7 +1107,8 @@ function isEligibleForGeneratedTranslation(el) {
     el.closest?.("#lang-toggle-btn") ||
     el.id === "theme-toggle-btn" ||
     el.closest?.("#theme-toggle-btn")
-  ) return false;
+  )
+    return false;
   const tag = el.tagName.toLowerCase();
   const directTags = new Set([
     "p",
@@ -1183,13 +1121,12 @@ function isEligibleForGeneratedTranslation(el) {
     "th",
     "button",
     "a",
-    "span",
+    "span"
   ]);
   if (directTags.has(tag)) return true;
   if (
     tag === "div" &&
-    (el.classList.contains("cmd-desc") ||
-      el.classList.contains("commit-structure"))
+    (el.classList.contains("cmd-desc") || el.classList.contains("commit-structure"))
   )
     return true;
   return false;
@@ -1198,11 +1135,7 @@ function isEligibleForGeneratedTranslation(el) {
 function hasTranslatedAncestor(el) {
   let parent = el.parentElement;
   while (parent) {
-    if (
-      parent.dataset?.es ||
-      parent.dataset?.en ||
-      parent.dataset?.i18nGenerated === "true"
-    )
+    if (parent.dataset?.es || parent.dataset?.en || parent.dataset?.i18nGenerated === "true")
       return true;
     parent = parent.parentElement;
   }
@@ -1212,12 +1145,11 @@ function hasTranslatedAncestor(el) {
 function prepareMissingTranslations() {
   document
     .querySelectorAll(
-      "p, li, figcaption, h2, h3, h4, td, th, button, a, span, div.cmd-desc, div.commit-structure",
+      "p, li, figcaption, h2, h3, h4, td, th, button, a, span, div.cmd-desc, div.commit-structure"
     )
     .forEach((el) => {
       if (!isEligibleForGeneratedTranslation(el)) return;
-      if (el.dataset.es || el.dataset.en || el.dataset.i18nGenerated === "true")
-        return;
+      if (el.dataset.es || el.dataset.en || el.dataset.i18nGenerated === "true") return;
       if (hasTranslatedAncestor(el)) return;
 
       const originalText = norm(el.textContent);
@@ -1279,15 +1211,15 @@ function setLanguage(lang) {
 
   const langToggle = document.getElementById("lang-toggle-btn");
   if (langToggle && !document.getElementById("lang-label")) {
-    langToggle.innerHTML =
-      '<span id="lang-icon">🌐</span><span id="lang-label">EN</span>';
+    langToggle.innerHTML = '<span id="lang-icon">🌐</span><span id="lang-label">EN</span>';
   }
 
   const label = document.getElementById("lang-label");
   if (label) label.textContent = lang === "en" ? "ES" : "EN";
   const themeIcon = getThemeIcon();
   if (themeIcon) {
-    themeIcon.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    themeIcon.textContent =
+      document.documentElement.getAttribute("data-theme") === "dark" ? "☀️" : "🌙";
   }
 
   document.documentElement.lang = lang;
@@ -1301,5 +1233,3 @@ function setLanguage(lang) {
 function toggleLang() {
   setLanguage(currentLang === "es" ? "en" : "es");
 }
-
-

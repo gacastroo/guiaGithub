@@ -9,8 +9,8 @@ const SIM_CHALLENGES = [
     command: "git init",
     responses: {
       ok: ["Initialized empty Git repository in /mi-proyecto/.git/"],
-      msg: "¡Repositorio creado! Ahora Git está vigilando esta carpeta.",
-    },
+      msg: "¡Repositorio creado! Ahora Git está vigilando esta carpeta."
+    }
   },
   {
     id: "add",
@@ -19,8 +19,8 @@ const SIM_CHALLENGES = [
     command: "git add .",
     responses: {
       ok: [""],
-      msg: "Archivos preparados para el commit (staging area).",
-    },
+      msg: "Archivos preparados para el commit (staging area)."
+    }
   },
   {
     id: "commit",
@@ -28,12 +28,9 @@ const SIM_CHALLENGES = [
     hint: 'Crea un commit con el mensaje "primer commit"',
     command: 'git commit -m "primer commit"',
     responses: {
-      ok: [
-        "[main (root-commit) a1b2c3d] primer commit",
-        " 3 files changed, 42 insertions(+)",
-      ],
-      msg: "¡Commit guardado! Tu código tiene su primera instantánea.",
-    },
+      ok: ["[main (root-commit) a1b2c3d] primer commit", " 3 files changed, 42 insertions(+)"],
+      msg: "¡Commit guardado! Tu código tiene su primera instantánea."
+    }
   },
   {
     id: "branch",
@@ -42,8 +39,8 @@ const SIM_CHALLENGES = [
     command: "git switch -c feature/login",
     responses: {
       ok: ["Switched to a new branch 'feature/login'"],
-      msg: "¡Nueva rama creada! Ahora puedes trabajar de forma aislada.",
-    },
+      msg: "¡Nueva rama creada! Ahora puedes trabajar de forma aislada."
+    }
   },
   {
     id: "push",
@@ -56,11 +53,11 @@ const SIM_CHALLENGES = [
         "Counting objects: 100% (5/5), done.",
         "Branch 'feature/login' set up to track remote branch 'feature/login' from 'origin'.",
         "To https://github.com/usuario/mi-proyecto.git",
-        " * [new branch]  feature/login -> feature/login",
+        " * [new branch]  feature/login -> feature/login"
       ],
-      msg: "🎉 ¡Reto completado! Tu rama ya está en GitHub.",
-    },
-  },
+      msg: "🎉 ¡Reto completado! Tu rama ya está en GitHub."
+    }
+  }
 ];
 
 let simStep = 0;
@@ -92,12 +89,9 @@ function simUpdateHint() {
   if (!hint) return;
   if (simStep < SIM_CHALLENGES.length) {
     hint.textContent =
-      uiText("💡 Pista: ", "💡 Hint: ") +
-      uiTranslate(SIM_CHALLENGES[simStep].hint);
+      uiText("💡 Pista: ", "💡 Hint: ") + uiTranslate(SIM_CHALLENGES[simStep].hint);
   } else {
-    hint.textContent = uiTranslate(
-      "🏆 ¡Todos los retos completados! Eres un pro de Git.",
-    );
+    hint.textContent = uiTranslate("🏆 ¡Todos los retos completados! Eres un pro de Git.");
   }
 }
 
@@ -105,10 +99,7 @@ function buildSimulator() {
   const input = document.getElementById("sim-input");
   if (!input) return;
   simPrint(uiTranslate("Bienvenido al simulador de Git"), "line-info");
-  simPrint(
-    uiTranslate("Completa los retos escribiendo los comandos correctos."),
-    "line-dim",
-  );
+  simPrint(uiTranslate("Completa los retos escribiendo los comandos correctos."), "line-dim");
   simPrint("", "");
   simUpdateChallengeBar();
   simUpdateHint();
@@ -136,10 +127,8 @@ function normalize(cmd) {
 function handleSimCommand(cmd) {
   if (simStep >= SIM_CHALLENGES.length) {
     simPrint(
-      uiTranslate(
-        "Ya completaste todos los retos. ¡Recarga la página para volver a jugar!",
-      ),
-      "line-dim",
+      uiTranslate("Ya completaste todos los retos. ¡Recarga la página para volver a jugar!"),
+      "line-dim"
     );
     return;
   }
@@ -152,9 +141,9 @@ function handleSimCommand(cmd) {
   if (given === "help" || given === "git help") {
     simPrint(
       uiTranslate(
-        'Comandos útiles: git init | git add . | git commit -m "msg" | git switch -c rama | git push origin rama',
+        'Comandos útiles: git init | git add . | git commit -m "msg" | git switch -c rama | git push origin rama'
       ),
-      "line-info",
+      "line-info"
     );
     return;
   }
@@ -165,9 +154,9 @@ function handleSimCommand(cmd) {
   if (!given.startsWith("git")) {
     simPrint(
       uiTranslate(
-        'Este es un simulador de Git. Empieza tus comandos con "git" (o escribe "help").',
+        'Este es un simulador de Git. Empieza tus comandos con "git" (o escribe "help").'
       ),
-      "line-err",
+      "line-err"
     );
     return;
   }
@@ -183,16 +172,8 @@ function handleSimCommand(cmd) {
     simUpdateHint();
     if (simStep >= SIM_CHALLENGES.length) {
       simPrint("════════════════════════════════", "line-dim");
-      simPrint(
-        uiTranslate("🏆 ¡FELICIDADES! Completaste todos los retos."),
-        "line-info",
-      );
-      simPrint(
-        uiTranslate(
-          "Ya sabes los comandos esenciales de Git. ¡A por el mundo!",
-        ),
-        "line-ok",
-      );
+      simPrint(uiTranslate("🏆 ¡FELICIDADES! Completaste todos los retos."), "line-info");
+      simPrint(uiTranslate("Ya sabes los comandos esenciales de Git. ¡A por el mundo!"), "line-ok");
     }
   } else {
     // give hints based on partial match
@@ -200,14 +181,10 @@ function handleSimCommand(cmd) {
       simPrint(
         uiTranslate("Comando no reconocido en este contexto. Recuerda: ") +
           uiTranslate(challenge.hint),
-        "line-err",
+        "line-err"
       );
     } else {
-      simPrint(
-        uiTranslate("Casi... revisa la sintaxis exacta del comando."),
-        "line-err",
-      );
+      simPrint(uiTranslate("Casi... revisa la sintaxis exacta del comando."), "line-err");
     }
   }
 }
-

@@ -11,12 +11,7 @@ const outputDir = path.join(root, "dist-package");
 const packageDir = path.join(outputDir, packageName);
 const zipPath = path.join(root, `${packageName}-package.zip`);
 
-const entriesToCopy = [
-  "index.html",
-  "assets",
-  "README.md",
-  "_headers"
-];
+const entriesToCopy = ["index.html", "assets", "README.md", "_headers"];
 
 function removeIfExists(targetPath) {
   if (fs.existsSync(targetPath)) {

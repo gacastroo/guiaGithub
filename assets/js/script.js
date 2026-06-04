@@ -3,12 +3,8 @@
 ═══════════════════════════════ */
 // Cambia de sección visible al hacer clic en el menú
 function show(id, btn) {
-  document
-    .querySelectorAll(".section")
-    .forEach((s) => s.classList.remove("visible"));
-  document
-    .querySelectorAll(".nav-btn")
-    .forEach((b) => b.classList.remove("active"));
+  document.querySelectorAll(".section").forEach((s) => s.classList.remove("visible"));
+  document.querySelectorAll(".nav-btn").forEach((b) => b.classList.remove("active"));
   document.getElementById(id).classList.add("visible");
   btn.classList.add("active");
   closeMobileNav();
@@ -73,28 +69,28 @@ document.addEventListener("DOMContentLoaded", adjustLayout);
 })();
 
 function getThemeIcon() {
-  const themeToggle = document.getElementById('theme-toggle-btn');
+  const themeToggle = document.getElementById("theme-toggle-btn");
 
-  if (themeToggle && !document.getElementById('theme-icon')) {
+  if (themeToggle && !document.getElementById("theme-icon")) {
     themeToggle.innerHTML = '<span id="theme-icon">🌙</span>';
   }
 
-  return document.getElementById('theme-icon');
+  return document.getElementById("theme-icon");
 }
 
 function toggleTheme() {
   const html = document.documentElement;
-  const isDark = html.getAttribute('data-theme') === 'dark';
+  const isDark = html.getAttribute("data-theme") === "dark";
   const icon = getThemeIcon();
 
   if (isDark) {
-    html.removeAttribute('data-theme');
-    localStorage.setItem('theme', 'light');
-    if (icon) icon.textContent = '🌙';
+    html.removeAttribute("data-theme");
+    localStorage.setItem("theme", "light");
+    if (icon) icon.textContent = "🌙";
   } else {
-    html.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-    if (icon) icon.textContent = '☀️';
+    html.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+    if (icon) icon.textContent = "☀️";
   }
 }
 
@@ -108,17 +104,14 @@ document.addEventListener("DOMContentLoaded", function () {
 /* ═══════════════════════════════
    LANGUAGE TOGGLE / I18N
 ═══════════════════════════════ */
-let currentLang =
-  localStorage.getItem("lang") || localStorage.getItem("site-lang") || "es";
+let currentLang = localStorage.getItem("lang") || localStorage.getItem("site-lang") || "es";
 
 const STATIC_TRANSLATIONS = {
   "🌐 EN": "🌐 EN",
   '"Git es el cerebro 🧠 , GitHub es la red social 🌐 ."':
     '"Git is the brain 🧠, GitHub is the social network 🌐."',
-  '"Git guarda tu código, GitHub lo presume."':
-    '"Git saves your code, GitHub shows it off."',
-  "Comparativa visual entre Git y GitHub":
-    "Visual comparison between Git and GitHub",
+  '"Git guarda tu código, GitHub lo presume."': '"Git saves your code, GitHub shows it off."',
+  "Comparativa visual entre Git y GitHub": "Visual comparison between Git and GitHub",
   Git: "Git",
   "Software local (en tu ordenador)": "Local software (on your computer)",
   "Control de versiones": "Version control",
@@ -136,8 +129,7 @@ const STATIC_TRANSLATIONS = {
   "Descarga Git desde su página oficial e instálalo en tu sistema operativo.":
     "Download Git from its official website and install it on your operating system.",
   "Página oficial de Git": "Official Git website",
-  "Instalación y primeros pasos con Git":
-    "Installation and first steps with Git",
+  "Instalación y primeros pasos con Git": "Installation and first steps with Git",
   Esencial: "Essential",
   Recomendado: "Recommended",
   "1 · Configuración inicial": "1 · Initial setup",
@@ -152,12 +144,10 @@ const STATIC_TRANSLATIONS = {
   "Crea una nueva conexión a un repositorio remoto.":
     "Creates a new connection to a remote repository.",
   "Descarga un repositorio existente": "Downloads an existing repository",
-  "Descarga los cambios del repositorio remoto":
-    "Downloads changes from the remote repository",
+  "Descarga los cambios del repositorio remoto": "Downloads changes from the remote repository",
   "3 · El ciclo diario": "3 · The daily workflow",
   "Muestra qué ha cambiado": "Shows what has changed",
-  "Prepara todos los cambios para el commit":
-    "Stages all changes for the commit",
+  "Prepara todos los cambios para el commit": "Stages all changes for the commit",
   "Guarda los cambios en el historial": "Saves the changes in the history",
   "Sube los cambios a GitHub": "Uploads changes to GitHub",
   "Baja los cambios del remoto": "Pulls changes from the remote",
@@ -175,12 +165,9 @@ const STATIC_TRANSLATIONS = {
     "Remote Repository: This is the copy on GitHub's servers. It is your cloud backup and the place where others can see your code.",
   "💾 Se guarda en tu computadora": "💾 Saved on your computer",
   "☁️ Ahora está en internet": "☁️ Now it is on the internet",
-  "Acceder a la creación de un nuevo repositorio":
-    "Access the new repository creation screen",
-  "Formulario para configurar el nuevo repositorio":
-    "Form to configure the new repository",
-  "Repositorio creado correctamente en GitHub":
-    "Repository created successfully on GitHub",
+  "Acceder a la creación de un nuevo repositorio": "Access the new repository creation screen",
+  "Formulario para configurar el nuevo repositorio": "Form to configure the new repository",
+  "Repositorio creado correctamente en GitHub": "Repository created successfully on GitHub",
   "Entra al repositorio en GitHub.": "Open the repository on GitHub.",
   "Haz clic en el botón verde Code y copia la URL del repositorio.":
     "Click the green Code button and copy the repository URL.",
@@ -220,8 +207,7 @@ const STATIC_TRANSLATIONS = {
   "Edita tus archivos y guárdalos.": "Edit your files and save them.",
   "Ve a la pestaña de Source Control (icono de nodos a la izquierda).":
     "Go to the Source Control tab (branch icon on the left).",
-  'Haz clic en el "+" para preparar los cambios (Stage).':
-    'Click the "+" to stage the changes.',
+  'Haz clic en el "+" para preparar los cambios (Stage).': 'Click the "+" to stage the changes.',
   "Escribe un mensaje de commit y presiona el botón Commit .":
     "Write a commit message and press the Commit button.",
   "Haz clic en Sync Changes (o Push) para enviar todo a GitHub.":
@@ -239,8 +225,7 @@ const STATIC_TRANSLATIONS = {
   perf: "perf",
   "Mejora de rendimiento": "Performance improvement",
   refactor: "refactor",
-  "Cambio interno sin afectar comportamiento":
-    "Internal change without affecting behavior",
+  "Cambio interno sin afectar comportamiento": "Internal change without affecting behavior",
   style: "style",
   "Formato (espacios, tabs, etc.)": "Formatting (spaces, tabs, etc.)",
   docs: "docs",
@@ -284,16 +269,14 @@ const STATIC_TRANSLATIONS = {
     "Make sure you are on the correct branch before running it (use git branch to check).",
   "Elimina una rama local (solo si ya fue fusionada)":
     "Deletes a local branch (only if it has already been merged)",
-  "Consecuencias de eliminar una rama local":
-    "Consequences of deleting a local branch",
+  "Consecuencias de eliminar una rama local": "Consequences of deleting a local branch",
   "Una vez eliminada la rama local sin haber hecho push, los commits exclusivos de esa rama se pierden .":
     "Once the local branch is deleted without being pushed, the commits that only existed on that branch are lost.",
   "Si otro compañero tenía esa rama como referencia, deberá actualizar su repositorio local.":
     "If another teammate had that branch as a reference, they will need to update their local repository.",
   "Elimina la rama también del repositorio remoto":
     "Deletes the branch from the remote repository too",
-  "Consecuencias de eliminar una rama remota":
-    "Consequences of deleting a remote branch",
+  "Consecuencias de eliminar una rama remota": "Consequences of deleting a remote branch",
   "La rama desaparece del repositorio remoto para todos los colaboradores del proyecto.":
     "The branch disappears from the remote repository for all project collaborators.",
   "Cualquier Pull Request abierto basado en esa rama quedará automáticamente cerrado o huérfano .":
@@ -316,10 +299,8 @@ const STATIC_TRANSLATIONS = {
     "Git will mark the conflict like this in the file:",
   Patrón: "Pattern",
   Significado: "Meaning",
-  "Ignora toda la carpeta de dependencias":
-    "Ignores the entire dependencies folder",
-  "Ignora cualquier archivo con extensión .log":
-    "Ignores any file with the .log extension",
+  "Ignora toda la carpeta de dependencias": "Ignores the entire dependencies folder",
+  "Ignora cualquier archivo con extensión .log": "Ignores any file with the .log extension",
   "Ignora el archivo de variables de entorno sensibles":
     "Ignores the sensitive environment variables file",
   "Ignora la carpeta de archivos generados en el build":
@@ -367,8 +348,7 @@ const STATIC_TRANSLATIONS = {
     "Contains sensitive environment configuration: database credentials, encryption keys, external service tokens. It should never be uploaded to the repository.",
   "Documentación oficial de Git sobre .gitignore: Documentación oficial de Git sobre .gitignore":
     "Official Git documentation about .gitignore: Official Git documentation about .gitignore",
-  "Documentación oficial de Git sobre .gitignore":
-    "Official Git documentation about .gitignore",
+  "Documentación oficial de Git sobre .gitignore": "Official Git documentation about .gitignore",
   "Generador de .gitignore en línea: Generador de .gitignore en línea":
     "Online .gitignore generator: Online .gitignore generator",
   "Generador de .gitignore en línea": "Online .gitignore generator",
@@ -389,10 +369,8 @@ const STATIC_TRANSLATIONS = {
   "0 de 6 archivos ignorados correctamente": "0 of 6 files ignored correctly",
   "📁 Archivos del proyecto": "📁 Project files",
   "📄 .gitignore": "📄 .gitignore",
-  "# escribe tus reglas aquí, una por línea":
-    "# write your rules here, one per line",
-  "💡 Ver pista 🔄 Reiniciar Comprobar solución ✓":
-    "💡 Show hint 🔄 Restart Check solution ✓",
+  "# escribe tus reglas aquí, una por línea": "# write your rules here, one per line",
+  "💡 Ver pista 🔄 Reiniciar Comprobar solución ✓": "💡 Show hint 🔄 Restart Check solution ✓",
   "💡 Ver pista": "💡 Show hint",
   "🔄 Reiniciar": "🔄 Restart",
   "Comprobar solución ✓": "Check solution ✓",
@@ -409,8 +387,7 @@ const STATIC_TRANSLATIONS = {
     "Wildcard that ignores all .log files. They are local execution logs.",
   "Metadatos internos de macOS. No aportan nada al repositorio.":
     "Internal macOS metadata. It adds nothing to the repository.",
-  "Vista general de la integración de Git en VS Code":
-    "Overview of Git integration in VS Code",
+  "Vista general de la integración de Git en VS Code": "Overview of Git integration in VS Code",
   "Cuando editas un archivo, VS Code lo marca automáticamente en el explorador de archivos con una letra:":
     "When you edit a file, VS Code automatically marks it in the file explorer with a letter:",
   "M (Modified) — archivo modificado.": "M (Modified) — modified file.",
@@ -463,8 +440,7 @@ const STATIC_TRANSLATIONS = {
     "When a conflict occurs, VS Code marks the file with a red C in the explorer and in the Source Control panel. When you open it, you will see the code divided into blocks with special markers:",
   "<<<<<<< HEAD — inicio de tu versión (rama actual).":
     "<<<<<<< HEAD — start of your version (current branch).",
-  "======= — separador entre las dos versiones.":
-    "======= — separator between the two versions.",
+  "======= — separador entre las dos versiones.": "======= — separator between the two versions.",
   ">>>>>>> feature/… — inicio de la versión entrante (rama que estás fusionando).":
     ">>>>>>> feature/… — start of the incoming version (the branch you are merging).",
   "VS Code resalta visualmente los bloques en conflicto con colores diferenciados":
@@ -491,7 +467,7 @@ const STATIC_TRANSLATIONS = {
     "After resolving all conflicts, a final commit closes the merge process",
   "© 2026 Guía de GitHub · Guillermo Castro Abarca":
     "© 2026 GitHub Guide · Guillermo Castro Abarca",
-  "Guillermo Castro Abarca": "Guillermo Castro Abarca",
+  "Guillermo Castro Abarca": "Guillermo Castro Abarca"
 };
 
 const EXTRA_STATIC_TRANSLATIONS = {
@@ -502,10 +478,8 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "🤝": "🤝",
   '"Git es el cerebro 🧠 , GitHub es la red social 🌐 ."':
     '"Git is the brain 🧠, GitHub is the social network 🌐."',
-  '"Git guarda tu código, GitHub lo presume."':
-    '"Git saves your code, GitHub shows it off."',
-  "Comparativa visual entre Git y GitHub":
-    "Visual comparison between Git and GitHub",
+  '"Git guarda tu código, GitHub lo presume."': '"Git saves your code, GitHub shows it off."',
+  "Comparativa visual entre Git y GitHub": "Visual comparison between Git and GitHub",
   Git: "Git",
   GitHub: "GitHub",
   "Software local (en tu ordenador)": "Local software (on your computer)",
@@ -523,8 +497,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Descarga Git desde su página oficial e instálalo en tu sistema operativo.":
     "Download Git from its official website and install it on your operating system.",
   "Página oficial de Git": "Official Git website",
-  "Instalación y primeros pasos con Git":
-    "Installation and first steps with Git",
+  "Instalación y primeros pasos con Git": "Installation and first steps with Git",
   "01": "01",
   "02": "02",
   "03": "03",
@@ -557,14 +530,11 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Crea una nueva conexión a un repositorio remoto.":
     "Creates a new connection to a remote repository.",
   "Descarga un repositorio existente": "Downloads an existing repository",
-  "Descarga los cambios del repositorio remoto":
-    "Downloads changes from the remote repository",
+  "Descarga los cambios del repositorio remoto": "Downloads changes from the remote repository",
   "3 · El ciclo diario": "3 · Daily workflow",
-  "Son los comandos que usas diariamente:":
-    "These are the commands you use every day:",
+  "Son los comandos que usas diariamente:": "These are the commands you use every day:",
   "Muestra qué ha cambiado": "Shows what has changed",
-  "Prepara todos los cambios para el commit":
-    "Stages all changes for the commit",
+  "Prepara todos los cambios para el commit": "Stages all changes for the commit",
   "Guarda los cambios en el historial": "Saves the changes in the history",
   "Sube los cambios a GitHub": "Pushes the changes to GitHub",
   "Baja los cambios del remoto": "Pulls changes from the remote",
@@ -593,12 +563,9 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "git add .": "git add .",
   'git commit -m "tu mensaje aquí"': 'git commit -m "your message here"',
   "git push origin main": "git push origin main",
-  "Acceder a la creación de un nuevo repositorio":
-    "Access the new repository creation screen",
-  "Formulario para configurar el nuevo repositorio":
-    "Form to configure the new repository",
-  "Repositorio creado correctamente en GitHub":
-    "Repository created successfully on GitHub",
+  "Acceder a la creación de un nuevo repositorio": "Access the new repository creation screen",
+  "Formulario para configurar el nuevo repositorio": "Form to configure the new repository",
+  "Repositorio creado correctamente en GitHub": "Repository created successfully on GitHub",
   "Entra al repositorio en GitHub.": "Open the repository on GitHub.",
   "Haz clic en el botón verde Code y copia la URL del repositorio.":
     "Click the green Code button and copy the repository URL.",
@@ -650,8 +617,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Edita tus archivos y guárdalos.": "Edit your files and save them.",
   "Ve a la pestaña de Source Control (icono de nodos a la izquierda).":
     "Go to the Source Control tab (branch icon on the left).",
-  'Haz clic en el "+" para preparar los cambios (Stage).':
-    'Click the "+" to stage the changes.',
+  'Haz clic en el "+" para preparar los cambios (Stage).': 'Click the "+" to stage the changes.',
   "Escribe un mensaje de commit y presiona el botón Commit .":
     "Write a commit message and press the Commit button.",
   "Haz clic en Sync Changes (o Push) para enviar todo a GitHub.":
@@ -661,8 +627,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Nota: Asegúrate de estar dentro de la carpeta de tu proyecto en la terminal antes de escribir estos comandos.":
     "Note: Make sure you are inside your project folder in the terminal before typing these commands.",
   "Estructura de un commit": "Commit structure",
-  'git commit -m "tipo: descripción breve"':
-    'git commit -m "type: short description"',
+  'git commit -m "tipo: descripción breve"': 'git commit -m "type: short description"',
   Tipos: "Types",
   feat: "feat",
   "Nueva funcionalidad": "New feature",
@@ -671,8 +636,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   perf: "perf",
   "Mejora de rendimiento": "Performance improvement",
   refactor: "refactor",
-  "Cambio interno sin afectar comportamiento":
-    "Internal change without affecting behavior",
+  "Cambio interno sin afectar comportamiento": "Internal change without affecting behavior",
   style: "style",
   "Formato (espacios, tabs, etc.)": "Formatting (spaces, tabs, etc.)",
   docs: "docs",
@@ -693,12 +657,9 @@ const EXTRA_STATIC_TRANSLATIONS = {
     '"A branch is like a parallel copy of your project where you can experiment without fear of breaking anything."',
   '"La rama main es el tronco del árbol. El resto son ramas que crecen a los lados."':
     '"The main branch is the tree trunk. The others are branches that grow from the sides."',
-  "git switch -c feature/mi-nueva-funcionalidad":
-    "git switch -c feature/my-new-feature",
-  'git add . && git commit -m "feat: añadir login"':
-    'git add . && git commit -m "feat: add login"',
-  "git push origin feature/mi-nueva-funcionalidad":
-    "git push origin feature/my-new-feature",
+  "git switch -c feature/mi-nueva-funcionalidad": "git switch -c feature/my-new-feature",
+  'git add . && git commit -m "feat: añadir login"': 'git add . && git commit -m "feat: add login"',
+  "git push origin feature/mi-nueva-funcionalidad": "git push origin feature/my-new-feature",
   "git switch main && git merge feature/mi-nueva-funcionalidad":
     "git switch main && git merge feature/my-new-feature",
   "Crear y navegar": "Create and navigate",
@@ -724,8 +685,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "Make sure you are on the correct branch before running it (use git branch to check).",
   "Elimina una rama local (solo si ya fue fusionada)":
     "Deletes a local branch (only if it has already been merged)",
-  "Consecuencias de eliminar una rama local":
-    "Consequences of deleting a local branch",
+  "Consecuencias de eliminar una rama local": "Consequences of deleting a local branch",
   "git branch -d solo borra la rama si ya fue fusionada, lo cual es una protección. Pero git branch -D (mayúscula) la elimina aunque tenga commits sin fusionar , perdiendo esos cambios.":
     "git branch -d only deletes the branch if it has already been merged, which is a protection. But git branch -D (uppercase) deletes it even if it has unmerged commits, losing those changes.",
   "Una vez eliminada la rama local sin haber hecho push, los commits exclusivos de esa rama se pierden .":
@@ -734,8 +694,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "If another teammate had that branch as a reference, they will need to update their local repository.",
   "Elimina la rama también del repositorio remoto":
     "Deletes the branch from the remote repository too",
-  "Consecuencias de eliminar una rama remota":
-    "Consequences of deleting a remote branch",
+  "Consecuencias de eliminar una rama remota": "Consequences of deleting a remote branch",
   "La rama desaparece del repositorio remoto para todos los colaboradores del proyecto.":
     "The branch disappears from the remote repository for all project collaborators.",
   "Cualquier Pull Request abierto basado en esa rama quedará automáticamente cerrado o huérfano .":
@@ -761,13 +720,11 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "rama main": "main branch",
   "# commit base (compartido)": "# base commit (shared)",
   '"Hola"': '"Hello"',
-  "# commit B — alguien en main escribe:":
-    "# commit B — someone on main writes:",
+  "# commit B — alguien en main escribe:": "# commit B — someone on main writes:",
   '"Hola mundo"': '"Hello world"',
   "mismo archivo": "same file",
   "rama feature": "feature branch",
-  "# commit D — alguien en feature escribe:":
-    "# commit D — someone on feature writes:",
+  "# commit D — alguien en feature escribe:": "# commit D — someone on feature writes:",
   '"Hello world"': '"Hello world"',
   "# Git no sabe qué línea elegir y marca el conflicto así:":
     "# Git does not know which line to choose and marks the conflict like this:",
@@ -787,8 +744,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "End of the block from the branch you are merging.",
   "Estos son los conflictos que encontrarás con más frecuencia en proyectos reales.":
     "These are the conflicts you will find most often in real projects.",
-  "Escenario 1 · Texto cambiado en la misma línea":
-    "Scenario 1 · Text changed on the same line",
+  "Escenario 1 · Texto cambiado en la misma línea": "Scenario 1 · Text changed on the same line",
   "El caso más común. Dos personas editan el mensaje de un mismo botón o la misma variable de configuración.":
     "The most common case. Two people edit the text of the same button or the same configuration variable.",
   "Solución: elige uno de los dos valores (o escribe uno nuevo), borra los tres marcadores y guarda.":
@@ -799,8 +755,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "One person adds validation to a function; another refactors it at the same time.",
   "Solución: en este caso lo correcto probablemente es combinar ambos cambios manualmente:":
     "Solution: in this case, the right thing is probably to combine both changes manually:",
-  "Escenario 3 · Archivo eliminado vs. modificado":
-    "Scenario 3 · File deleted vs. modified",
+  "Escenario 3 · Archivo eliminado vs. modificado": "Scenario 3 · File deleted vs. modified",
   "Una rama elimina un archivo que la otra ha modificado. Git no sabe si debes conservarlo o borrarlo.":
     "One branch deletes a file that the other branch modified. Git does not know whether you should keep it or delete it.",
   "Solución: decide explícitamente si el archivo debe existir o no:":
@@ -817,14 +772,12 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Abre el archivo y edítalo": "Open the file and edit it",
   "Busca los marcadores <<< , === y >>> . Decide qué versión conservar (o combina las dos). Borra todos los marcadores. Guarda el archivo.":
     "Look for the <<<, === and >>> markers. Decide which version to keep (or combine both). Delete all markers. Save the file.",
-  "Marca el archivo como resuelto y haz commit":
-    "Mark the file as resolved and commit",
+  "Marca el archivo como resuelto y haz commit": "Mark the file as resolved and commit",
   "Una vez editado, añade el archivo al stage y cierra el merge con un commit.":
     "Once edited, add the file to the stage and close the merge with a commit.",
   'git add src/saludo.js git commit -m "fix: resolver conflicto en saludo.js"':
     'git add src/hello.js git commit -m "fix: resolve conflict in hello.js"',
-  "¿Te has liado? Puedes abortar el merge":
-    "Got stuck? You can abort the merge",
+  "¿Te has liado? Puedes abortar el merge": "Got stuck? You can abort the merge",
   "Si en medio de la resolución te das cuenta de que algo no cuadra, puedes cancelar el merge y volver al estado anterior como si nada hubiera ocurrido:":
     "If, while resolving the conflict, you realize something is wrong, you can cancel the merge and return to the previous state as if nothing had happened:",
   "Los conflictos no se pueden eliminar del todo, pero sí reducir con buenos hábitos de equipo:":
@@ -844,11 +797,9 @@ const EXTRA_STATIC_TRANSLATIONS = {
   Patrón: "Pattern",
   Significado: "Meaning",
   "node_modules/": "node_modules/",
-  "Ignora toda la carpeta de dependencias":
-    "Ignores the whole dependencies folder",
+  "Ignora toda la carpeta de dependencias": "Ignores the whole dependencies folder",
   "*.log": "*.log",
-  "Ignora cualquier archivo con extensión .log":
-    "Ignores any file with the .log extension",
+  "Ignora cualquier archivo con extensión .log": "Ignores any file with the .log extension",
   ".env": ".env",
   "Ignora el archivo de variables de entorno sensibles":
     "Ignores the sensitive environment variables file",
@@ -917,8 +868,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "0 de 6 archivos ignorados correctamente": "0 of 6 files ignored correctly",
   "📁 Archivos del proyecto": "📁 Project files",
   "📄 .gitignore": "📄 .gitignore",
-  "# escribe tus reglas aquí, una por línea":
-    "# write your rules here, one per line",
+  "# escribe tus reglas aquí, una por línea": "# write your rules here, one per line",
   "💡 Ver pista": "💡 Show hint",
   "🔄 Reiniciar": "🔄 Reset",
   "Comprobar solución ✓": "Check solution ✓",
@@ -945,8 +895,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Cuando Git marque el conflicto, elimina los marcadores <<<<<<< , ======= y >>>>>>> .":
     "When Git marks the conflict, remove the <<<<<<<, ======= and >>>>>>> markers.",
   "Comprobar resolución ✓": "Check resolution ✓",
-  "¿Qué significan los marcadores del conflicto?":
-    "What do the conflict markers mean?",
+  "¿Qué significan los marcadores del conflicto?": "What do the conflict markers mean?",
   "Es la versión de la rama actual. En este caso, la versión que había en main .":
     "This is the version from the current branch. In this case, the version that was on main.",
   "Separa las dos versiones que Git no sabe combinar automáticamente.":
@@ -960,8 +909,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "git commit": "git commit",
   "Finaliza el merge y guarda la resolución del conflicto.":
     "Finishes the merge and saves the conflict resolution.",
-  "Vista general de la integración de Git en VS Code":
-    "Overview of Git integration in VS Code",
+  "Vista general de la integración de Git en VS Code": "Overview of Git integration in VS Code",
   "Cuando editas un archivo, VS Code lo marca automáticamente en el explorador de archivos con una letra:":
     "When you edit a file, VS Code automatically marks it in the file explorer with a letter:",
   "M (Modified) — archivo modificado.": "M (Modified) — modified file.",
@@ -1014,8 +962,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "When a conflict occurs, VS Code marks the file with a red C in the explorer and in the Source Control panel. When you open it, you will see the code divided into blocks with special markers:",
   "<<<<<<< HEAD — inicio de tu versión (rama actual).":
     "<<<<<<< HEAD — start of your version (current branch).",
-  "======= — separador entre las dos versiones.":
-    "======= — separator between the two versions.",
+  "======= — separador entre las dos versiones.": "======= — separator between the two versions.",
   ">>>>>>> feature/… — inicio de la versión entrante (rama que estás fusionando).":
     ">>>>>>> feature/… — start of the incoming version (the branch you are merging).",
   "VS Code resalta visualmente los bloques en conflicto con colores diferenciados":
@@ -1043,8 +990,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "© 2026 Guía de GitHub · Guillermo Castro Abarca":
     "© 2026 GitHub Guide · Guillermo Castro Abarca",
   "Guillermo Castro Abarca": "Guillermo Castro Abarca",
-  "Inicializa un repositorio en la carpeta actual":
-    "Initialize a repository in the current folder",
+  "Inicializa un repositorio en la carpeta actual": "Initialize a repository in the current folder",
   "¡Repositorio creado! Ahora Git está vigilando esta carpeta.":
     "Repository created! Git is now watching this folder.",
   "2. Añadir archivos": "2. Add files",
@@ -1113,8 +1059,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "Vuelve a la rama main. Allí también se cambiará la misma línea del archivo.":
     "Go back to the main branch. The same line in the file will also be changed there.",
   "Usa: git switch main": "Use: git switch main",
-  "Añade ejercicios interactivos al título":
-    "Add interactive exercises to the title",
+  "Añade ejercicios interactivos al título": "Add interactive exercises to the title",
   "Fusiona la rama": "Merge the branch",
   "Fusiona feature-titulo dentro de main. Como ambas ramas tocaron la misma línea, aparecerá un conflicto.":
     "Merge feature-title into main. Since both branches touched the same line, a conflict will appear.",
@@ -1148,8 +1093,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
   "resuelto sin add": "resolved without add",
   conflicto: "conflict",
   "sin iniciar": "not started",
-  "resuelve primero el archivo en el editor...":
-    "resolve the file in the editor first...",
+  "resuelve primero el archivo en el editor...": "resolve the file in the editor first...",
   "escribe un comando git...": "write a git command...",
   'Este simulador solo acepta comandos de Git. Prueba con "git status".':
     'This simulator only accepts Git commands. Try "git status".',
@@ -1163,8 +1107,7 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "❌ That is not the command for this step. You can type <code>git status</code> to orient yourself.",
   "✅ Ejercicio completado. Has provocado un conflicto, lo has resuelto y has cerrado el merge.":
     "✅ Exercise completed. You triggered a conflict, resolved it and closed the merge.",
-  "✅ Correcto. Continúa con el siguiente paso.":
-    "✅ Correct. Continue with the next step.",
+  "✅ Correcto. Continúa con el siguiente paso.": "✅ Correct. Continue with the next step.",
   "❌ Todavía quedan marcadores de conflicto. Elimina <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> y <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.":
     "❌ There are still conflict markers. Remove <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.",
   "❌ La solución debe conservar una línea <code>&lt;h1&gt;</code> relacionada con GitHub.":
@@ -1175,12 +1118,10 @@ const EXTRA_STATIC_TRANSLATIONS = {
     "index.html edited correctly. The conflict no longer has markers.",
   "✅ Resolución correcta. Ahora usa <code>git add index.html</code>.":
     "✅ Correct resolution. Now use <code>git add index.html</code>.",
-  "🏆 Ya has completado el ejercicio.":
-    "🏆 You have already completed the exercise.",
-  "Bienvenido al ejercicio de conflictos entre ramas.":
-    "Welcome to the branch conflict exercise.",
+  "🏆 Ya has completado el ejercicio.": "🏆 You have already completed the exercise.",
+  "Bienvenido al ejercicio de conflictos entre ramas.": "Welcome to the branch conflict exercise.",
   'Puedes escribir "git status" en cualquier momento para ver el estado.':
-    'You can type "git status" at any time to see the status.',
+    'You can type "git status" at any time to see the status.'
 };
 Object.assign(STATIC_TRANSLATIONS, EXTRA_STATIC_TRANSLATIONS);
 const LAST_I18N_PATCH = {
@@ -1195,9 +1136,8 @@ const LAST_I18N_PATCH = {
   "Guía básica de GitHub": "Basic GitHub Guide",
   "Guía básica de GitHub con ejercicios interactivos":
     "Basic GitHub Guide with interactive exercises",
-  "Guía práctica de GitHub para principiantes":
-    "Practical GitHub Guide for beginners",
-  "Aprende Git y GitHub paso a paso.": "Learn Git and GitHub step by step.",
+  "Guía práctica de GitHub para principiantes": "Practical GitHub Guide for beginners",
+  "Aprende Git y GitHub paso a paso.": "Learn Git and GitHub step by step."
 };
 Object.assign(STATIC_TRANSLATIONS, LAST_I18N_PATCH);
 
@@ -1206,10 +1146,10 @@ const ATTR_TRANSLATIONS = {
     "Cambiar idioma": "Change language",
     "Cambiar tema": "Change theme",
     Contribuciones: "Contributions",
-    "Instalación de Git": "Git Installation",
+    "Instalación de Git": "Git Installation"
   },
   "aria-label": {
-    Menú: "Menu",
+    Menú: "Menu"
   },
   alt: {
     "Diferencias entre Git y GitHub": "Differences between Git and GitHub",
@@ -1224,40 +1164,33 @@ const ATTR_TRANSLATIONS = {
     "Activar 2FA": "Enable 2FA",
     "App autenticadora en móvil": "Authenticator app on mobile",
     "Confirmar 2FA": "Confirm 2FA",
-    "Vista general de integración Git en VS Code":
-      "Overview of Git integration in VS Code",
+    "Vista general de integración Git en VS Code": "Overview of Git integration in VS Code",
     "Commit final tras resolver los conflictos en VS Code":
-      "Final commit after resolving conflicts in VS Code",
-  },
+      "Final commit after resolving conflicts in VS Code"
+  }
 };
 
 const EXTRA_ATTR_TRANSLATIONS = {
   alt: {
     "Panel Source Control mostrando archivos modificados":
       "Source Control panel showing modified files",
-    "Preparando archivos con el botón + en VS Code":
-      "Staging files with the + button in VS Code",
+    "Preparando archivos con el botón + en VS Code": "Staging files with the + button in VS Code",
     "Campo de mensaje de commit en VS Code": "Commit message field in VS Code",
-    "Menú de ramas en la barra de estado de VS Code":
-      "Branch menu in the VS Code status bar",
-    "Selección de rama existente en VS Code":
-      "Existing branch selection in VS Code",
+    "Menú de ramas en la barra de estado de VS Code": "Branch menu in the VS Code status bar",
+    "Selección de rama existente en VS Code": "Existing branch selection in VS Code",
     "Paleta de comandos con Git Merge Branch en VS Code":
       "Command palette with Git Merge Branch in VS Code",
     "Marcadores de conflicto en un archivo dentro de VS Code":
       "Conflict markers in a file inside VS Code",
-    ".gitignore": ".gitignore",
+    ".gitignore": ".gitignore"
   },
   placeholder: {
     "escribe un comando git...": "write a git command...",
-    "node_modules/\n*.log\n.env": "node_modules/\n*.log\n.env",
-  },
+    "node_modules/\n*.log\n.env": "node_modules/\n*.log\n.env"
+  }
 };
 Object.entries(EXTRA_ATTR_TRANSLATIONS).forEach(([attr, translations]) => {
-  ATTR_TRANSLATIONS[attr] = Object.assign(
-    ATTR_TRANSLATIONS[attr] || {},
-    translations,
-  );
+  ATTR_TRANSLATIONS[attr] = Object.assign(ATTR_TRANSLATIONS[attr] || {}, translations);
 });
 
 const norm = (value) => (value || "").replace(/\s+/g, " ").trim();
@@ -1277,7 +1210,8 @@ function isEligibleForGeneratedTranslation(el) {
     el.closest?.("#lang-toggle-btn") ||
     el.id === "theme-toggle-btn" ||
     el.closest?.("#theme-toggle-btn")
-  ) return false;
+  )
+    return false;
   const tag = el.tagName.toLowerCase();
   const directTags = new Set([
     "p",
@@ -1290,13 +1224,12 @@ function isEligibleForGeneratedTranslation(el) {
     "th",
     "button",
     "a",
-    "span",
+    "span"
   ]);
   if (directTags.has(tag)) return true;
   if (
     tag === "div" &&
-    (el.classList.contains("cmd-desc") ||
-      el.classList.contains("commit-structure"))
+    (el.classList.contains("cmd-desc") || el.classList.contains("commit-structure"))
   )
     return true;
   return false;
@@ -1305,11 +1238,7 @@ function isEligibleForGeneratedTranslation(el) {
 function hasTranslatedAncestor(el) {
   let parent = el.parentElement;
   while (parent) {
-    if (
-      parent.dataset?.es ||
-      parent.dataset?.en ||
-      parent.dataset?.i18nGenerated === "true"
-    )
+    if (parent.dataset?.es || parent.dataset?.en || parent.dataset?.i18nGenerated === "true")
       return true;
     parent = parent.parentElement;
   }
@@ -1319,12 +1248,11 @@ function hasTranslatedAncestor(el) {
 function prepareMissingTranslations() {
   document
     .querySelectorAll(
-      "p, li, figcaption, h2, h3, h4, td, th, button, a, span, div.cmd-desc, div.commit-structure",
+      "p, li, figcaption, h2, h3, h4, td, th, button, a, span, div.cmd-desc, div.commit-structure"
     )
     .forEach((el) => {
       if (!isEligibleForGeneratedTranslation(el)) return;
-      if (el.dataset.es || el.dataset.en || el.dataset.i18nGenerated === "true")
-        return;
+      if (el.dataset.es || el.dataset.en || el.dataset.i18nGenerated === "true") return;
       if (hasTranslatedAncestor(el)) return;
 
       const originalText = norm(el.textContent);
@@ -1386,15 +1314,15 @@ function setLanguage(lang) {
 
   const langToggle = document.getElementById("lang-toggle-btn");
   if (langToggle && !document.getElementById("lang-label")) {
-    langToggle.innerHTML =
-      '<span id="lang-icon">🌐</span><span id="lang-label">EN</span>';
+    langToggle.innerHTML = '<span id="lang-icon">🌐</span><span id="lang-label">EN</span>';
   }
 
   const label = document.getElementById("lang-label");
   if (label) label.textContent = lang === "en" ? "ES" : "EN";
   const themeIcon = getThemeIcon();
   if (themeIcon) {
-    themeIcon.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    themeIcon.textContent =
+      document.documentElement.getAttribute("data-theme") === "dark" ? "☀️" : "🌙";
   }
 
   document.documentElement.lang = lang;
@@ -1438,10 +1366,8 @@ const QUIZ_QUESTIONS = [
     opts: ["git start", "git init", "git create", "git new"],
     optsEn: ["git start", "git init", "git create", "git new"],
     correct: 1,
-    explanation:
-      "git init crea el directorio .git que convierte la carpeta en un repositorio.",
-    explanationEn:
-      "git init creates the .git directory that turns the folder into a repository.",
+    explanation: "git init crea el directorio .git que convierte la carpeta en un repositorio.",
+    explanationEn: "git init creates the .git directory that turns the folder into a repository."
   },
   {
     q: "¿Qué diferencia hay entre Git y GitHub?",
@@ -1450,19 +1376,19 @@ const QUIZ_QUESTIONS = [
       "Son exactamente lo mismo",
       "Git es la plataforma web, GitHub el software local",
       "Git es el software de control de versiones local; GitHub es la plataforma web en la nube",
-      "GitHub solo sirve para proyectos públicos",
+      "GitHub solo sirve para proyectos públicos"
     ],
     optsEn: [
       "They are exactly the same",
       "Git is the web platform, GitHub is the local software",
       "Git is the local version control software; GitHub is the cloud-based web platform",
-      "GitHub is only for public projects",
+      "GitHub is only for public projects"
     ],
     correct: 2,
     explanation:
       "Git vive en tu ordenador y gestiona versiones. GitHub es la plataforma online basada en Git.",
     explanationEn:
-      "Git lives on your computer and manages versions. GitHub is the online platform built on top of Git.",
+      "Git lives on your computer and manages versions. GitHub is the online platform built on top of Git."
   },
   {
     q: "¿Qué hace git add . ?",
@@ -1471,40 +1397,26 @@ const QUIZ_QUESTIONS = [
       "Crea un nuevo repositorio",
       "Prepara todos los archivos modificados para el próximo commit",
       "Sube los cambios a GitHub",
-      "Descarta todos los cambios",
+      "Descarta todos los cambios"
     ],
     optsEn: [
       "Creates a new repository",
       "Stages all modified files for the next commit",
       "Uploads the changes to GitHub",
-      "Discards all changes",
+      "Discards all changes"
     ],
     correct: 1,
-    explanation:
-      "git add . mueve todos los cambios al área de staging, listos para el commit.",
-    explanationEn:
-      "git add . moves all changes to the staging area, ready to be committed.",
+    explanation: "git add . mueve todos los cambios al área de staging, listos para el commit.",
+    explanationEn: "git add . moves all changes to the staging area, ready to be committed."
   },
   {
     q: "¿Qué comando sube tus commits al repositorio remoto?",
     qEn: "Which command pushes your commits to the remote repository?",
-    opts: [
-      "git commit -m",
-      "git pull origin main",
-      "git push origin main",
-      "git sync",
-    ],
-    optsEn: [
-      "git commit -m",
-      "git pull origin main",
-      "git push origin main",
-      "git sync",
-    ],
+    opts: ["git commit -m", "git pull origin main", "git push origin main", "git sync"],
+    optsEn: ["git commit -m", "git pull origin main", "git push origin main", "git sync"],
     correct: 2,
-    explanation:
-      "git push envía los commits locales al repositorio remoto en GitHub.",
-    explanationEn:
-      "git push sends your local commits to the remote repository on GitHub.",
+    explanation: "git push envía los commits locales al repositorio remoto en GitHub.",
+    explanationEn: "git push sends your local commits to the remote repository on GitHub."
   },
   {
     q: "¿Para qué sirve una rama (branch) en Git?",
@@ -1513,19 +1425,17 @@ const QUIZ_QUESTIONS = [
       "Para hacer copias de seguridad en otro disco",
       "Para trabajar en paralelo sin afectar a la rama principal",
       "Para eliminar archivos del repositorio",
-      "Para cambiar el nombre del proyecto",
+      "Para cambiar el nombre del proyecto"
     ],
     optsEn: [
       "To make backups on another drive",
       "To work in parallel without affecting the main branch",
       "To delete files from the repository",
-      "To rename the project",
+      "To rename the project"
     ],
     correct: 1,
-    explanation:
-      "Las ramas permiten desarrollar funcionalidades o correcciones de forma aislada.",
-    explanationEn:
-      "Branches allow you to develop features or fixes in isolation.",
+    explanation: "Las ramas permiten desarrollar funcionalidades o correcciones de forma aislada.",
+    explanationEn: "Branches allow you to develop features or fixes in isolation."
   },
   {
     q: "¿Qué comando crea una nueva rama y cambia a ella directamente?",
@@ -1534,19 +1444,17 @@ const QUIZ_QUESTIONS = [
       "git branch nueva-rama",
       "git new nueva-rama",
       "git switch -c nueva-rama",
-      "git checkout nueva-rama --create",
+      "git checkout nueva-rama --create"
     ],
     optsEn: [
       "git branch new-branch",
       "git new new-branch",
       "git switch -c new-branch",
-      "git checkout new-branch --create",
+      "git checkout new-branch --create"
     ],
     correct: 2,
-    explanation:
-      "git switch -c crea la rama y te cambia a ella en un solo paso.",
-    explanationEn:
-      "git switch -c creates the branch and switches to it in a single step.",
+    explanation: "git switch -c crea la rama y te cambia a ella en un solo paso.",
+    explanationEn: "git switch -c creates the branch and switches to it in a single step."
   },
   {
     q: "¿Qué hace git merge nombre-rama?",
@@ -1555,19 +1463,18 @@ const QUIZ_QUESTIONS = [
       "Crea una copia de la rama",
       "Elimina la rama indicada",
       "Integra los cambios de la rama indicada en la rama actual",
-      "Sube la rama a GitHub",
+      "Sube la rama a GitHub"
     ],
     optsEn: [
       "Creates a copy of the branch",
       "Deletes the specified branch",
       "Integrates the changes from the specified branch into the current branch",
-      "Uploads the branch to GitHub",
+      "Uploads the branch to GitHub"
     ],
     correct: 2,
     explanation:
       "git merge fusiona los commits de otra rama en la rama en la que estás actualmente.",
-    explanationEn:
-      "git merge integrates another branch's commits into your current branch.",
+    explanationEn: "git merge integrates another branch's commits into your current branch."
   },
   {
     q: "¿Qué es un Pull Request?",
@@ -1576,19 +1483,18 @@ const QUIZ_QUESTIONS = [
       "Un comando de Git para descargar código",
       "Una solicitud para que otros revisen tus cambios antes de fusionarlos en main",
       "Lo mismo que git pull",
-      "Una forma de eliminar ramas remotas",
+      "Una forma de eliminar ramas remotas"
     ],
     optsEn: [
       "A Git command to download code",
       "A request for others to review your changes before merging into main",
       "The same as git pull",
-      "A way to delete remote branches",
+      "A way to delete remote branches"
     ],
     correct: 1,
     explanation:
       "Un PR es una propuesta de cambios en GitHub que permite revisión de código antes del merge.",
-    explanationEn:
-      "A PR is a proposed change on GitHub that allows code review before merging.",
+    explanationEn: "A PR is a proposed change on GitHub that allows code review before merging."
   },
   {
     q: "¿Qué ocurre cuando hay un conflicto de merge?",
@@ -1597,19 +1503,19 @@ const QUIZ_QUESTIONS = [
       "Git elige automáticamente la versión más reciente",
       "El repositorio se borra",
       "Git marca las líneas en conflicto y espera que tú elijas cuál conservar",
-      "Se cancela el merge sin posibilidad de reintentar",
+      "Se cancela el merge sin posibilidad de reintentar"
     ],
     optsEn: [
       "Git automatically picks the most recent version",
       "The repository gets deleted",
       "Git marks the conflicting lines and waits for you to choose which to keep",
-      "The merge is cancelled with no way to retry",
+      "The merge is cancelled with no way to retry"
     ],
     correct: 2,
     explanation:
       "Git marca las secciones conflictivas con <<<<<<, ======= y >>>>>>>. Tú editas el archivo y haces un nuevo commit.",
     explanationEn:
-      "Git marks conflicting sections with <<<<<<, ======= and >>>>>>>. You edit the file and make a new commit.",
+      "Git marks conflicting sections with <<<<<<, ======= and >>>>>>>. You edit the file and make a new commit."
   },
   {
     q: "¿Qué muestra el comando git log --oneline?",
@@ -1618,20 +1524,19 @@ const QUIZ_QUESTIONS = [
       "Solo el último commit",
       "Un listado resumido de todos los commits del historial",
       "Los archivos modificados en el último commit",
-      "La configuración global de Git",
+      "La configuración global de Git"
     ],
     optsEn: [
       "Only the latest commit",
       "A compact list of all commits in the history",
       "The files modified in the last commit",
-      "Git's global configuration",
+      "Git's global configuration"
     ],
     correct: 1,
     explanation:
       "git log --oneline muestra el historial de commits en formato compacto: hash + mensaje.",
-    explanationEn:
-      "git log --oneline shows the commit history in compact format: hash + message.",
-  },
+    explanationEn: "git log --oneline shows the commit history in compact format: hash + message."
+  }
 ];
 
 // State
@@ -1657,7 +1562,7 @@ function buildQuiz() {
   // Build dots
   const dotsEl = document.getElementById("quiz-dots");
   dotsEl.innerHTML = QUIZ_QUESTIONS.map(
-    (_, i) => `<span class="quiz-dot" id="qdot-${i}"></span>`,
+    (_, i) => `<span class="quiz-dot" id="qdot-${i}"></span>`
   ).join("");
 
   // Build slides
@@ -1672,7 +1577,7 @@ function buildQuiz() {
         (o, j) => `
       <div class="quiz-opt" id="qopt-${i}-${j}" data-q="${i}" data-o="${j}" onclick="quizSelectOpt(this)">
         <span class="quiz-opt-letter">${letters[j]}</span>${o}
-      </div>`,
+      </div>`
       )
       .join("");
     return `
@@ -1691,13 +1596,10 @@ function quizRefreshUI() {
 
   // Progress bar
   const answered = qAnswers.filter((a) => a !== null).length;
-  document.getElementById("quiz-progress-bar").style.width =
-    (answered / total) * 100 + "%";
+  document.getElementById("quiz-progress-bar").style.width = (answered / total) * 100 + "%";
   const lang = currentLang || "es";
   document.getElementById("quiz-progress-text").textContent =
-    lang === "en"
-      ? `Question ${qCurrent + 1} of ${total}`
-      : `Pregunta ${qCurrent + 1} de ${total}`;
+    lang === "en" ? `Question ${qCurrent + 1} of ${total}` : `Pregunta ${qCurrent + 1} de ${total}`;
 
   // Dots
   QUIZ_QUESTIONS.forEach((_, i) => {
@@ -1705,9 +1607,7 @@ function quizRefreshUI() {
     dot.className = "quiz-dot";
     if (i === qCurrent) dot.classList.add("active");
     else if (qRevealed[i]) {
-      dot.classList.add(
-        qAnswers[i] === QUIZ_QUESTIONS[i].correct ? "correct" : "wrong",
-      );
+      dot.classList.add(qAnswers[i] === QUIZ_QUESTIONS[i].correct ? "correct" : "wrong");
     }
   });
 
@@ -1750,8 +1650,7 @@ function quizGoTo(index, direction) {
   const next = document.getElementById(`qslide-${qCurrent}`);
 
   // Prepare new slide from the right or left
-  next.style.transform =
-    direction === "next" ? "translateX(60px)" : "translateX(-60px)";
+  next.style.transform = direction === "next" ? "translateX(60px)" : "translateX(-60px)";
   next.style.opacity = "0";
   next.style.position = "absolute";
   next.style.pointerEvents = "none";
@@ -1820,8 +1719,7 @@ function quizConfirm() {
 
   const fb = document.getElementById(`qf-${i}`);
   fb.className = "quiz-feedback " + (chosen === correct ? "ok" : "ko");
-  const expl =
-    currentLang === "en" && q.explanationEn ? q.explanationEn : q.explanation;
+  const expl = currentLang === "en" && q.explanationEn ? q.explanationEn : q.explanation;
   fb.textContent = (chosen === correct ? "✓ " : "✗ ") + expl;
 
   quizRefreshUI();
@@ -1829,9 +1727,7 @@ function quizConfirm() {
 
 function quizShowResults() {
   const total = QUIZ_QUESTIONS.length;
-  const score = qAnswers.filter(
-    (a, i) => a === QUIZ_QUESTIONS[i].correct,
-  ).length;
+  const score = qAnswers.filter((a, i) => a === QUIZ_QUESTIONS[i].correct).length;
   const pct = Math.round((score / total) * 100);
 
   let emoji, label, bg;
@@ -1842,15 +1738,11 @@ function quizShowResults() {
     bg = "var(--success-bg)";
   } else if (pct >= 70) {
     emoji = "🎉";
-    label = isEn
-      ? "Great job! You know the concepts"
-      : "¡Muy bien! Dominas los conceptos";
+    label = isEn ? "Great job! You know the concepts" : "¡Muy bien! Dominas los conceptos";
     bg = "var(--accent-bg)";
   } else if (pct >= 50) {
     emoji = "📚";
-    label = isEn
-      ? "Good, but review a bit more"
-      : "Bien, pero repasa un poco más";
+    label = isEn ? "Good, but review a bit more" : "Bien, pero repasa un poco más";
     bg = "var(--warn-bg)";
   } else {
     emoji = "💡";
@@ -1896,8 +1788,8 @@ const SIM_CHALLENGES = [
     command: "git init",
     responses: {
       ok: ["Initialized empty Git repository in /mi-proyecto/.git/"],
-      msg: "¡Repositorio creado! Ahora Git está vigilando esta carpeta.",
-    },
+      msg: "¡Repositorio creado! Ahora Git está vigilando esta carpeta."
+    }
   },
   {
     id: "add",
@@ -1906,8 +1798,8 @@ const SIM_CHALLENGES = [
     command: "git add .",
     responses: {
       ok: [""],
-      msg: "Archivos preparados para el commit (staging area).",
-    },
+      msg: "Archivos preparados para el commit (staging area)."
+    }
   },
   {
     id: "commit",
@@ -1915,12 +1807,9 @@ const SIM_CHALLENGES = [
     hint: 'Crea un commit con el mensaje "primer commit"',
     command: 'git commit -m "primer commit"',
     responses: {
-      ok: [
-        "[main (root-commit) a1b2c3d] primer commit",
-        " 3 files changed, 42 insertions(+)",
-      ],
-      msg: "¡Commit guardado! Tu código tiene su primera instantánea.",
-    },
+      ok: ["[main (root-commit) a1b2c3d] primer commit", " 3 files changed, 42 insertions(+)"],
+      msg: "¡Commit guardado! Tu código tiene su primera instantánea."
+    }
   },
   {
     id: "branch",
@@ -1929,8 +1818,8 @@ const SIM_CHALLENGES = [
     command: "git switch -c feature/login",
     responses: {
       ok: ["Switched to a new branch 'feature/login'"],
-      msg: "¡Nueva rama creada! Ahora puedes trabajar de forma aislada.",
-    },
+      msg: "¡Nueva rama creada! Ahora puedes trabajar de forma aislada."
+    }
   },
   {
     id: "push",
@@ -1943,11 +1832,11 @@ const SIM_CHALLENGES = [
         "Counting objects: 100% (5/5), done.",
         "Branch 'feature/login' set up to track remote branch 'feature/login' from 'origin'.",
         "To https://github.com/usuario/mi-proyecto.git",
-        " * [new branch]  feature/login -> feature/login",
+        " * [new branch]  feature/login -> feature/login"
       ],
-      msg: "🎉 ¡Reto completado! Tu rama ya está en GitHub.",
-    },
-  },
+      msg: "🎉 ¡Reto completado! Tu rama ya está en GitHub."
+    }
+  }
 ];
 
 let simStep = 0;
@@ -1979,12 +1868,9 @@ function simUpdateHint() {
   if (!hint) return;
   if (simStep < SIM_CHALLENGES.length) {
     hint.textContent =
-      uiText("💡 Pista: ", "💡 Hint: ") +
-      uiTranslate(SIM_CHALLENGES[simStep].hint);
+      uiText("💡 Pista: ", "💡 Hint: ") + uiTranslate(SIM_CHALLENGES[simStep].hint);
   } else {
-    hint.textContent = uiTranslate(
-      "🏆 ¡Todos los retos completados! Eres un pro de Git.",
-    );
+    hint.textContent = uiTranslate("🏆 ¡Todos los retos completados! Eres un pro de Git.");
   }
 }
 
@@ -1992,10 +1878,7 @@ function buildSimulator() {
   const input = document.getElementById("sim-input");
   if (!input) return;
   simPrint(uiTranslate("Bienvenido al simulador de Git"), "line-info");
-  simPrint(
-    uiTranslate("Completa los retos escribiendo los comandos correctos."),
-    "line-dim",
-  );
+  simPrint(uiTranslate("Completa los retos escribiendo los comandos correctos."), "line-dim");
   simPrint("", "");
   simUpdateChallengeBar();
   simUpdateHint();
@@ -2023,10 +1906,8 @@ function normalize(cmd) {
 function handleSimCommand(cmd) {
   if (simStep >= SIM_CHALLENGES.length) {
     simPrint(
-      uiTranslate(
-        "Ya completaste todos los retos. ¡Recarga la página para volver a jugar!",
-      ),
-      "line-dim",
+      uiTranslate("Ya completaste todos los retos. ¡Recarga la página para volver a jugar!"),
+      "line-dim"
     );
     return;
   }
@@ -2039,9 +1920,9 @@ function handleSimCommand(cmd) {
   if (given === "help" || given === "git help") {
     simPrint(
       uiTranslate(
-        'Comandos útiles: git init | git add . | git commit -m "msg" | git switch -c rama | git push origin rama',
+        'Comandos útiles: git init | git add . | git commit -m "msg" | git switch -c rama | git push origin rama'
       ),
-      "line-info",
+      "line-info"
     );
     return;
   }
@@ -2052,9 +1933,9 @@ function handleSimCommand(cmd) {
   if (!given.startsWith("git")) {
     simPrint(
       uiTranslate(
-        'Este es un simulador de Git. Empieza tus comandos con "git" (o escribe "help").',
+        'Este es un simulador de Git. Empieza tus comandos con "git" (o escribe "help").'
       ),
-      "line-err",
+      "line-err"
     );
     return;
   }
@@ -2070,16 +1951,8 @@ function handleSimCommand(cmd) {
     simUpdateHint();
     if (simStep >= SIM_CHALLENGES.length) {
       simPrint("════════════════════════════════", "line-dim");
-      simPrint(
-        uiTranslate("🏆 ¡FELICIDADES! Completaste todos los retos."),
-        "line-info",
-      );
-      simPrint(
-        uiTranslate(
-          "Ya sabes los comandos esenciales de Git. ¡A por el mundo!",
-        ),
-        "line-ok",
-      );
+      simPrint(uiTranslate("🏆 ¡FELICIDADES! Completaste todos los retos."), "line-info");
+      simPrint(uiTranslate("Ya sabes los comandos esenciales de Git. ¡A por el mundo!"), "line-ok");
     }
   } else {
     // give hints based on partial match
@@ -2087,13 +1960,10 @@ function handleSimCommand(cmd) {
       simPrint(
         uiTranslate("Comando no reconocido en este contexto. Recuerda: ") +
           uiTranslate(challenge.hint),
-        "line-err",
+        "line-err"
       );
     } else {
-      simPrint(
-        uiTranslate("Casi... revisa la sintaxis exacta del comando."),
-        "line-err",
-      );
+      simPrint(uiTranslate("Casi... revisa la sintaxis exacta del comando."), "line-err");
     }
   }
 }
@@ -2169,7 +2039,7 @@ function buildLightbox() {
     { name: "error.log", icon: "📝", shouldIgnore: true },
     { name: ".DS_Store", icon: "💻", shouldIgnore: true },
     { name: "src/app.js", icon: "📄", shouldIgnore: false },
-    { name: "README.md", icon: "📘", shouldIgnore: false },
+    { name: "README.md", icon: "📘", shouldIgnore: false }
   ];
 
   const TOTAL = FILES.filter((f) => f.shouldIgnore).length;
@@ -2179,7 +2049,7 @@ function buildLightbox() {
     "Piensa: ¿qué carpetas se generan automáticamente y nunca necesitas subir?",
     "node_modules/ y dist/ son carpetas que no se suben nunca al repositorio.",
     "Los archivos .env contienen secretos. Los .log son ruido. .DS_Store es de macOS.",
-    "Prueba con: node_modules/ · dist/ · .env · .env.local · *.log · .DS_Store",
+    "Prueba con: node_modules/ · dist/ · .env · .env.local · *.log · .DS_Store"
   ];
 
   function getRules(text) {
@@ -2287,10 +2157,8 @@ function buildLightbox() {
   window.giShowHint = () => {
     if (hintLevel >= HINTS.length) {
       showFeedback(
-        uiTranslate(
-          "Ya has visto todas las pistas. ¡Inténtalo con lo que sabes!",
-        ),
-        "info",
+        uiTranslate("Ya has visto todas las pistas. ¡Inténtalo con lo que sabes!"),
+        "info"
       );
       return;
     }
@@ -2328,9 +2196,9 @@ function buildLightbox() {
     if (missed.length === 0 && wrong.length === 0) {
       showFeedback(
         uiTranslate(
-          "✅ ¡Perfecto! Tu .gitignore es correcto. Todos los archivos sensibles están ignorados y el código fuente queda trackeado.",
+          "✅ ¡Perfecto! Tu .gitignore es correcto. Todos los archivos sensibles están ignorados y el código fuente queda trackeado."
         ),
-        "ok",
+        "ok"
       );
 
       const expl = document.getElementById("gi-ex-explanation");
@@ -2382,10 +2250,7 @@ const CF_STEPS = [
     title: "Crea una rama nueva",
     task: "Crea una rama llamada feature-titulo. En esa rama se cambiará el título de la página.",
     hint: "Usa: git switch -c feature-titulo",
-    valid: [
-      /^git switch -c feature-titulo$/i,
-      /^git checkout -b feature-titulo$/i,
-    ],
+    valid: [/^git switch -c feature-titulo$/i, /^git checkout -b feature-titulo$/i],
     output:
       "Switched to a new branch 'feature-titulo'\n[feature-titulo a12b34c] Cambia título para principiantes",
     after: function () {
@@ -2395,15 +2260,14 @@ const CF_STEPS = [
   <h1>Guía práctica de GitHub para principiantes</h1>
   <p>Aprende Git y GitHub paso a paso.</p>
 </header>`;
-    },
+    }
   },
   {
     title: "Vuelve a main",
     task: "Vuelve a la rama main. Allí también se cambiará la misma línea del archivo.",
     hint: "Usa: git switch main",
     valid: [/^git switch main$/i, /^git checkout main$/i],
-    output:
-      "Switched to branch 'main'\n[main d45e67f] Añade ejercicios interactivos al título",
+    output: "Switched to branch 'main'\n[main d45e67f] Añade ejercicios interactivos al título",
     after: function () {
       cfState.branch = "main";
       cfState.mainCommit = true;
@@ -2411,7 +2275,7 @@ const CF_STEPS = [
   <h1>Guía básica de GitHub con ejercicios interactivos</h1>
   <p>Aprende Git y GitHub paso a paso.</p>
 </header>`;
-    },
+    }
   },
   {
     title: "Fusiona la rama",
@@ -2423,7 +2287,7 @@ const CF_STEPS = [
     after: function () {
       cfState.conflict = true;
       cfState.fileContent = CF_CONFLICT_FILE;
-    },
+    }
   },
   {
     title: "Resuelve el archivo",
@@ -2434,7 +2298,7 @@ const CF_STEPS = [
     after: function () {
       cfState.conflict = false;
       cfState.resolved = true;
-    },
+    }
   },
   {
     title: "Marca el conflicto como resuelto",
@@ -2444,19 +2308,18 @@ const CF_STEPS = [
     output: "Archivo preparado. Git ya sabe que el conflicto está resuelto.",
     after: function () {
       cfState.staged = true;
-    },
+    }
   },
   {
     title: "Finaliza el merge",
     task: "Haz un commit para cerrar el merge y guardar la resolución del conflicto.",
     hint: 'Usa: git commit -m "resuelve conflicto en título"',
     valid: [/^git commit$/i, /^git commit -m .+$/i],
-    output:
-      "[main f89a10b] Resuelve conflicto en título\nMerge finalizado correctamente.",
+    output: "[main f89a10b] Resuelve conflicto en título\nMerge finalizado correctamente.",
     after: function () {
       cfState.done = true;
-    },
-  },
+    }
+  }
 ];
 
 let cfState = {};
@@ -2472,7 +2335,7 @@ function cfResetState() {
     resolved: false,
     staged: false,
     done: false,
-    fileContent: CF_INITIAL_FILE,
+    fileContent: CF_INITIAL_FILE
   };
 
   cfHistory = [];
@@ -2522,9 +2385,7 @@ function cfRender() {
 
   const step = cfCurrentStep();
   if (!step) return;
-  const progress = cfState.done
-    ? 100
-    : Math.round((cfState.step / CF_STEPS.length) * 100);
+  const progress = cfState.done ? 100 : Math.round((cfState.step / CF_STEPS.length) * 100);
 
   const bar = document.getElementById("cf-progress-bar");
   if (bar) bar.style.width = progress + "%";
@@ -2641,10 +2502,7 @@ function cfRunCommand(command) {
     return;
   }
 
-  if (
-    normalized.toLowerCase() === "clear" ||
-    normalized.toLowerCase() === "cls"
-  ) {
+  if (normalized.toLowerCase() === "clear" || normalized.toLowerCase() === "cls") {
     const out = document.getElementById("cf-output");
     if (out) out.innerHTML = "";
     return;
@@ -2652,15 +2510,10 @@ function cfRunCommand(command) {
 
   if (!normalized.toLowerCase().startsWith("git")) {
     cfPrint(
-      uiTranslate(
-        'Este simulador solo acepta comandos de Git. Prueba con "git status".',
-      ),
-      "line-err",
+      uiTranslate('Este simulador solo acepta comandos de Git. Prueba con "git status".'),
+      "line-err"
     );
-    cfSetFeedback(
-      uiTranslate("❌ Escribe un comando que empiece por <code>git</code>."),
-      "err",
-    );
+    cfSetFeedback(uiTranslate("❌ Escribe un comando que empiece por <code>git</code>."), "err");
     return;
   }
 
@@ -2673,10 +2526,8 @@ function cfRunCommand(command) {
 
   if (cfState.step === 3) {
     cfPrint(
-      uiTranslate(
-        "Ahora no toca escribir comandos. Primero resuelve el archivo en el editor.",
-      ),
-      "line-err",
+      uiTranslate("Ahora no toca escribir comandos. Primero resuelve el archivo en el editor."),
+      "line-err"
     );
     return;
   }
@@ -2687,9 +2538,9 @@ function cfRunCommand(command) {
     cfPrint(uiTranslate("Comando incorrecto para este paso."), "line-err");
     cfSetFeedback(
       uiTranslate(
-        "❌ Ese comando no es el que toca ahora. Puedes escribir <code>git status</code> para orientarte.",
+        "❌ Ese comando no es el que toca ahora. Puedes escribir <code>git status</code> para orientarte."
       ),
-      "err",
+      "err"
     );
     return;
   }
@@ -2706,15 +2557,12 @@ function cfRunCommand(command) {
   if (cfState.done) {
     cfSetFeedback(
       uiTranslate(
-        "✅ Ejercicio completado. Has provocado un conflicto, lo has resuelto y has cerrado el merge.",
+        "✅ Ejercicio completado. Has provocado un conflicto, lo has resuelto y has cerrado el merge."
       ),
-      "ok",
+      "ok"
     );
   } else {
-    cfSetFeedback(
-      uiTranslate("✅ Correcto. Continúa con el siguiente paso."),
-      "ok",
-    );
+    cfSetFeedback(uiTranslate("✅ Correcto. Continúa con el siguiente paso."), "ok");
   }
 
   cfRender();
@@ -2760,9 +2608,7 @@ window.cfCheckResolution = function () {
   const content = editor.value.trim();
 
   const hasMarkers =
-    content.includes("<<<<<<<") ||
-    content.includes("=======") ||
-    content.includes(">>>>>>>");
+    content.includes("<<<<<<<") || content.includes("=======") || content.includes(">>>>>>>");
 
   const hasH1 = /<h1>.*<\/h1>/i.test(content);
   const hasGithub = /github/i.test(content);
@@ -2772,9 +2618,9 @@ window.cfCheckResolution = function () {
   if (hasMarkers) {
     cfSetFeedback(
       uiTranslate(
-        "❌ Todavía quedan marcadores de conflicto. Elimina <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> y <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>.",
+        "❌ Todavía quedan marcadores de conflicto. Elimina <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> y <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>."
       ),
-      "err",
+      "err"
     );
     return;
   }
@@ -2782,9 +2628,9 @@ window.cfCheckResolution = function () {
   if (!hasH1 || !hasGithub) {
     cfSetFeedback(
       uiTranslate(
-        "❌ La solución debe conservar una línea <code>&lt;h1&gt;</code> relacionada con GitHub.",
+        "❌ La solución debe conservar una línea <code>&lt;h1&gt;</code> relacionada con GitHub."
       ),
-      "err",
+      "err"
     );
     return;
   }
@@ -2792,9 +2638,9 @@ window.cfCheckResolution = function () {
   if (!hasBeginners || !hasExercises) {
     cfSetFeedback(
       uiTranslate(
-        "⚠️ La idea es combinar las dos versiones: debe aparecer la idea de <strong>principiantes</strong> y la de <strong>ejercicios interactivos</strong>.",
+        "⚠️ La idea es combinar las dos versiones: debe aparecer la idea de <strong>principiantes</strong> y la de <strong>ejercicios interactivos</strong>."
       ),
-      "err",
+      "err"
     );
     return;
   }
@@ -2804,16 +2650,12 @@ window.cfCheckResolution = function () {
   cfState.step++;
 
   cfPrint(
-    uiTranslate(
-      "index.html editado correctamente. El conflicto ya no tiene marcadores.",
-    ),
-    "line-ok",
+    uiTranslate("index.html editado correctamente. El conflicto ya no tiene marcadores."),
+    "line-ok"
   );
   cfSetFeedback(
-    uiTranslate(
-      "✅ Resolución correcta. Ahora usa <code>git add index.html</code>.",
-    ),
-    "ok",
+    uiTranslate("✅ Resolución correcta. Ahora usa <code>git add index.html</code>."),
+    "ok"
   );
   cfRender();
 };
@@ -2833,15 +2675,10 @@ window.cfReset = function () {
   const out = document.getElementById("cf-output");
   if (out) out.innerHTML = "";
 
+  cfPrint(uiTranslate("Bienvenido al ejercicio de conflictos entre ramas."), "line-info");
   cfPrint(
-    uiTranslate("Bienvenido al ejercicio de conflictos entre ramas."),
-    "line-info",
-  );
-  cfPrint(
-    uiTranslate(
-      'Puedes escribir "git status" en cualquier momento para ver el estado.',
-    ),
-    "line-dim",
+    uiTranslate('Puedes escribir "git status" en cualquier momento para ver el estado.'),
+    "line-dim"
   );
 
   cfClearFeedback();
@@ -2854,15 +2691,10 @@ function buildConflictExercise() {
 
   cfResetState();
 
+  cfPrint(uiTranslate("Bienvenido al ejercicio de conflictos entre ramas."), "line-info");
   cfPrint(
-    uiTranslate("Bienvenido al ejercicio de conflictos entre ramas."),
-    "line-info",
-  );
-  cfPrint(
-    uiTranslate(
-      'Puedes escribir "git status" en cualquier momento para ver el estado.',
-    ),
-    "line-dim",
+    uiTranslate('Puedes escribir "git status" en cualquier momento para ver el estado.'),
+    "line-dim"
   );
 
   input.addEventListener("keydown", function (e) {
@@ -2884,10 +2716,7 @@ function buildConflictExercise() {
 }
 
 function cfEscapeHtml(value) {
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;");
+  return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 }
 
 function cfRenderConflictView() {
