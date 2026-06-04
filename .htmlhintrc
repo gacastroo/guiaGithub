@@ -2,7 +2,7 @@
   "doctype-first": false,
   "attr-lowercase": true,
   "tagname-lowercase": true,
-  "attr-value-double-quotes": true,
+  "attr-value-double-quotes": false,
   "id-unique": true,
   "src-not-empty": true,
   "alt-require": false,

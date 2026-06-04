@@ -1536,7 +1536,7 @@ pre code {
   font-weight: 800;
   line-height: 1;
   background: linear-gradient(135deg, var(--accent), #7c3aed);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
@@ -1763,7 +1763,7 @@ a:active {
   border-left: 4px solid var(--warn-text);
   border-radius: 8px;
   padding: 11px 13px;
-  margin: 10px 0 4px 0;
+  margin: 10px 0 4px;
 }
 .warn-box.danger {
   background: rgba(192, 57, 43, 0.08);
@@ -1812,7 +1812,7 @@ a:active {
   font-weight: 400;
   color: var(--text);
   line-height: 1.6;
-  margin: 0 0 4px 0;
+  margin: 0 0 4px;
   padding: 0;
 }
 .warn-box .warn-body ul li:last-child,
@@ -1842,7 +1842,7 @@ a:active {
 .commit-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 12px 0 6px 0;
+  margin: 12px 0 6px;
   font-size: 13px;
 }
 .commit-table td {
@@ -1868,7 +1868,7 @@ a:active {
   white-space: nowrap;
 }
 .commit-rules {
-  margin: 8px 0 0 0;
+  margin: 8px 0 0;
   padding-left: 18px;
   font-size: 13px;
   color: var(--text);
@@ -1883,7 +1883,7 @@ a:active {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--text2);
-  margin: 14px 0 6px 0;
+  margin: 14px 0 6px;
   border-bottom: 1px solid var(--border);
   padding-bottom: 4px;
 }
@@ -2192,7 +2192,7 @@ a:active {
   background: var(--surface2);
 }
 .gi-table th:first-child {
-  border-radius: 6px 0 0 0;
+  border-radius: 6px 0 0;
 }
 .gi-table th:last-child {
   border-radius: 0 6px 0 0;

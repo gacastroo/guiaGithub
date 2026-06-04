@@ -18,7 +18,7 @@ export default [
         "warn",
         {
           argsIgnorePattern: "^_",
-          varsIgnorePattern: "^_"
+          varsIgnorePattern: "^(show|toggleMobileNav|toggleTheme|toggleLang|copyCmd|quizPrev|quizSelectOpt|retryQuiz|toggleContributionLang|_)"
         }
       ],
       "no-console": "off"

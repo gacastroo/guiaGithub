@@ -16,7 +16,9 @@
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
     "package": "node scripts/create-package.mjs",
     "clean": "node scripts/clean.mjs",
-    "test": "echo \"No tests configured\""
+    "test": "echo \"No tests configured\"",
+    "check": "npm run format:check && npm run lint",
+    "package:dry": "npm pack --dry-run"
   },
   "keywords": [
     "git",
@@ -43,7 +45,7 @@
     "type": "git",
     "url": "git+https://github.com/gacastroo/guiaGithub.git"
   },
-  "homepage": "https://github.com/gacastroo/guiaGithub#readme",
+  "homepage": "https://gacastroo.github.io/guiaGithub/",
   "bugs": {
     "url": "https://github.com/gacastroo/guiaGithub/issues"
   },
@@ -56,5 +58,8 @@
     "_headers",
     "README.md",
     "PACKAGE-USAGE.md"
-  ]
+  ],
+  "engines": {
+    "node": ">=20"
+  }
 }

@@ -7,6 +7,15 @@
     "declaration-block-no-redundant-longhand-properties": null,
     "font-family-name-quotes": null,
     "selector-id-pattern": null,
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "media-feature-range-notation": null,
+    "color-hex-length": null,
+    "rule-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "at-rule-empty-line-before": null,
+    "declaration-block-no-duplicate-properties": null
   }
 }

@@ -1740,7 +1740,6 @@ function quizRefreshUI() {
 }
 
 function quizGoTo(index, direction) {
-  const slides = document.querySelectorAll(".quiz-slide");
   const current = document.getElementById(`qslide-${qCurrent}`);
 
   // Exit current

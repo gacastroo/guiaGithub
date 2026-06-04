@@ -2,28 +2,38 @@
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
 
 ## Demo
 
-> Puedes abrir directamente el archivo `index.html` en tu navegador.
+Página publicada en GitHub Pages:
+## Demo
+
+https://gacastroo.github.io/guiaGithub/
 
 ---
 
 ## Descripción
 
-Este proyecto es una guía visual sobre el uso de GitHub, desarrollada como una página web estática.  
-El diseño está inspirado en la interfaz de GitHub, con estilos tipo Markdown para mejorar la legibilidad.
+Guía web interactiva para aprender Git y GitHub desde cero de forma visual y práctica.
+## Descripción
+
+El proyecto está desarrollado como una web estática con HTML, CSS y JavaScript. Incluye comandos copiables, ejemplos guiados, errores frecuentes, ejercicios interactivos, modo claro/oscuro, cambio de idioma y una sección de contribuciones.
 
 ---
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/gacastroo/guiaGithub/master/assets/img/PNG/proyecto.png" alt="Vista previa del proyecto" width="1200">
 </p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/gacastroo/guiaGithub/master/assets/img/webp/PNG/proyecto.webp" alt="Vista previa del proyecto" width="1200">
+</p>
 
 ---
+---
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - HTML5
 - CSS3
@@ -34,10 +44,13 @@ El diseño está inspirado en la interfaz de GitHub, con estilos tipo Markdown p
 
 ---
 
-## 📂 Estructura
+## Estructura
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/gacastroo/guiaGithub/master/assets/img/PNG/estructura.png" alt="Estructura del proyecto" width="300">
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/gacastroo/guiaGithub/master/assets/img/webp/PNG/estructura.webp" alt="Estructura del proyecto" width="300">
 </p>
 
 ---
@@ -47,6 +60,11 @@ El diseño está inspirado en la interfaz de GitHub, con estilos tipo Markdown p
 Puedes usar este proyecto de dos formas: abriéndolo directamente como una web estática o instalando sus dependencias con npm para trabajar en desarrollo.
 
 ---
+
+### Opción 1: abrir la guía directamente
+## Guía de instalación
+
+Puedes usar este proyecto de dos formas: abriéndolo directamente como una web estática o instalando sus dependencias con npm para trabajar en desarrollo.
 
 ### Opción 1: abrir la guía directamente
 
@@ -71,6 +89,21 @@ index.html
 ```
 
 En macOS puedes usar:
+Entra en la carpeta del proyecto:
+
+```bash
+cd guiaGithub
+```
+
+Abre el archivo `index.html` en tu navegador.
+
+En Windows puedes hacer doble clic sobre el archivo:
+
+```txt
+index.html
+```
+
+En macOS puedes usar:
 
 ```bash
 open index.html
@@ -78,6 +111,7 @@ open index.html
 
 ---
 
+## Características
 ### Opción 2: ejecutar el proyecto con npm
 
 Primero clona el repositorio:
@@ -193,6 +227,17 @@ Luego ejecuta la Action de GitHub para publicar el paquete.
 ## Características
 
 - Diseño inspirado en GitHub.
+- Modo claro y modo oscuro.
+- Cambio de idioma.
+- Comandos copiables.
+- Sección de errores frecuentes.
+- Ejercicios interactivos.
+- Guía de contribuciones.
+- Documentación técnica.
+- Despliegue en GitHub Pages.
+- Publicación en GitHub Packages.
+- Proyecto preparado con npm.
+- Diseño inspirado en GitHub.
 - Estilos tipo Markdown.
 - Navbar personalizada.
 - Modo claro y modo oscuro.
@@ -207,7 +252,34 @@ Luego ejecuta la Action de GitHub para publicar el paquete.
 ---
 
 ## Contribuciones
+## Contribuciones
 
+Las contribuciones son bienvenidas.
+
+Para contribuir:
+
+1. Haz un fork del proyecto.
+2. Crea una rama nueva:
+
+```bash
+git checkout -b feature/nueva-mejora
+```
+
+3. Realiza tus cambios.
+4. Guarda los cambios con un commit:
+
+```bash
+git add .
+git commit -m "feat: add nueva mejora"
+```
+
+5. Sube la rama:
+
+```bash
+git push origin feature/nueva-mejora
+```
+
+6. Abre un Pull Request en GitHub hacia la rama `master`.
 Las contribuciones son bienvenidas.
 
 Para contribuir:
@@ -237,7 +309,7 @@ git push origin feature/nueva-mejora
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es de uso educativo.
 
