@@ -8,7 +8,6 @@
 ## Demo
 
 Página publicada en GitHub Pages:
-## Demo
 
 https://gacastroo.github.io/guiaGithub/
 
@@ -17,20 +16,15 @@ https://gacastroo.github.io/guiaGithub/
 ## Descripción
 
 Guía web interactiva para aprender Git y GitHub desde cero de forma visual y práctica.
-## Descripción
 
 El proyecto está desarrollado como una web estática con HTML, CSS y JavaScript. Incluye comandos copiables, ejemplos guiados, errores frecuentes, ejercicios interactivos, modo claro/oscuro, cambio de idioma y una sección de contribuciones.
 
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gacastroo/guiaGithub/master/assets/img/PNG/proyecto.png" alt="Vista previa del proyecto" width="1200">
-</p>
-<p align="center">
   <img src="https://raw.githubusercontent.com/gacastroo/guiaGithub/master/assets/img/webp/PNG/proyecto.webp" alt="Vista previa del proyecto" width="1200">
 </p>
 
----
 ---
 
 ## Tecnologías
@@ -38,8 +32,9 @@ El proyecto está desarrollado como una web estática con HTML, CSS y JavaScript
 - HTML5
 - CSS3
 - JavaScript
-- github-markdown-css
+- Vite
 - npm
+- GitHub Pages
 - GitHub Packages
 
 ---
@@ -47,21 +42,11 @@ El proyecto está desarrollado como una web estática con HTML, CSS y JavaScript
 ## Estructura
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gacastroo/guiaGithub/master/assets/img/PNG/estructura.png" alt="Estructura del proyecto" width="300">
-</p>
-<p align="center">
   <img src="https://raw.githubusercontent.com/gacastroo/guiaGithub/master/assets/img/webp/PNG/estructura.webp" alt="Estructura del proyecto" width="300">
 </p>
 
 ---
 
-## ⚙️ Guía de instalación
-
-Puedes usar este proyecto de dos formas: abriéndolo directamente como una web estática o instalando sus dependencias con npm para trabajar en desarrollo.
-
----
-
-### Opción 1: abrir la guía directamente
 ## Guía de instalación
 
 Puedes usar este proyecto de dos formas: abriéndolo directamente como una web estática o instalando sus dependencias con npm para trabajar en desarrollo.
@@ -89,42 +74,12 @@ index.html
 ```
 
 En macOS puedes usar:
-Entra en la carpeta del proyecto:
-
-```bash
-cd guiaGithub
-```
-
-Abre el archivo `index.html` en tu navegador.
-
-En Windows puedes hacer doble clic sobre el archivo:
-
-```txt
-index.html
-```
-
-En macOS puedes usar:
 
 ```bash
 open index.html
 ```
 
----
-
-## Características
 ### Opción 2: ejecutar el proyecto con npm
-
-Primero clona el repositorio:
-
-```bash
-git clone https://github.com/gacastroo/guiaGithub.git
-```
-
-Entra en la carpeta:
-
-```bash
-cd guiaGithub
-```
 
 Instala las dependencias:
 
@@ -138,7 +93,7 @@ Levanta el servidor de desarrollo:
 npm run dev
 ```
 
-Después abre en el navegador la URL que aparezca en la terminal, normalmente:
+Después abre la URL que aparezca en la terminal, normalmente:
 
 ```txt
 http://localhost:5173
@@ -146,27 +101,7 @@ http://localhost:5173
 
 ---
 
-## 📦 Uso como package
-
-Este proyecto también está preparado para publicarse como package en GitHub Packages.
-
-Para instalar el package desde GitHub Packages, primero configura el registro de npm:
-
-```bash
-npm config set @gacastroo:registry https://npm.pkg.github.com
-```
-
-Después puedes instalarlo con:
-
-```bash
-npm install @gacastroo/guia-github
-```
-
----
-
-## 🧪 Scripts disponibles
-
-Estos son algunos scripts útiles del proyecto:
+## Scripts disponibles
 
 ```bash
 npm run dev
@@ -175,52 +110,40 @@ npm run dev
 Ejecuta el proyecto en modo desarrollo.
 
 ```bash
-npm run package
+npm run lint
 ```
 
-Genera un ZIP de distribución.
+Revisa HTML, CSS y JavaScript.
 
 ```bash
 npm run format
 ```
 
-Formatea los archivos del proyecto.
+Formatea el proyecto con Prettier.
 
 ```bash
-npm run lint
+npm run package
 ```
 
-Revisa posibles errores de código o estilo.
+Genera un ZIP de distribución.
 
 ---
 
-## 🚀 Publicar una nueva versión del package
+## Uso como package
 
-Antes de publicar de nuevo en GitHub Packages, tienes que subir la versión del paquete.
+Este proyecto está preparado para publicarse en GitHub Packages.
 
-Para subir una versión pequeña, por ejemplo de `1.0.0` a `1.0.1`, ejecuta:
-
-```bash
-npm version patch --no-git-tag-version
-```
-
-Después guarda los cambios:
+Configura el registro de npm:
 
 ```bash
-git add package.json package-lock.json
-git commit -m "chore: bump package version"
-git push origin master
+npm config set @gacastroo:registry https://npm.pkg.github.com
 ```
 
-Si no tienes `package-lock.json`, usa:
+Instala el package:
 
 ```bash
-git add package.json
-git commit -m "chore: bump package version"
-git push origin master
+npm install @gacastroo/guia-github
 ```
-
-Luego ejecuta la Action de GitHub para publicar el paquete.
 
 ---
 
@@ -237,49 +160,11 @@ Luego ejecuta la Action de GitHub para publicar el paquete.
 - Despliegue en GitHub Pages.
 - Publicación en GitHub Packages.
 - Proyecto preparado con npm.
-- Diseño inspirado en GitHub.
-- Estilos tipo Markdown.
-- Navbar personalizada.
-- Modo claro y modo oscuro.
-- Cambio de idioma.
-- Sección de errores frecuentes.
-- Ejercicios interactivos.
-- Guía visual para aprender Git y GitHub.
-- Responsive básico.
-- Estructura limpia y sencilla.
-- Preparado para publicarse en GitHub Packages.
 
 ---
 
 ## Contribuciones
-## Contribuciones
 
-Las contribuciones son bienvenidas.
-
-Para contribuir:
-
-1. Haz un fork del proyecto.
-2. Crea una rama nueva:
-
-```bash
-git checkout -b feature/nueva-mejora
-```
-
-3. Realiza tus cambios.
-4. Guarda los cambios con un commit:
-
-```bash
-git add .
-git commit -m "feat: add nueva mejora"
-```
-
-5. Sube la rama:
-
-```bash
-git push origin feature/nueva-mejora
-```
-
-6. Abre un Pull Request en GitHub hacia la rama `master`.
 Las contribuciones son bienvenidas.
 
 Para contribuir:
