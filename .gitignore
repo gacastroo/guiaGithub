@@ -1,0 +1,36 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencias Node, si algún día usas npm
+node_modules/
+
+# Builds o carpetas generadas
+dist/
+build/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Archivos comprimidos generados
+*.zip
+*.rar
+*.7z
+
+# Variables de entorno
+.env
+.env.local
