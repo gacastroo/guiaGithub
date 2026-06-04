@@ -993,6 +993,94 @@ pre code {
   color: var(--text);
 }
 
+
+
+/* ── ERRORES COMUNES ── */
+.error-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.error-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+
+.error-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.error-card-header h3 {
+  flex-basis: 100%;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.35;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  word-break: break-word;
+}
+
+.error-pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  background: var(--accent-bg);
+  color: var(--accent-text);
+  border: 1px solid rgba(9, 105, 218, 0.18);
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.error-card p {
+  font-size: 13px;
+}
+
+.error-fix {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.error-fix-title {
+  font-size: 11px !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--success-text) !important;
+  margin-bottom: 6px;
+}
+
+.error-fix pre {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.error-fix ol,
+.error-fix ul {
+  margin-top: 6px;
+}
+
+.error-fix li {
+  font-size: 13px !important;
+}
+
+@media (min-width: 900px) {
+  .error-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* ── LIGHTBOX ── */
 .img-figure img {
   cursor: zoom-in;

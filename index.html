@@ -97,6 +97,14 @@
         </button>
         <button
           class="nav-btn"
+          onclick="show('errores', this)"
+          data-es="Errores comunes"
+          data-en="Common Errors"
+        >
+          Errores comunes
+        </button>
+        <button
+          class="nav-btn"
           onclick="show('ramas', this)"
           data-es="Ramas"
           data-en="Branches"
@@ -932,6 +940,502 @@
           </p>
         </div>
       </div>
+
+
+      <!-- ERRORES COMUNES -->
+      <div id="errores" class="section">
+        <div class="card">
+          <h2
+            data-es="Errores comunes en Git/GitHub y cómo solucionarlos"
+            data-en="Common Git/GitHub errors and how to fix them"
+          >
+            Errores comunes en Git/GitHub y cómo solucionarlos
+          </h2>
+          <p
+            data-es="Esta sección está pensada como un botiquín de primeros auxilios: buscas el mensaje de error, entiendes por qué aparece y aplicas la solución segura antes de tocar comandos peligrosos."
+            data-en="This section is designed as a first-aid kit: find the error message, understand why it appears, and apply the safe fix before using dangerous commands."
+          >
+            Esta sección está pensada como un <strong>botiquín de primeros auxilios</strong>:
+            buscas el mensaje de error, entiendes por qué aparece y aplicas la
+            solución segura antes de tocar comandos peligrosos.
+          </p>
+
+          <div class="warn-box" style="margin-top: 14px">
+            <span class="warn-icon">🧭</span>
+            <div class="warn-body">
+              <p
+                class="warn-title"
+                data-es="Regla de oro antes de arreglar nada"
+                data-en="Golden rule before fixing anything"
+              >
+                Regla de oro antes de arreglar nada
+              </p>
+              <ul>
+                <li
+                  data-es="Mira el estado del repositorio con <code>git status</code>."
+                  data-en="Check the repository state with <code>git status</code>."
+                >
+                  Mira el estado del repositorio con <code>git status</code>.
+                </li>
+                <li
+                  data-es="Lee el mensaje completo del error: normalmente Git ya te dice qué falta."
+                  data-en="Read the full error message: Git usually tells you what is missing."
+                >
+                  Lee el mensaje completo del error: normalmente Git ya te dice qué falta.
+                </li>
+                <li
+                  data-es="No uses <code>--force</code>, <code>reset --hard</code> o <code>clean -fd</code> si no sabes exactamente qué borran."
+                  data-en="Do not use <code>--force</code>, <code>reset --hard</code>, or <code>clean -fd</code> unless you know exactly what they delete."
+                >
+                  No uses <code>--force</code>, <code>reset --hard</code> o
+                  <code>clean -fd</code> si no sabes exactamente qué borran.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 data-es="Diagnóstico rápido" data-en="Quick diagnosis">
+            Diagnóstico rápido
+          </h2>
+          <p
+            data-es="Cuando Git se queja, estos comandos te dicen casi siempre dónde está el problema:"
+            data-en="When Git complains, these commands almost always tell you where the problem is:"
+          >
+            Cuando Git se queja, estos comandos te dicen casi siempre dónde está el problema:
+          </p>
+          <div class="cmd-group" style="margin-top: 12px">
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git status</div>
+                <div
+                  class="cmd-desc"
+                  data-es="Muestra cambios pendientes, conflictos, rama actual y si hay commits por subir."
+                  data-en="Shows pending changes, conflicts, current branch, and commits waiting to be pushed."
+                >
+                  Muestra cambios pendientes, conflictos, rama actual y si hay commits por subir.
+                </div>
+              </div>
+              <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement);">Copiar</button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git branch</div>
+                <div
+                  class="cmd-desc"
+                  data-es="Lista tus ramas locales y marca con un asterisco la rama en la que estás."
+                  data-en="Lists local branches and marks your current branch with an asterisk."
+                >
+                  Lista tus ramas locales y marca con un asterisco la rama en la que estás.
+                </div>
+              </div>
+              <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement);">Copiar</button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git remote -v</div>
+                <div
+                  class="cmd-desc"
+                  data-es="Comprueba a qué repositorio de GitHub está conectada tu carpeta local."
+                  data-en="Checks which GitHub repository your local folder is connected to."
+                >
+                  Comprueba a qué repositorio de GitHub está conectada tu carpeta local.
+                </div>
+              </div>
+              <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement);">Copiar</button>
+            </div>
+            <div class="cmd" onclick="copyCmd(this)">
+              <div class="cmd-text">
+                <div class="cmd-code">git log --oneline --decorate -5</div>
+                <div
+                  class="cmd-desc"
+                  data-es="Muestra los últimos commits de forma resumida para saber dónde estás."
+                  data-en="Shows the latest commits in a compact way so you know where you are."
+                >
+                  Muestra los últimos commits de forma resumida para saber dónde estás.
+                </div>
+              </div>
+              <button class="cmd-copy" onclick="event.stopPropagation(); copyCmd(this.parentElement);">Copiar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 data-es="Errores frecuentes" data-en="Frequent errors">
+            Errores frecuentes
+          </h2>
+
+          <div class="error-grid">
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Carpeta incorrecta" data-en="Wrong folder">Carpeta incorrecta</span>
+                <h3 data-es="fatal: not a git repository" data-en="fatal: not a git repository">
+                  fatal: not a git repository
+                </h3>
+              </div>
+              <p
+                data-es="Aparece cuando ejecutas comandos de Git fuera de una carpeta que tenga repositorio. Normalmente estás en otra ruta o todavía no has hecho <code>git init</code>/<code>git clone</code>."
+                data-en="This appears when you run Git commands outside a folder that has a repository. You are usually in the wrong path, or you have not run <code>git init</code>/<code>git clone</code> yet."
+              >
+                Aparece cuando ejecutas comandos de Git fuera de una carpeta que tenga repositorio.
+                Normalmente estás en otra ruta o todavía no has hecho <code>git init</code>/<code>git clone</code>.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución" data-en="Fix">Solución</p>
+                <ol>
+                  <li data-es="Entra en la carpeta correcta del proyecto." data-en="Go into the correct project folder.">Entra en la carpeta correcta del proyecto.</li>
+                  <li data-es="Si el proyecto aún no usa Git, inicialízalo." data-en="If the project does not use Git yet, initialize it.">Si el proyecto aún no usa Git, inicialízalo.</li>
+                </ol>
+                <pre><code>cd ruta/de/tu/proyecto
+git status
+# si no era un repositorio todavía:
+git init</code></pre>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Identidad Git" data-en="Git identity">Identidad Git</span>
+                <h3 data-es="Please tell me who you are" data-en="Please tell me who you are">
+                  Please tell me who you are
+                </h3>
+              </div>
+              <p
+                data-es="Git no sabe con qué nombre y correo debe firmar tus commits. No es un fallo de GitHub: es configuración local de Git."
+                data-en="Git does not know which name and email should sign your commits. This is not a GitHub problem: it is local Git configuration."
+              >
+                Git no sabe con qué nombre y correo debe firmar tus commits.
+                No es un fallo de GitHub: es configuración local de Git.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución" data-en="Fix">Solución</p>
+                <pre><code>git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com"</code></pre>
+                <p
+                  data-es="Después vuelve a ejecutar el commit."
+                  data-en="Then run the commit again."
+                >Después vuelve a ejecutar el commit.</p>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Sin cambios" data-en="No changes">Sin cambios</span>
+                <h3 data-es="nothing to commit, working tree clean" data-en="nothing to commit, working tree clean">
+                  nothing to commit, working tree clean
+                </h3>
+              </div>
+              <p
+                data-es="Significa que Git no ve cambios pendientes. Puede ser correcto, o puede que hayas olvidado guardar el archivo, estés en otra carpeta o el archivo esté ignorado por <code>.gitignore</code>."
+                data-en="It means Git does not see pending changes. This may be correct, or you may have forgotten to save the file, be in another folder, or the file may be ignored by <code>.gitignore</code>."
+              >
+                Significa que Git no ve cambios pendientes. Puede ser correcto, o puede que
+                hayas olvidado guardar el archivo, estés en otra carpeta o el archivo esté ignorado por <code>.gitignore</code>.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución" data-en="Fix">Solución</p>
+                <pre><code>git status
+git status --ignored</code></pre>
+                <p
+                  data-es="Si el archivo sale como ignorado, revisa tu <code>.gitignore</code>."
+                  data-en="If the file appears as ignored, review your <code>.gitignore</code>."
+                >Si el archivo sale como ignorado, revisa tu <code>.gitignore</code>.</p>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Remote duplicado" data-en="Duplicate remote">Remote duplicado</span>
+                <h3 data-es="remote origin already exists" data-en="remote origin already exists">
+                  remote origin already exists
+                </h3>
+              </div>
+              <p
+                data-es="Tu proyecto ya tiene un remoto llamado <code>origin</code>. Suele pasar cuando intentas conectar otra vez la misma carpeta con GitHub."
+                data-en="Your project already has a remote named <code>origin</code>. This usually happens when you try to connect the same folder to GitHub again."
+              >
+                Tu proyecto ya tiene un remoto llamado <code>origin</code>.
+                Suele pasar cuando intentas conectar otra vez la misma carpeta con GitHub.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución" data-en="Fix">Solución</p>
+                <pre><code>git remote -v
+# cambiar la URL del remoto existente:
+git remote set-url origin https://github.com/usuario/repositorio.git</code></pre>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Rama sin commits" data-en="Branch without commits">Rama sin commits</span>
+                <h3 data-es="src refspec main does not match any" data-en="src refspec main does not match any">
+                  src refspec main does not match any
+                </h3>
+              </div>
+              <p
+                data-es="Git no encuentra la rama que quieres subir. Lo más común es que todavía no tengas ningún commit o que tu rama se llame <code>master</code> en vez de <code>main</code>."
+                data-en="Git cannot find the branch you are trying to push. Most commonly, you have no commits yet or your branch is named <code>master</code> instead of <code>main</code>."
+              >
+                Git no encuentra la rama que quieres subir. Lo más común es que todavía no tengas
+                ningún commit o que tu rama se llame <code>master</code> en vez de <code>main</code>.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución" data-en="Fix">Solución</p>
+                <pre><code>git status
+git add .
+git commit -m "chore: primer commit"
+git branch -M main
+git push -u origin main</code></pre>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Push rechazado" data-en="Rejected push">Push rechazado</span>
+                <h3 data-es="failed to push some refs / non-fast-forward" data-en="failed to push some refs / non-fast-forward">
+                  failed to push some refs / non-fast-forward
+                </h3>
+              </div>
+              <p
+                data-es="GitHub tiene commits que tú no tienes en local. Git evita que sobrescribas trabajo remoto sin revisarlo antes."
+                data-en="GitHub has commits that you do not have locally. Git prevents you from overwriting remote work without reviewing it first."
+              >
+                GitHub tiene commits que tú no tienes en local. Git evita que sobrescribas
+                trabajo remoto sin revisarlo antes.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución segura" data-en="Safe fix">Solución segura</p>
+                <pre><code>git pull origin main
+# si aparecen conflictos, resuélvelos
+git status
+git push origin main</code></pre>
+                <p
+                  data-es="Si estás trabajando en equipo, evita <code>git push --force</code> salvo que sepas exactamente lo que haces."
+                  data-en="If you work in a team, avoid <code>git push --force</code> unless you know exactly what you are doing."
+                >Si estás trabajando en equipo, evita <code>git push --force</code> salvo que sepas exactamente lo que haces.</p>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Rama protegida" data-en="Protected branch">Rama protegida</span>
+                <h3 data-es="Cannot update this protected ref / protected branch hook declined" data-en="Cannot update this protected ref / protected branch hook declined">
+                  Cannot update this protected ref / protected branch hook declined
+                </h3>
+              </div>
+              <p
+                data-es="La rama está protegida en GitHub. Es habitual en <code>main</code> o <code>master</code>: no puedes subir cambios directamente y debes usar una rama + Pull Request."
+                data-en="The branch is protected on GitHub. This is common for <code>main</code> or <code>master</code>: you cannot push directly and must use a branch + Pull Request."
+              >
+                La rama está protegida en GitHub. Es habitual en <code>main</code> o
+                <code>master</code>: no puedes subir cambios directamente y debes usar una rama + Pull Request.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución" data-en="Fix">Solución</p>
+                <pre><code>git switch -c feature/mi-cambio
+git add .
+git commit -m "feat: describir cambio"
+git push -u origin feature/mi-cambio</code></pre>
+                <p
+                  data-es="Después abre un Pull Request en GitHub hacia <code>main</code>."
+                  data-en="Then open a Pull Request on GitHub into <code>main</code>."
+                >Después abre un Pull Request en GitHub hacia <code>main</code>.</p>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Autenticación" data-en="Authentication">Autenticación</span>
+                <h3 data-es="Authentication failed / Support for password authentication was removed" data-en="Authentication failed / Support for password authentication was removed">
+                  Authentication failed / password authentication removed
+                </h3>
+              </div>
+              <p
+                data-es="GitHub no acepta la contraseña normal de tu cuenta para operar por HTTPS. Debes iniciar sesión con el gestor de credenciales, usar un token personal o configurar SSH."
+                data-en="GitHub does not accept your normal account password for HTTPS Git operations. You must sign in with the credential manager, use a personal token, or configure SSH."
+              >
+                GitHub no acepta la contraseña normal de tu cuenta para operar por HTTPS.
+                Debes iniciar sesión con el gestor de credenciales, usar un token personal o configurar SSH.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución recomendada" data-en="Recommended fix">Solución recomendada</p>
+                <ol>
+                  <li data-es="Cierra sesión o borra credenciales antiguas en el gestor de credenciales de Windows/macOS." data-en="Sign out or remove old credentials from Windows/macOS Credential Manager.">Cierra sesión o borra credenciales antiguas en el gestor de credenciales de Windows/macOS.</li>
+                  <li data-es="Vuelve a hacer <code>git push</code> y autentícate en la ventana del navegador." data-en="Run <code>git push</code> again and authenticate in the browser window.">Vuelve a hacer <code>git push</code> y autentícate en la ventana del navegador.</li>
+                </ol>
+                <pre><code>git remote -v
+git push origin main</code></pre>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Permisos" data-en="Permissions">Permisos</span>
+                <h3 data-es="Repository not found / Permission denied (publickey)" data-en="Repository not found / Permission denied (publickey)">
+                  Repository not found / Permission denied (publickey)
+                </h3>
+              </div>
+              <p
+                data-es="Puede significar que la URL del remoto está mal, que no tienes permisos en ese repositorio o que tu clave SSH no está añadida a GitHub."
+                data-en="This may mean the remote URL is wrong, you do not have permission for that repository, or your SSH key has not been added to GitHub."
+              >
+                Puede significar que la URL del remoto está mal, que no tienes permisos en ese
+                repositorio o que tu clave SSH no está añadida a GitHub.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución" data-en="Fix">Solución</p>
+                <pre><code>git remote -v
+# HTTPS:
+git remote set-url origin https://github.com/usuario/repositorio.git
+# SSH, si tienes clave configurada:
+git remote set-url origin git@github.com:usuario/repositorio.git</code></pre>
+                <p
+                  data-es="Si el repositorio es privado, confirma que tu usuario tiene acceso."
+                  data-en="If the repository is private, confirm your user has access."
+                >Si el repositorio es privado, confirma que tu usuario tiene acceso.</p>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Cambios locales" data-en="Local changes">Cambios locales</span>
+                <h3 data-es="Your local changes would be overwritten by merge" data-en="Your local changes would be overwritten by merge">
+                  Your local changes would be overwritten by merge
+                </h3>
+              </div>
+              <p
+                data-es="Tienes cambios sin guardar en commit y Git no quiere pisarlos al hacer <code>pull</code>, <code>merge</code> o cambiar de rama."
+                data-en="You have changes that are not committed, and Git refuses to overwrite them during <code>pull</code>, <code>merge</code>, or branch switching."
+              >
+                Tienes cambios sin guardar en commit y Git no quiere pisarlos al hacer
+                <code>pull</code>, <code>merge</code> o cambiar de rama.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Soluciones posibles" data-en="Possible fixes">Soluciones posibles</p>
+                <pre><code># opción A: guardar los cambios en un commit
+git add .
+git commit -m "wip: guardar cambios antes de actualizar"
+
+# opción B: guardarlos temporalmente
+git stash
+git pull origin main
+git stash pop</code></pre>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Conflicto" data-en="Conflict">Conflicto</span>
+                <h3 data-es="CONFLICT (content): Merge conflict" data-en="CONFLICT (content): Merge conflict">
+                  CONFLICT (content): Merge conflict
+                </h3>
+              </div>
+              <p
+                data-es="Dos ramas han cambiado la misma zona de un archivo. Git no puede decidir solo y necesita que elijas la versión correcta."
+                data-en="Two branches changed the same area of a file. Git cannot decide alone and needs you to choose the correct version."
+              >
+                Dos ramas han cambiado la misma zona de un archivo. Git no puede decidir solo y
+                necesita que elijas la versión correcta.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución" data-en="Fix">Solución</p>
+                <pre><code>git status
+# abre los archivos en conflicto, elimina &lt;&lt;&lt;&lt;&lt;&lt;&lt; ======= &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+git add archivo-resuelto
+git commit -m "fix: resolver conflicto"</code></pre>
+                <p
+                  data-es="Si todavía no quieres resolverlo, puedes cancelar el merge con <code>git merge --abort</code>."
+                  data-en="If you do not want to solve it yet, you can cancel the merge with <code>git merge --abort</code>."
+                >Si todavía no quieres resolverlo, puedes cancelar el merge con <code>git merge --abort</code>.</p>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es=".gitignore" data-en=".gitignore">.gitignore</span>
+                <h3 data-es=".gitignore no me funciona" data-en=".gitignore is not working">
+                  .gitignore no me funciona
+                </h3>
+              </div>
+              <p
+                data-es="Si un archivo ya fue añadido al repositorio, <code>.gitignore</code> no lo elimina automáticamente del seguimiento. Solo evita que se añadan archivos nuevos que coincidan con sus reglas."
+                data-en="If a file was already added to the repository, <code>.gitignore</code> does not automatically stop tracking it. It only prevents new matching files from being added."
+              >
+                Si un archivo ya fue añadido al repositorio, <code>.gitignore</code> no lo elimina
+                automáticamente del seguimiento. Solo evita que se añadan archivos nuevos que coincidan con sus reglas.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución" data-en="Fix">Solución</p>
+                <pre><code>git rm --cached archivo.txt
+# o para una carpeta:
+git rm -r --cached carpeta/
+git add .gitignore
+git commit -m "chore: actualizar gitignore"</code></pre>
+              </div>
+            </article>
+
+            <article class="error-card">
+              <div class="error-card-header">
+                <span class="error-pill" data-es="Saltos de línea" data-en="Line endings">Saltos de línea</span>
+                <h3 data-es="LF will be replaced by CRLF" data-en="LF will be replaced by CRLF">
+                  LF will be replaced by CRLF
+                </h3>
+              </div>
+              <p
+                data-es="Es un aviso habitual en Windows. Git te está diciendo que convertirá saltos de línea entre formatos Windows y Linux/macOS. No suele ser grave, pero puede molestar en proyectos compartidos."
+                data-en="This is a common warning on Windows. Git is telling you it will convert line endings between Windows and Linux/macOS formats. It is usually not serious, but it can be annoying in shared projects."
+              >
+                Es un aviso habitual en Windows. Git te está diciendo que convertirá saltos de línea
+                entre formatos Windows y Linux/macOS. No suele ser grave, pero puede molestar en proyectos compartidos.
+              </p>
+              <div class="error-fix">
+                <p class="error-fix-title" data-es="Solución habitual" data-en="Usual fix">Solución habitual</p>
+                <pre><code># en Windows suele usarse:
+git config --global core.autocrlf true
+
+# en Linux/macOS suele usarse:
+git config --global core.autocrlf input</code></pre>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 data-es="Comandos peligrosos: úsalos con cuidado" data-en="Dangerous commands: use them carefully">
+            Comandos peligrosos: úsalos con cuidado
+          </h2>
+          <div class="compare" style="margin-bottom: 0">
+            <div class="cbox">
+              <h3 data-es="⚠️ Puede borrar trabajo local" data-en="⚠️ Can delete local work">⚠️ Puede borrar trabajo local</h3>
+              <ul>
+                <li><code>git reset --hard</code></li>
+                <li><code>git clean -fd</code></li>
+                <li><code>git checkout -- archivo</code></li>
+              </ul>
+            </div>
+            <div class="cbox">
+              <h3 data-es="⚠️ Puede afectar al equipo" data-en="⚠️ Can affect the team">⚠️ Puede afectar al equipo</h3>
+              <ul>
+                <li><code>git push --force</code></li>
+                <li><code>git branch -D nombre-rama</code></li>
+                <li><code>git push origin --delete nombre-rama</code></li>
+              </ul>
+            </div>
+          </div>
+          <p
+            style="margin-top: 14px"
+            data-es="Antes de usar uno de estos comandos, haz una copia, pregunta al equipo o guarda tus cambios en una rama temporal."
+            data-en="Before using one of these commands, make a copy, ask your team, or save your changes in a temporary branch."
+          >
+            Antes de usar uno de estos comandos, haz una copia, pregunta al equipo o guarda tus cambios en una rama temporal.
+          </p>
+          <pre><code>git switch -c backup/antes-de-arreglar
+git add .
+git commit -m "backup: guardar estado antes de corregir"</code></pre>
+        </div>
+      </div>
+
       <div id="miniguia" class="section">
         <div class="card">
           <h2
