@@ -1,8 +1,8 @@
 {
-  "name": "guia-github",
+  "name": "@gacastroo/guia-github",
   "version": "1.0.0",
   "description": "Guía visual de Git y GitHub para principiantes, desarrollada con HTML, CSS y JavaScript.",
-  "private": true,
+  "private": false,
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
@@ -15,7 +15,8 @@
     "lint:js": "eslint \"assets/js/**/*.js\"",
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
     "package": "node scripts/create-package.mjs",
-    "clean": "node scripts/clean.mjs"
+    "clean": "node scripts/clean.mjs",
+    "test": "echo \"No tests configured\""
   },
   "keywords": [
     "git",
@@ -37,5 +38,23 @@
     "stylelint": "^16.12.0",
     "stylelint-config-standard": "^36.0.1",
     "vite": "^6.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gacastroo/guiaGithub.git"
+  },
+  "homepage": "https://github.com/gacastroo/guiaGithub#readme",
+  "bugs": {
+    "url": "https://github.com/gacastroo/guiaGithub/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "index.html",
+    "assets/",
+    "_headers",
+    "README.md",
+    "PACKAGE-USAGE.md"
+  ]
 }
