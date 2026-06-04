@@ -12,16 +12,18 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 24
           registry-url: https://npm.pkg.github.com
           scope: '@gacastroo'
+          package-manager-cache: false
 
       - name: Install dependencies
         run: npm install
