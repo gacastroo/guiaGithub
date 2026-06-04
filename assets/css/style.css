@@ -15,6 +15,7 @@ img {
   --bg: #f6f8fa;
   --surface: #ffffff;
   --surface2: #f0f2f5;
+  --bg2: #f0f2f5;
   --border: rgba(0, 0, 0, 0.1);
   --border2: rgba(0, 0, 0, 0.2);
   --text: #1c2128;
@@ -39,6 +40,7 @@ img {
   --bg: #0d1117;
   --surface: #161b22;
   --surface2: #21262d;
+  --bg2: #21262d;
   --border: rgba(255, 255, 255, 0.08);
   --border2: rgba(255, 255, 255, 0.18);
   --text: #e6edf3;
@@ -996,60 +998,114 @@ pre code {
 
 
 /* ── ERRORES COMUNES ── */
+#errores {
+  overflow-x: hidden;
+  overflow-x: clip;
+  padding-inline: 2px;
+}
+
+#errores .card {
+  background: var(--surface);
+  max-width: 100%;
+  overflow: hidden;
+  padding: clamp(18px, 3vw, 28px);
+}
+
+#errores .card > h2 {
+  text-wrap: balance;
+}
+
 .error-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  margin-top: 14px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(16px, 2.4vw, 24px);
+  margin-top: 18px;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .error-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  overflow: clip;
   background: var(--surface2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 16px;
+  padding: clamp(16px, 2.4vw, 22px);
+  box-shadow: 0 1px 0 rgba(31, 35, 40, 0.04);
+}
+
+[data-theme="dark"] .error-card {
+  background: var(--surface2);
+  box-shadow: none;
 }
 
 .error-card-header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
+  gap: 10px;
+  min-width: 0;
+  max-width: 100%;
+  margin-bottom: 0;
 }
 
 .error-card-header h3 {
   flex-basis: 100%;
+  min-width: 0;
+  max-width: 100%;
   color: var(--text);
   font-size: 15px;
-  line-height: 1.35;
+  line-height: 1.45;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  overflow-wrap: anywhere;
   word-break: break-word;
+  text-wrap: balance;
 }
 
 .error-pill {
   display: inline-flex;
   align-items: center;
   width: fit-content;
+  max-width: 100%;
   background: var(--accent-bg);
   color: var(--accent-text);
   border: 1px solid rgba(9, 105, 218, 0.18);
   border-radius: 999px;
-  padding: 3px 9px;
+  padding: 4px 10px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .error-card p {
   font-size: 13px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .error-fix {
-  margin-top: 12px;
-  border-top: 1px solid var(--border);
-  padding-top: 12px;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(14px, 2vw, 18px);
+  overflow: hidden;
+  overflow: clip;
+}
+
+[data-theme="dark"] .error-fix {
+  background: var(--surface);
 }
 
 .error-fix-title {
@@ -1058,26 +1114,155 @@ pre code {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--success-text) !important;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+  text-wrap: balance;
 }
 
 .error-fix pre {
-  margin-top: 8px;
-  margin-bottom: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 12px 0 0;
+  padding: 16px 18px;
+  overflow-x: visible;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border-radius: var(--radius);
+  line-height: 1.75;
+}
+
+.error-fix pre code {
+  display: block;
+  max-width: 100%;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .error-fix ol,
 .error-fix ul {
-  margin-top: 6px;
+  margin: 10px 0 14px;
+  padding-left: 22px;
 }
 
 .error-fix li {
   font-size: 13px !important;
+  line-height: 1.75;
+  margin-bottom: 8px !important;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.error-fix li:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Textos sueltos de ayuda dentro de la solución:
+   tienen aire, pero NO se centran todos. */
+.error-fix > p:not(.error-fix-title) {
+  display: block;
+  width: 100%;
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  text-align: left;
+  line-height: 1.75;
+  color: var(--text2);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.error-fix > p:not(.error-fix-title) code {
+  display: inline-block;
+  margin: 0 2px;
+  padding: 2px 6px;
+  background: var(--surface);
+  color: var(--accent);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 12px;
+}
+
+/* Solo el bloque/tarjeta de "Saltos de línea" queda centrado. */
+.error-card:has(.error-pill[data-es="Saltos de línea"]),
+.error-card:has(.error-pill[data-en="Line endings"]) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 620px);
+  text-align: center;
+}
+
+.error-card:has(.error-pill[data-es="Saltos de línea"]) .error-card-header,
+.error-card:has(.error-pill[data-en="Line endings"]) .error-card-header {
+  justify-content: center;
+}
+
+.error-card:has(.error-pill[data-es="Saltos de línea"]) .error-card-header h3,
+.error-card:has(.error-pill[data-en="Line endings"]) .error-card-header h3,
+.error-card:has(.error-pill[data-es="Saltos de línea"]) > p,
+.error-card:has(.error-pill[data-en="Line endings"]) > p,
+.error-card:has(.error-pill[data-es="Saltos de línea"]) .error-fix-title,
+.error-card:has(.error-pill[data-en="Line endings"]) .error-fix-title {
+  text-align: center;
+}
+
+.error-card:has(.error-pill[data-es="Saltos de línea"]) .error-fix,
+.error-card:has(.error-pill[data-en="Line endings"]) .error-fix {
+  text-align: center;
+}
+
+.error-card:has(.error-pill[data-es="Saltos de línea"]) .error-fix pre,
+.error-card:has(.error-pill[data-en="Line endings"]) .error-fix pre {
+  max-width: 520px;
+  margin-inline: auto;
+  text-align: left;
 }
 
 @media (min-width: 900px) {
   .error-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  #errores .card {
+    overflow: hidden;
+    padding: 18px 14px;
+  }
+
+  .error-grid {
+    gap: 16px;
+  }
+
+  .error-card {
+    padding: 16px 14px;
+  }
+
+  .error-fix {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  #errores .card {
+    padding: 16px 10px;
+  }
+
+  .error-card {
+    padding: 14px 12px;
+  }
+
+  .error-card-header h3 {
+    font-size: 13px;
+  }
+
+  .error-fix pre {
+    padding: 12px;
+    font-size: 10px;
   }
 }
 
