@@ -1,6 +1,6 @@
 {
   "name": "@gacastroo/guia-github",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Guía visual de Git y GitHub para principiantes, desarrollada con HTML, CSS y JavaScript.",
   "private": false,
   "type": "module",
