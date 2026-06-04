@@ -8,11 +8,7 @@ const CF_INITIAL_FILE = `<header>
 </header>`;
 
 const CF_CONFLICT_FILE = `<header>
-<<<<<<< HEAD
   <h1>Guía básica de GitHub con ejercicios interactivos</h1>
-=======
-  <h1>Guía práctica de GitHub para principiantes</h1>
->>>>>>> feature-titulo
   <p>Aprende Git y GitHub paso a paso.</p>
 </header>`;
 
