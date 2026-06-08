@@ -1679,7 +1679,67 @@ pre {
 }
 
 .step-card-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 20px;
   background: var(--surface2) !important;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.step-card-inner .content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.step-card-inner .content h3 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.step-card-inner .content p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text2);
+}
+
+/* Bloque de comando */
+.step-card-inner .content p[style*="background"] {
+  margin-top: 8px !important;
+  padding: 11px 12px !important;
+  text-align: left !important;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 540px) {
+  .step-card-inner {
+    flex-direction: column;
+    padding: 16px 14px;
+    gap: 12px;
+  }
+
+  .step-card-inner .icon {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+  .step-card-inner .content p[style*="background"] {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 }
 
 /* ══════════════════════════════════════════
