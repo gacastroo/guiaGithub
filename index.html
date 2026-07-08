@@ -6,6 +6,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Guía de GitHub</title>
     <link href="./assets/img/favicon/favicon.ico" rel="icon" type="image/x-icon" />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/img/webp/PNG/githubVsGit.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <!-- ── Security Headers ── -->
     <!--
       NOTA: X-Frame-Options y frame-ancestors DEBEN enviarse como cabeceras HTTP,
@@ -26,7 +33,7 @@
       http-equiv="Content-Security-Policy"
     />
     <!-- /Security Headers ── -->
-    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/style.min.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -185,8 +192,9 @@
           <img
             alt="Diferencias entre Git y GitHub"
             decoding="async"
+            fetchpriority="high"
             height="789"
-            loading="lazy"
+            loading="eager"
             src="./assets/img/webp/PNG/githubVsGit.webp"
             style="border-radius: 8px"
             width="1171"
@@ -241,15 +249,15 @@
           <p style="font-size: 13px; color: var(--text3); margin-bottom: 0">
             Instalación y primeros pasos con Git
           </p>
-          <div class="video-wrap">
-            <iframe
-              allow="fullscreen"
-              referrerpolicy="strict-origin-when-cross-origin"
-              src="https://www.youtube.com/embed/jdXKwLNUfmg"
-              style="border: 0"
-              title="Instalación de Git"
-            >
-            </iframe>
+          <div
+            class="video-wrap youtube-lazy"
+            data-video-id="jdXKwLNUfmg"
+            data-video-title="Instalación de Git"
+            role="button"
+            tabindex="0"
+            aria-label="Reproducir vídeo: Instalación de Git"
+          >
+            <button class="youtube-lazy-btn" type="button">▶ Ver vídeo</button>
           </div>
         </div>
       </div>
@@ -4403,15 +4411,16 @@ Thumbs.db
         >
       </p>
     </footer>
-    <script src="./assets/js/navigation.js"></script>
-    <script src="./assets/js/theme.js"></script>
-    <script src="./assets/js/i18n.js"></script>
-    <script src="./assets/js/commands.js"></script>
-    <script src="./assets/js/quiz.js"></script>
-    <script src="./assets/js/terminal-simulator.js"></script>
-    <script src="./assets/js/lightbox.js"></script>
-    <script src="./assets/js/gitignore-exercise.js"></script>
-    <script src="./assets/js/conflict-exercise.js"></script>
-    <script src="./assets/js/app.js"></script>
+    <script defer src="./assets/js/navigation.min.js"></script>
+    <script defer src="./assets/js/theme.min.js"></script>
+    <script defer src="./assets/js/i18n.min.js"></script>
+    <script defer src="./assets/js/commands.min.js"></script>
+    <script defer src="./assets/js/quiz.min.js"></script>
+    <script defer src="./assets/js/terminal-simulator.min.js"></script>
+    <script defer src="./assets/js/lightbox.min.js"></script>
+    <script defer src="./assets/js/gitignore-exercise.min.js"></script>
+    <script defer src="./assets/js/conflict-exercise.min.js"></script>
+    <script defer src="./assets/js/lazy-youtube.min.js"></script>
+    <script defer src="./assets/js/app.min.js"></script>
   </body>
 </html>
