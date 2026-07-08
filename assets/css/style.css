@@ -479,7 +479,6 @@ main {
 }
 
 /* ── VIDEO ── */
-/* ── VIDEO ── */
 .video-wrap {
   position: relative;
   width: 100%;
@@ -490,7 +489,6 @@ main {
   margin-top: 12px;
   background: #000;
 }
-
 .video-wrap iframe {
   position: absolute;
   inset: 0;
@@ -1971,20 +1969,6 @@ a:active {
    RESPONSIVE
    ══════════════════════════════════════════════════════════════ */
 
-.video-wrap {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-.video-wrap iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-}
-
 .nav-hamburger {
   display: none;
   flex-direction: column;
@@ -2854,29 +2838,4 @@ a:active {
 
 .git-github-info strong {
   color: var(--text);
-}
-
-/* ── Lazy YouTube placeholder ── */
-.youtube-lazy {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #0d1117, #30363d);
-  cursor: pointer;
-}
-.youtube-lazy:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
-}
-.youtube-lazy-btn {
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  font-weight: 700;
-  cursor: pointer;
-}
-.youtube-lazy:hover .youtube-lazy-btn {
-  background: rgba(255, 255, 255, 0.2);
 }
